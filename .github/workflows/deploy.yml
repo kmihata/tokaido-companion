@@ -1,14 +1,7 @@
-# PROPOSED — NOT ACTIVE.
+# Activated 2026-09-25 with Kevin's explicit approval, after fifteen months of
+# sitting in proposed/ precisely so it could not run by accident.
 #
-# This file is deliberately in proposed/ rather than .github/workflows/ so it
-# cannot run. Activating it is a decision Kevin makes, not a side effect of a
-# build. See GITHUB-PAGES-DEPLOYMENT.md for the full sequence.
-#
-# To activate, after the repository exists and Kevin has approved deployment:
-#   mkdir -p .github/workflows
-#   git mv proposed/deploy-github-pages.yml .github/workflows/deploy.yml
-#
-# Assumes the repository is named `tokaido-companion`. If it is named anything
+# The repository is named `tokaido-companion`. If it is named anything
 # else, change BASE_PATH below to match: GitHub Pages serves a project site at
 # https://<user>.github.io/<repo>/ and every asset path depends on it.
 
