@@ -11,6 +11,8 @@ import { href } from '../router';
 export function MapScreen({ focusId }: { focusId: string | null }): ReactNode {
   const { dataset, effectiveDate, userPoints } = useAppState();
   const geo = useGeolocation();
+  // Bumped to ask the map to recentre; see MapView's centreOnPosition.
+  const [centreTick, setCentreTick] = useState(0);
   const [dayOnly, setDayOnly] = useState(false);
   const [showAnchors, setShowAnchors] = useState(true);
   const [basemapId, setBasemapId] = useState('osm');
@@ -52,7 +54,12 @@ export function MapScreen({ focusId }: { focusId: string | null }): ReactNode {
         basemapId={basemapId}
         waypoints={waypoints}
         userPoints={userPoints.points}
-        position={geo.lat !== null && geo.lon !== null ? { lat: geo.lat, lon: geo.lon, accuracyM: geo.accuracyM } : null}
+        position={
+          geo.lat !== null && geo.lon !== null
+            ? { lat: geo.lat, lon: geo.lon, accuracyM: geo.accuracyM, overridden: geo.overridden }
+            : null
+        }
+        centreOnPosition={centreTick}
         focus={focus}
       />
 
@@ -82,10 +89,27 @@ export function MapScreen({ focusId }: { focusId: string | null }): ReactNode {
             Stop location
           </button>
         ) : (
-          <button type="button" className="btn btn--primary" onClick={geo.start}>
+          <button
+            type="button"
+            className="btn btn--primary"
+            onClick={() => {
+              geo.start();
+              setCentreTick((t) => t + 1);
+            }}
+          >
             Show my location
           </button>
         )}
+        {geo.lat !== null ? (
+          <button
+            type="button"
+            className="btn"
+            data-testid="centre-on-me"
+            onClick={() => setCentreTick((t) => t + 1)}
+          >
+            Centre on me
+          </button>
+        ) : null}
         <button type="button" className="btn" onClick={() => setDayOnly((v) => !v)}>
           {dayOnly ? 'All waypoints' : "Today's waypoints only"}
         </button>

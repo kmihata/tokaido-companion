@@ -10,7 +10,7 @@ import { href } from '../router';
  */
 export function StatusStrip(): ReactNode {
   const online = useOnline();
-  const { sync, dataset, dateIsOverridden, effectiveDate } = useAppState();
+  const { sync, dataset, dateIsOverridden, effectiveDate, settings } = useAppState();
 
   return (
     <div className="statusstrip" role="status" aria-live="polite">
@@ -33,6 +33,13 @@ export function StatusStrip(): ReactNode {
       {dateIsOverridden ? (
         <span className="chip chip--warn" data-testid="date-override-chip">
           ⚠ Previewing {effectiveDate}
+        </span>
+      ) : null}
+
+      {settings.positionOverride ? (
+        <span className="chip chip--warn" data-testid="position-override-chip">
+          ⚠ Pretend position {settings.positionOverride.lat.toFixed(4)},{' '}
+          {settings.positionOverride.lon.toFixed(4)}
         </span>
       ) : null}
     </div>

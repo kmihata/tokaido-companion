@@ -109,7 +109,9 @@ export interface MapViewProps {
   routeFeatures?: readonly RouteFeature[];
   anchors?: readonly AnchorFeature[];
   waypoints: readonly PointFeature[];
-  position: { lat: number; lon: number; accuracyM: number | null } | null;
+  position: { lat: number; lon: number; accuracyM: number | null; overridden?: boolean } | null;
+  /** Bump to recentre the map on the position. 0 means never. */
+  centreOnPosition?: number;
   focus?: Position | null;
   showAnchors?: boolean;
   showInactiveVariants?: boolean;
@@ -136,6 +138,7 @@ export function MapView({
   anchors = [],
   waypoints,
   position,
+  centreOnPosition = 0,
   focus = null,
   showAnchors = true,
   showInactiveVariants = true,
@@ -382,12 +385,16 @@ export function MapView({
     if (!layer) return;
     layer.clearLayers();
     if (!position) return;
+    // Amber for a pretend position, blue for a real one. On 2026-09-25 the
+    // override was added for rehearsing from home, and a rehearsal that looks
+    // identical to the real thing is worse than no rehearsal.
+    const fill = position.overridden ? '#e0a33c' : '#7fb8d8';
     if (position.accuracyM !== null && position.accuracyM > 0) {
       L.circle([position.lat, position.lon], {
         radius: position.accuracyM,
-        color: '#7fb8d8',
+        color: fill,
         weight: 1,
-        fillColor: '#7fb8d8',
+        fillColor: fill,
         fillOpacity: 0.12,
       }).addTo(layer);
     }
@@ -395,12 +402,33 @@ export function MapView({
       radius: 8,
       color: '#ffffff',
       weight: 3,
-      fillColor: '#7fb8d8',
+      fillColor: fill,
       fillOpacity: 1,
     })
-      .bindPopup('Device position (foreground only)')
+      .bindPopup(
+        position.overridden
+          ? 'PRETEND position, set in Settings. Not where you are.'
+          : 'Device position (foreground only)',
+      )
       .addTo(layer);
   }, [position]);
+
+  // Centre on the position when asked.
+  //
+  // The map opens framed on the Tokaido corridor. Starting a location watch
+  // without moving the view means the dot is drawn thousands of screen-widths
+  // away, and on 2026-09-25 that read as "no dot" on a phone in Seattle — the
+  // rendering was correct the whole time and there was simply no way to reach
+  // it by panning. `centreOnPosition` is bumped by the caller to ask for a
+  // recentre, so tapping the button twice re-centres after a pan.
+  const lastCentre = useRef<number>(0);
+  useEffect(() => {
+    const m = map.current;
+    if (!m || !position || centreOnPosition === 0) return;
+    if (centreOnPosition === lastCentre.current) return;
+    lastCentre.current = centreOnPosition;
+    m.setView([position.lat, position.lon], Math.max(m.getZoom(), 13));
+  }, [centreOnPosition, position]);
 
   return (
     <>

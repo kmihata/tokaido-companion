@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useAppState } from './AppState';
 
 /**
  * Foreground geolocation.
@@ -28,9 +29,15 @@ const INITIAL: GeoState = {
   error: null,
 };
 
-export function useGeolocation(): GeoState & { start: () => void; stop: () => void } {
+export function useGeolocation(): GeoState & {
+  start: () => void;
+  stop: () => void;
+  overridden: boolean;
+} {
   const [state, setState] = useState<GeoState>(INITIAL);
   const watchId = useRef<number | null>(null);
+  const { settings } = useAppState();
+  const override = settings.positionOverride;
 
   const stop = useCallback(() => {
     if (watchId.current !== null && typeof navigator !== 'undefined' && navigator.geolocation) {
@@ -72,5 +79,23 @@ export function useGeolocation(): GeoState & { start: () => void; stop: () => vo
 
   useEffect(() => stop, [stop]);
 
-  return { ...state, start, stop };
+  // The override wins outright. It does not merge with a real fix, and it does
+  // not silently fall back to one if the hardware answers — a rehearsal in
+  // which the position quietly became real would be indistinguishable from the
+  // thing it is rehearsing. `overridden` is returned so the UI can say so.
+  if (override) {
+    return {
+      status: 'watching',
+      lat: override.lat,
+      lon: override.lon,
+      accuracyM: null,
+      timestamp: Date.now(),
+      error: null,
+      start,
+      stop,
+      overridden: true,
+    };
+  }
+
+  return { ...state, start, stop, overridden: false };
 }

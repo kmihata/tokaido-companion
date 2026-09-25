@@ -142,11 +142,47 @@ export function buildStretches(
       return;
     }
     const positions = current.positions;
+    // Name the base paths, and count the retraces layered over each.
+    //
+    // A stretch alternates base path and variant — east, retrace, east,
+    // retrace — so listing every member in order repeated the base path's
+    // title between each one. By 2026-09-25 that was thirty-odd copies of
+    // "Nihonbashi to the Miya ferry landing" in a single line on the map
+    // screen. Collapsing consecutive duplicates does not help, because they
+    // are never consecutive; the alternation IS the structure.
+    //
+    // So: the base paths in the order they are walked, each said once, with
+    // the number of retraced sections sitting on it. That is both shorter and
+    // more informative than the sequence, which nobody could read anyway.
+    const titleOf = (id: string): string =>
+      meta.paths.find((p) => p.id === id)?.title ??
+      meta.variants.find((v) => v.id === id)?.title ??
+      id;
+    const isVariant = (id: string): boolean => meta.variants.some((v) => v.id === id);
+    const parts: string[] = [];
+    let retraces = 0;
+    let lastBase: string | null = null;
+    const flush = (): void => {
+      if (lastBase === null) return;
+      parts.push(retraces === 0 ? lastBase : `${lastBase}, ${retraces} retraced`);
+      lastBase = null;
+      retraces = 0;
+    };
+    for (const id of current.members) {
+      if (isVariant(id)) {
+        retraces += 1;
+        continue;
+      }
+      const t = titleOf(id);
+      if (t !== lastBase) {
+        flush();
+        lastBase = t;
+      }
+    }
+    flush();
     stretches.push({
       id: current.members.join('+'),
-      title: current.members
-        .map((id) => meta.paths.find((p) => p.id === id)?.title ?? meta.variants.find((v) => v.id === id)?.title ?? id)
-        .join(' → '),
+      title: parts.join(' → '),
       memberIds: current.members,
       positions,
       lengthKm: lineLengthKm(positions),

@@ -89,6 +89,43 @@ export function Settings(): ReactNode {
             the top of every screen. Clear it before you leave.
           </p>
         </div>
+
+        <div className="field">
+          <label htmlFor="set-position">Pretend I am here (lat, lon)</label>
+          <input
+            id="set-position"
+            type="text"
+            inputMode="text"
+            placeholder="34.8300, 138.1742"
+            data-testid="position-override"
+            defaultValue={
+              settings.positionOverride
+                ? `${settings.positionOverride.lat}, ${settings.positionOverride.lon}`
+                : ''
+            }
+            onBlur={(e) => {
+              const t = e.target.value.trim();
+              if (t === '') {
+                updateSettings({ positionOverride: null });
+                return;
+              }
+              const m = /^\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*$/.exec(t);
+              const lat = m ? Number(m[1]) : NaN;
+              const lon = m ? Number(m[2]) : NaN;
+              const ok =
+                Number.isFinite(lat) && Number.isFinite(lon) &&
+                lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180;
+              updateSettings({ positionOverride: ok ? { lat, lon } : null });
+              if (!ok) e.target.value = '';
+            }}
+          />
+          <p className="field__hint">
+            Rehearsal only. The device treats this as where you are standing, so the decision
+            calculator, the off-route distance and the nearest exit all become real from home. It
+            overrides the actual GPS completely and never falls back to it. A warning chip stays on
+            every screen while it is set, and the map dot turns amber. Clear it before you leave.
+          </p>
+        </div>
       </section>
 
       <section className="card">
