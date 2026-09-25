@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Samwise — Tokaido Field Companion" schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.topografix.com/GPX/gpx_style/0/2 http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2">
+  <metadata>
+    <name>Section — Urayasu Bridge to Okitsu-juku</name>
+    <desc>1.8 km, 17 points, mean spacing 112 m. Route km 165.7 to 167.5. Trace with road snapping on, then import back into Samwise as a replaced section. Waypoints are context only — do not export them back.</desc>
+    <author>
+      <name>gpx.studio</name>
+      <link href="https://gpx.studio"/>
+    </author>
+    <time>2026-09-17T04:06:44.854Z</time>
+  </metadata>
+  <wpt lat="35.058553" lon="138.53278">
+    <name>Urayasu Bridge</name>
+    <desc>浦安橋 · bridge</desc>
+  </wpt>
+  <wpt lat="35.049476" lon="138.518913">
+    <name>Okitsu-juku</name>
+    <desc>興津宿 · post-station · station #17</desc>
+  </wpt>
+  <wpt lat="35.07147" lon="138.541353">
+    <name>Satta Pass viewpoint</name>
+    <desc>research · Weather-dependent and the reason to be there. Position approximate.</desc>
+  </wpt>
+  <trk>
+    <name>Section — Urayasu Bridge to Okitsu-juku</name>
+    <trkseg>
+      <trkpt lat="35.058553" lon="138.53278"/>
+      <trkpt lat="35.058557" lon="138.532679"/>
+      <trkpt lat="35.05855902614289" lon="138.53267161438237">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.058559" lon="138.532671">
+        <ele>5.64</ele>
+      </trkpt>
+      <trkpt lat="35.058564" lon="138.532638">
+        <ele>5.77</ele>
+      </trkpt>
+      <trkpt lat="35.058557" lon="138.532568">
+        <ele>4.79</ele>
+      </trkpt>
+      <trkpt lat="35.058562" lon="138.532561">
+        <ele>4.63</ele>
+      </trkpt>
+      <trkpt lat="35.058567" lon="138.532569">
+        <ele>4.61</ele>
+      </trkpt>
+      <trkpt lat="35.058567" lon="138.532569">
+        <ele>4.61</ele>
+      </trkpt>
+      <trkpt lat="35.058673" lon="138.532716">
+        <ele>4.1</ele>
+      </trkpt>
+      <trkpt lat="35.058711" lon="138.532736">
+        <ele>3.24</ele>
+      </trkpt>
+      <trkpt lat="35.058751" lon="138.532707">
+        <ele>3.31</ele>
+      </trkpt>
+      <trkpt lat="35.058751" lon="138.532707">
+        <ele>3.31</ele>
+      </trkpt>
+      <trkpt lat="35.058899" lon="138.532602">
+        <ele>3.54</ele>
+      </trkpt>
+      <trkpt lat="35.058906" lon="138.532565">
+        <ele>3.72</ele>
+      </trkpt>
+      <trkpt lat="35.058932" lon="138.532508">
+        <ele>4.17</ele>
+      </trkpt>
+      <trkpt lat="35.05893" lon="138.532494">
+        <ele>4.31</ele>
+      </trkpt>
+      <trkpt lat="35.05893" lon="138.532494">
+        <ele>4.31</ele>
+      </trkpt>
+      <trkpt lat="35.058927" lon="138.532464">
+        <ele>4.59</ele>
+      </trkpt>
+      <trkpt lat="35.058516" lon="138.531704">
+        <ele>4.81</ele>
+      </trkpt>
+      <trkpt lat="35.058375" lon="138.531468">
+        <ele>4.42</ele>
+      </trkpt>
+      <trkpt lat="35.058321" lon="138.531413">
+        <ele>4.38</ele>
+      </trkpt>
+      <trkpt lat="35.058219" lon="138.53136">
+        <ele>4.22</ele>
+      </trkpt>
+      <trkpt lat="35.057816" lon="138.531248">
+        <ele>3.64</ele>
+      </trkpt>
+      <trkpt lat="35.05752" lon="138.530981">
+        <ele>3.85</ele>
+      </trkpt>
+      <trkpt lat="35.057221" lon="138.530595">
+        <ele>3.98</ele>
+      </trkpt>
+      <trkpt lat="35.056939" lon="138.530356">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.056939" lon="138.530356">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.056747" lon="138.530231">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.056615" lon="138.530177">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.056504" lon="138.530167">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.056338" lon="138.530199">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.055849" lon="138.530347">
+        <ele>3.24</ele>
+      </trkpt>
+      <trkpt lat="35.055551" lon="138.530437">
+        <ele>5.67</ele>
+      </trkpt>
+      <trkpt lat="35.055545" lon="138.530409"/>
+      <trkpt lat="35.055132" lon="138.529846"/>
+      <trkpt lat="35.054214" lon="138.528543"/>
+      <trkpt lat="35.054221" lon="138.528536">
+        <ele>5</ele>
+      </trkpt>
+      <trkpt lat="35.054127" lon="138.528408">
+        <ele>5</ele>
+      </trkpt>
+      <trkpt lat="35.053763" lon="138.527846">
+        <ele>4.27</ele>
+      </trkpt>
+      <trkpt lat="35.053268" lon="138.526941">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.053052" lon="138.526497">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.052672" lon="138.525614">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.05217" lon="138.524362">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.051761" lon="138.523369">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.051436" lon="138.522601">
+        <ele>4.12</ele>
+      </trkpt>
+      <trkpt lat="35.051354" lon="138.522409">
+        <ele>4.15</ele>
+      </trkpt>
+      <trkpt lat="35.050955" lon="138.521655">
+        <ele>5</ele>
+      </trkpt>
+      <trkpt lat="35.05042" lon="138.520694">
+        <ele>5</ele>
+      </trkpt>
+      <trkpt lat="35.049466" lon="138.518921">
+        <ele>5.31</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

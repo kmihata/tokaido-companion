@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Samwise — Tokaido Field Companion" schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.topografix.com/GPX/gpx_style/0/2 http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2">
+  <metadata>
+    <name>Section — Mishima Taisha to Mishima-juku</name>
+    <desc>0.4 km, 4 points, mean spacing 143 m. Route km 116.8 to 117.2. Trace with road snapping on, then import back into Samwise as a replaced section. Waypoints are context only — do not export them back.</desc>
+    <author>
+      <name>gpx.studio</name>
+      <link href="https://gpx.studio"/>
+    </author>
+    <time>2026-09-14T03:44:10.522Z</time>
+  </metadata>
+  <wpt lat="35.120154" lon="138.919228">
+    <name>Mishima Taisha</name>
+    <desc>三島大社 · landmark</desc>
+  </wpt>
+  <wpt lat="35.119386" lon="138.914593">
+    <name>Mishima-juku</name>
+    <desc>三島宿 · post-station · station #11</desc>
+  </wpt>
+  <wpt lat="35.126" lon="138.911">
+    <name>Mishima Station</name>
+    <desc>rail-bailout · Shinkansen stop.</desc>
+  </wpt>
+  <trk>
+    <name>Section — Mishima Taisha to Mishima-juku</name>
+    <trkseg>
+      <trkpt lat="35.12014" lon="138.919231">
+        <ele>25.94</ele>
+      </trkpt>
+      <trkpt lat="35.120046" lon="138.918554">
+        <ele>25</ele>
+      </trkpt>
+      <trkpt lat="35.11994" lon="138.917901">
+        <ele>23</ele>
+      </trkpt>
+      <trkpt lat="35.119776" lon="138.916901">
+        <ele>23</ele>
+      </trkpt>
+      <trkpt lat="35.119608" lon="138.915919">
+        <ele>22.88</ele>
+      </trkpt>
+      <trkpt lat="35.119439" lon="138.914806">
+        <ele>25</ele>
+      </trkpt>
+      <trkpt lat="35.119397" lon="138.91459">
+        <ele>25</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

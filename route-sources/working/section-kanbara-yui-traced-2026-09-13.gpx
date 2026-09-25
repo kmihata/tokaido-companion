@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Samwise — Tokaido Field Companion" schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.topografix.com/GPX/gpx_style/0/2 http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2">
+  <metadata>
+    <name>Section — Kanbara-juku to Yui-shuku</name>
+    <desc>4.0 km, 28 points, mean spacing 147 m. Route km 153.9 to 157.9. Trace with road snapping on, then import back into Samwise as a replaced section. Waypoints are context only — do not export them back.</desc>
+    <author>
+      <name>gpx.studio</name>
+      <link href="https://gpx.studio"/>
+    </author>
+    <time>2026-09-14T01:34:30.831Z</time>
+  </metadata>
+  <wpt lat="35.120132" lon="138.605661">
+    <name>Kanbara-juku</name>
+    <desc>蒲原宿 · post-station · station #15</desc>
+  </wpt>
+  <wpt lat="35.107279" lon="138.566984">
+    <name>Yui-shuku</name>
+    <desc>由比宿 · post-station · station #16</desc>
+  </wpt>
+  <wpt lat="35.096316" lon="138.551846">
+    <name>Yui Station</name>
+    <desc>由比駅 · rail</desc>
+  </wpt>
+  <wpt lat="35.103" lon="138.567">
+    <name>Yui Station</name>
+    <desc>rail-bailout</desc>
+  </wpt>
+  <trk>
+    <name>Section — Kanbara-juku to Yui-shuku</name>
+    <trkseg>
+      <trkpt lat="35.120132" lon="138.605661"/>
+      <trkpt lat="35.119931" lon="138.604288"/>
+      <trkpt lat="35.119768" lon="138.603489"/>
+      <trkpt lat="35.11977" lon="138.603488">
+        <ele>8.99</ele>
+      </trkpt>
+      <trkpt lat="35.119622" lon="138.603013">
+        <ele>8.71</ele>
+      </trkpt>
+      <trkpt lat="35.119341" lon="138.602206">
+        <ele>8.83</ele>
+      </trkpt>
+      <trkpt lat="35.11915" lon="138.601556">
+        <ele>7.01</ele>
+      </trkpt>
+      <trkpt lat="35.11915" lon="138.601556">
+        <ele>7.01</ele>
+      </trkpt>
+      <trkpt lat="35.119148" lon="138.601551">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.118612" lon="138.60157">
+        <ele>6</ele>
+      </trkpt>
+      <trkpt lat="35.118411" lon="138.60156">
+        <ele>6</ele>
+      </trkpt>
+      <trkpt lat="35.117703" lon="138.60156">
+        <ele>6</ele>
+      </trkpt>
+      <trkpt lat="35.117702" lon="138.601552">
+        <ele>6</ele>
+      </trkpt>
+      <trkpt lat="35.117485" lon="138.60004">
+        <ele>6.59</ele>
+      </trkpt>
+      <trkpt lat="35.117425" lon="138.599562">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.117348" lon="138.598723">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.117304" lon="138.598311">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.117273" lon="138.598099">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.117276" lon="138.598098"/>
+      <trkpt lat="35.117273" lon="138.598099">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.117147" lon="138.597392">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.116958" lon="138.59647">
+        <ele>7.97</ele>
+      </trkpt>
+      <trkpt lat="35.116846" lon="138.595998">
+        <ele>7.3</ele>
+      </trkpt>
+      <trkpt lat="35.116625" lon="138.595097">
+        <ele>10.39</ele>
+      </trkpt>
+      <trkpt lat="35.116605" lon="138.594988">
+        <ele>10.26</ele>
+      </trkpt>
+      <trkpt lat="35.116605" lon="138.594988">
+        <ele>10.26</ele>
+      </trkpt>
+      <trkpt lat="35.116356" lon="138.593527">
+        <ele>9</ele>
+      </trkpt>
+      <trkpt lat="35.116224" lon="138.592616">
+        <ele>9</ele>
+      </trkpt>
+      <trkpt lat="35.11615" lon="138.592177">
+        <ele>9</ele>
+      </trkpt>
+      <trkpt lat="35.116006" lon="138.591426">
+        <ele>8.3</ele>
+      </trkpt>
+      <trkpt lat="35.115733" lon="138.590191">
+        <ele>11</ele>
+      </trkpt>
+      <trkpt lat="35.115654" lon="138.589749">
+        <ele>10</ele>
+      </trkpt>
+      <trkpt lat="35.115609" lon="138.58935">
+        <ele>9.12</ele>
+      </trkpt>
+      <trkpt lat="35.115504" lon="138.588567">
+        <ele>9</ele>
+      </trkpt>
+      <trkpt lat="35.115367" lon="138.587654">
+        <ele>8.36</ele>
+      </trkpt>
+      <trkpt lat="35.115271" lon="138.587081">
+        <ele>8</ele>
+      </trkpt>
+      <trkpt lat="35.115219" lon="138.586702">
+        <ele>8</ele>
+      </trkpt>
+      <trkpt lat="35.11509" lon="138.585505">
+        <ele>9</ele>
+      </trkpt>
+      <trkpt lat="35.114907" lon="138.584338">
+        <ele>8</ele>
+      </trkpt>
+      <trkpt lat="35.114863" lon="138.583896">
+        <ele>8</ele>
+      </trkpt>
+      <trkpt lat="35.114851" lon="138.583677">
+        <ele>8</ele>
+      </trkpt>
+      <trkpt lat="35.114815" lon="138.583292">
+        <ele>7.81</ele>
+      </trkpt>
+      <trkpt lat="35.114755" lon="138.58286">
+        <ele>8</ele>
+      </trkpt>
+      <trkpt lat="35.114646" lon="138.582213">
+        <ele>8</ele>
+      </trkpt>
+      <trkpt lat="35.114646" lon="138.582213">
+        <ele>8</ele>
+      </trkpt>
+      <trkpt lat="35.114482" lon="138.581241">
+        <ele>8</ele>
+      </trkpt>
+      <trkpt lat="35.114353" lon="138.580633">
+        <ele>8.26</ele>
+      </trkpt>
+      <trkpt lat="35.114295" lon="138.580396">
+        <ele>8.42</ele>
+      </trkpt>
+      <trkpt lat="35.11409" lon="138.579626">
+        <ele>8</ele>
+      </trkpt>
+      <trkpt lat="35.11357" lon="138.578168">
+        <ele>7.86</ele>
+      </trkpt>
+      <trkpt lat="35.113569" lon="138.578168">
+        <ele>7.86</ele>
+      </trkpt>
+      <trkpt lat="35.113122" lon="138.576847">
+        <ele>7.51</ele>
+      </trkpt>
+      <trkpt lat="35.112931" lon="138.576366">
+        <ele>7.16</ele>
+      </trkpt>
+      <trkpt lat="35.112822" lon="138.576131">
+        <ele>7.38</ele>
+      </trkpt>
+      <trkpt lat="35.112633" lon="138.575758">
+        <ele>7.04</ele>
+      </trkpt>
+      <trkpt lat="35.112448" lon="138.575423">
+        <ele>7.02</ele>
+      </trkpt>
+      <trkpt lat="35.112313" lon="138.575178">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.111881" lon="138.574469">
+        <ele>7.61</ele>
+      </trkpt>
+      <trkpt lat="35.111763" lon="138.574227">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.11165584206295" lon="138.57396746151028">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.111654" lon="138.573963">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.111535" lon="138.573892">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.111057" lon="138.573109">
+        <ele>5.87</ele>
+      </trkpt>
+      <trkpt lat="35.110117728988435" lon="138.57175139820177">
+        <ele>6.861013765605322</ele>
+      </trkpt>
+      <trkpt lat="35.109986" lon="138.571561">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.109698" lon="138.571167">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.109598" lon="138.570976">
+        <ele>7.09</ele>
+      </trkpt>
+      <trkpt lat="35.109474" lon="138.570598">
+        <ele>7.64</ele>
+      </trkpt>
+      <trkpt lat="35.109391" lon="138.570432">
+        <ele>8.35</ele>
+      </trkpt>
+      <trkpt lat="35.109265" lon="138.570238">
+        <ele>8.53</ele>
+      </trkpt>
+      <trkpt lat="35.108952" lon="138.569804">
+        <ele>9</ele>
+      </trkpt>
+      <trkpt lat="35.108764" lon="138.56958">
+        <ele>9.3</ele>
+      </trkpt>
+      <trkpt lat="35.108645" lon="138.569486">
+        <ele>9.85</ele>
+      </trkpt>
+      <trkpt lat="35.108464" lon="138.56919">
+        <ele>10</ele>
+      </trkpt>
+      <trkpt lat="35.107654" lon="138.567707">
+        <ele>11.72</ele>
+      </trkpt>
+      <trkpt lat="35.107275" lon="138.566987">
+        <ele>11.97</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

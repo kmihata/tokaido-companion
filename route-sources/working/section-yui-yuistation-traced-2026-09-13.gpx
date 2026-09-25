@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Samwise — Tokaido Field Companion" schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.topografix.com/GPX/gpx_style/0/2 http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2">
+  <metadata>
+    <name>Section — Yui-shuku to Yui Station</name>
+    <desc>1.9 km, 14 points, mean spacing 147 m. Route km 157.9 to 159.8. Trace with road snapping on, then import back into Samwise as a replaced section. Waypoints are context only — do not export them back.</desc>
+    <author>
+      <name>gpx.studio</name>
+      <link href="https://gpx.studio"/>
+    </author>
+    <time>2026-09-14T00:39:18.378Z</time>
+  </metadata>
+  <wpt lat="35.107279" lon="138.566984">
+    <name>Yui-shuku</name>
+    <desc>由比宿 · post-station · station #16</desc>
+  </wpt>
+  <wpt lat="35.096316" lon="138.551846">
+    <name>Yui Station</name>
+    <desc>由比駅 · rail</desc>
+  </wpt>
+  <wpt lat="35.103" lon="138.567">
+    <name>Yui Station</name>
+    <desc>rail-bailout</desc>
+  </wpt>
+  <wpt lat="35.07147" lon="138.541353">
+    <name>Satta Pass viewpoint</name>
+    <desc>research · Weather-dependent and the reason to be there. Position approximate.</desc>
+  </wpt>
+  <trk>
+    <name>Section — Yui-shuku to Yui Station</name>
+    <trkseg>
+      <trkpt lat="35.107275" lon="138.566987">
+        <ele>11.97</ele>
+      </trkpt>
+      <trkpt lat="35.107125" lon="138.566704">
+        <ele>12</ele>
+      </trkpt>
+      <trkpt lat="35.106888" lon="138.56627">
+        <ele>11.21</ele>
+      </trkpt>
+      <trkpt lat="35.106431" lon="138.565388">
+        <ele>6.63</ele>
+      </trkpt>
+      <trkpt lat="35.106" lon="138.564505">
+        <ele>4.92</ele>
+      </trkpt>
+      <trkpt lat="35.105736" lon="138.563965">
+        <ele>6.94</ele>
+      </trkpt>
+      <trkpt lat="35.105468" lon="138.563417">
+        <ele>6</ele>
+      </trkpt>
+      <trkpt lat="35.104966" lon="138.562275">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.104616" lon="138.561425">
+        <ele>7</ele>
+      </trkpt>
+      <trkpt lat="35.104307" lon="138.560645">
+        <ele>4.4</ele>
+      </trkpt>
+      <trkpt lat="35.104119" lon="138.560119">
+        <ele>5.67</ele>
+      </trkpt>
+      <trkpt lat="35.103963" lon="138.559788">
+        <ele>6</ele>
+      </trkpt>
+      <trkpt lat="35.10386" lon="138.559518">
+        <ele>6</ele>
+      </trkpt>
+      <trkpt lat="35.103655" lon="138.558852">
+        <ele>6</ele>
+      </trkpt>
+      <trkpt lat="35.103587" lon="138.558688">
+        <ele>5.74</ele>
+      </trkpt>
+      <trkpt lat="35.103371" lon="138.558254">
+        <ele>5.33</ele>
+      </trkpt>
+      <trkpt lat="35.103219" lon="138.55791">
+        <ele>6.02</ele>
+      </trkpt>
+      <trkpt lat="35.103115" lon="138.55762">
+        <ele>6.33</ele>
+      </trkpt>
+      <trkpt lat="35.103037" lon="138.557426">
+        <ele>6</ele>
+      </trkpt>
+      <trkpt lat="35.102769" lon="138.556897">
+        <ele>6.08</ele>
+      </trkpt>
+      <trkpt lat="35.10264" lon="138.556653">
+        <ele>6</ele>
+      </trkpt>
+      <trkpt lat="35.102258" lon="138.556189">
+        <ele>6</ele>
+      </trkpt>
+      <trkpt lat="35.101452" lon="138.555318">
+        <ele>5</ele>
+      </trkpt>
+      <trkpt lat="35.101102" lon="138.55508">
+        <ele>5.97</ele>
+      </trkpt>
+      <trkpt lat="35.100419" lon="138.554749">
+        <ele>6.12</ele>
+      </trkpt>
+      <trkpt lat="35.099715" lon="138.554473">
+        <ele>6.14</ele>
+      </trkpt>
+      <trkpt lat="35.099559" lon="138.554392">
+        <ele>6.26</ele>
+      </trkpt>
+      <trkpt lat="35.099424" lon="138.554304">
+        <ele>6.38</ele>
+      </trkpt>
+      <trkpt lat="35.098365" lon="138.553494">
+        <ele>6.41</ele>
+      </trkpt>
+      <trkpt lat="35.097834" lon="138.552916">
+        <ele>7.84</ele>
+      </trkpt>
+      <trkpt lat="35.097693" lon="138.552807">
+        <ele>7.71</ele>
+      </trkpt>
+      <trkpt lat="35.097084" lon="138.552377">
+        <ele>7.32</ele>
+      </trkpt>
+      <trkpt lat="35.096318" lon="138.551841">
+        <ele>11</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

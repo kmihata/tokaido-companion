@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- viewport-fit=cover so the tab bar can sit above the iPhone home indicator -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#12100e" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Samwise" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!--
+      OpenStreetMap's tile policy requires a request to identify the app that
+      made it. A browser cannot set a User-Agent, so the Referer is the only
+      identification available, and `no-referrer` made every tile request
+      anonymous: on 2026-09-13 the tile servers returned 403 "App is not
+      following the tile usage policy" and the basemap disappeared mid-zoom.
+
+      `strict-origin-when-cross-origin` sends the origin and nothing else to a
+      cross-origin request — no path, no query, and hashes are never sent at
+      all, so the route, day and place being viewed stay private. The tile
+      server already learns the IP and the tile coordinates, which is strictly
+      more revealing than the origin; this adds no new exposure.
+
+      Outbound links are unaffected: all five carry `rel="noreferrer"`
+      themselves, which overrides this policy and still sends nothing.
+    -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      name="description"
+      content="Samwise — offline-first field companion for the Tokyo-to-Kyoto Tokaido walk. Demonstration data only; not for navigation."
+    />
+    <!-- Relative hrefs only: this app is served from a GitHub Pages project subpath. -->
+    <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <title>Samwise — Tokaido Field Companion</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      Samwise needs JavaScript. Offline day cards and a paper
+      backup remain the fallback described in OFFLINE-AND-RECOVERY.md.
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Samwise Desk — route work</title>
+    <!--
+      The desk, not the field app.
+
+      This is where route work happens: a big screen, a keyboard, a network,
+      and no hurry. It is a separate entry point rather than a mode of the
+      field app because the two have opposite requirements. The field app has
+      to be small, offline and legible one-handed at the end of a long day;
+      the desk needs six screens' worth of detail and will never be opened on
+      the road. Keeping them apart is what lets the field app stay small.
+
+      It is deliberately NOT precached by the service worker. See vite.config.ts.
+    -->
+  </head>
+  <body>
+    <div id="desk"></div>
+    <script type="module" src="/src/desk/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,928 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "0.1.0-demo",
+  "demonstration": true,
+  "navigational": false,
+  "days": [
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [],
+      "hazardWaypointIds": [],
+      "stationIds": [],
+      "editorialPrompts": [],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-10-18",
+      "date": "2026-10-18",
+      "kind": "travel",
+      "label": "Travel",
+      "plan": "SEA 13:20 departure, AS 123.",
+      "sleepBase": "Aircraft",
+      "tiredDaySummary": "No walking target. Pack is cabin baggage."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [],
+      "hazardWaypointIds": [],
+      "stationIds": [],
+      "editorialPrompts": [],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-10-19",
+      "date": "2026-10-19",
+      "kind": "travel",
+      "label": "Arrival",
+      "plan": "NRT 16:00. Immigration, transfer, food, sleep.",
+      "sleepBase": "Tokyo (Ueno or Nihonbashi area)",
+      "tiredDaySummary": "Ordinary arrival walking only. Favour daylight and a normal bedtime."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-shinagawa",
+        "wp-rail-kawasaki"
+      ],
+      "hazardWaypointIds": [],
+      "stationIds": [
+        "st-nihonbashi",
+        "st-shinagawa",
+        "st-kawasaki"
+      ],
+      "editorialPrompts": [
+        "The first ichirizuka stood one ri out, not at Nihonbashi. Look for whether anything marks a zero point here, and who put it there.",
+        "What is the bridge doing today, as a piece of working infrastructure, rather than as a starting line.",
+        "Hiroshige’s first print is a DAWN scene — Nihonbashi, asa no kei, the daimyo procession crossing as the gates open at ake-mutsu, the hour of the rabbit, roughly six. Late-October sunrise in Tokyo is close to the same hour. Being on the bridge at six is the one chance on the whole route to stand in a print at its own time of day. Verify the sunrise time before setting the alarm.",
+        "You cross Nihonbashi twice: once walking out on Oct 20, once passing through on Oct 22 on the way to the train, having seen the print in between. Notice what the second crossing knows that the first did not."
+      ],
+      "hiroshigeRefIds": [
+        "hr-nihonbashi",
+        "hr-kawasaki"
+      ],
+      "safetyNotes": [
+        "Urban traffic and crowding, not exposure. The real risk today is doing more than 17.7 km because it feels easy.",
+        "REVERSIBLE THIS MORNING. This walk was moved from Oct 21 to Oct 20 so a rest day falls AFTER the first walking day instead of before it. If the flight was late or the night was bad, swap it back: museum today, walk tomorrow. Both dates are open museum days in the same rotation, the hotel is the same either way, and no booking is affected. Decide at breakfast, not in advance."
+      ],
+      "verificationTasks": [
+        "Measure the actual pedestrian line on a GPX, not the post-station table.",
+        "Confirm the Kawasaki endpoint and its relationship to the hotel."
+      ],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-10-20",
+      "date": "2026-10-20",
+      "kind": "walk",
+      "walkingDayNumber": 1,
+      "label": "Walk 1 — Nihonbashi to Kawasaki",
+      "plan": "Nihonbashi → Shinagawa → Kawasaki-juku.",
+      "from": "Nihonbashi",
+      "to": "Kawasaki-juku",
+      "fromWaypointId": "wp-start-d1",
+      "toWaypointId": "wp-end-d1",
+      "nominalDistanceKm": 17.7,
+      "likelyDoorToDoorKm": 19.5,
+      "terrain": "Continuous urban pavement. Negligible elevation.",
+      "elevationWarning": null,
+      "startLightGuidance": "Start at first light if the body offers it. Tokyo is sixteen hours ahead of Seattle, so on the first morning 06:00 here reads as early afternoon at home: alert, and the crash comes at about 15:00 local. Thirteen miles started at 06:30 finishes inside that window. This is the one day the jet lag is an asset, and it is gone by Walk 3.",
+      "railRedundancy": "high",
+      "sleepBase": "Tokyo (Nihonbashi)",
+      "sleepBaseNote": "Not the walk endpoint. The Tokyo arrival hotel is booked through the morning of Oct 22, so tonight means riding back in from Hatchonawate. Tomorrow is a rest day in the same bed; the return to this point is on Oct 22. This is the one day whose bed is behind the walker rather than ahead.",
+      "tiredDaySummary": "Short day by design. Rail parallels the whole line. Stop early rather than borrowing against tomorrow."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [],
+      "hazardWaypointIds": [],
+      "stationIds": [],
+      "editorialPrompts": [
+        "The exhibition rotates three times and this window is the Tokaido one. The Kisokaido replaces it on Oct 27, so there is no second chance later in the trip.",
+        "You have now walked the first stage. Look at the first print again knowing what the ground under it feels like."
+      ],
+      "hiroshigeRefIds": [
+        "hr-nihonbashi"
+      ],
+      "safetyNotes": [],
+      "verificationTasks": [
+        "Open the Asoview ticket in the app at the hotel, not at the gate: it is phone-only, needs a live connection, and the seller warns some handsets cannot display it.",
+        "Check feet, socks, shoes and pack fit against what the first walking day produced. Tokyo is the best place on the route to replace any of them, and Fujisawa and Odawara are not."
+      ],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-10-21",
+      "date": "2026-10-21",
+      "kind": "orientation",
+      "label": "Tokyo rest and the Hiroshige exhibition",
+      "plan": "Hiroshige exhibition at the Tokyo National Museum, Honkan Room A. Feet, pack and shoes reviewed after the first walking day. Takkyubin send to Hamamatsu if the chain is confirmed.",
+      "sleepBase": "Tokyo (Nihonbashi)",
+      "nominalDistanceKm": 0,
+      "startLightGuidance": "No mileage target. Museum opens 09:30; the ticket needs no time slot.",
+      "tiredDaySummary": "The point of this day is diagnosis, not rest. Whatever the first thirteen miles revealed, today is when it gets fixed."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-totsuka",
+        "wp-rail-fujisawa"
+      ],
+      "hazardWaypointIds": [],
+      "stationIds": [
+        "st-kawasaki",
+        "st-kanagawa",
+        "st-hodogaya",
+        "st-totsuka",
+        "st-fujisawa"
+      ],
+      "editorialPrompts": [],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-10-22",
+      "date": "2026-10-22",
+      "kind": "walk",
+      "walkingDayNumber": 2,
+      "label": "Walk 2 — Kawasaki to Fujisawa",
+      "plan": "Kawasaki → Kanagawa → Hodogaya → Totsuka → Fujisawa-juku.",
+      "from": "Kawasaki-juku",
+      "to": "Fujisawa-juku",
+      "nominalDistanceKm": 31.4,
+      "likelyDoorToDoorKm": 34,
+      "terrain": "Urban pavement throughout.",
+      "railRedundancy": "high",
+      "sleepBase": "Fujisawa",
+      "startLightGuidance": "First full pavement day. Feet and pack govern pace, not the clock.",
+      "tiredDaySummary": "Dense rail. Stopping anywhere is cheap today."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-odawara"
+      ],
+      "hazardWaypointIds": [],
+      "stationIds": [
+        "st-fujisawa",
+        "st-odawara"
+      ],
+      "editorialPrompts": [],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [
+        "Arriving at Odawara tired is a legitimate reason to spend a recovery token here rather than start Hakone short of sleep."
+      ],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-10-23",
+      "date": "2026-10-23",
+      "kind": "walk",
+      "walkingDayNumber": 3,
+      "label": "Walk 3 — Fujisawa to Odawara",
+      "plan": "Fujisawa → Hiratsuka → Oiso → Odawara-juku.",
+      "from": "Fujisawa-juku",
+      "to": "Odawara-juku",
+      "nominalDistanceKm": 32.4,
+      "likelyDoorToDoorKm": 34.5,
+      "terrain": "Coastal pavement, mild grades.",
+      "railRedundancy": "high",
+      "sleepBase": "Odawara",
+      "startLightGuidance": "Finish below Hakone. Do not borrow against the mountain day.",
+      "tiredDaySummary": "Finish at Odawara. Tomorrow is the hard one."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-odawara",
+        "wp-bus-hatajuku",
+        "wp-bus-moto-hakone",
+        "wp-rail-mishima"
+      ],
+      "hazardWaypointIds": [
+        "wp-hazard-hakone-pass-ic",
+        "wp-hazard-hiryu-trail"
+      ],
+      "stationIds": [
+        "st-odawara",
+        "st-hakone",
+        "st-mishima"
+      ],
+      "editorialPrompts": [
+        "Which road counts. The hybrid line trades exact Edo alignment for an older road and less traffic — that trade is the subject, not a failure of continuity.",
+        "The checkpoint: permission, status, and controlled movement."
+      ],
+      "hiroshigeRefIds": [
+        "hr-hakone",
+        "hr-mishima"
+      ],
+      "safetyNotes": [
+        "Hakone Pass IC on the west slope: Route 1, Hakone Shindo, the old-road approaches and the Ashinoko Skyline access converge. The pedestrian margin is green paint on a highway shoulder. There is no curb and no barrier. Paint is not protection.",
+        "Published accounts describe several hundred metres of Route 1 without sidewalk plus an unprotected crossing near the Hakone Shindo merge.",
+        "This is one of the two lowest-rail-redundancy days on the route. Suzuka is the other."
+      ],
+      "verificationTasks": [
+        "Check current trail notices for the Hiryu Falls nature trail and the restored west-slope old road within days of the crossing.",
+        "Map the Hakone Pass IC micro-route continuously: green-shoulder exposure, the old-road/golf-road loop, and the Yasuragi-no-Mori wooded connector reported May 2026.",
+        "Confirm east-side and west-side bus timetables as the actual mid-crossing exit."
+      ],
+      "weatherSensitive": [
+        "Hiryu Falls nature trail: Kanagawa Prefecture advises against use during or just after rain; sections are prone to crumbling.",
+        "Upper west-slope old road reopened 2026-03-30 after typhoon restoration; Kannami Town asks walkers to avoid it in rain and for several days after. Route 1 is the designated wet-weather detour — and Route 1 is where the shoulder problem is."
+      ],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-10-24",
+      "date": "2026-10-24",
+      "kind": "walk",
+      "walkingDayNumber": 4,
+      "label": "Walk 4 — Odawara over Hakone to Lake Ashi",
+      "plan": "Odawara → Hakone-Yumoto → Hatajuku → (Hiryu Falls / Ashinoyu hybrid) → the Lake Ashi shore at Moto-Hakone, 1.20 km short of the Sekisho. Stops at the top: the climb without the descent.",
+      "from": "Odawara-juku",
+      "to": "Lake Ashi shore (Moto-Hakone)",
+      "fromWaypointId": "wp-rail-odawara",
+      "toWaypointId": "wp-bus-moto-hakone",
+      "nominalDistanceKm": 15.5,
+      "likelyDoorToDoorKm": 17.3,
+      "terrain": "Roughly 640 m of ascent on the east slope, much of it stone-paved trail, then a steep western descent.",
+      "elevationWarning": "The largest single climb and descent on the route. Wet stone is the specific hazard, not the gradient.",
+      "startLightGuidance": "First-light start. This is the day where losing two hours in the morning changes what is safe in the afternoon.",
+      "railRedundancy": "low",
+      "sleepBase": "Lake Ashi (Moto-Hakone)",
+      "sleepBaseNote": "Booked at the lake, which is why this day stops at the checkpoint instead of descending to Mishima. No railway crosses the historic pass: Odawara and Mishima are both Shinkansen stops, but a mid-crossing exit means reaching a trailhead or a bus stop, not a station.",
+      "tiredDaySummary": "Biggest climb, worst shoulder, fewest trains. Start at first light. If the mountain is wet, the recovery token moves here — that is what it is for."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-mishima",
+        "wp-rail-yui"
+      ],
+      "hazardWaypointIds": [],
+      "stationIds": [
+        "st-mishima",
+        "st-yui"
+      ],
+      "editorialPrompts": [],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-10-25",
+      "date": "2026-10-25",
+      "kind": "walk",
+      "walkingDayNumber": 5,
+      "label": "Walk 5 — Lake Ashi to Fuji",
+      "plan": "Lake Ashi shore → Hakone Sekisho (first thing, in the morning, when it is open) → Hakone Pass → Mishima → Numazu → Hara → past Yoshiwara-juku to the Fuji hotel. Starts at 725 m and descends the west slope.",
+      "from": "Lake Ashi shore (Moto-Hakone)",
+      "to": "Fuji lodging, 818 m past Yoshiwara-juku",
+      "nominalDistanceKm": 42,
+      "likelyDoorToDoorKm": 42.9,
+      "terrain": "Long descent off the pass, then sustained pavement.",
+      "railRedundancy": "high",
+      "sleepBase": "Fuji",
+      "sleepBaseNote": "The route passes 62 m from the door, so the day ends at the bed rather than walking to it. Longest day of the trip after Walk 7.",
+      "startLightGuidance": "Opens with the Hakone west descent on cold legs. The descent, not the distance, is what to pace.",
+      "tiredDaySummary": "Shortened to Yoshiwara so the Lake Ashi remainder spreads onto Walks 6 and 7 instead of landing here. The Tokaido Main Line parallels most of it, so stopping early and riding in is cheap."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-yui",
+        "wp-rail-shizuoka",
+        "wp-rail-fujieda"
+      ],
+      "hazardWaypointIds": [],
+      "stationIds": [
+        "st-yui",
+        "st-fuchu",
+        "st-mariko",
+        "st-okabe"
+      ],
+      "editorialPrompts": [
+        "Satta Pass is the one view on the route that is still composed the way Hiroshige composed it — sea, road, and Fuji stacked in one frame."
+      ],
+      "hiroshigeRefIds": [
+        "hr-yui-satta"
+      ],
+      "safetyNotes": [],
+      "verificationTasks": [
+        "Confirm the Satta Pass path is open; it is the one view worth rescheduling for."
+      ],
+      "weatherSensitive": [
+        "Satta Pass viewpoint is weather-dependent and the reason to be there."
+      ],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-10-26",
+      "date": "2026-10-26",
+      "kind": "walk",
+      "walkingDayNumber": 6,
+      "label": "Walk 6 — Fuji over Satta to Shizuoka",
+      "plan": "Fuji → Kambara → Yui → Satta Pass → Okitsu → Ejiri → past Fuchu-juku to the Shizuoka hotel, 1,091 m further on.",
+      "from": "Fuji lodging",
+      "to": "Shizuoka, 1,091 m past Fuchu-juku",
+      "nominalDistanceKm": 41.9,
+      "likelyDoorToDoorKm": 42,
+      "terrain": "Two short climbs (Satta, Utsunoya) inside a long pavement day.",
+      "elevationWarning": "Modest elevation. Satta is the only climb; Mariko and Utsunoya moved to Walk 7 when the endpoint came back to Fuchu.",
+      "startLightGuidance": "Early start. The research stops, not the distance, are what will eat the daylight.",
+      "railRedundancy": "high",
+      "sleepBase": "Shizuoka",
+      "sleepBaseNote": "The route passes 26 m from the door. Fuchu-juku and JR Shizuoka Station are both passed 1,091 m earlier.",
+      "tiredDaySummary": "One climb, then a long flat run into Shizuoka. Rail is dense — moving the endpoint costs little."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-fujieda",
+        "wp-rail-shimada",
+        "wp-rail-kanaya"
+      ],
+      "hazardWaypointIds": [
+        "wp-utsunoya-tunnel",
+        "wp-crossing-oi"
+      ],
+      "stationIds": [
+        "st-fuchu",
+        "st-mariko",
+        "st-okabe"
+      ],
+      "editorialPrompts": [
+        "The Meiji tunnel is the road surviving by changing category — 1876 toll tunnel, rebuilt in brick 1904, now a walking route. Photograph the portal inscription; it reads right to left.",
+        "This is the tunnel misfiled as Suzuka for eight years. Notice what the place actually looks like before checking it against the memory.",
+        "The Oi was unbridged by policy, not by engineering limits. The modern crossing is a different kind of decision about who may move."
+      ],
+      "hiroshigeRefIds": [
+        "hr-mariko"
+      ],
+      "safetyNotes": [
+        "Utsunoya: repair work is scheduled during FY2026. Confirm the tunnel is open as a walking route shortly before the crossing."
+      ],
+      "verificationTasks": [
+        "Recheck Utsunoya tunnel status against Shizuoka City and Fujieda City notices in October 2026."
+      ],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-10-27",
+      "date": "2026-10-27",
+      "kind": "walk",
+      "walkingDayNumber": 7,
+      "label": "Walk 7 — Shizuoka over Utsunoya to Shimada",
+      "plan": "Shizuoka → Fuchu-juku → Mariko → Utsunoya → Okabe → Fujieda → Shimada-juku.",
+      "from": "Shizuoka",
+      "to": "Shimada-juku",
+      "nominalDistanceKm": 30.3,
+      "likelyDoorToDoorKm": 30.4,
+      "terrain": "Utsunoya early, then tea-country hills after the Oi River crossing.",
+      "railRedundancy": "high",
+      "sleepBase": "Shimada",
+      "sleepBaseNote": "Lodging 41 m off the route and 141 m from the Shimada-juku finish — walked in, no transfer. Desk closes at midnight and there is no after-hours check-in. Walking on to Kanaya-juku instead is a day-of option: the route passes 15 m from that platform and one stop brings you back here, which takes 5.4 km off Walk 8.",
+      "tiredDaySummary": "Shortest walking day after Walk 8b. Utsunoya early, then a steady run down to Shimada, where the bed is on the road. The Nissaka finish with its 6.7 km rural bus was dropped on 2026-09-24."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-kakegawa",
+        "wp-rail-aino",
+        "wp-rail-fukuroi",
+        "wp-rail-iwata",
+        "wp-rail-toyodacho",
+        "wp-rail-tenryugawa"
+      ],
+      "hazardWaypointIds": [
+        "wp-tenryu-bridge-access"
+      ],
+      "stationIds": [
+        "st-kakegawa",
+        "st-hamamatsu"
+      ],
+      "editorialPrompts": [],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [
+        "Tenryu crossing: confirm which span carries the walkway and that the under-bridge approach is open. Verified in Street View 2026-09-13, not on the ground."
+      ],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-10-28",
+      "date": "2026-10-28",
+      "kind": "walk",
+      "walkingDayNumber": 8,
+      "label": "Walk 8 — Shimada to Iwata",
+      "plan": "Shimada → Oi River → Kanaya → Sayo-no-Nakayama → Nissaka → Kakegawa → Fukuroi → Mitsuke → Iwata, 255.15 km. Rail three stops into the booked Hamamatsu bed.",
+      "from": "Shimada-juku",
+      "to": "Iwata (255.15 km)",
+      "nominalDistanceKm": 39.4,
+      "likelyDoorToDoorKm": 39.6,
+      "terrain": "Tea-country hills after the Oi River, then flat pavement.",
+      "railRedundancy": "high",
+      "sleepBase": "Hamamatsu, three JR stops back from Iwata",
+      "sleepBaseNote": "Iwata Station is 181 m off the route — the closest approach of any station between Kanaya and Hamamatsu. Stopping at the 25-mile mark instead leaves 900 m to the platform, so finish at 255.15 km, not later. Toyodacho (13.1 km left for Walk 8b) and Tenryugawa (5.2 km left) are the longer options if the legs are good.",
+      "startLightGuidance": "The day the Shimada split was built for. Every exit from Kanaya west is on the JR Tokaido Main Line, so stopping short costs a train ride and nothing else — the Hamamatsu bed is booked for the following night too, and Walk 8b finishes whatever is left.",
+      "tiredDaySummary": "Eighth walking day. Reach Iwata, ride in, sleep. Walk 8b carries the last 15.8 km into Hamamatsu in the morning."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-iwata",
+        "wp-rail-toyodacho",
+        "wp-rail-tenryugawa",
+        "wp-rail-hamamatsu"
+      ],
+      "hazardWaypointIds": [
+        "wp-tenryu-bridge-access"
+      ],
+      "stationIds": [
+        "st-hamamatsu"
+      ],
+      "editorialPrompts": [],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [
+        "Tenryu crossing: confirm which span carries the walkway and that the under-bridge approach is open. Verified in Street View 2026-09-13, not on the ground."
+      ],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-10-29",
+      "date": "2026-10-29",
+      "kind": "walk",
+      "label": "Walk 8b — Iwata to Hamamatsu, part recovery",
+      "plan": "Rail three stops back to Iwata, walk the last 15.8 km into Hamamatsu-juku, then laundry, feet, pack repairs, field-system check, and a private visit if it confirms.",
+      "from": "Iwata (255.15 km)",
+      "to": "Hamamatsu-juku",
+      "nominalDistanceKm": 15.8,
+      "likelyDoorToDoorKm": 16.6,
+      "terrain": "Flat pavement, the Tenryu crossing in the middle.",
+      "railRedundancy": "high",
+      "sleepBase": "Hamamatsu",
+      "sleepBaseNote": "Same bed as the night before; nothing to move. Walk 9 starts on foot from it.",
+      "startLightGuidance": "A half day, not a rest day, and it was not chosen — Shimada to Hamamatsu is 55.2 km and cannot be one day, so whatever Walk 8 leaves lands here. Finish the walking early enough that the recovery half actually happens.",
+      "tiredDaySummary": "The recovery token is spent walking. If Walk 8 reached Tenryugawa instead of Iwata this is only 5.2 km and most of the day is yours."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-hamamatsu",
+        "wp-rail-toyohashi"
+      ],
+      "hazardWaypointIds": [
+        "wp-hazard-hamanako-bridges"
+      ],
+      "stationIds": [
+        "st-hamamatsu",
+        "st-arai",
+        "st-yoshida"
+      ],
+      "editorialPrompts": [
+        "Imagire/Arai was a water gap and a checkpoint. The bridge replaced the ferry; ask what else it replaced."
+      ],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [
+        "Verify pedestrian routing and legality across the Hamanako bridges before committing to the day."
+      ],
+      "verificationTasks": [
+        "Confirm pedestrian access on every Hamanako bridge segment."
+      ],
+      "weatherSensitive": [
+        "High wind on the exposed Hamanako bridges is a real stop condition. Rail parallels the whole crossing."
+      ],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-10-30",
+      "date": "2026-10-30",
+      "kind": "walk",
+      "walkingDayNumber": 9,
+      "label": "Walk 9 — Hamamatsu to Toyohashi",
+      "plan": "Hamamatsu → Maisaka → Arai → Shirasuka → Futagawa → Yoshida/Toyohashi.",
+      "from": "Hamamatsu-juku",
+      "to": "Yoshida-juku (Toyohashi)",
+      "nominalDistanceKm": 38.7,
+      "likelyDoorToDoorKm": 39.4,
+      "terrain": "Exposed bridges across Hamanako.",
+      "elevationWarning": null,
+      "railRedundancy": "high",
+      "sleepBase": "Toyohashi",
+      "sleepBaseNote": "The route passes 39 m from the door, 66 m from the Yoshida-juku finish — nearer than Toyohashi Station, which is 883 m away. Onsen on site. Call the property if arriving after 22:00.",
+      "tiredDaySummary": "Wind, not distance, is the governing variable. Trains run alongside; a windy day is a train day."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-toyohashi",
+        "wp-rail-okazaki"
+      ],
+      "hazardWaypointIds": [],
+      "stationIds": [
+        "st-yoshida",
+        "st-okazaki"
+      ],
+      "editorialPrompts": [],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-10-31",
+      "date": "2026-10-31",
+      "kind": "walk",
+      "walkingDayNumber": 10,
+      "label": "Walk 10 — Toyohashi to Shin-Anjo",
+      "plan": "Toyohashi → Goyu → Akasaka → Fujikawa → Okazaki → Toeicho crossing (Shin-Anjo).",
+      "from": "Yoshida-juku (Toyohashi)",
+      "to": "Toeicho crossing (Shin-Anjo)",
+      "nominalDistanceKm": 27.5,
+      "likelyDoorToDoorKm": 29,
+      "terrain": "Rolling pavement.",
+      "railRedundancy": "high",
+      "sleepBase": "Shin-Anjo",
+      "sleepBaseNote": "The bed is 579 m south of the road at the Toeicho signal, on a street that runs straight down to Shin-Anjo Station. That is the shortest hotel access on the route; finishing at Okazaki-juku instead meant 3.4 km to Okazaki Station.",
+      "startLightGuidance": "No longer the light day it was. Extended past Okazaki to take six miles off Walk 11, which has to get back to Nagoya from Manba Ohashi.",
+      "tiredDaySummary": "Flat, rail-dense, and longer than it used to be. Meitetsu runs beside the old road most of the way, so stopping early and riding the last stretch into Shin-Anjo costs little."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-okazaki",
+        "wp-rail-atsuta",
+        "wp-rail-iwatsuka",
+        "wp-rail-haruta"
+      ],
+      "hazardWaypointIds": [],
+      "stationIds": [
+        "st-okazaki",
+        "st-miya"
+      ],
+      "editorialPrompts": [
+        "Route 1, the rail line, the expressway and the old road occupy one corridor. Several Tokaidos, one strip of ground."
+      ],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [
+        "Confirm the Kanayama hotel will hold a pack before check-in on Nov 1. The shape of this day rests on it.",
+        "Walk 12 carries the Manba stretch but was shortened to Ise-Asahi on 2026-09-16 and now runs 34.6 km, so the Kiso Three Rivers crossing no longer has a threshold to cross. Measure it anyway: it is the largest unmeasured distance on the route."
+      ],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-11-01",
+      "date": "2026-11-01",
+      "kind": "walk",
+      "walkingDayNumber": 11,
+      "label": "Walk 11 — Shin-Anjo to Iwatsuka",
+      "plan": "Shin-Anjo → Chiryu → Narumi → Miya/Atsuta → Saya Kaido → Iwatsuka Station crossing.",
+      "from": "Toeicho crossing (Shin-Anjo)",
+      "to": "Iwatsuka Station crossing",
+      "nominalDistanceKm": 32.6,
+      "likelyDoorToDoorKm": 34.5,
+      "terrain": "Continuous urban corridor.",
+      "railRedundancy": "high",
+      "sleepBase": "Nagoya / Atsuta",
+      "sleepBaseNote": "Two stations sit on this day. The line passes 191 m from Kanayama Station at 378.71 km — 16.4 mi in, and the hotel is there — so leave the pack at the hotel on the way past, room ready or not, and walk the last 3.0 mi unladen. It finishes 396 m from Iwatsuka Station: step off the road, Higashiyama line to Nagoya, one hop back to Kanayama. Nov 3 reverses it in about twenty minutes. Manba Ohashi, 1.91 km further west, was the finish until 2026-09-16; it has no station, so ending there meant walking that stretch twice or waiting on a bus.",
+      "tiredDaySummary": "Nineteen miles, urban and rail-dense, the day before a rest day, and the pack only has to be carried for the first sixteen. Finishes at a subway entrance rather than a bridge."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [],
+      "hazardWaypointIds": [],
+      "stationIds": [],
+      "editorialPrompts": [
+        "Miya, the missing ferry interval, and how a route contains a gap."
+      ],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-11-02",
+      "date": "2026-11-02",
+      "kind": "rest",
+      "label": "Recovery 2 — Nagoya/Atsuta",
+      "plan": "Recovery and research token before the western block.",
+      "nominalDistanceKm": 0,
+      "sleepBase": "Nagoya / Atsuta",
+      "sleepBaseNote": "Movable toward the Suzuka gate if the forecast requires it.",
+      "tiredDaySummary": "No mileage required. The least forgiving stages start tomorrow."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-atsuta",
+        "wp-rail-kuwana",
+        "wp-rail-yokkaichi"
+      ],
+      "hazardWaypointIds": [
+        "wp-crossing-miya-kuwana"
+      ],
+      "stationIds": [
+        "st-miya",
+        "st-kuwana",
+        "st-yokkaichi"
+      ],
+      "editorialPrompts": [
+        "The road admits it is not a road at the water. Whatever gets chosen here is an answer to \"did I walk the whole thing\".",
+        "Many contemporary walkers take a train between the preserved ferry sites. That is a legible choice, not a failure — but it should be made deliberately."
+      ],
+      "hiroshigeRefIds": [
+        "hr-miya",
+        "hr-kuwana"
+      ],
+      "safetyNotes": [
+        "The 40.2 km figure is the HISTORICAL equivalent: 27.5 km of it is the Seven-ri sea crossing, which no ordinary ferry now reproduces. The safe modern walking line is a different and unmeasured distance.",
+        "A land substitute over the Kiso Three Rivers must be checked for pedestrian legality and shoulder quality bridge by bridge."
+      ],
+      "verificationTasks": [
+        "Decide explicitly: walk a safe modern land replacement, use transit to enact the historical discontinuity, or split a long substitute across the flex day.",
+        "Measure the chosen line on a GPX. This is the largest unresolved distance on the route."
+      ],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-11-03",
+      "date": "2026-11-03",
+      "kind": "walk",
+      "walkingDayNumber": 12,
+      "label": "Walk 12 — Iwatsuka to Ise-Asahi",
+      "plan": "Iwatsuka Station crossing → Manba Ohashi → modern Kiso Three Rivers substitute → Kuwana-juku → Machiya Bridge → Outside Ise-Asahi Station.",
+      "from": "Iwatsuka Station crossing",
+      "to": "Outside Ise-Asahi Station",
+      "nominalDistanceKm": 40.2,
+      "likelyDoorToDoorKm": null,
+      "terrain": "Unresolved. Depends entirely on which crossing is chosen.",
+      "elevationWarning": null,
+      "startLightGuidance": "Do not start this day without having settled the crossing decision in advance. It opens with a twenty-minute subway ride out from Kanayama and the 1.91 km to Manba Ohashi that Walk 11 deliberately left behind, so the first hour is easy and the unknowns are all later.",
+      "railRedundancy": "moderate",
+      "sleepBase": "Kuwana",
+      "sleepBaseNote": "Shortened from Yokkaichi on 2026-09-16. The day ends 55 m from the Ise-Asahi platform on the Kintetsu Nagoya Line, one stop from the Kuwana bed and one stop back out in the morning. Machiya Bridge was the first candidate but sits 2.6 km from any station; the extra 0.6 mi buys a finish you can step onto a train from. The six miles this sheds go onto Walks 13 and 14, which were the two shortest days in the west.",
+      "tiredDaySummary": "The biggest open question on the route, now carried on a twenty-one mile day instead of a twenty-eight. Distance still unknown until the crossing is chosen; the Nov 7 flex day exists partly for this."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-yokkaichi",
+        "wp-rail-kameyama",
+        "wp-rail-seki"
+      ],
+      "hazardWaypointIds": [],
+      "stationIds": [
+        "st-yokkaichi",
+        "st-kameyama",
+        "st-seki",
+        "st-sakashita"
+      ],
+      "editorialPrompts": [],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [
+        "Last day with reasonable rail before Suzuka. Sort out tomorrow’s weather decision tonight, not in the morning — though note that KONAN-01 stops being cancellable at midnight entering Nov 4, so the real decision point is the night of Nov 3, in Kuwana, on a two-day forecast.",
+        "Nothing about tomorrow morning depends on a timetable now. Set the alarm by the forecast and the sunrise, not by a train."
+      ],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-11-04",
+      "date": "2026-11-04",
+      "kind": "walk",
+      "walkingDayNumber": 13,
+      "label": "Walk 13 — Ise-Asahi to Ono-cho",
+      "plan": "Outside Ise-Asahi Station → Yokkaichi → Ishiyakushi → Shono → Kameyama-juku → Ono-cho.",
+      "from": "Outside Ise-Asahi Station",
+      "to": "Ono-cho, Kameyama",
+      "nominalDistanceKm": 33.8,
+      "likelyDoorToDoorKm": 36,
+      "terrain": "Gradual climb toward the Suzuka approach.",
+      "railRedundancy": "moderate",
+      "sleepBase": "Ono-cho, Kameyama",
+      "sleepBaseNote": "The bed is 274 m off the road — walk off the Tokaido into it and back onto it in the morning. No train either way. That is the reason this day stops 1.3 mi short of Seki-juku: finishing at Seki meant a one-stop hop to Kameyama and the 06:02 back out, and the Suzuka day should not open by catching a rural train. Seki-juku itself has little lodging; Seki Station is 408 m from that anchor and Kameyama Station 628 m from its own, both on the JR Kansai Line at roughly hourly, if a fallback is needed.",
+      "tiredDaySummary": "Ends 274 m off the road with the pass still ahead. Twenty-four miles, then sleep where you stopped."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-seki",
+        "wp-rail-kibukawa"
+      ],
+      "hazardWaypointIds": [
+        "wp-hazard-suzuka-pass"
+      ],
+      "stationIds": [
+        "st-sakashita",
+        "st-tsuchiyama",
+        "st-minakuchi",
+        "st-ishibe"
+      ],
+      "editorialPrompts": [
+        "Direction matters. On the 2018 walk this was a descent from the Shiga side. It will not be the same pass."
+      ],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [
+        "Modern Route 1 runs through the Suzuka Tunnel below the pass; the old road climbs over the saddle as part of the Tokai Nature Trail. Those are different lines with different exposure.",
+        "If the weather is bad, this is what the second recovery token was being held for."
+      ],
+      "verificationTasks": [
+        "Confirm Tokai Nature Trail condition and any closures.",
+        "Confirm the daylight margin against an actual sunrise time, not an assumed one."
+      ],
+      "weatherSensitive": [
+        "Cold and wind at the saddle. Put the midlayer and shell on before the descent, not after the sweat cools."
+      ],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-11-05",
+      "date": "2026-11-05",
+      "kind": "walk",
+      "walkingDayNumber": 14,
+      "label": "Walk 14 — Ono-cho over Suzuka to Kosei",
+      "plan": "Ono-cho → Seki → Sakashita → Suzuka Pass → Tsuchiyama → Minakuchi → Mikumo → Outside Kosei Station.",
+      "from": "Ono-cho, Kameyama",
+      "to": "Outside Kosei Station",
+      "nominalDistanceKm": 34.1,
+      "likelyDoorToDoorKm": 36.5,
+      "terrain": "Forested Mie-side ascent to roughly 378 m, then the gentler Shiga-side descent.",
+      "elevationWarning": "Modest in absolute height, but exposed, cool, and windy, and the Mie-side approach feels remote. Walking Tokyo-to-Kyoto makes the steep side the ascent.",
+      "startLightGuidance": "First-light start and an explicit weather gate, and for once nothing stands between the bed and the road: the night before ends 274 m off the Tokaido, so the start time is yours. This day carries the 6.6 mi from Ono-cho through Seki up to Sakashita as its opening, and the pass falls about a quarter of the way into 25.5 mi. Climb it early; the approach is the warm-up, not an extra.",
+      "railRedundancy": "low",
+      "sleepBase": "Konan (Kosei)",
+      "sleepBaseNote": "The day ends 306 m from the Kosei platform on the JR Kusatsu Line and the bed is about 500 m further on, so the hardest day on the route finishes on foot with no train at the end of it. Shortened from Ishibe-juku on 2026-09-16 to even the last two days and take distance off the pass. If the forecast is bad, Mikumo Station at 306.5 mi is the short version — 21.7 mi instead of 24.2 — and it is one stop east on the same line.",
+      "tiredDaySummary": "Hard mountain day, low rail, the longest in the west at 25.5 mi, and it starts and finishes on foot with no train at either end. First light, weather gate, warm layers before the descent. Nothing recovers after it, so a bad forecast spends the second token here."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-kusatsu",
+        "wp-rail-otsu"
+      ],
+      "hazardWaypointIds": [],
+      "stationIds": [
+        "st-ishibe",
+        "st-kusatsu",
+        "st-otsu",
+        "st-sanjo"
+      ],
+      "editorialPrompts": [
+        "The road begins and ends on bridges over rivers."
+      ],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-11-06",
+      "date": "2026-11-06",
+      "kind": "walk",
+      "walkingDayNumber": 15,
+      "label": "Walk 15 — Kosei to Sanjo Ohashi",
+      "plan": "Outside Kosei Station → Ishibe → Kusatsu → Otsu → Sanjo Ohashi, Kyoto.",
+      "from": "Outside Kosei Station",
+      "to": "Sanjo Ohashi, Kyoto",
+      "nominalDistanceKm": 38,
+      "likelyDoorToDoorKm": 40,
+      "terrain": "Long approach along Biwa, then the final climb into Kyoto.",
+      "railRedundancy": "high",
+      "sleepBase": "Kyoto",
+      "startLightGuidance": "Evened against Walk 14 on 2026-09-16 so the pass day and the Kyoto day are the same length. Flat, rail-dense, and the whole point of the trip is at the end of it. If the flex day is still unused, finishing at Kusatsu or Otsu and arriving on Nov 7 is the cleanest late edit.",
+      "tiredDaySummary": "Long but rail-dense. Splitting it across Nov 7 costs nothing if the flex day is unspent."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [],
+      "hazardWaypointIds": [],
+      "stationIds": [],
+      "editorialPrompts": [],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-11-07",
+      "date": "2026-11-07",
+      "kind": "flex",
+      "label": "True flex day",
+      "plan": "Unassigned. Absorbs weather, feet, route error, or an overlong western stage.",
+      "nominalDistanceKm": 0,
+      "sleepBase": "Kyoto or wherever needed",
+      "tiredDaySummary": "Genuinely unassigned. Converting it to planned mileage repeats the first trip’s mistake."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [],
+      "hazardWaypointIds": [],
+      "stationIds": [],
+      "editorialPrompts": [],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-11-08",
+      "date": "2026-11-08",
+      "kind": "rest",
+      "label": "Kyoto — protected",
+      "plan": "Protected recovery and research day.",
+      "nominalDistanceKm": 0,
+      "sleepBase": "Kyoto",
+      "tiredDaySummary": "Protected. Keep separate from route flex if at all possible."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [],
+      "hazardWaypointIds": [],
+      "stationIds": [],
+      "editorialPrompts": [
+        "The same corridor in two and a half hours. The Tokaido made again."
+      ],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-11-09",
+      "date": "2026-11-09",
+      "kind": "travel",
+      "label": "Transfer",
+      "plan": "Shinkansen Kyoto to Tokyo.",
+      "sleepBase": "Tokyo",
+      "tiredDaySummary": "Unhurried transfer. Exact train chosen later."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [],
+      "hazardWaypointIds": [],
+      "stationIds": [],
+      "editorialPrompts": [],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-11-10",
+      "date": "2026-11-10",
+      "kind": "buffer",
+      "label": "Tokyo buffer",
+      "plan": "Repack, research, contingency.",
+      "nominalDistanceKm": 0,
+      "sleepBase": "Tokyo / Haneda area",
+      "tiredDaySummary": "Protected buffer."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [],
+      "hazardWaypointIds": [],
+      "stationIds": [],
+      "editorialPrompts": [],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-11-11",
+      "date": "2026-11-11",
+      "kind": "travel",
+      "label": "Return via Honolulu",
+      "plan": "HND 21:20 to HNL 09:35; 14h24 layover; HNL 23:59 departure.",
+      "sleepBase": "Aircraft",
+      "tiredDaySummary": "Build immigration, ground-transport, and airport-return margins."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [],
+      "hazardWaypointIds": [],
+      "stationIds": [],
+      "editorialPrompts": [],
+      "hiroshigeRefIds": [],
+      "safetyNotes": [],
+      "verificationTasks": [],
+      "weatherSensitive": [],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "id": "d-2026-11-12",
+      "date": "2026-11-12",
+      "kind": "travel",
+      "label": "Arrival Seattle",
+      "plan": "SEA 07:41.",
+      "sleepBase": "Home",
+      "tiredDaySummary": "Recovery. No commitments assumed."
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Samwise — Tokaido Field Companion" schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.topografix.com/GPX/gpx_style/0/2 http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2">
+  <metadata>
+    <name>Section — Ise Ohashi to Shichiri-no-watashi site (Kuwana landing)</name>
+    <desc>2.0 km, 17 points, mean spacing 123 m. Route km 410.1 to 412.1. Trace with road snapping on, then import back into Samwise as a replaced section. Waypoints are context only — do not export them back.</desc>
+    <author>
+      <name>gpx.studio</name>
+      <link href="https://gpx.studio"/>
+    </author>
+    <time>2026-09-15T04:17:05.481Z</time>
+  </metadata>
+  <wpt lat="35.08141" lon="136.691734">
+    <name>Ise Ohashi</name>
+    <desc>伊勢大橋 · bridge</desc>
+  </wpt>
+  <wpt lat="35.068212" lon="136.69654">
+    <name>Shichiri-no-watashi site (Kuwana landing)</name>
+    <desc>七里の渡跡 · ferry-site</desc>
+  </wpt>
+  <wpt lat="35.068212" lon="136.69654">
+    <name>Kuwana-juku</name>
+    <desc>桑名宿 · post-station · station #42</desc>
+  </wpt>
+  <wpt lat="35.062" lon="136.693">
+    <name>Kuwana Station</name>
+    <desc>rail-bailout</desc>
+  </wpt>
+  <trk>
+    <name>Section — Ise Ohashi to Shichiri-no-watashi site (Kuwana landing)</name>
+    <trkseg>
+      <trkpt lat="35.081442" lon="136.691696">
+        <ele>2.74</ele>
+      </trkpt>
+      <trkpt lat="35.079087" lon="136.687481">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.079036" lon="136.687375">
+        <ele>3.9</ele>
+      </trkpt>
+      <trkpt lat="35.079059" lon="136.687358">
+        <ele>3.97</ele>
+      </trkpt>
+      <trkpt lat="35.079032" lon="136.687306">
+        <ele>4.61</ele>
+      </trkpt>
+      <trkpt lat="35.078962" lon="136.687352">
+        <ele>4.4</ele>
+      </trkpt>
+      <trkpt lat="35.07896" lon="136.687349">
+        <ele>4.39</ele>
+      </trkpt>
+      <trkpt lat="35.07896" lon="136.687349">
+        <ele>4.39</ele>
+      </trkpt>
+      <trkpt lat="35.078962" lon="136.687352">
+        <ele>4.4</ele>
+      </trkpt>
+      <trkpt lat="35.078609" lon="136.687651">
+        <ele>3.98</ele>
+      </trkpt>
+      <trkpt lat="35.07862" lon="136.687725">
+        <ele>3.83</ele>
+      </trkpt>
+      <trkpt lat="35.078556" lon="136.687789">
+        <ele>3.69</ele>
+      </trkpt>
+      <trkpt lat="35.078555560428455" lon="136.68778943957156">
+        <ele>3.6912545603152354</ele>
+      </trkpt>
+      <trkpt lat="35.078411" lon="136.687934">
+        <ele>3.38</ele>
+      </trkpt>
+      <trkpt lat="35.078379" lon="136.688026">
+        <ele>3.28</ele>
+      </trkpt>
+      <trkpt lat="35.075392" lon="136.690599">
+        <ele>4.7</ele>
+      </trkpt>
+      <trkpt lat="35.074279" lon="136.69163">
+        <ele>3.89</ele>
+      </trkpt>
+      <trkpt lat="35.073999" lon="136.691849">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.073862" lon="136.691907">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.071865" lon="136.693452">
+        <ele>4.59</ele>
+      </trkpt>
+      <trkpt lat="35.071865" lon="136.693452">
+        <ele>4.59</ele>
+      </trkpt>
+      <trkpt lat="35.06972" lon="136.695102">
+        <ele>5</ele>
+      </trkpt>
+      <trkpt lat="35.06972" lon="136.695102">
+        <ele>5</ele>
+      </trkpt>
+      <trkpt lat="35.069581" lon="136.695207">
+        <ele>5</ele>
+      </trkpt>
+      <trkpt lat="35.06954965294522" lon="136.6952127649756">
+        <ele>4.981984451627812</ele>
+      </trkpt>
+      <trkpt lat="35.069407" lon="136.695239">
+        <ele>4.9</ele>
+      </trkpt>
+      <trkpt lat="35.06939" lon="136.695252">
+        <ele>4.77</ele>
+      </trkpt>
+      <trkpt lat="35.069385" lon="136.695242"/>
+      <trkpt lat="35.06939" lon="136.695252">
+        <ele>4.77</ele>
+      </trkpt>
+      <trkpt lat="35.069345" lon="136.695288">
+        <ele>4.45</ele>
+      </trkpt>
+      <trkpt lat="35.06931" lon="136.695317">
+        <ele>4.2</ele>
+      </trkpt>
+      <trkpt lat="35.069124" lon="136.695522">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.069054" lon="136.695615">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.069054" lon="136.695615">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.069042" lon="136.69563">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.068961" lon="136.69595">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.068588" lon="136.696608">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.068577" lon="136.696599"/>
+      <trkpt lat="35.068212" lon="136.69654"/>
+    </trkseg>
+  </trk>
+</gpx>

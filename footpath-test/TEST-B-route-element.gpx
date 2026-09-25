@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Tokaido Field Companion — diagnostic fixture"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>D04 CONTINUE — Odawara to Hakone-Yumoto</name>
+    <desc>DIAGNOSTIC TEST FILE. Route element, no elevation. Not a road.</desc>
+    <time>2026-08-18T00:00:00Z</time>
+  </metadata>
+  <rte>
+    <name>D04 CONTINUE — Odawara to Hakone-Yumoto</name>
+    <rtept lat="35.256" lon="139.155"></rtept>
+    <rtept lat="35.2551" lon="139.1531"></rtept>
+    <rtept lat="35.2542" lon="139.1512"></rtept>
+    <rtept lat="35.2534" lon="139.1493"></rtept>
+    <rtept lat="35.2527" lon="139.1473"></rtept>
+    <rtept lat="35.2519" lon="139.1452"></rtept>
+    <rtept lat="35.251" lon="139.1432"></rtept>
+    <rtept lat="35.25" lon="139.1414"></rtept>
+    <rtept lat="35.2489" lon="139.1398"></rtept>
+    <rtept lat="35.2478" lon="139.1383"></rtept>
+    <rtept lat="35.2467" lon="139.1369"></rtept>
+    <rtept lat="35.2456" lon="139.1354"></rtept>
+    <rtept lat="35.2446" lon="139.1338"></rtept>
+    <rtept lat="35.2437" lon="139.1321"></rtept>
+    <rtept lat="35.2429" lon="139.1303"></rtept>
+    <rtept lat="35.2421" lon="139.1285"></rtept>
+    <rtept lat="35.2412" lon="139.1268"></rtept>
+    <rtept lat="35.2403" lon="139.1251"></rtept>
+    <rtept lat="35.2394" lon="139.1234"></rtept>
+    <rtept lat="35.2385" lon="139.1217"></rtept>
+    <rtept lat="35.2376" lon="139.12"></rtept>
+    <rtept lat="35.2368" lon="139.1182"></rtept>
+    <rtept lat="35.236" lon="139.1164"></rtept>
+    <rtept lat="35.2352" lon="139.1146"></rtept>
+    <rtept lat="35.2345" lon="139.1127"></rtept>
+    <rtept lat="35.2338" lon="139.1108"></rtept>
+    <rtept lat="35.2332" lon="139.1088"></rtept>
+    <rtept lat="35.2328" lon="139.1069"></rtept>
+    <rtept lat="35.2325" lon="139.105"></rtept>
+  </rte>
+</gpx>

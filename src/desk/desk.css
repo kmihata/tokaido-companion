@@ -1,0 +1,55 @@
+/* Desk-only layout. Assumes a real screen; the field styles assume a phone. */
+.desk {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+.desk__head { margin-bottom: 20px; }
+.desk__head h1 { margin: 0 0 4px; }
+.desk__grid { display: grid; gap: 20px; grid-template-columns: minmax(360px, 1fr) minmax(320px, 420px); }
+@media (max-width: 900px) { .desk__grid { grid-template-columns: 1fr; } }
+
+.wl { list-style: none; margin: 0; padding: 0; }
+.wl__item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 12px;
+  align-items: baseline;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+  color: inherit;
+  margin-bottom: 6px;
+  cursor: pointer;
+  font: inherit;
+}
+.wl__item[aria-current='true'] { border-color: var(--accent); }
+.wl__item--stale { border-left: 4px solid var(--stop, #c0392b); }
+.wl__title { font-weight: 600; }
+.wl__meta { font-size: 0.82rem; color: var(--text-dim); grid-column: 1 / -1; }
+.wl__badge {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+.wl__badge--stale { border-color: var(--stop, #c0392b); color: var(--stop, #c0392b); }
+.wl__badge--baked { opacity: 0.55; }
+
+.desk table.shift { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.desk table.shift th, .desk table.shift td { text-align: left; padding: 4px 8px 4px 0; }
+.desk table.shift td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.desk .step { display: flex; gap: 10px; align-items: baseline; margin: 6px 0; }
+.desk .step__n {
+  flex: 0 0 22px; height: 22px; border-radius: 999px;
+  border: 1px solid var(--border); display: grid; place-items: center;
+  font-size: 0.75rem; color: var(--text-dim);
+}
+.desk .step--now .step__n { border-color: var(--accent); color: var(--accent); }
+.desk .step--done { opacity: 0.5; }

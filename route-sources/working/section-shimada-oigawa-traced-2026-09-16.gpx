@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Samwise — Tokaido Field Companion" schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.topografix.com/GPX/gpx_style/0/2 http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2">
+  <metadata>
+    <name>Section — Shimada-juku to Oigawa Bridge</name>
+    <desc>3.4 km, 26 points, mean spacing 134 m. Route km 215.3 to 218.6. Trace with road snapping on, then import back into Samwise as a replaced section. Waypoints are context only — do not export them back.</desc>
+    <author>
+      <name>gpx.studio</name>
+      <link href="https://gpx.studio"/>
+    </author>
+    <time>2026-09-17T04:02:47.361Z</time>
+  </metadata>
+  <wpt lat="34.832761" lon="138.176143">
+    <name>Shimada-juku</name>
+    <desc>島田宿 · post-station · station #23</desc>
+  </wpt>
+  <wpt lat="34.830815" lon="138.143903">
+    <name>Oigawa Bridge</name>
+    <desc>大井川橋 · bridge</desc>
+  </wpt>
+  <wpt lat="34.830815" lon="138.143903">
+    <name>Oi River crossing</name>
+    <desc>river-crossing</desc>
+  </wpt>
+  <trk>
+    <name>Section — Shimada-juku to Oigawa Bridge</name>
+    <trkseg>
+      <trkpt lat="34.83277" lon="138.176144">
+        <ele>56</ele>
+      </trkpt>
+      <trkpt lat="34.832956" lon="138.174101">
+        <ele>57</ele>
+      </trkpt>
+      <trkpt lat="34.832957" lon="138.173921">
+        <ele>57</ele>
+      </trkpt>
+      <trkpt lat="34.832928" lon="138.173714">
+        <ele>57</ele>
+      </trkpt>
+      <trkpt lat="34.832885" lon="138.173548">
+        <ele>57</ele>
+      </trkpt>
+      <trkpt lat="34.832627" lon="138.172883">
+        <ele>58</ele>
+      </trkpt>
+      <trkpt lat="34.832538" lon="138.172363">
+        <ele>58</ele>
+      </trkpt>
+      <trkpt lat="34.8325" lon="138.172042">
+        <ele>58</ele>
+      </trkpt>
+      <trkpt lat="34.832491" lon="138.171619">
+        <ele>58</ele>
+      </trkpt>
+      <trkpt lat="34.83251" lon="138.170973">
+        <ele>59</ele>
+      </trkpt>
+      <trkpt lat="34.832576" lon="138.169889">
+        <ele>59.43</ele>
+      </trkpt>
+      <trkpt lat="34.83259" lon="138.169683">
+        <ele>60</ele>
+      </trkpt>
+      <trkpt lat="34.832729" lon="138.168512">
+        <ele>60</ele>
+      </trkpt>
+      <trkpt lat="34.83281" lon="138.167669">
+        <ele>61</ele>
+      </trkpt>
+      <trkpt lat="34.832931" lon="138.16582">
+        <ele>61</ele>
+      </trkpt>
+      <trkpt lat="34.833067" lon="138.164522">
+        <ele>63</ele>
+      </trkpt>
+      <trkpt lat="34.833094" lon="138.163782">
+        <ele>63</ele>
+      </trkpt>
+      <trkpt lat="34.833112" lon="138.163575">
+        <ele>63</ele>
+      </trkpt>
+      <trkpt lat="34.833169" lon="138.163165">
+        <ele>63.18</ele>
+      </trkpt>
+      <trkpt lat="34.833447" lon="138.161513">
+        <ele>65</ele>
+      </trkpt>
+      <trkpt lat="34.833444" lon="138.161508">
+        <ele>64.99</ele>
+      </trkpt>
+      <trkpt lat="34.833444" lon="138.161509"/>
+      <trkpt lat="34.833444" lon="138.161508">
+        <ele>64.99</ele>
+      </trkpt>
+      <trkpt lat="34.833363" lon="138.161392">
+        <ele>64.53</ele>
+      </trkpt>
+      <trkpt lat="34.833329" lon="138.161321">
+        <ele>64.29</ele>
+      </trkpt>
+      <trkpt lat="34.833291" lon="138.160717">
+        <ele>64</ele>
+      </trkpt>
+      <trkpt lat="34.833269" lon="138.160568">
+        <ele>64.14</ele>
+      </trkpt>
+      <trkpt lat="34.833145" lon="138.159998">
+        <ele>64.36</ele>
+      </trkpt>
+      <trkpt lat="34.833059" lon="138.159364">
+        <ele>65</ele>
+      </trkpt>
+      <trkpt lat="34.832975" lon="138.158907">
+        <ele>65</ele>
+      </trkpt>
+      <trkpt lat="34.832905" lon="138.158663">
+        <ele>65</ele>
+      </trkpt>
+      <trkpt lat="34.83252" lon="138.157668">
+        <ele>65.18</ele>
+      </trkpt>
+      <trkpt lat="34.832426" lon="138.15741">
+        <ele>65.97</ele>
+      </trkpt>
+      <trkpt lat="34.832176" lon="138.156912">
+        <ele>65.05</ele>
+      </trkpt>
+      <trkpt lat="34.831964" lon="138.156579">
+        <ele>65</ele>
+      </trkpt>
+      <trkpt lat="34.831713" lon="138.156239">
+        <ele>65</ele>
+      </trkpt>
+      <trkpt lat="34.831435" lon="138.155903">
+        <ele>66</ele>
+      </trkpt>
+      <trkpt lat="34.831268" lon="138.155726">
+        <ele>66.32</ele>
+      </trkpt>
+      <trkpt lat="34.83116" lon="138.15551">
+        <ele>66</ele>
+      </trkpt>
+      <trkpt lat="34.8311" lon="138.155307">
+        <ele>66</ele>
+      </trkpt>
+      <trkpt lat="34.830926" lon="138.154946">
+        <ele>66</ele>
+      </trkpt>
+      <trkpt lat="34.830728" lon="138.154485">
+        <ele>67.68</ele>
+      </trkpt>
+      <trkpt lat="34.830617" lon="138.154268">
+        <ele>68.79</ele>
+      </trkpt>
+      <trkpt lat="34.830491" lon="138.154047">
+        <ele>69.81</ele>
+      </trkpt>
+      <trkpt lat="34.830493" lon="138.154044">
+        <ele>69.81</ele>
+      </trkpt>
+      <trkpt lat="34.83228" lon="138.152153">
+        <ele>71.07</ele>
+      </trkpt>
+      <trkpt lat="34.832905" lon="138.151462">
+        <ele>71.23</ele>
+      </trkpt>
+      <trkpt lat="34.833142" lon="138.151179">
+        <ele>71.89</ele>
+      </trkpt>
+      <trkpt lat="34.833481" lon="138.15078">
+        <ele>70.43</ele>
+      </trkpt>
+      <trkpt lat="34.833851" lon="138.150405">
+        <ele>71.18</ele>
+      </trkpt>
+      <trkpt lat="34.833946" lon="138.150335">
+        <ele>71.45</ele>
+      </trkpt>
+      <trkpt lat="34.834283" lon="138.150032">
+        <ele>72.31</ele>
+      </trkpt>
+      <trkpt lat="34.834272" lon="138.150013"/>
+      <trkpt lat="34.832783" lon="138.147368"/>
+      <trkpt lat="34.830815" lon="138.143903"/>
+    </trkseg>
+  </trk>
+</gpx>

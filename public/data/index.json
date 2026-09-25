@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "0.1.0-demo",
+  "generated": "2026-08-18",
+  "demonstration": true,
+  "navigational": false,
+  "notice": "MIXED PROVENANCE, NOTHING VERIFIED. The route comes from a real GPS-traced source (kaidotrail, CC BY-SA 4.0) and has not been checked on the ground by anyone on this trip; its last 6 km into Kyoto are missing. Day distances still come from a balancing draft of historical post-station figures, and hazards, bailouts and lodging are placeholders — the hotels are fictional. Every record carries its own provenance. Do not navigate from this.",
+  "generatedBy": "scripts/build-fixtures.mjs",
+  "routeFilesGeneratedBy": "scripts/import-kaidotrail.mjs",
+  "routeFiles": [
+    "route-meta.json",
+    "route.geojson",
+    "anchors.geojson"
+  ],
+  "files": [
+    {
+      "path": "trip.json",
+      "bytes": 1070
+    },
+    {
+      "path": "days.json",
+      "bytes": 36712
+    },
+    {
+      "path": "stations.json",
+      "bytes": 14127
+    },
+    {
+      "path": "hiroshige.json",
+      "bytes": 5051
+    },
+    {
+      "path": "waypoints.geojson",
+      "bytes": 41673
+    }
+  ]
+}

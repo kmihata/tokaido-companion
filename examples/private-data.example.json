@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "kind": "tokaido-private-data",
+  "label": "EXAMPLE FILE — entirely fictional",
+  "generated": "2026-08-18T00:00:00.000Z",
+  "_readme": "DELETE THIS KEY BEFORE IMPORTING. The importer is strict and will refuse a file containing it. That is deliberate: it forces you to look at the file before it reaches the device. Everything below is invented. No real booking, address, phone number, person, or medical detail appears in this repository, and none ever should.",
+  "lodging": [
+    {
+      "id": "lodge-example-1",
+      "dayId": "d-2026-10-21",
+      "name": "EXAMPLE INN KAWASAKI (does not exist)",
+      "address": "0-0-0 Nowhere-cho, Example Ward, Kawasaki",
+      "checkIn": "2026-10-21",
+      "checkOut": "2026-10-22",
+      "lat": 35.532,
+      "lon": 139.699,
+      "cancellationDeadline": "2026-10-14",
+      "notes": "Fictional placeholder. Real cancellation deadlines belong in the at-risk ledger, not in a public repository."
+    }
+  ],
+  "transport": [
+    {
+      "id": "transport-example-1",
+      "dayId": "d-2026-11-09",
+      "description": "EXAMPLE Shinkansen Kyoto to Tokyo (not booked)",
+      "departsIso": "2026-11-09T10:00:00+09:00",
+      "notes": "Fictional. Ticket numbers must never be stored in this file if the file might ever be shared."
+    }
+  ],
+  "contacts": [
+    {
+      "id": "contact-example-1",
+      "label": "EXAMPLE emergency contact",
+      "detail": "Fictional Person, +00-000-000-0000",
+      "notes": "Invented. Replace on your own device only."
+    }
+  ],
+  "health": [
+    {
+      "id": "health-example-1",
+      "label": "EXAMPLE health note",
+      "detail": "Fictional placeholder text. Do not commit a real medication list anywhere in this repository."
+    }
+  ],
+  "notes": [
+    {
+      "id": "note-example-1",
+      "dayId": "d-2026-10-24",
+      "title": "EXAMPLE private note",
+      "body": "Fictional. Private notes stay in IndexedDB on the device."
+    }
+  ]
+}

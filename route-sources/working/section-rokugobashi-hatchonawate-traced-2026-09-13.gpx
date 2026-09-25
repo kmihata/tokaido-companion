@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Samwise — Tokaido Field Companion" schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.topografix.com/GPX/gpx_style/0/2 http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2">
+  <metadata>
+    <name>Section — Rokugobashi to Hatchonawate Station</name>
+    <desc>2.2 km, 19 points, mean spacing 122 m. Route km 18.9 to 21.1. Trace with road snapping on, then import back into Samwise as a replaced section. Waypoints are context only — do not export them back.</desc>
+    <author>
+      <name>gpx.studio</name>
+      <link href="https://gpx.studio"/>
+    </author>
+    <time>2026-09-14T03:50:54.062Z</time>
+  </metadata>
+  <wpt lat="35.535981" lon="139.70836">
+    <name>Rokugobashi</name>
+    <desc>六郷橋 · bridge</desc>
+  </wpt>
+  <wpt lat="35.52346" lon="139.691715">
+    <name>Hatchonawate Station</name>
+    <desc>八丁畷駅 · rail</desc>
+  </wpt>
+  <wpt lat="35.5308" lon="139.7029">
+    <name>Kawasaki-juku — Walk 1 finish</name>
+    <desc>day-end · Planned walk endpoint. Distinct from the hotel until lodging is chosen.</desc>
+  </wpt>
+  <wpt lat="35.5308" lon="139.697">
+    <name>Kawasaki Station</name>
+    <desc>rail-bailout</desc>
+  </wpt>
+  <trk>
+    <name>Section — Rokugobashi to Hatchonawate Station</name>
+    <trkseg>
+      <trkpt lat="35.536005" lon="139.70836">
+        <ele>1.02</ele>
+      </trkpt>
+      <trkpt lat="35.536003" lon="139.708594">
+        <ele>1.03</ele>
+      </trkpt>
+      <trkpt lat="35.535946" lon="139.708586">
+        <ele>1.85</ele>
+      </trkpt>
+      <trkpt lat="35.535944" lon="139.708512">
+        <ele>1.88</ele>
+      </trkpt>
+      <trkpt lat="35.535895" lon="139.708508">
+        <ele>2.57</ele>
+      </trkpt>
+      <trkpt lat="35.53586" lon="139.708448">
+        <ele>2.94</ele>
+      </trkpt>
+      <trkpt lat="35.53583" lon="139.708423">
+        <ele>3.34</ele>
+      </trkpt>
+      <trkpt lat="35.535748" lon="139.708398">
+        <ele>4.22</ele>
+      </trkpt>
+      <trkpt lat="35.535378" lon="139.708303">
+        <ele>4.37</ele>
+      </trkpt>
+      <trkpt lat="35.53542" lon="139.708188">
+        <ele>4.82</ele>
+      </trkpt>
+      <trkpt lat="35.535462" lon="139.70799">
+        <ele>4.47</ele>
+      </trkpt>
+      <trkpt lat="35.535465" lon="139.70786">
+        <ele>4.06</ele>
+      </trkpt>
+      <trkpt lat="35.535431" lon="139.707745">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.535421" lon="139.707751">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.535431" lon="139.707745">
+        <ele>4</ele>
+      </trkpt>
+      <trkpt lat="35.535254" lon="139.707342">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.535093" lon="139.707038">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.53467" lon="139.70628">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.534603" lon="139.706177">
+        <ele>2.92</ele>
+      </trkpt>
+      <trkpt lat="35.534205" lon="139.705477">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.533827" lon="139.704841">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.533339" lon="139.703993">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.532854" lon="139.703197">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.532854" lon="139.703197">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.532389" lon="139.702467">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.531931" lon="139.70186">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.531768" lon="139.701694">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.531702" lon="139.701642">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.531702" lon="139.701642">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.531651" lon="139.701602">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.53143" lon="139.701477">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.530837" lon="139.701189">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.530816" lon="139.701189">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.53065" lon="139.701127">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.529978" lon="139.700915">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.529877" lon="139.700876">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.529265" lon="139.700712">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.528851" lon="139.700578">
+        <ele>3</ele>
+      </trkpt>
+      <trkpt lat="35.528322" lon="139.700438">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.528216" lon="139.700395">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.528186" lon="139.700359">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.528179" lon="139.700368"/>
+      <trkpt lat="35.528186" lon="139.700359">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.528154" lon="139.700321">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.528095" lon="139.700213">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.528048" lon="139.700106">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.527717" lon="139.699477">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.527491" lon="139.699056">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.527324" lon="139.698765">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.525963" lon="139.696221">
+        <ele>1.81</ele>
+      </trkpt>
+      <trkpt lat="35.525736" lon="139.6958">
+        <ele>1</ele>
+      </trkpt>
+      <trkpt lat="35.525231" lon="139.69486">
+        <ele>1.02</ele>
+      </trkpt>
+      <trkpt lat="35.524395" lon="139.693346">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.523915" lon="139.692461">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.523866" lon="139.692398">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.523797" lon="139.69234">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.523714" lon="139.692296">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.523413" lon="139.692241">
+        <ele>1</ele>
+      </trkpt>
+      <trkpt lat="35.523406" lon="139.692255">
+        <ele>1</ele>
+      </trkpt>
+      <trkpt lat="35.523406" lon="139.692255">
+        <ele>1</ele>
+      </trkpt>
+      <trkpt lat="35.523413" lon="139.692241">
+        <ele>1</ele>
+      </trkpt>
+      <trkpt lat="35.523414" lon="139.69207">
+        <ele>1.14</ele>
+      </trkpt>
+      <trkpt lat="35.523477" lon="139.691786">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.523499" lon="139.691752">
+        <ele>2</ele>
+      </trkpt>
+      <trkpt lat="35.523462" lon="139.691713">
+        <ele>2</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

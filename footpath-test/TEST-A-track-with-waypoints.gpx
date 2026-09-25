@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Tokaido Field Companion — diagnostic fixture"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>D04 ACTIVE — Odawara to Hakone-Yumoto</name>
+    <desc>DIAGNOSTIC TEST FILE. Approximate placemarks, not a road. Do not navigate.</desc>
+    <time>2026-08-18T00:00:00Z</time>
+  </metadata>
+  <wpt lat="35.256" lon="139.155">
+    <name>Odawara Station</name>
+    <desc>Day start. Rail bailout.</desc>
+  </wpt>
+  <wpt lat="35.2437" lon="139.1321">
+    <name>Hazard — test annotation</name>
+    <desc>Does a mid-route waypoint survive import?</desc>
+  </wpt>
+  <wpt lat="35.2325" lon="139.105">
+    <name>Hakone-Yumoto</name>
+    <desc>Planned stop.</desc>
+  </wpt>
+  <trk>
+    <name>D04 ACTIVE — Odawara to Hakone-Yumoto</name>
+    <trkseg>
+      <trkpt lat="35.256" lon="139.155"><ele>15</ele></trkpt>
+      <trkpt lat="35.2551" lon="139.1531"><ele>16</ele></trkpt>
+      <trkpt lat="35.2542" lon="139.1512"><ele>18</ele></trkpt>
+      <trkpt lat="35.2534" lon="139.1493"><ele>20</ele></trkpt>
+      <trkpt lat="35.2527" lon="139.1473"><ele>22</ele></trkpt>
+      <trkpt lat="35.2519" lon="139.1452"><ele>25</ele></trkpt>
+      <trkpt lat="35.251" lon="139.1432"><ele>28</ele></trkpt>
+      <trkpt lat="35.25" lon="139.1414"><ele>31</ele></trkpt>
+      <trkpt lat="35.2489" lon="139.1398"><ele>34</ele></trkpt>
+      <trkpt lat="35.2478" lon="139.1383"><ele>38</ele></trkpt>
+      <trkpt lat="35.2467" lon="139.1369"><ele>42</ele></trkpt>
+      <trkpt lat="35.2456" lon="139.1354"><ele>46</ele></trkpt>
+      <trkpt lat="35.2446" lon="139.1338"><ele>51</ele></trkpt>
+      <trkpt lat="35.2437" lon="139.1321"><ele>56</ele></trkpt>
+      <trkpt lat="35.2429" lon="139.1303"><ele>61</ele></trkpt>
+      <trkpt lat="35.2421" lon="139.1285"><ele>66</ele></trkpt>
+      <trkpt lat="35.2412" lon="139.1268"><ele>71</ele></trkpt>
+      <trkpt lat="35.2403" lon="139.1251"><ele>76</ele></trkpt>
+      <trkpt lat="35.2394" lon="139.1234"><ele>81</ele></trkpt>
+      <trkpt lat="35.2385" lon="139.1217"><ele>86</ele></trkpt>
+      <trkpt lat="35.2376" lon="139.12"><ele>90</ele></trkpt>
+      <trkpt lat="35.2368" lon="139.1182"><ele>94</ele></trkpt>
+      <trkpt lat="35.236" lon="139.1164"><ele>98</ele></trkpt>
+      <trkpt lat="35.2352" lon="139.1146"><ele>101</ele></trkpt>
+      <trkpt lat="35.2345" lon="139.1127"><ele>104</ele></trkpt>
+      <trkpt lat="35.2338" lon="139.1108"><ele>106</ele></trkpt>
+      <trkpt lat="35.2332" lon="139.1088"><ele>108</ele></trkpt>
+      <trkpt lat="35.2328" lon="139.1069"><ele>109</ele></trkpt>
+      <trkpt lat="35.2325" lon="139.105"><ele>110</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

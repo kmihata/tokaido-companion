@@ -1,0 +1,84 @@
+# PROPOSED — NOT ACTIVE.
+#
+# This file is deliberately in proposed/ rather than .github/workflows/ so it
+# cannot run. Activating it is a decision Kevin makes, not a side effect of a
+# build. See GITHUB-PAGES-DEPLOYMENT.md for the full sequence.
+#
+# To activate, after the repository exists and Kevin has approved deployment:
+#   mkdir -p .github/workflows
+#   git mv proposed/deploy-github-pages.yml .github/workflows/deploy.yml
+#
+# Assumes the repository is named `tokaido-companion`. If it is named anything
+# else, change BASE_PATH below to match: GitHub Pages serves a project site at
+# https://<user>.github.io/<repo>/ and every asset path depends on it.
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time. Do not cancel a run in progress: a half-replaced
+# Pages deployment is worse than a queued one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Build
+        run: npm run build
+        env:
+          BASE_PATH: /tokaido-companion/
+
+      # These assert the built bundle: subpath correctness, precache contents,
+      # and that no private content or third-party host reached dist/.
+      - name: Build assertions
+        run: npm run test:build
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Browser tests (mobile viewport, offline, accessibility)
+        run: npm run test:e2e
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: verify
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

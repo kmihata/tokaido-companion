@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Tokaido Field Companion — diagnostic fixture"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>TEST MULTI — Miya and Kuwana as separate tracks</name>
+    <desc>DIAGNOSTIC TEST FILE. Two separate &lt;trk&gt; elements. Does the app keep them apart or join them?</desc>
+    <time>2026-08-18T00:00:00Z</time>
+  </metadata>
+  <wpt lat="35.128" lon="136.908">
+    <name>Miya ferry landing</name>
+    <desc>End of walking section 1.</desc>
+  </wpt>
+  <wpt lat="35.062" lon="136.693">
+    <name>Kuwana ferry landing</name>
+    <desc>Start of walking section 2.</desc>
+  </wpt>
+  <trk>
+    <name>D12a MIYA — walking section</name>
+    <trkseg>
+      <trkpt lat="35.131" lon="136.914"></trkpt>
+      <trkpt lat="35.1301" lon="136.9122"></trkpt>
+      <trkpt lat="35.1293" lon="136.9105"></trkpt>
+      <trkpt lat="35.1286" lon="136.9092"></trkpt>
+      <trkpt lat="35.128" lon="136.908"></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>D12b KUWANA — walking section</name>
+    <trkseg>
+      <trkpt lat="35.062" lon="136.693"></trkpt>
+      <trkpt lat="35.0627" lon="136.6913"></trkpt>
+      <trkpt lat="35.0634" lon="136.6897"></trkpt>
+      <trkpt lat="35.0641" lon="136.6881"></trkpt>
+      <trkpt lat="35.0648" lon="136.6864"></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

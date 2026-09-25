@@ -1,0 +1,1869 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "wp-start-d1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.774533,
+          35.684112
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Route start. Exact start marker unverified.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-20"
+        ],
+        "source": "kaidotrail 2026-08-20 (route anchor)",
+        "confidence": "medium",
+        "verification": "imported",
+        "id": "wp-start-d1",
+        "type": "day-start",
+        "title": "Nihonbashi — Walk 1 start",
+        "anchorId": "a-001",
+        "positionSource": "source-route-anchor",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-end-d1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7029,
+          35.5308
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Planned walk endpoint. Distinct from the hotel until lodging is chosen.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-20"
+        ],
+        "source": "demonstration-fixture",
+        "confidence": "demonstration",
+        "verification": "unverified",
+        "id": "wp-end-d1",
+        "type": "day-end",
+        "title": "Kawasaki-juku — Walk 1 finish",
+        "anchorId": null,
+        "positionSource": "operator-estimate",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-shinagawa",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.73869444,
+          35.62822222
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Dense service. Bailing out here is trivial.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-20"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-shinagawa",
+        "type": "rail-bailout",
+        "title": "Shinagawa Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-kawasaki",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.69694444,
+          35.53138889
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-20"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-kawasaki",
+        "type": "rail-bailout",
+        "title": "Kawasaki Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-totsuka",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.53419444,
+          35.40061111
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-22"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-totsuka",
+        "type": "rail-bailout",
+        "title": "Totsuka Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-fujisawa",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.48722222,
+          35.33888889
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-22"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-fujisawa",
+        "type": "rail-bailout",
+        "title": "Fujisawa Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-odawara",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.15555556,
+          35.25583333
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Shinkansen stop. Last dense-rail point before the Hakone crossing.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-23",
+          "d-2026-10-24"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-odawara",
+        "type": "rail-bailout",
+        "title": "Odawara Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-bus-hatajuku",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.063847,
+          35.213298
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Bus, not rail. This is the realistic east-slope exit once the trail is committed to. Timetable unverified.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-24"
+        ],
+        "source": "kaidotrail 2026-08-20 (route anchor)",
+        "confidence": "medium",
+        "verification": "imported",
+        "id": "wp-bus-hatajuku",
+        "type": "rail-bailout",
+        "title": "Hatajuku bus stop (east slope)",
+        "anchorId": "a-019",
+        "positionSource": "source-route-anchor",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-bus-moto-hakone",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.02637,
+          35.192307
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "West-side services connect to Mishima. The decisive stop-or-continue point of the Hakone day.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-24"
+        ],
+        "source": "kaidotrail 2026-08-20 (route anchor)",
+        "confidence": "medium",
+        "verification": "imported",
+        "id": "wp-bus-moto-hakone",
+        "type": "rail-bailout",
+        "title": "Moto-Hakone (Lake Ashi) bus",
+        "anchorId": "a-021",
+        "positionSource": "source-route-anchor",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-mishima",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.91116389,
+          35.12633889
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Shinkansen stop.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-24",
+          "d-2026-10-25"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-mishima",
+        "type": "rail-bailout",
+        "title": "Mishima Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-yui",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.55272222,
+          35.09719444
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-25",
+          "d-2026-10-26"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-yui",
+        "type": "rail-bailout",
+        "title": "Yui Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-motoyoshiwara",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.69258333,
+          35.16197778
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Closest rail to the Walk 5 finish at Yoshiwara-juku — 817 m from the anchor, 189 m off the road. It is the Gakunan Electric Railway, a short local line, so check the service before relying on it; Yoshiwara Station two stops down is the interchange with the JR Tokaido Main Line.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-25",
+          "d-2026-10-26"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-17",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-motoyoshiwara",
+        "type": "rail-bailout",
+        "title": "Motoyoshiwara Station (Gakunan)",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-yoshiwara",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.70277778,
+          35.14386111
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "The real transport node for the Walk 5 finish: JR Tokaido Main Line and the Gakunan terminus. 2.8 km from Yoshiwara-juku but only 158 m off the route further east, so it is easier to reach before finishing than after.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-25",
+          "d-2026-10-26"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-17",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-yoshiwara",
+        "type": "rail-bailout",
+        "title": "Yoshiwara Station (JR Tokaido + Gakunan)",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-fuji",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.65108611,
+          35.15144444
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "The rail-linked alternative named in the Walk 5 sleep base. 3.3 km west of Yoshiwara-juku and 503 m off the route, larger than Yoshiwara Station and with more lodging around it.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-25",
+          "d-2026-10-26"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-17",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-fuji",
+        "type": "rail-bailout",
+        "title": "Fuji Station (JR Tokaido)",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-shizuoka",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.38855556,
+          34.97161111
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-26"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-shizuoka",
+        "type": "rail-bailout",
+        "title": "Shizuoka Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-fujieda",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.25238056,
+          34.84935833
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-26",
+          "d-2026-10-27"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-fujieda",
+        "type": "rail-bailout",
+        "title": "Fujieda Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-shimada",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.1742278,
+          34.8300583
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "NOT an emergency exit — this is where Walk 7 is planned to finish. 343 m from Shimada-juku, with lodging within 440 m of the platform, so the day ends on foot with no transfer. Walk 8 starts here.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-27",
+          "d-2026-10-28"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-24",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-shimada",
+        "type": "rail-bailout",
+        "title": "Shimada Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-kanaya",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.1254444,
+          34.8190833
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "The route passes 15 m from the platform — the closest rail on this stretch. One stop back to the Shimada bed, which makes walking on to Kanaya on Walk 7 a day-of option that takes 5.4 km off Walk 8 without changing any booking. OpenStreetMap places this 93 m away; that node is the Oigawa Railway terminus platform, not the JR one.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-27",
+          "d-2026-10-28"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-24",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-kanaya",
+        "type": "rail-bailout",
+        "title": "Kanaya Station (JR Tokaido + Oigawa)",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-kakegawa",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.01483889,
+          34.76974167
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-27",
+          "d-2026-10-28"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-kakegawa",
+        "type": "rail-bailout",
+        "title": "Kakegawa Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-aino",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9616167,
+          34.7524194
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "969 m off the route at 242.5 km. Local stop; check service before relying on it.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-28"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-24",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-aino",
+        "type": "rail-bailout",
+        "title": "Aino Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-fukuroi",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.9256667,
+          34.7414333
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "721 m off the route at 246.3 km, near Fukuroi-juku. The mid-day exit on Walk 8.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-28"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-24",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-fukuroi",
+        "type": "rail-bailout",
+        "title": "Fukuroi Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-iwata",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.851725,
+          34.710075
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "NOT an emergency exit — the planned Walk 8 finish. 181 m off the route at 255.1 km, the closest approach of any station between Kanaya and Hamamatsu, and three stops on the JR Tokaido Main Line to the booked Hamamatsu room. Walk 8b resumes here. Stopping at the 25-mile mark instead leaves 900 m to the platform, so finish at 255.1 km, not later.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-28",
+          "d-2026-10-29"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-24",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-iwata",
+        "type": "rail-bailout",
+        "title": "Iwata Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-toyodacho",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8200056,
+          34.7120222
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "1,122 m off the route at 257.8 km. Ending Walk 8 here instead of Iwata leaves 13.1 km for Walk 8b rather than 15.8 km, at the cost of 941 m more walking to the platform.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-28",
+          "d-2026-10-29"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-24",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-toyodacho",
+        "type": "rail-bailout",
+        "title": "Toyodacho Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-tenryugawa",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.7792361,
+          34.7170222
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "399 m off the route at 265.8 km, just past the Tenryu bridge. The long-day option: reaching here on Walk 8 leaves only 5.2 km for the next morning, which buys back most of the recovery day the Shimada split spends.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-28",
+          "d-2026-10-29"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-24",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-tenryugawa",
+        "type": "rail-bailout",
+        "title": "Tenryugawa Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-hamamatsu",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.73440278,
+          34.703425
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-28",
+          "d-2026-10-30"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-hamamatsu",
+        "type": "rail-bailout",
+        "title": "Hamamatsu Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-toyohashi",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.38165083,
+          34.76281083
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-30",
+          "d-2026-10-31"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-toyohashi",
+        "type": "rail-bailout",
+        "title": "Toyohashi Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-okazaki",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.157315,
+          34.92561083
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-31",
+          "d-2026-11-01"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-okazaki",
+        "type": "rail-bailout",
+        "title": "Okazaki Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-atsuta",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.91247222,
+          35.12580556
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-01",
+          "d-2026-11-03"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-atsuta",
+        "type": "rail-bailout",
+        "title": "Atsuta / Jingu-mae",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-shinanjo",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.0851868,
+          34.9870732
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "NOT an emergency exit — this is where Walk 10 is planned to finish. The Toeicho crossing is 579 m north of the platform on a street that runs straight down to it, and the bed is a minute from the station. Walk 11 starts from the same crossing. It is recorded as a bailout so the app can find it mid-day as well.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-31",
+          "d-2026-11-01"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-shinanjo",
+        "type": "rail-bailout",
+        "title": "Shin-Anjo Station (Meitetsu)",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-ise-asahi",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.66895409,
+          35.03832913
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "NOT an emergency exit — this is where Walk 12 is planned to finish, and the Tokaido passes about 55 m north of the platform, which was measured against a section traced at 31 m spacing. Kuwana is two stations back up the line and is the bed for Nov 3; Walk 13 starts here again on the morning of Nov 4. Recorded as a bailout so the app can find it mid-day as well.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-03",
+          "d-2026-11-04"
+        ],
+        "source": "Mapion station record, read 2026-09-16",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-ise-asahi",
+        "type": "rail-bailout",
+        "title": "Ise-Asahi Station (Kintetsu Nagoya Line)",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-kosei",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.08234279,
+          35.00062488
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "NOT an emergency exit — this is where Walk 14 is planned to finish, 306 m off the road, with the bed about 500 m beyond it. It is also the first rail on the Shiga side that is actually near the route: Kibukawa, the recorded bailout for the Suzuka day, is 8.4 km away. Walk 15 starts here.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-05",
+          "d-2026-11-06"
+        ],
+        "source": "Mapion station record, read 2026-09-16",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-kosei",
+        "type": "rail-bailout",
+        "title": "Kosei Station (JR Kusatsu Line)",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-iwatsuka",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.854389,
+          35.158478
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "The answer to the Manba Ohashi return. The route passes 396 m from this station at 383.11 km, 1.91 km BEFORE the Walk 11 finish, so the walk back from Manba is about 2.3 km along ground already walked. Higashiyama line to Nagoya Station, then one hop to Kanayama. Two city bus routes, Kan-Nakamura 1 and Nakamura 12, also run between the Manba Ohashi stop and this station, but the walk is short enough that no timetable governs the evening. Bus routes read off a route-map site on 2026-09-16, not the operator: verify before relying on the bus rather than the legs.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-01",
+          "d-2026-11-03"
+        ],
+        "source": "Mapion station record, read 2026-09-16",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-iwatsuka",
+        "type": "rail-bailout",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "title": "Iwatsuka Station (Higashiyama subway)",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-haruta",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.81356,
+          35.143235
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Second option from Manba, 2.0 km off the route and on the JR Kansai Main Line rather than the subway. City bus Nakamura 12 runs Manba Ohashi to Haruta Station directly. Useful on Nov 3 heading west as well as Nov 1 heading back.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-01",
+          "d-2026-11-03"
+        ],
+        "source": "Mapion station record, read 2026-09-16",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-haruta",
+        "type": "rail-bailout",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "title": "Haruta Station (JR Kansai Main Line)",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-kuwana",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.68411111,
+          35.06738889
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-03"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-kuwana",
+        "type": "rail-bailout",
+        "title": "Kuwana Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-yokkaichi",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.62963889,
+          34.96308333
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-03",
+          "d-2026-11-04"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-yokkaichi",
+        "type": "rail-bailout",
+        "title": "Yokkaichi Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-kameyama",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.450347,
+          34.850326
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Real position. The fixture carried 34.856, 136.452 until 2026-09-16 — a hand-typed estimate 649 m from the platform, which is where the \"Kameyama-juku is 0.2 km from its station\" figure came from. It is 628 m.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-04"
+        ],
+        "source": "Mapion station record, read 2026-09-16",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-kameyama",
+        "type": "rail-bailout",
+        "title": "Kameyama Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-seki",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.394532,
+          34.84918
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Real position, 351 m off the route and 408 m from the Seki-juku anchor. The fixture carried 34.853, 136.400 until 2026-09-16 — lon typed to one decimal, 655 m from the platform. JR Kansai Line: about 19 trains a day toward Kameyama on weekdays, last 22:43; back out at 06:02, 06:40, 07:06, 08:03. Read from a timetable site on 2026-09-16, before the March revision.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-04",
+          "d-2026-11-05"
+        ],
+        "source": "Mapion station record, read 2026-09-16",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-seki",
+        "type": "rail-bailout",
+        "title": "Seki Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-kibukawa",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.15393333,
+          34.95210556
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "First rail on the descent side of Suzuka. Position approximate.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-05"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-kibukawa",
+        "type": "rail-bailout",
+        "title": "Kibukawa Station (Shiga side)",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-kusatsu",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.96163611,
+          35.0224
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-06"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-kusatsu",
+        "type": "rail-bailout",
+        "title": "Kusatsu Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-sanjo",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.772275,
+          35.00911389
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "The end of the road. Keihan Sanjo sits 41 m from the terminus anchor, at the east end of the bridge itself — so for this one the station and the destination are the same place, and nothing about arriving here is a bailout. Recorded because Otsu Station, 8.4 km back, was otherwise the nearest rail the app knew about on the last day.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-06"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-17",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-sanjo",
+        "type": "rail-bailout",
+        "title": "Sanjo Ohashi — Keihan Sanjo Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-rail-otsu",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.86489722,
+          35.00297222
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-06"
+        ],
+        "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
+        "confidence": "medium",
+        "verification": "desk-checked",
+        "id": "wp-rail-otsu",
+        "type": "rail-bailout",
+        "title": "Otsu Station",
+        "demonstration": true,
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-hazard-hakone-pass-ic",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.009,
+          35.183
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Alternatives to map continuously before departure: the old-road/golf-road loop, and the wooded connector between the Hakone Yasuragi-no-Mori bus stop and Roadside Station Hakone-toge reported May 2026.",
+        "historicalNotes": null,
+        "safetyNotes": "Route 1, Hakone Shindo, old-road approaches and the Ashinoko Skyline access converge. Several hundred metres without sidewalk plus an unprotected crossing near the Shindo merge. The green pedestrian paint is paint: no curb, no barrier, no separation. Kevin and Kai ran this section in 2018.",
+        "links": [
+          {
+            "label": "Account of the junction",
+            "url": "https://ossanpo.hatenablog.com/entry/hakone"
+          },
+          {
+            "label": "Wooded connector report (May 2026)",
+            "url": "https://busmagazine.bestcarweb.jp/feature/column/209862"
+          }
+        ],
+        "dayIds": [
+          "d-2026-10-24"
+        ],
+        "source": "demonstration-fixture",
+        "confidence": "demonstration",
+        "verification": "unverified",
+        "id": "wp-hazard-hakone-pass-ic",
+        "type": "hazard",
+        "title": "Hakone Pass IC — highway shoulder",
+        "anchorId": null,
+        "positionSource": "operator-estimate",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-hazard-hiryu-trail",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.04,
+          35.223
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Part of the preferred hybrid east-slope line: Old Tokaido to Hatajuku, then this trail toward Ashinoyu and Lake Ashi. Position approximate.",
+        "historicalNotes": null,
+        "safetyNotes": "Steep 2.3 km maintained nature trail. Kanagawa Prefecture advises against use during or just after rain; parts are prone to crumbling.",
+        "links": [],
+        "dayIds": [
+          "d-2026-10-24"
+        ],
+        "source": "demonstration-fixture",
+        "confidence": "demonstration",
+        "verification": "unverified",
+        "id": "wp-hazard-hiryu-trail",
+        "type": "hazard",
+        "title": "Hiryu Falls — Ashinoyu nature trail",
+        "anchorId": null,
+        "positionSource": "operator-estimate",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-utsunoya-tunnel",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.302969,
+          34.93298
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Currently presented as a walking route, but repair work is scheduled during FY2026. Recheck status shortly before crossing.",
+        "historicalNotes": "Opened 1876 as Japan’s first toll tunnel; rebuilt in brick 1904; present passage about 203 m. The portal inscription reads right-to-left. A Meiji-period transformation of the corridor, not the Edo path.",
+        "safetyNotes": "Confirm open before relying on it; the alternative adds distance to an already crowded day.",
+        "links": [
+          {
+            "label": "Shizuoka City",
+            "url": "https://www.city.shizuoka.lg.jp/s5984/s005526.html"
+          },
+          {
+            "label": "Fujieda City trail notices",
+            "url": "https://www.city.fujieda.shizuoka.jp/soshiki/sports_bunka/kankokoryu/oshirase/19928.html"
+          }
+        ],
+        "dayIds": [
+          "d-2026-10-26"
+        ],
+        "source": "kaidotrail 2026-08-20 (route anchor)",
+        "confidence": "medium",
+        "verification": "imported",
+        "id": "wp-utsunoya-tunnel",
+        "type": "category-change",
+        "title": "Meiji Utsunoya Tunnel",
+        "anchorId": "a-041",
+        "positionSource": "source-route-anchor",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-tenryu-bridge-access",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.8114,
+          34.7284
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Reach the walkway by continuing under the bridge and looping back around — about 423 m, and it looks like a mistake on the map. The route line already follows it. The out-and-back just before it goes to the historic Tenryu ferry site, which is where the Tokaido ran; skipping that spur is a fair trade on a tired day, the bridge access is not.",
+        "historicalNotes": "The Tokaido crossed the Tenryu by ferry. Hiroshige's Mitsuke print is that crossing.",
+        "safetyNotes": "Do not attempt the nearest span. Of the three bridge sections here only one carries a pedestrian walkway; the others are one-way highway.",
+        "links": [],
+        "dayIds": [
+          "d-2026-10-28"
+        ],
+        "source": "demonstration-fixture",
+        "confidence": "demonstration",
+        "verification": "unverified",
+        "id": "wp-tenryu-bridge-access",
+        "type": "category-change",
+        "title": "Tenryu crossing — only one span has a walkway",
+        "anchorId": null,
+        "positionSource": "operator-estimate",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-hazard-hamanako-bridges",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.585,
+          34.693
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Rail parallels the entire crossing, so a wind day is cheap to abandon. Position approximate.",
+        "historicalNotes": null,
+        "safetyNotes": "Exposed to wind. Pedestrian legality and shoulder quality unverified bridge by bridge.",
+        "links": [],
+        "dayIds": [
+          "d-2026-10-30"
+        ],
+        "source": "demonstration-fixture",
+        "confidence": "demonstration",
+        "verification": "unverified",
+        "id": "wp-hazard-hamanako-bridges",
+        "type": "hazard",
+        "title": "Hamanako bridge crossings",
+        "anchorId": null,
+        "positionSource": "operator-estimate",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-crossing-oi",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.143903,
+          34.830815
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": "Deliberately unbridged under Edo policy. Travellers were carried across.",
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-27"
+        ],
+        "source": "kaidotrail 2026-08-20 (route anchor)",
+        "confidence": "medium",
+        "verification": "imported",
+        "id": "wp-crossing-oi",
+        "type": "river-crossing",
+        "title": "Oi River crossing",
+        "anchorId": "a-045",
+        "positionSource": "source-route-anchor",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-crossing-miya-kuwana",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.8,
+          35.095
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Three legible options: a safe modern land line over the Kiso Three Rivers, transit between the preserved ferry sites, or splitting a long substitute across the Nov 7 flex day. Undecided. Position is a placeholder mid-gap, not a route point.",
+        "historicalNotes": "The historical table assigns 27.5 km to a sea crossing between Miya and Kuwana. No ordinary ferry reproduces it now.",
+        "safetyNotes": "Any land substitute needs pedestrian legality and shoulder quality checked bridge by bridge before it is walked.",
+        "links": [
+          {
+            "label": "Nagoya City — Seven-ri ferry",
+            "url": "https://www.city.nagoya.jp/atsuta/miryoku/1022287/1022299/1022302.html"
+          }
+        ],
+        "dayIds": [
+          "d-2026-11-03"
+        ],
+        "source": "demonstration-fixture",
+        "confidence": "demonstration",
+        "verification": "unverified",
+        "id": "wp-crossing-miya-kuwana",
+        "type": "ferry-gap",
+        "title": "Miya to Kuwana — Seven-ri gap",
+        "anchorId": null,
+        "positionSource": "operator-estimate",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-hazard-suzuka-pass",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.336799,
+          34.89401
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Route 1 passes below through the Suzuka Tunnel; the old road climbs over as part of the Tokai Nature Trail. Westbound makes the steep Mie side the ascent.",
+        "historicalNotes": null,
+        "safetyNotes": "Roughly 378 m saddle. Exposed, cool, windy; the Mie-side approach feels remote. Low rail redundancy on both sides.",
+        "links": [],
+        "dayIds": [
+          "d-2026-11-05"
+        ],
+        "source": "kaidotrail 2026-08-20 (route anchor)",
+        "confidence": "medium",
+        "verification": "imported",
+        "id": "wp-hazard-suzuka-pass",
+        "type": "hazard",
+        "title": "Suzuka Pass",
+        "anchorId": "a-088",
+        "positionSource": "source-route-anchor",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-research-satta",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.541353,
+          35.07147
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "Weather-dependent and the reason to be there. Position approximate.",
+        "historicalNotes": "One of the most reproduced viewpoints on the road.",
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-26"
+        ],
+        "source": "kaidotrail 2026-08-20 (route anchor)",
+        "confidence": "medium",
+        "verification": "imported",
+        "id": "wp-research-satta",
+        "type": "research",
+        "title": "Satta Pass viewpoint",
+        "anchorId": "a-032",
+        "positionSource": "source-route-anchor",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-research-atsuta",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.904717,
+          35.118509
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": null,
+        "historicalNotes": "Preserved eastern landing of the Seven-ri crossing.",
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-01",
+          "d-2026-11-02"
+        ],
+        "source": "kaidotrail 2026-08-20 (route anchor)",
+        "confidence": "medium",
+        "verification": "imported",
+        "id": "wp-research-atsuta",
+        "type": "research",
+        "title": "Miya-juku ferry site, Atsuta",
+        "anchorId": "a-070",
+        "positionSource": "source-route-anchor",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-water-hatajuku",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.063847,
+          35.213298
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "DEMONSTRATION PLACEMARK. Availability and hours entirely unverified. Do not plan the Hakone day around this.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-24"
+        ],
+        "source": "kaidotrail 2026-08-20 (route anchor)",
+        "confidence": "medium",
+        "verification": "imported",
+        "id": "wp-water-hatajuku",
+        "type": "water",
+        "title": "Hatajuku — water and food",
+        "anchorId": "a-019",
+        "positionSource": "source-route-anchor",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-water-seki",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.392455,
+          34.852433
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "DEMONSTRATION PLACEMARK. Availability and hours entirely unverified.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-11-04",
+          "d-2026-11-05"
+        ],
+        "source": "kaidotrail 2026-08-20 (route anchor)",
+        "confidence": "medium",
+        "verification": "imported",
+        "id": "wp-water-seki",
+        "type": "water",
+        "title": "Seki-juku — last resupply before Suzuka",
+        "anchorId": "a-086",
+        "positionSource": "source-route-anchor",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-hotel-demo-kawasaki",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.699,
+          35.532
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "FICTIONAL PLACEHOLDER. No booking exists. Real lodging is private data and belongs in an imported private file, never in this repository. See PRIVACY-AND-THREAT-MODEL.md.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-20"
+        ],
+        "source": "demonstration-fixture",
+        "confidence": "demonstration",
+        "verification": "unverified",
+        "id": "wp-hotel-demo-kawasaki",
+        "type": "hotel",
+        "title": "EXAMPLE HOTEL — Kawasaki (fictional)",
+        "anchorId": null,
+        "positionSource": "operator-estimate",
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wp-hotel-demo-mishima",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.913,
+          35.127
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "FICTIONAL PLACEHOLDER. No booking exists.",
+        "historicalNotes": null,
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-24"
+        ],
+        "source": "demonstration-fixture",
+        "confidence": "demonstration",
+        "verification": "unverified",
+        "id": "wp-hotel-demo-mishima",
+        "type": "hotel",
+        "title": "EXAMPLE HOTEL — Mishima (fictional)",
+        "anchorId": null,
+        "positionSource": "operator-estimate",
+        "navigational": false,
+        "demonstration": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Samwise — Tokaido Field Companion" schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.topografix.com/GPX/gpx_style/0/2 http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2">
+  <metadata>
+    <name>Section — Owari Ohashi to Ise Ohashi</name>
+    <desc>3.8 km, 35 points, mean spacing 111 m. Route km 406.6 to 410.4. Trace with road snapping on, then import back into Samwise as a replaced section. Waypoints are context only — do not export them back.</desc>
+    <author>
+      <name>gpx.studio</name>
+      <link href="https://gpx.studio"/>
+    </author>
+    <time>2026-09-17T04:13:21.918Z</time>
+  </metadata>
+  <wpt lat="35.104822" lon="136.712794">
+    <name>Owari Ohashi</name>
+    <desc>尾張大橋 · bridge</desc>
+  </wpt>
+  <wpt lat="35.081442" lon="136.691696">
+    <name>Ise Ohashi</name>
+    <desc>伊勢大橋 · bridge</desc>
+  </wpt>
+  <wpt lat="35.068212" lon="136.69654">
+    <name>Shichiri-no-watashi site (Kuwana landing)</name>
+    <desc>七里の渡跡 · ferry-site</desc>
+  </wpt>
+  <wpt lat="35.068212" lon="136.69654">
+    <name>Kuwana-juku</name>
+    <desc>桑名宿 · post-station · station #42</desc>
+  </wpt>
+  <wpt lat="35.062" lon="136.693">
+    <name>Kuwana Station</name>
+    <desc>rail-bailout</desc>
+  </wpt>
+  <trk>
+    <name>Section — Owari Ohashi to Ise Ohashi</name>
+    <trkseg>
+      <trkpt lat="35.104822" lon="136.712794"/>
+      <trkpt lat="35.10294348589667" lon="136.7095196511333">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.102521" lon="136.708803">
+        <ele>2.78</ele>
+      </trkpt>
+      <trkpt lat="35.102357" lon="136.708529">
+        <ele>3.99</ele>
+      </trkpt>
+      <trkpt lat="35.101957" lon="136.707836">
+        <ele>1.18</ele>
+      </trkpt>
+      <trkpt lat="35.101071" lon="136.706301">
+        <ele>-0.49</ele>
+      </trkpt>
+      <trkpt lat="35.100727" lon="136.705723">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.100612" lon="136.705545">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.100418" lon="136.70528">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.100212" lon="136.705041">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.100051" lon="136.704873">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.099917" lon="136.704748">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.099625" lon="136.704514">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.099626" lon="136.704512"/>
+      <trkpt lat="35.099625" lon="136.704514">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.099206" lon="136.704231">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.098846" lon="136.704045">
+        <ele>-0.63</ele>
+      </trkpt>
+      <trkpt lat="35.098578" lon="136.703933">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.098363" lon="136.703863">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.097557" lon="136.703647">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.097557" lon="136.703647">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.09757" lon="136.70365">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.097529" lon="136.703568">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.096992" lon="136.70279">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.096943" lon="136.7027">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.096716" lon="136.702379">
+        <ele>-2</ele>
+      </trkpt>
+      <trkpt lat="35.096587" lon="136.702242">
+        <ele>-1.91</ele>
+      </trkpt>
+      <trkpt lat="35.096486" lon="136.702154">
+        <ele>-1.11</ele>
+      </trkpt>
+      <trkpt lat="35.09575" lon="136.701597">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.09574981252922" lon="136.70159836678292">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.095021" lon="136.701052"/>
+      <trkpt lat="35.095016" lon="136.701049">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.094993" lon="136.701115">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.094867" lon="136.701369">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.094697" lon="136.701622">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.094684" lon="136.701613">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.094684" lon="136.701613">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.094064" lon="136.701218">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.093532" lon="136.700986">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.093021" lon="136.700785">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.092722" lon="136.700632">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.092722" lon="136.700632">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.092698" lon="136.700595">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.092578" lon="136.700486">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.092295" lon="136.700171">
+        <ele>-0.87</ele>
+      </trkpt>
+      <trkpt lat="35.091876" lon="136.699649">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.091874" lon="136.699652">
+        <ele>0.01</ele>
+      </trkpt>
+      <trkpt lat="35.091874" lon="136.699652">
+        <ele>0.01</ele>
+      </trkpt>
+      <trkpt lat="35.091519" lon="136.700209">
+        <ele>1</ele>
+      </trkpt>
+      <trkpt lat="35.09152" lon="136.700205">
+        <ele>1</ele>
+      </trkpt>
+      <trkpt lat="35.091474" lon="136.700163">
+        <ele>0.67</ele>
+      </trkpt>
+      <trkpt lat="35.09118" lon="136.69995">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.090867" lon="136.699692">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.090667" lon="136.699515">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.090588" lon="136.699465">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.090588" lon="136.699465">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.090036" lon="136.698829">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.089964" lon="136.69879">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.089964" lon="136.698788">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.089964" lon="136.698788">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.089986" lon="136.698703">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.090137" lon="136.698458">
+        <ele>-1.16</ele>
+      </trkpt>
+      <trkpt lat="35.090156" lon="136.698401">
+        <ele>-1.18</ele>
+      </trkpt>
+      <trkpt lat="35.090153" lon="136.698346">
+        <ele>-1.08</ele>
+      </trkpt>
+      <trkpt lat="35.090144" lon="136.698314">
+        <ele>-1.02</ele>
+      </trkpt>
+      <trkpt lat="35.090094" lon="136.698248">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.089613" lon="136.697687">
+        <ele>-1</ele>
+      </trkpt>
+      <trkpt lat="35.08912073314015" lon="136.6971009462384">
+        <ele>-1.0914992568927206</ele>
+      </trkpt>
+      <trkpt lat="35.089122" lon="136.697099">
+        <ele>-1.01</ele>
+      </trkpt>
+      <trkpt lat="35.088537" lon="136.696406">
+        <ele>-1.2</ele>
+      </trkpt>
+      <trkpt lat="35.088072" lon="136.695888">
+        <ele>0.49</ele>
+      </trkpt>
+      <trkpt lat="35.088062" lon="136.695898">
+        <ele>0.47</ele>
+      </trkpt>
+      <trkpt lat="35.088062" lon="136.695898">
+        <ele>0.47</ele>
+      </trkpt>
+      <trkpt lat="35.088012" lon="136.695947">
+        <ele>0.36</ele>
+      </trkpt>
+      <trkpt lat="35.087703" lon="136.696419">
+        <ele>0.95</ele>
+      </trkpt>
+      <trkpt lat="35.087697" lon="136.696417">
+        <ele>0.95</ele>
+      </trkpt>
+      <trkpt lat="35.087697" lon="136.696417">
+        <ele>0.95</ele>
+      </trkpt>
+      <trkpt lat="35.087408" lon="136.696332">
+        <ele>0.78</ele>
+      </trkpt>
+      <trkpt lat="35.086613" lon="136.696055">
+        <ele>1.11</ele>
+      </trkpt>
+      <trkpt lat="35.086607" lon="136.69606">
+        <ele>1.11</ele>
+      </trkpt>
+      <trkpt lat="35.086607" lon="136.69606">
+        <ele>1.11</ele>
+      </trkpt>
+      <trkpt lat="35.086225" lon="136.696336">
+        <ele>0.96</ele>
+      </trkpt>
+      <trkpt lat="35.086078" lon="136.696462">
+        <ele>0.95</ele>
+      </trkpt>
+      <trkpt lat="35.086078" lon="136.696462">
+        <ele>0.95</ele>
+      </trkpt>
+      <trkpt lat="35.086058" lon="136.696479">
+        <ele>0.97</ele>
+      </trkpt>
+      <trkpt lat="35.085607" lon="136.696867">
+        <ele>0.7</ele>
+      </trkpt>
+      <trkpt lat="35.085593" lon="136.696888">
+        <ele>0.65</ele>
+      </trkpt>
+      <trkpt lat="35.085593" lon="136.696888">
+        <ele>0.65</ele>
+      </trkpt>
+      <trkpt lat="35.085502" lon="136.69702">
+        <ele>0.34</ele>
+      </trkpt>
+      <trkpt lat="35.08529" lon="136.697194">
+        <ele>0.38</ele>
+      </trkpt>
+      <trkpt lat="35.085167" lon="136.697285">
+        <ele>1.14</ele>
+      </trkpt>
+      <trkpt lat="35.085074" lon="136.697308">
+        <ele>1.8</ele>
+      </trkpt>
+      <trkpt lat="35.08507" lon="136.697316">
+        <ele>1.83</ele>
+      </trkpt>
+      <trkpt lat="35.08507" lon="136.697316">
+        <ele>1.83</ele>
+      </trkpt>
+      <trkpt lat="35.085015" lon="136.697425">
+        <ele>2.23</ele>
+      </trkpt>
+      <trkpt lat="35.084996" lon="136.697552">
+        <ele>2.36</ele>
+      </trkpt>
+      <trkpt lat="35.084969" lon="136.697562">
+        <ele>2.55</ele>
+      </trkpt>
+      <trkpt lat="35.084969" lon="136.697562">
+        <ele>2.55</ele>
+      </trkpt>
+      <trkpt lat="35.084951" lon="136.697569">
+        <ele>2.67</ele>
+      </trkpt>
+      <trkpt lat="35.084742" lon="136.697735">
+        <ele>3.29</ele>
+      </trkpt>
+      <trkpt lat="35.084741" lon="136.697732">
+        <ele>3.29</ele>
+      </trkpt>
+      <trkpt lat="35.08455562282315" lon="136.69739903557365">
+        <ele>3.272137935186527</ele>
+      </trkpt>
+      <trkpt lat="35.08403932618405" lon="136.69647169156514">
+        <ele>3.222389895536978</ele>
+      </trkpt>
+      <trkpt lat="35.08142" lon="136.691767">
+        <ele>2.97</ele>
+      </trkpt>
+      <trkpt lat="35.081472" lon="136.691733">
+        <ele>2.95</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,3125 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "a-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.774533,
+          35.684112
+        ]
+      },
+      "properties": {
+        "id": "a-001",
+        "titleJa": "日本橋",
+        "title": "Nihonbashi",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 0,
+        "alongKm": 0,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.743851,
+          35.618294
+        ]
+      },
+      "properties": {
+        "id": "a-002",
+        "titleJa": "品川宿",
+        "title": "Shinagawa-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 1,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 32,
+        "alongKm": 8.692,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.70836,
+          35.535981
+        ]
+      },
+      "properties": {
+        "id": "a-003",
+        "titleJa": "六郷橋",
+        "title": "Rokugobashi",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 109,
+        "alongKm": 18.714,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.691715,
+          35.52346
+        ]
+      },
+      "properties": {
+        "id": "a-004",
+        "titleJa": "八丁畷駅",
+        "title": "Hatchonawate Station",
+        "romanised": true,
+        "kind": "rail",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 127,
+        "alongKm": 20.908,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.631644,
+          35.47137
+        ]
+      },
+      "properties": {
+        "id": "a-005",
+        "titleJa": "神奈川宿",
+        "title": "Kanagawa-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 3,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 183,
+        "alongKm": 29.45,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.603196,
+          35.453906
+        ]
+      },
+      "properties": {
+        "id": "a-006",
+        "titleJa": "天王町駅",
+        "title": "Tennocho Station",
+        "romanised": true,
+        "kind": "rail",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 226,
+        "alongKm": 33.079,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.595461,
+          35.444073
+        ]
+      },
+      "properties": {
+        "id": "a-007",
+        "titleJa": "保土ヶ谷宿",
+        "title": "Hodogaya-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 4,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 234,
+        "alongKm": 34.387,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.53134,
+          35.399969
+        ]
+      },
+      "properties": {
+        "id": "a-008",
+        "titleJa": "戸塚宿",
+        "title": "Totsuka-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 5,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 371,
+        "alongKm": 43.539,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.487078,
+          35.346535
+        ]
+      },
+      "properties": {
+        "id": "a-009",
+        "titleJa": "藤沢宿交流館",
+        "title": "Fujisawa-juku Koryukan",
+        "romanised": true,
+        "kind": "landmark",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 436,
+        "alongKm": 51.174,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.482368,
+          35.347729
+        ]
+      },
+      "properties": {
+        "id": "a-010",
+        "titleJa": "藤沢宿",
+        "title": "Fujisawa-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 6,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 441,
+        "alongKm": 51.664,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.365735,
+          35.331705
+        ]
+      },
+      "properties": {
+        "id": "a-011",
+        "titleJa": "馬入橋",
+        "title": "Banyubashi",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 531,
+        "alongKm": 63.169,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.337711,
+          35.327424
+        ]
+      },
+      "properties": {
+        "id": "a-012",
+        "titleJa": "平塚宿",
+        "title": "Hiratsuka-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 7,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 544,
+        "alongKm": 65.779,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.314934,
+          35.30845
+        ]
+      },
+      "properties": {
+        "id": "a-013",
+        "titleJa": "大磯宿",
+        "title": "Oiso-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 8,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 581,
+        "alongKm": 68.876,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.239661,
+          35.291073
+        ]
+      },
+      "properties": {
+        "id": "a-014",
+        "titleJa": "松屋本陣",
+        "title": "Matsuya Honjin",
+        "romanised": true,
+        "kind": "landmark",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 645,
+        "alongKm": 76.323,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.212651,
+          35.280134
+        ]
+      },
+      "properties": {
+        "id": "a-015",
+        "titleJa": "国府津駅前",
+        "title": "Outside Kozu Station",
+        "romanised": true,
+        "kind": "rail",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 669,
+        "alongKm": 79.11,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.16001,
+          35.248449
+        ]
+      },
+      "properties": {
+        "id": "a-016",
+        "titleJa": "小田原宿",
+        "title": "Odawara-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 9,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 712,
+        "alongKm": 85.381,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.108533,
+          35.23308
+        ]
+      },
+      "properties": {
+        "id": "a-017",
+        "titleJa": "三枚橋",
+        "title": "Sanmaibashi",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 780,
+        "alongKm": 90.862,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-018",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.065912,
+          35.215431
+        ]
+      },
+      "properties": {
+        "id": "a-018",
+        "titleJa": "大澤坂入口",
+        "title": "Osawa-zaka entrance",
+        "romanised": true,
+        "kind": "landmark",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 889,
+        "alongKm": 95.857,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.063847,
+          35.213298
+        ]
+      },
+      "properties": {
+        "id": "a-019",
+        "titleJa": "畑宿本陣",
+        "title": "Hatajuku Honjin",
+        "romanised": true,
+        "kind": "landmark",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 926,
+        "alongKm": 96.308,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.058669,
+          35.20878
+        ]
+      },
+      "properties": {
+        "id": "a-020",
+        "titleJa": "七曲り",
+        "title": "Nanamagari (the seven bends)",
+        "romanised": true,
+        "kind": "landmark",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1025,
+        "alongKm": 97.517,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.02637,
+          35.192307
+        ]
+      },
+      "properties": {
+        "id": "a-021",
+        "titleJa": "箱根関所",
+        "title": "Hakone Sekisho (checkpoint)",
+        "romanised": true,
+        "kind": "checkpoint",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1293,
+        "alongKm": 102.095,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.919228,
+          35.120154
+        ]
+      },
+      "properties": {
+        "id": "a-022",
+        "titleJa": "三島大社",
+        "title": "Mishima Taisha",
+        "romanised": true,
+        "kind": "landmark",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1546,
+        "alongKm": 116.413,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-023",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.914593,
+          35.119386
+        ]
+      },
+      "properties": {
+        "id": "a-023",
+        "titleJa": "三島宿",
+        "title": "Mishima-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 11,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1549,
+        "alongKm": 116.843,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-024",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.856802,
+          35.096448
+        ]
+      },
+      "properties": {
+        "id": "a-024",
+        "titleJa": "沼津宿",
+        "title": "Numazu-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 12,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1591,
+        "alongKm": 123.073,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-025",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.798941,
+          35.124981
+        ]
+      },
+      "properties": {
+        "id": "a-025",
+        "titleJa": "原宿",
+        "title": "Hara-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 13,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1617,
+        "alongKm": 129.701,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-026",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.683832,
+          35.163648
+        ]
+      },
+      "properties": {
+        "id": "a-026",
+        "titleJa": "吉原宿",
+        "title": "Yoshiwara-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 14,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1669,
+        "alongKm": 141.894,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-027",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.638502,
+          35.157833
+        ]
+      },
+      "properties": {
+        "id": "a-027",
+        "titleJa": "柚木駅",
+        "title": "Yunoki Station",
+        "romanised": true,
+        "kind": "rail",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1724,
+        "alongKm": 146.675,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-028",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.622795,
+          35.154749
+        ]
+      },
+      "properties": {
+        "id": "a-028",
+        "titleJa": "富士川橋",
+        "title": "Fujikawa Bridge",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1738,
+        "alongKm": 148.22,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-029",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.605661,
+          35.120132
+        ]
+      },
+      "properties": {
+        "id": "a-029",
+        "titleJa": "蒲原宿",
+        "title": "Kanbara-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 15,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1807,
+        "alongKm": 153.453,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-030",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.566984,
+          35.107279
+        ]
+      },
+      "properties": {
+        "id": "a-030",
+        "titleJa": "由比宿",
+        "title": "Yui-shuku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 16,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1834,
+        "alongKm": 157.432,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-031",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.551846,
+          35.096316
+        ]
+      },
+      "properties": {
+        "id": "a-031",
+        "titleJa": "由比駅",
+        "title": "Yui Station",
+        "romanised": true,
+        "kind": "rail",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1847,
+        "alongKm": 159.342,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-032",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.541353,
+          35.07147
+        ]
+      },
+      "properties": {
+        "id": "a-032",
+        "titleJa": "薩埵峠",
+        "title": "Satta Pass",
+        "romanised": true,
+        "kind": "pass",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1905,
+        "alongKm": 162.473,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-033",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.53278,
+          35.058553
+        ]
+      },
+      "properties": {
+        "id": "a-033",
+        "titleJa": "浦安橋",
+        "title": "Urayasu Bridge",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1939,
+        "alongKm": 165.104,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-034",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.518913,
+          35.049476
+        ]
+      },
+      "properties": {
+        "id": "a-034",
+        "titleJa": "興津宿",
+        "title": "Okitsu-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 17,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1955,
+        "alongKm": 166.895,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-035",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.481529,
+          35.019673
+        ]
+      },
+      "properties": {
+        "id": "a-035",
+        "titleJa": "江尻宿",
+        "title": "Ejiri-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 18,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2002,
+        "alongKm": 172.46,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-036",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.443629,
+          35.001175
+        ]
+      },
+      "properties": {
+        "id": "a-036",
+        "titleJa": "草薙駅前",
+        "title": "Outside Kusanagi Station",
+        "romanised": true,
+        "kind": "rail",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2029,
+        "alongKm": 176.732,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-037",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.389652,
+          34.975329
+        ]
+      },
+      "properties": {
+        "id": "a-037",
+        "titleJa": "府中宿",
+        "title": "Fuchu-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 19,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2096,
+        "alongKm": 183.282,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-038",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.365754,
+          34.958031
+        ]
+      },
+      "properties": {
+        "id": "a-038",
+        "titleJa": "安倍川橋",
+        "title": "Abekawa Bridge",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2119,
+        "alongKm": 186.695,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-039",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.340611,
+          34.949536
+        ]
+      },
+      "properties": {
+        "id": "a-039",
+        "titleJa": "丸子宿",
+        "title": "Mariko-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 20,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2145,
+        "alongKm": 189.939,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-040",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.310114,
+          34.937707
+        ]
+      },
+      "properties": {
+        "id": "a-040",
+        "titleJa": "道の駅 宇津ノ谷峠",
+        "title": "Michi-no-Eki Utsunoya-toge",
+        "romanised": true,
+        "kind": "pass",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2216,
+        "alongKm": 193.711,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-041",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.302969,
+          34.93298
+        ]
+      },
+      "properties": {
+        "id": "a-041",
+        "titleJa": "宇津ノ谷峠",
+        "title": "Utsunoya Pass",
+        "romanised": true,
+        "kind": "pass",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2256,
+        "alongKm": 194.962,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-042",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.282412,
+          34.919178
+        ]
+      },
+      "properties": {
+        "id": "a-042",
+        "titleJa": "岡部宿",
+        "title": "Okabe-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 21,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2310,
+        "alongKm": 198.206,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-043",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.252398,
+          34.869842
+        ]
+      },
+      "properties": {
+        "id": "a-043",
+        "titleJa": "藤枝宿",
+        "title": "Fujieda-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 22,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2383,
+        "alongKm": 205.498,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-044",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.176143,
+          34.832761
+        ]
+      },
+      "properties": {
+        "id": "a-044",
+        "titleJa": "島田宿",
+        "title": "Shimada-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 23,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2458,
+        "alongKm": 214.579,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-045",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.143903,
+          34.830815
+        ]
+      },
+      "properties": {
+        "id": "a-045",
+        "titleJa": "大井川橋",
+        "title": "Oigawa Bridge",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2483,
+        "alongKm": 217.937,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-046",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.128711,
+          34.822629
+        ]
+      },
+      "properties": {
+        "id": "a-046",
+        "titleJa": "金谷宿",
+        "title": "Kanaya-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 24,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2503,
+        "alongKm": 219.965,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-047",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.096626,
+          34.815741
+        ]
+      },
+      "properties": {
+        "id": "a-047",
+        "titleJa": "小夜の中山",
+        "title": "Sayo-no-Nakayama",
+        "romanised": true,
+        "kind": "landmark",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2582,
+        "alongKm": 224.2,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-048",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.075137,
+          34.804184
+        ]
+      },
+      "properties": {
+        "id": "a-048",
+        "titleJa": "日坂宿",
+        "title": "Nissaka-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 25,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2624,
+        "alongKm": 226.992,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-049",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.016466,
+          34.772931
+        ]
+      },
+      "properties": {
+        "id": "a-049",
+        "titleJa": "掛川宿",
+        "title": "Kakegawa-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 26,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2691,
+        "alongKm": 234.797,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-050",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.922283,
+          34.74718
+        ]
+      },
+      "properties": {
+        "id": "a-050",
+        "titleJa": "袋井宿",
+        "title": "Fukuroi-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 27,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2793,
+        "alongKm": 245.18,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-051",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.857561,
+          34.726915
+        ]
+      },
+      "properties": {
+        "id": "a-051",
+        "titleJa": "見附宿",
+        "title": "Mitsuke-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 28,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2860,
+        "alongKm": 251.834,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-052",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.811052,
+          34.728308
+        ]
+      },
+      "properties": {
+        "id": "a-052",
+        "titleJa": "天竜川橋",
+        "title": "Tenryugawa Bridge",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2919,
+        "alongKm": 260.782,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-053",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.728579,
+          34.705158
+        ]
+      },
+      "properties": {
+        "id": "a-053",
+        "titleJa": "浜松宿",
+        "title": "Hamamatsu-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 29,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2964,
+        "alongKm": 269.589,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-054",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.609859,
+          34.684556
+        ]
+      },
+      "properties": {
+        "id": "a-054",
+        "titleJa": "舞坂宿",
+        "title": "Maisaka-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 30,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3014,
+        "alongKm": 281.606,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-055",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.561569,
+          34.69434
+        ]
+      },
+      "properties": {
+        "id": "a-055",
+        "titleJa": "新居関所",
+        "title": "Arai Sekisho (checkpoint)",
+        "romanised": true,
+        "kind": "checkpoint",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3044,
+        "alongKm": 286.421,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-056",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.560501,
+          34.694675
+        ]
+      },
+      "properties": {
+        "id": "a-056",
+        "titleJa": "新居宿",
+        "title": "Arai-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 31,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3045,
+        "alongKm": 286.526,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-057",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.500908,
+          34.688526
+        ]
+      },
+      "properties": {
+        "id": "a-057",
+        "titleJa": "白須賀宿",
+        "title": "Shirasuka-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 32,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3109,
+        "alongKm": 293.459,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-058",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.450037,
+          34.72385
+        ]
+      },
+      "properties": {
+        "id": "a-058",
+        "titleJa": "二川宿",
+        "title": "Futagawa-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 33,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3155,
+        "alongKm": 299.909,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-059",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.433729,
+          34.730728
+        ]
+      },
+      "properties": {
+        "id": "a-059",
+        "titleJa": "岩屋緑地入口",
+        "title": "Iwaya Ryokuchi entrance",
+        "romanised": true,
+        "kind": "landmark",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3169,
+        "alongKm": 301.751,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-060",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.390235,
+          34.766453
+        ]
+      },
+      "properties": {
+        "id": "a-060",
+        "titleJa": "吉田宿",
+        "title": "Yoshida-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 34,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3206,
+        "alongKm": 308.062,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-061",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.317509,
+          34.844825
+        ]
+      },
+      "properties": {
+        "id": "a-061",
+        "titleJa": "御油宿",
+        "title": "Goyu-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 35,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3270,
+        "alongKm": 319.828,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-062",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.308052,
+          34.855897
+        ]
+      },
+      "properties": {
+        "id": "a-062",
+        "titleJa": "赤坂宿",
+        "title": "Akasaka-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 36,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3285,
+        "alongKm": 321.359,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-063",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.221727,
+          34.911322
+        ]
+      },
+      "properties": {
+        "id": "a-063",
+        "titleJa": "藤川宿",
+        "title": "Fujikawa-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 37,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3384,
+        "alongKm": 331.864,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-064",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.170524,
+          34.957525
+        ]
+      },
+      "properties": {
+        "id": "a-064",
+        "titleJa": "岡崎宿",
+        "title": "Okazaki-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 38,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3467,
+        "alongKm": 339.723,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-065",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.041462,
+          35.008724
+        ]
+      },
+      "properties": {
+        "id": "a-065",
+        "titleJa": "池鯉鮒宿",
+        "title": "Chiryu-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 39,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3581,
+        "alongKm": 354.839,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-066",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.981283,
+          35.060796
+        ]
+      },
+      "properties": {
+        "id": "a-066",
+        "titleJa": "中央競艇場前駅",
+        "title": "Chuo-Kyoteijo-mae Station",
+        "romanised": true,
+        "kind": "rail",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3666,
+        "alongKm": 363.293,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-067",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.969911,
+          35.067563
+        ]
+      },
+      "properties": {
+        "id": "a-067",
+        "titleJa": "有松重伝建地区",
+        "title": "Arimatsu preservation district",
+        "romanised": true,
+        "kind": "landmark",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3687,
+        "alongKm": 364.646,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-068",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.948845,
+          35.080747
+        ]
+      },
+      "properties": {
+        "id": "a-068",
+        "titleJa": "鳴海宿",
+        "title": "Narumi-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 40,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3710,
+        "alongKm": 367.201,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-069",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.907829,
+          35.121133
+        ]
+      },
+      "properties": {
+        "id": "a-069",
+        "titleJa": "東海道・佐屋街道分岐 (一旦七里の渡方向へ)",
+        "title": "Saya Kaido junction (on the Tokaido)",
+        "romanised": true,
+        "kind": "junction",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3776,
+        "alongKm": 374.198,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-070",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.904717,
+          35.118509
+        ]
+      },
+      "properties": {
+        "id": "a-070",
+        "titleJa": "七里の渡",
+        "title": "Shichiri-no-watashi (Miya ferry landing)",
+        "romanised": true,
+        "kind": "ferry-site",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 3786,
+        "alongKm": 374.699,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-071",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.907829,
+          35.121133
+        ]
+      },
+      "properties": {
+        "id": "a-071",
+        "titleJa": "東海道・佐屋街道分岐",
+        "title": "Saya Kaido start",
+        "romanised": true,
+        "kind": "junction",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "variant-saya",
+        "indexOnPath": 0,
+        "alongKm": 0,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-072",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.835888,
+          35.156785
+        ]
+      },
+      "properties": {
+        "id": "a-072",
+        "titleJa": "万場大橋",
+        "title": "Manba Ohashi",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "variant-saya",
+        "indexOnPath": 204,
+        "alongKm": 9.247,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-073",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.75383,
+          35.178059
+        ]
+      },
+      "properties": {
+        "id": "a-073",
+        "titleJa": "日光橋",
+        "title": "Nikko Bridge",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "variant-saya",
+        "indexOnPath": 423,
+        "alongKm": 18.669,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-074",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.7128,
+          35.104825
+        ]
+      },
+      "properties": {
+        "id": "a-074",
+        "titleJa": "尾張大橋",
+        "title": "Owari Ohashi",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "variant-saya",
+        "indexOnPath": 677,
+        "alongKm": 30.984,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-075",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.691733,
+          35.081472
+        ]
+      },
+      "properties": {
+        "id": "a-075",
+        "titleJa": "伊勢大橋",
+        "title": "Ise Ohashi",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "variant-saya",
+        "indexOnPath": 768,
+        "alongKm": 34.759,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-076",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.69654,
+          35.068212
+        ]
+      },
+      "properties": {
+        "id": "a-076",
+        "titleJa": "七里の渡跡",
+        "title": "Shichiri-no-watashi site (Kuwana landing)",
+        "romanised": true,
+        "kind": "ferry-site",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "variant-saya",
+        "indexOnPath": 801,
+        "alongKm": 36.751,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-077",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.69654,
+          35.068212
+        ]
+      },
+      "properties": {
+        "id": "a-077",
+        "titleJa": "桑名宿",
+        "title": "Kuwana-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 42,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 0,
+        "alongKm": 0,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-078",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.675662,
+          35.043762
+        ]
+      },
+      "properties": {
+        "id": "a-078",
+        "titleJa": "町屋橋",
+        "title": "Machiya Bridge",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 45,
+        "alongKm": 4.354,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-079",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.624862,
+          34.968986
+        ]
+      },
+      "properties": {
+        "id": "a-079",
+        "titleJa": "四日市宿",
+        "title": "Yokkaichi-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 43,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 367,
+        "alongKm": 15.122,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-080",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.598189,
+          34.935544
+        ]
+      },
+      "properties": {
+        "id": "a-080",
+        "titleJa": "日永追分",
+        "title": "Hinaga Oiwake",
+        "romanised": true,
+        "kind": "junction",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 492,
+        "alongKm": 20.15,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-081",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.58278,
+          34.922372
+        ]
+      },
+      "properties": {
+        "id": "a-081",
+        "titleJa": "内部橋",
+        "title": "Utsube Bridge",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 557,
+        "alongKm": 22.371,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-082",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.547721,
+          34.903333
+        ]
+      },
+      "properties": {
+        "id": "a-082",
+        "titleJa": "石薬師宿",
+        "title": "Ishiyakushi-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 44,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 684,
+        "alongKm": 26.901,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-083",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.524689,
+          34.883307
+        ]
+      },
+      "properties": {
+        "id": "a-083",
+        "titleJa": "庄野宿",
+        "title": "Shono-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 45,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 804,
+        "alongKm": 30.792,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-084",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.491839,
+          34.868266
+        ]
+      },
+      "properties": {
+        "id": "a-084",
+        "titleJa": "井田川駅",
+        "title": "Idagawa Station",
+        "romanised": true,
+        "kind": "rail",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 941,
+        "alongKm": 35.083,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-085",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.454004,
+          34.855105
+        ]
+      },
+      "properties": {
+        "id": "a-085",
+        "titleJa": "亀山宿",
+        "title": "Kameyama-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 46,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 1078,
+        "alongKm": 39.625,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-086",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.392455,
+          34.852433
+        ]
+      },
+      "properties": {
+        "id": "a-086",
+        "titleJa": "関宿",
+        "title": "Seki-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 47,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 1294,
+        "alongKm": 45.944,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-087",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.353596,
+          34.888788
+        ]
+      },
+      "properties": {
+        "id": "a-087",
+        "titleJa": "坂下宿",
+        "title": "Sakashita-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 48,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 1531,
+        "alongKm": 52.35,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-088",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.336799,
+          34.89401
+        ]
+      },
+      "properties": {
+        "id": "a-088",
+        "titleJa": "鈴鹿峠",
+        "title": "Suzuka Pass",
+        "romanised": true,
+        "kind": "pass",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 1650,
+        "alongKm": 54.479,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-089",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.282404,
+          34.934812
+        ]
+      },
+      "properties": {
+        "id": "a-089",
+        "titleJa": "土山宿",
+        "title": "Tsuchiyama-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 49,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 1928,
+        "alongKm": 62.213,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-090",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.182065,
+          34.966227
+        ]
+      },
+      "properties": {
+        "id": "a-090",
+        "titleJa": "水口宿",
+        "title": "Minakuchi-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 50,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 2307,
+        "alongKm": 73.936,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-091",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.127998,
+          34.982066
+        ]
+      },
+      "properties": {
+        "id": "a-091",
+        "titleJa": "横田渡",
+        "title": "Yokota-no-watashi",
+        "romanised": true,
+        "kind": "ferry-site",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 2400,
+        "alongKm": 79.533,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-092",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.117457,
+          34.983698
+        ]
+      },
+      "properties": {
+        "id": "a-092",
+        "titleJa": "三雲駅",
+        "title": "Mikumo Station",
+        "romanised": true,
+        "kind": "rail",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 2433,
+        "alongKm": 80.864,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-093",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.054785,
+          35.009987
+        ]
+      },
+      "properties": {
+        "id": "a-093",
+        "titleJa": "石部宿",
+        "title": "Ishibe-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 51,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 2629,
+        "alongKm": 87.562,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-094",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.960836,
+          35.018072
+        ]
+      },
+      "properties": {
+        "id": "a-094",
+        "titleJa": "中山道・東海道合流地点",
+        "title": "Nakasendo / Tokaido confluence",
+        "romanised": true,
+        "kind": "junction",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 2956,
+        "alongKm": 98.307,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-095",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.960362,
+          35.017538
+        ]
+      },
+      "properties": {
+        "id": "a-095",
+        "titleJa": "草津宿",
+        "title": "Kusatsu-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 52,
+        "nakasendoNumber": 68,
+        "pathId": "path-west",
+        "indexOnPath": 2958,
+        "alongKm": 98.381,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-096",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.904816,
+          34.973408
+        ]
+      },
+      "properties": {
+        "id": "a-096",
+        "titleJa": "瀬田の唐橋",
+        "title": "Seta-no-Karahashi",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 3154,
+        "alongKm": 106.633,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-097",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.861408,
+          35.005917
+        ]
+      },
+      "properties": {
+        "id": "a-097",
+        "titleJa": "大津宿",
+        "title": "Otsu-juku",
+        "romanised": true,
+        "kind": "post-station",
+        "stationNumber": 53,
+        "nakasendoNumber": 69,
+        "pathId": "path-west",
+        "indexOnPath": 3217,
+        "alongKm": 113.586,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-098",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.836418,
+          34.991005
+        ]
+      },
+      "properties": {
+        "id": "a-098",
+        "titleJa": "髭茶屋追分",
+        "title": "Higechaya Oiwake",
+        "romanised": true,
+        "kind": "junction",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 3267,
+        "alongKm": 117.037,
+        "source": "kevin-traced 2026-08-22 (from kaidotrail, CC BY-SA 4.0)",
+        "confidence": "medium",
+        "verification": "imported",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-099",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.772714,
+          35.009025
+        ]
+      },
+      "properties": {
+        "id": "a-099",
+        "titleJa": "三条大橋",
+        "title": "Sanjo Ohashi",
+        "romanised": true,
+        "kind": "bridge",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 3481,
+        "alongKm": 124.083,
+        "navigational": false,
+        "demonstration": false,
+        "source": "kevin-traced 2026-08-22 — route terminus",
+        "confidence": "medium",
+        "verification": "manually-traced",
+        "lastChecked": null,
+        "classification": "public"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-100",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.085008,
+          34.99228
+        ]
+      },
+      "properties": {
+        "id": "a-100",
+        "titleJa": "東栄町交差点",
+        "title": "Toeicho crossing (Shin-Anjo)",
+        "romanised": true,
+        "kind": "junction",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "edit-section-okazaki-chiryu-traced-2026-09-15",
+        "indexOnPath": 232,
+        "alongKm": 10.715,
+        "source": "Signalised crossing of the old Tokaido and the Shin-Anjo station road, taken from Kevin's 2026-09-15 retrace at the point 579 m due north of Shin-Anjo Station. Read off the map, not seen.",
+        "confidence": "medium",
+        "verification": "manually-traced",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-101",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.853967,
+          35.154935
+        ]
+      },
+      "properties": {
+        "id": "a-101",
+        "titleJa": "岩塚駅南交差点",
+        "title": "Iwatsuka Station crossing",
+        "romanised": true,
+        "kind": "junction",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "variant-saya",
+        "indexOnPath": 178,
+        "alongKm": 7.337,
+        "source": "Where the Saya Kaido crosses the road running north to Iwatsuka Station, 396 m due south of the station, taken from the shipped line on 2026-09-16. Read off the map, not seen.",
+        "confidence": "medium",
+        "verification": "manually-traced",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-102",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.668556,
+          35.03865
+        ]
+      },
+      "properties": {
+        "id": "a-102",
+        "titleJa": "伊勢朝日駅前",
+        "title": "Outside Ise-Asahi Station",
+        "romanised": true,
+        "kind": "rail",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 83,
+        "alongKm": 5.353,
+        "source": "Where the Tokaido passes Ise-Asahi Station on the Kintetsu Nagoya Line, about 55 m north of the platform. Taken from the shipped line on 2026-09-16; this section is traced at 31 m spacing, so the distance is geometry rather than a cut corner. Read off the map, not seen.",
+        "confidence": "medium",
+        "verification": "manually-traced",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-103",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.080429,
+          34.998363
+        ]
+      },
+      "properties": {
+        "id": "a-103",
+        "titleJa": "甲西駅前",
+        "title": "Outside Kosei Station",
+        "romanised": true,
+        "kind": "rail",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 2565,
+        "alongKm": 84.84,
+        "source": "Where the Tokaido passes Kosei Station on the JR Kusatsu Line, about 306 m from the platform, between Mikumo and Ishibe. Taken from the shipped line on 2026-09-16. Read off the map, not seen.",
+        "confidence": "medium",
+        "verification": "manually-traced",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-104",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.413014,
+          34.854927
+        ]
+      },
+      "properties": {
+        "id": "a-104",
+        "titleJa": "小野町",
+        "title": "Ono-cho, Kameyama",
+        "romanised": true,
+        "kind": "landmark",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-west",
+        "indexOnPath": 1233,
+        "alongKm": 43.832,
+        "source": "Point on the Tokaido in Ono-cho, Kameyama, between Kameyama-juku and Seki-juku near the Route 1 / Route 25 interchange. Chosen 2026-09-16 as a Walk 13 finish because lodging sits within 300 m of the road here. Read off the map, not seen.",
+        "confidence": "medium",
+        "verification": "manually-traced",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    }
+  ]
+}
