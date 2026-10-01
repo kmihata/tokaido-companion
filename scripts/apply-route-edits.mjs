@@ -43,6 +43,40 @@ if (payload.appliesToRouteDataVersion !== meta.dataVersion) {
 }
 
 const anchors = JSON.parse(readFileSync(join(DATA, 'anchors.geojson'), 'utf8')).features;
+
+/**
+ * The Japanese labels of the anchors each walking day ends at, read out of
+ * src/lib/dayPlan.ts rather than copied.
+ *
+ * Copying it is what this guard exists to prevent. DEFAULT_DAY_END_ANCHORS was
+ * one of four places the same fact lived, and the only one nobody updated when
+ * endpoints moved through September; by 2026-10-01 it still named Nissaka and
+ * Hamamatsu for days that had ended elsewhere for a week. A second copy here
+ * would rot the same way and the guard would then protect the wrong anchors.
+ *
+ * This is a regex over TypeScript, which is ugly. It is tolerable only because
+ * it fails loudly: too few matches and the script stops rather than running a
+ * guard that silently checks nothing.
+ */
+const DAY_END_TITLES_JA = (() => {
+  const src = readFileSync(
+    join(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'lib', 'dayPlan.ts'),
+    'utf8',
+  );
+  const start = src.indexOf('DEFAULT_DAY_END_ANCHORS');
+  const end = src.indexOf('\n};', start);
+  if (start < 0 || end < 0) {
+    console.error('Cannot find DEFAULT_DAY_END_ANCHORS in src/lib/dayPlan.ts.');
+    console.error('The day-end guard would check nothing, so this is fatal rather than skipped.');
+    process.exit(1);
+  }
+  const found = [...src.slice(start, end).matchAll(/titleJa:\s*'([^']+)'/g)].map((m) => m[1]);
+  if (found.length < 10) {
+    console.error(`Only parsed ${found.length} day-end anchors from dayPlan.ts; expected every walking day.`);
+    process.exit(1);
+  }
+  return found;
+})();
 const anchorOf = (id) => anchors.find((a) => a.properties.id === id);
 const variantIds = new Set(meta.variants.map((v) => v.id));
 
@@ -83,6 +117,59 @@ for (const e of payload.edits) {
   if (meta.variants.some((v) => v.id === e.id)) {
     console.log(`skip ${e.id} — already present`);
     continue;
+  }
+
+  // ---- A day end must not be swallowed by the span an edit replaces --------
+  //
+  // A replace-section edit takes the road between its two anchors out of the
+  // active route. Anything strictly inside that span goes with it. For most
+  // anchors that is a normal route decision — the Hakone hybrid line
+  // deliberately bypasses the Nanamagari switchbacks. For a DAY END it is not:
+  // `buildDefaultDayPlans` can no longer find the anchor, falls back to an even
+  // division of what remains, and the day silently becomes a different length.
+  // Day 4 would go from 15.5 km to 34.6 and nothing would say so.
+  //
+  // Four day ends sit mid-section rather than at a post station — the Lake Ashi
+  // shore, the two hotel-adjacent points at Fuji and Shizuoka, and Iwata — and
+  // those are exactly the ones a wider edit could step over. Sections exported
+  // from the desk run between ADJACENT anchors and cannot do this; a hand-built
+  // edit spanning several anchors can.
+  //
+  // Refuse rather than re-project. Where the day should end is a decision made
+  // against a paid booking, not a geometry problem to solve automatically.
+  {
+    const dayEnds = new Set(DAY_END_TITLES_JA);
+    const a0 = anchorOf(e.divergeAnchorId);
+    const a1 = e.rejoinAnchorId ? anchorOf(e.rejoinAnchorId) : null;
+    if (a0 && a1 && a0.properties.pathId === a1.properties.pathId) {
+      const lo = Math.min(a0.properties.indexOnPath, a1.properties.indexOnPath);
+      const hi = Math.max(a0.properties.indexOnPath, a1.properties.indexOnPath);
+      const swallowed = anchors.filter(
+        (a) =>
+          a.properties.pathId === a0.properties.pathId &&
+          a.properties.indexOnPath > lo &&
+          a.properties.indexOnPath < hi &&
+          dayEnds.has(a.properties.titleJa),
+      );
+      if (swallowed.length > 0) {
+        console.error(`\nRefusing to bake ${e.label}.`);
+        for (const a of swallowed) {
+          console.error(
+            `  It replaces the road through ${a.properties.title} (${a.properties.titleJa}), which is where a walking day ends.`,
+          );
+        }
+        console.error(
+          '  Baking it would drop that anchor from the active route, and the day planner would',
+        );
+        console.error(
+          '  quietly fall back to an even division instead of the planned distance.',
+        );
+        console.error(
+          '  Split the edit at the day end and bake the two halves, or move the day end first.',
+        );
+        process.exit(1);
+      }
+    }
   }
 
   // An edit whose two ends both lie on an existing VARIANT is an edit TO that
