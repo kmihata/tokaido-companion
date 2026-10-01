@@ -65,7 +65,8 @@
       ],
       "hiroshigeRefIds": [
         "hr-nihonbashi",
-        "hr-shinagawa"
+        "hr-shinagawa",
+        "hr-kawasaki"
       ],
       "safetyNotes": [
         "Urban traffic and crowding, not exposure. The real risk today is doing more than 17.7 km because it feels easy.",
@@ -87,8 +88,8 @@
       "to": "Kawasaki-juku",
       "fromWaypointId": "wp-start-d1",
       "toWaypointId": "wp-end-d1",
-      "nominalDistanceKm": 17.7,
-      "likelyDoorToDoorKm": 19.5,
+      "nominalDistanceKm": 21.4,
+      "likelyDoorToDoorKm": 22.5,
       "terrain": "Continuous urban pavement. Negligible elevation.",
       "elevationWarning": null,
       "startLightGuidance": "Start at first light if the body offers it. Tokyo is sixteen hours ahead of Seattle, so on the first morning 06:00 here reads as early afternoon at home: alert, and the crash comes at about 15:00 local. Thirteen miles started at 06:30 finishes inside that window. This is the one day the jet lag is an asset, and it is gone by Walk 3.",
@@ -144,10 +145,10 @@
       ],
       "editorialPrompts": [],
       "hiroshigeRefIds": [
-        "hr-kawasaki",
         "hr-kanagawa",
         "hr-hodogaya",
-        "hr-totsuka"
+        "hr-totsuka",
+        "hr-fujisawa"
       ],
       "safetyNotes": [],
       "verificationTasks": [],
@@ -161,8 +162,8 @@
       "plan": "Kawasaki → Kanagawa → Hodogaya → Totsuka → Fujisawa-juku.",
       "from": "Kawasaki-juku",
       "to": "Fujisawa-juku",
-      "nominalDistanceKm": 31.4,
-      "likelyDoorToDoorKm": 34,
+      "nominalDistanceKm": 30.8,
+      "likelyDoorToDoorKm": 31.6,
       "terrain": "Urban pavement throughout.",
       "railRedundancy": "high",
       "sleepBase": "Fujisawa",
@@ -182,9 +183,9 @@
       ],
       "editorialPrompts": [],
       "hiroshigeRefIds": [
-        "hr-fujisawa",
         "hr-hiratsuka",
-        "hr-oiso"
+        "hr-oiso",
+        "hr-odawara"
       ],
       "safetyNotes": [
         "Arriving at Odawara tired is a legitimate reason to spend a recovery token here rather than start Hakone short of sleep."
@@ -200,8 +201,8 @@
       "plan": "Fujisawa → Hiratsuka → Oiso → Odawara-juku.",
       "from": "Fujisawa-juku",
       "to": "Odawara-juku",
-      "nominalDistanceKm": 32.4,
-      "likelyDoorToDoorKm": 34.5,
+      "nominalDistanceKm": 33.9,
+      "likelyDoorToDoorKm": 34.6,
       "terrain": "Coastal pavement, mild grades.",
       "railRedundancy": "high",
       "sleepBase": "Odawara",
@@ -230,9 +231,7 @@
         "Which road counts. The hybrid line trades exact Edo alignment for an older road and less traffic — that trade is the subject, not a failure of continuity.",
         "The checkpoint: permission, status, and controlled movement."
       ],
-      "hiroshigeRefIds": [
-        "hr-odawara"
-      ],
+      "hiroshigeRefIds": [],
       "safetyNotes": [
         "Hakone Pass IC on the west slope: Route 1, Hakone Shindo, the old-road approaches and the Ashinoko Skyline access converge. The pedestrian margin is green paint on a highway shoulder. There is no curb and no barrier. Paint is not protection.",
         "Published accounts describe several hundred metres of Route 1 without sidewalk plus an unprotected crossing near the Hakone Shindo merge.",
@@ -285,7 +284,8 @@
         "hr-hakone",
         "hr-mishima",
         "hr-numazu",
-        "hr-hara"
+        "hr-hara",
+        "hr-yoshiwara"
       ],
       "safetyNotes": [],
       "verificationTasks": [],
@@ -327,11 +327,11 @@
         "Satta Pass is the one view on the route that is still composed the way Hiroshige composed it — sea, road, and Fuji stacked in one frame."
       ],
       "hiroshigeRefIds": [
-        "hr-yoshiwara",
         "hr-kanbara",
         "hr-yui",
         "hr-okitsu",
-        "hr-ejiri"
+        "hr-ejiri",
+        "hr-fuchu"
       ],
       "safetyNotes": [],
       "verificationTasks": [
@@ -382,10 +382,10 @@
         "The Oi was unbridged by policy, not by engineering limits. The modern crossing is a different kind of decision about who may move."
       ],
       "hiroshigeRefIds": [
-        "hr-fuchu",
         "hr-mariko",
         "hr-okabe",
-        "hr-fujieda"
+        "hr-fujieda",
+        "hr-shimada"
       ],
       "safetyNotes": [
         "Utsunoya: repair work is scheduled during FY2026. Confirm the tunnel is open as a walking route shortly before the crossing."
@@ -431,11 +431,11 @@
       ],
       "editorialPrompts": [],
       "hiroshigeRefIds": [
-        "hr-shimada",
         "hr-kanaya",
         "hr-nissaka",
         "hr-kakegawa",
-        "hr-fukuroi"
+        "hr-fukuroi",
+        "hr-mitsuke"
       ],
       "safetyNotes": [],
       "verificationTasks": [
@@ -477,7 +477,7 @@
       ],
       "editorialPrompts": [],
       "hiroshigeRefIds": [
-        "hr-mitsuke"
+        "hr-hamamatsu"
       ],
       "safetyNotes": [],
       "verificationTasks": [
@@ -520,11 +520,11 @@
         "Imagire/Arai was a water gap and a checkpoint. The bridge replaced the ferry; ask what else it replaced."
       ],
       "hiroshigeRefIds": [
-        "hr-hamamatsu",
         "hr-maisaka",
         "hr-arai",
         "hr-shirasuka",
-        "hr-futagawa"
+        "hr-futagawa",
+        "hr-yoshida"
       ],
       "safetyNotes": [
         "Verify pedestrian routing and legality across the Hamanako bridges before committing to the day."
@@ -567,10 +567,10 @@
       ],
       "editorialPrompts": [],
       "hiroshigeRefIds": [
-        "hr-yoshida",
         "hr-goyu",
         "hr-akasaka",
-        "hr-fujikawa"
+        "hr-fujikawa",
+        "hr-okazaki"
       ],
       "safetyNotes": [],
       "verificationTasks": [],
@@ -584,8 +584,8 @@
       "plan": "Toyohashi → Goyu → Akasaka → Fujikawa → Okazaki → Toeicho crossing (Shin-Anjo).",
       "from": "Yoshida-juku (Toyohashi)",
       "to": "Toeicho crossing (Shin-Anjo)",
-      "nominalDistanceKm": 27.5,
-      "likelyDoorToDoorKm": 29,
+      "nominalDistanceKm": 42.7,
+      "likelyDoorToDoorKm": 43.3,
       "terrain": "Rolling pavement.",
       "railRedundancy": "high",
       "sleepBase": "Shin-Anjo",
@@ -611,8 +611,9 @@
         "Route 1, the rail line, the expressway and the old road occupy one corridor. Several Tokaidos, one strip of ground."
       ],
       "hiroshigeRefIds": [
-        "hr-okazaki",
-        "hr-chiryu"
+        "hr-chiryu",
+        "hr-narumi",
+        "hr-miya"
       ],
       "safetyNotes": [],
       "verificationTasks": [
@@ -629,8 +630,8 @@
       "plan": "Shin-Anjo → Chiryu → Narumi → Miya/Atsuta → Saya Kaido → Iwatsuka Station crossing.",
       "from": "Toeicho crossing (Shin-Anjo)",
       "to": "Iwatsuka Station crossing",
-      "nominalDistanceKm": 32.6,
-      "likelyDoorToDoorKm": 34.5,
+      "nominalDistanceKm": 31.3,
+      "likelyDoorToDoorKm": 31.7,
       "terrain": "Continuous urban corridor.",
       "railRedundancy": "high",
       "sleepBase": "Nagoya / Atsuta",
@@ -682,9 +683,8 @@
         "Many contemporary walkers take a train between the preserved ferry sites. That is a legible choice, not a failure — but it should be made deliberately."
       ],
       "hiroshigeRefIds": [
-        "hr-narumi",
-        "hr-miya",
-        "hr-kuwana"
+        "hr-kuwana",
+        "hr-yokkaichi"
       ],
       "safetyNotes": [
         "The 40.2 km figure is the HISTORICAL equivalent: 27.5 km of it is the Seven-ri sea crossing, which no ordinary ferry now reproduces. The safe modern walking line is a different and unmeasured distance.",
@@ -704,8 +704,8 @@
       "plan": "Iwatsuka Station crossing → Manba Ohashi → modern Kiso Three Rivers substitute → Kuwana-juku → Machiya Bridge → Outside Ise-Asahi Station.",
       "from": "Iwatsuka Station crossing",
       "to": "Outside Ise-Asahi Station",
-      "nominalDistanceKm": 40.2,
-      "likelyDoorToDoorKm": null,
+      "nominalDistanceKm": 34.8,
+      "likelyDoorToDoorKm": 35,
       "terrain": "Unresolved. Depends entirely on which crossing is chosen.",
       "elevationWarning": null,
       "startLightGuidance": "Do not start this day without having settled the crossing decision in advance. It opens with a twenty-minute subway ride out from Kanayama and the 1.91 km to Manba Ohashi that Walk 11 deliberately left behind, so the first hour is easy and the unknowns are all later.",
@@ -731,10 +731,12 @@
       ],
       "editorialPrompts": [],
       "hiroshigeRefIds": [
-        "hr-yokkaichi",
         "hr-ishiyakushi",
         "hr-shono",
-        "hr-kameyama"
+        "hr-kameyama",
+        "hr-seki",
+        "hr-sakashita",
+        "hr-tsuchiyama"
       ],
       "safetyNotes": [
         "Last day with reasonable rail before Suzuka. Sort out tomorrow’s weather decision tonight, not in the morning — though note that KONAN-01 stops being cancellable at midnight entering Nov 4, so the real decision point is the night of Nov 3, in Kuwana, on a two-day forecast.",
@@ -751,8 +753,8 @@
       "plan": "Outside Ise-Asahi Station → Yokkaichi → Ishiyakushi → Shono → Kameyama-juku → Ono-cho.",
       "from": "Outside Ise-Asahi Station",
       "to": "Ono-cho, Kameyama",
-      "nominalDistanceKm": 33.8,
-      "likelyDoorToDoorKm": 36,
+      "nominalDistanceKm": 38.5,
+      "likelyDoorToDoorKm": 38.8,
       "terrain": "Gradual climb toward the Suzuka approach.",
       "railRedundancy": "moderate",
       "sleepBase": "Ono-cho, Kameyama",
@@ -779,10 +781,9 @@
         "Direction matters. On the 2018 walk this was a descent from the Shiga side. It will not be the same pass."
       ],
       "hiroshigeRefIds": [
-        "hr-seki",
-        "hr-sakashita",
-        "hr-tsuchiyama",
-        "hr-minakuchi"
+        "hr-minakuchi",
+        "hr-ishibe",
+        "hr-kusatsu"
       ],
       "safetyNotes": [
         "Modern Route 1 runs through the Suzuka Tunnel below the pass; the old road climbs over the saddle as part of the Tokai Nature Trail. Those are different lines with different exposure.",
@@ -804,8 +805,8 @@
       "plan": "Ono-cho → Seki → Sakashita → Suzuka Pass → Tsuchiyama → Minakuchi → Mikumo → Outside Kosei Station.",
       "from": "Ono-cho, Kameyama",
       "to": "Outside Kosei Station",
-      "nominalDistanceKm": 34.1,
-      "likelyDoorToDoorKm": 36.5,
+      "nominalDistanceKm": 41,
+      "likelyDoorToDoorKm": 41.7,
       "terrain": "Forested Mie-side ascent to roughly 378 m, then the gentler Shiga-side descent.",
       "elevationWarning": "Modest in absolute height, but exposed, cool, and windy, and the Mie-side approach feels remote. Walking Tokyo-to-Kyoto makes the steep side the ascent.",
       "startLightGuidance": "First-light start and an explicit weather gate, and for once nothing stands between the bed and the road: the night before ends 274 m off the Tokaido, so the start time is yours. This day carries the 6.6 mi from Ono-cho through Seki up to Sakashita as its opening, and the pass falls about a quarter of the way into 25.5 mi. Climb it early; the approach is the warm-up, not an extra.",
@@ -832,9 +833,8 @@
         "The road begins and ends on bridges over rivers."
       ],
       "hiroshigeRefIds": [
-        "hr-ishibe",
-        "hr-kusatsu",
-        "hr-otsu"
+        "hr-otsu",
+        "hr-sanjoohashi"
       ],
       "safetyNotes": [],
       "verificationTasks": [],
@@ -848,8 +848,8 @@
       "plan": "Outside Kosei Station → Ishibe → Kusatsu → Otsu → Sanjo Ohashi, Kyoto.",
       "from": "Outside Kosei Station",
       "to": "Sanjo Ohashi, Kyoto",
-      "nominalDistanceKm": 38,
-      "likelyDoorToDoorKm": 40,
+      "nominalDistanceKm": 39.3,
+      "likelyDoorToDoorKm": 40.8,
       "terrain": "Long approach along Biwa, then the final climb into Kyoto.",
       "railRedundancy": "high",
       "sleepBase": "Kyoto",
