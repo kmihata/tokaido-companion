@@ -61,10 +61,15 @@ describe('anchorAlongKm', () => {
 
 describe('buildDefaultDayPlans', () => {
   it('produces one plan per walking day, in order', () => {
-    expect(defaults).toHaveLength(15);
-    expect(defaults.map((p) => p.walkingDayNumber)).toEqual(
-      Array.from({ length: 15 }, (_, i) => i + 1),
-    );
+    // Sixteen days with walking, fifteen numbered stages. Walk 8b has no
+    // number — it is the half day the Shimada split carved out of a recovery
+    // day — and until 2026-10-01 this builder keyed off the stage number, so
+    // 8b was skipped entirely and its 15.8 km was handed to the day after it.
+    const walks = days.filter((d) => d.kind === 'walk');
+    expect(defaults).toHaveLength(walks.length);
+    expect(defaults.map((p) => p.dayId)).toEqual(walks.map((d) => d.id));
+    const numbered = defaults.map((p) => p.walkingDayNumber).filter((n) => n !== null);
+    expect(numbered).toEqual(Array.from({ length: 15 }, (_, i) => i + 1));
   });
 
   it('ends every day further along than the one before', () => {

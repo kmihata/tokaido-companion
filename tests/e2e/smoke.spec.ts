@@ -336,9 +336,25 @@ test.describe('planning the days', () => {
   test('measures every day on the route and flags the ones past the threshold', async ({ page }) => {
     await page.goto('./#/plan');
     await expect(page.getByRole('heading', { name: 'Plan the days' })).toBeVisible();
-    await expect(page.getByTestId('plan-days').locator('> li')).toHaveCount(15);
+    // Sixteen rows, not fifteen: Walk 8b is a walking day without a stage
+    // number, and until 2026-10-01 the planner keyed off the number and skipped
+    // it, handing its 15.8 km to the day after. The count is derived from the
+    // shipped days rather than written here, so adding or removing a day is a
+    // data change and not a test change.
+    const walkingDays = (
+      JSON.parse(readFileSync('public/data/days.json', 'utf8')) as {
+        days: { kind: string }[];
+      }
+    ).days.filter((d) => d.kind === 'walk').length;
+    await expect(page.getByTestId('plan-days').locator('> li')).toHaveCount(walkingDays);
     await expect(page.getByTestId('plan-total')).toContainText(/53[0-9]\.\d km/);
-    await expect(page.getByTestId('plan-mean')).toContainText(/3[45]\.\d km/);
+    // The mean fell when the sixteenth day joined: the same road over one more
+    // day. Assert it against the total rather than a literal band.
+    const totalText = (await page.getByTestId('plan-total').textContent()) ?? '';
+    const total = Number(/([\d.]+) km/.exec(totalText)?.[1] ?? 0);
+    const meanText = (await page.getByTestId('plan-mean').textContent()) ?? '';
+    const mean = Number(/([\d.]+) km/.exec(meanText)?.[1] ?? 0);
+    expect(Math.abs(mean - total / walkingDays)).toBeLessThan(0.3);
 
     // Day 12 walked the Saya Kaido in one 51 km push until Walk 11 was extended
     // to Manba Ohashi on 2026-09-13; it is now 42.4. What this screen has to do

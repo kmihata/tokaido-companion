@@ -192,7 +192,10 @@ function DayControls({
     <div style={{ borderTop: '1px solid var(--border)', marginTop: 10, paddingTop: 10 }}>
       {isLast ? (
         <p className="small muted">
-          The last day ends where the route ends. Move day {leg.plan.walkingDayNumber - 1} instead.
+          The last day ends where the route ends.{' '}
+          {leg.plan.walkingDayNumber !== null
+            ? `Move day ${leg.plan.walkingDayNumber - 1} instead.`
+            : 'Move the day before it instead.'}
         </p>
       ) : (
         <div className="field">
@@ -222,8 +225,12 @@ function DayControls({
               const nextDay = nextLeg ? nextLeg.endAlongKm - alongKm : null;
               return (
                 <option key={anchor.properties.id} value={anchor.properties.id}>
-                  {anchor.properties.title} → D{leg.plan.walkingDayNumber} {thisDay.toFixed(1)} km
-                  {nextDay !== null ? `, D${leg.plan.walkingDayNumber + 1} ${nextDay.toFixed(1)} km` : ''}
+                  {anchor.properties.title} →{' '}
+                  {leg.plan.walkingDayNumber !== null ? `D${leg.plan.walkingDayNumber} ` : ''}
+                  {thisDay.toFixed(1)} km
+                  {nextDay !== null
+                    ? `, ${leg.plan.walkingDayNumber !== null ? `D${leg.plan.walkingDayNumber + 1} ` : 'next '}${nextDay.toFixed(1)} km`
+                    : ''}
                 </option>
               );
             })}

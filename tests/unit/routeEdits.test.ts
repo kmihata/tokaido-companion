@@ -170,13 +170,39 @@ describe('applyRouteEdits — replacing a section', () => {
     }
   });
 
-  it('changes the days that contain it and leaves the rest alone', () => {
+  it('leaves the days it does not touch alone', () => {
     const line = buildPlanningLine(built.stretches, built.breaks);
     const after = buildLegs(line, buildDefaultDayPlans(line, anchors, days), days, anchors);
     const before = buildLegs(baseLine, buildDefaultDayPlans(baseLine, anchors, days), days, anchors);
-    // Day 4 crosses Hakone.
-    expect(after[3]!.distanceKm).toBeLessThan(before[3]!.distanceKm);
     expect(after[0]!.distanceKm).toBeCloseTo(before[0]!.distanceKm, 3);
+  });
+
+  /**
+   * This used to assert that day 4 got SHORTER, because day 4 ended at Hakone
+   * Sekisho — the edit's own rejoin anchor, which an edit by definition keeps.
+   *
+   * On 2026-10-01 day 4's end moved to the Lake Ashi shore, 1.20 km before the
+   * Sekisho, so that the day finishes at the point nearest the bed instead of
+   * walking past it to the checkpoint and back. That anchor sits INSIDE the
+   * span this edit replaces, so the edit removes it from the active line, the
+   * planner cannot find it, and day 4 falls back to an even division of what
+   * remains — 34.6 km instead of 15.5.
+   *
+   * The fallback is deliberate and documented in buildDefaultDayPlans: a
+   * missing anchor must never produce a zero-length day. But the failure is
+   * silent, and that is the part worth knowing. Retracing the Hakone section
+   * between Hatajuku and the Sekisho would do this to the real route, not just
+   * to this fixture. Four day ends now sit mid-section rather than on a section
+   * boundary — Lake Ashi, Fuji, Shizuoka and Iwata — and each carries the same
+   * exposure.
+   */
+  it('orphans a day end that sits inside the span it replaces, and falls back', () => {
+    const line = buildPlanningLine(built.stretches, built.breaks);
+    const after = buildLegs(line, buildDefaultDayPlans(line, anchors, days), days, anchors);
+    const before = buildLegs(baseLine, buildDefaultDayPlans(baseLine, anchors, days), days, anchors);
+    expect(before[3]!.plan.endAnchorId).not.toBeNull();
+    expect(after[3]!.plan.endAnchorId).toBeNull();
+    expect(after[3]!.distanceKm).toBeGreaterThan(before[3]!.distanceKm);
   });
 
   it('is undone by deactivating it, with nothing to restore', () => {

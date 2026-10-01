@@ -3120,6 +3120,122 @@
         "navigational": false,
         "demonstration": false
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.030657,
+          35.201068
+        ]
+      },
+      "properties": {
+        "id": "a-105",
+        "titleJa": "元箱根湖畔",
+        "title": "Lake Ashi shore (Moto-Hakone)",
+        "romanised": true,
+        "kind": "landmark",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1236,
+        "alongKm": 100.9,
+        "source": "The point on the Tokaido closest to the Walk 4 lodging on the Lake Ashi shore, 1.20 km short of Hakone Sekisho. Walk 4 was moved here on 2026-09-25: continuing to the Sekisho meant walking past the bed and 1,410 m back, then out again next morning, against 874 m each way from here. Walk 5 takes the Sekisho at its start instead. Read off the map, not seen.",
+        "confidence": "medium",
+        "verification": "manually-traced",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.678006,
+          35.160556
+        ]
+      },
+      "properties": {
+        "id": "a-106",
+        "titleJa": "富士・吉原宿西",
+        "title": "Fuji, 818 m west of Yoshiwara-juku",
+        "romanised": true,
+        "kind": "landmark",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 1675,
+        "alongKm": 142.64,
+        "source": "Walk 5 finish from 2026-09-25. The road passes 62 m from the Walk 5 lodging here, against 723 m at Yoshiwara-juku, which is walked through 818 m earlier. Read off the map, not seen.",
+        "confidence": "medium",
+        "verification": "manually-traced",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.380173,
+          34.972459
+        ]
+      },
+      "properties": {
+        "id": "a-107",
+        "titleJa": "静岡・府中宿西",
+        "title": "Shizuoka, 1,091 m west of Fuchu-juku",
+        "romanised": true,
+        "kind": "landmark",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "path-east",
+        "indexOnPath": 2105,
+        "alongKm": 184.441,
+        "source": "Walk 6 finish from 2026-09-25. The road passes 26 m from the Walk 6 lodging here. Fuchu-juku and JR Shizuoka Station are both walked through 1,091 m earlier. Read off the map, not seen.",
+        "confidence": "medium",
+        "verification": "manually-traced",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          137.851619,
+          34.711764
+        ]
+      },
+      "properties": {
+        "id": "a-108",
+        "titleJa": "磐田",
+        "title": "Iwata",
+        "romanised": true,
+        "kind": "landmark",
+        "stationNumber": null,
+        "nakasendoNumber": null,
+        "pathId": "edit-restored-section-mitsuke-tenryugawa-traced-2026-09-13",
+        "indexOnPath": 42,
+        "alongKm": 2.122,
+        "source": "Walk 8 finish from 2026-09-24, the Shimada split. 181 m off the road, the closest any station between Kanaya and Hamamatsu comes to it, and three JR stops from the Walk 8 bed. Walk 8b resumes here. Read off the map, not seen.",
+        "confidence": "medium",
+        "verification": "manually-traced",
+        "lastChecked": null,
+        "classification": "public",
+        "navigational": false,
+        "demonstration": false
+      }
     }
   ]
 }

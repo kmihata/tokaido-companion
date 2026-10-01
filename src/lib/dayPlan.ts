@@ -22,7 +22,8 @@ export const DAY_PLAN_SCHEMA_VERSION = 1;
 
 export interface DayPlan {
   dayId: string;
-  walkingDayNumber: number;
+  /** Null for a walking day that is not a numbered stage, i.e. Walk 8b. */
+  walkingDayNumber: number | null;
   /** Distance along the planning line at which this day ends, km. */
   endAlongKm: number;
   /** Anchor the end snaps to, when it does. Takes precedence over endAlongKm. */
@@ -54,50 +55,46 @@ export function emptyDayPlanDocument(): DayPlanDocument {
  * sits between Rokugobashi and Hatchonawate, and the final day ends where the
  * source data ends rather than at Sanjo Ohashi.
  */
-export const DEFAULT_DAY_END_ANCHORS: Record<number, { titleJa: string; note?: string }> = {
-  1: { titleJa: '八丁畷駅', note: 'Kawasaki-juku is not labelled upstream; Hatchonawate is the nearest anchor.' },
-  2: { titleJa: '藤沢宿' },
-  3: { titleJa: '小田原宿' },
-  4: {
-    titleJa: '箱根関所',
-    note: 'Lake Ashi, not Mishima. Climbing to the pass and descending the far side in one day wastes the best scenery on the route and arrives late; this stops at the top. Confirmed by a paid booking — see RESERVATION-AT-RISK-LEDGER.md, HAKONE-01. Walk 5 then starts at the lake and descends.',
+export const DEFAULT_DAY_END_ANCHORS: Record<string, { titleJa: string; note?: string }> = {
+  'd-2026-10-20': { titleJa: '八丁畷駅', note: 'Kawasaki-juku is not labelled upstream; Hatchonawate is the nearest anchor.' },
+  'd-2026-10-22': { titleJa: '藤沢宿' },
+  'd-2026-10-23': { titleJa: '小田原宿' },
+  'd-2026-10-24': {
+    titleJa: '元箱根湖畔',
+    note: 'The lake shore, 1.20 km short of Hakone Sekisho, not the Sekisho itself and not Mishima. Climbing the pass and descending the far side in one day wastes the best scenery and arrives late, so this stops at the top; and it stops at the point on the road nearest the bed rather than walking past it to the checkpoint and 1,410 m back. Walk 5 takes the Sekisho at its start. Confirmed by a paid booking — see RESERVATION-AT-RISK-LEDGER.md, HAKONE-01.',
   },
-  5: {
-    titleJa: '吉原宿',
-    note: 'Shortened from Yui. Walk 4 now stops at Lake Ashi, so this day opens with the Hakone west descent and should not also carry a pass.',
+  'd-2026-10-25': {
+    titleJa: '富士・吉原宿西',
+    note: 'Fuji, 818 m past Yoshiwara-juku. The road passes 62 m from the bed here against 723 m at the post station, which is walked through on the way. Opens with the Hakone west descent, so it carries no pass of its own.',
   },
-  6: {
-    titleJa: '府中宿',
-    note: 'Carries Satta Pass. Ends at Fuchu (Shizuoka), the largest rail hub between Odawara and Hamamatsu.',
+  'd-2026-10-26': {
+    titleJa: '静岡・府中宿西',
+    note: 'Shizuoka, 1,091 m past Fuchu-juku. Carries Satta Pass. Fuchu-juku and JR Shizuoka Station are both walked through before the finish; the road passes 26 m from the bed here.',
   },
-  7: {
-    titleJa: '日坂宿',
-    note: 'Carries Utsunoya Pass. One pass per day from here to Hamamatsu rather than two on one day.',
+  'd-2026-10-27': {
+    titleJa: '島田宿',
+    note: 'Shimada, not Nissaka. Carries Utsunoya Pass. Nissaka was the only day end on the route with no station — 4.8 km to Kikugawa, 6.7 km to Kakegawa — and reaching the bed meant a rural bus timetable carrying the whole day, twice. Shimada Station is 343 m from the juku and the day ends on foot.',
   },
-  8: { titleJa: '浜松宿' },
-  9: { titleJa: '吉田宿' },
-  10: {
+  'd-2026-10-28': {
+    titleJa: '磐田',
+    note: 'Iwata, not Hamamatsu. Shimada to Hamamatsu is 55.2 km and cannot be one day, so the Shimada split leaves the remainder to Walk 8b. Iwata is 181 m off the road, the closest any station between Kanaya and Hamamatsu comes, and three JR stops from the bed.',
+  },
+  'd-2026-10-29': {
+    titleJa: '浜松宿',
+    note: 'Walk 8b. Not a numbered stage and not a rest day: the Shimada split leaves 15.8 km that has to be walked, and the recovery token is spent doing it. Rail back to Iwata, walk in, sleep in the same bed as the night before.',
+  },
+  'd-2026-10-30': { titleJa: '吉田宿' },
+  'd-2026-10-31': {
     titleJa: '東栄町交差点',
-    note: 'Extended past Okazaki. Okazaki-juku left Walk 10 at 19.9 mi and Walk 11 at 27.3 mi with no anchor in the nine miles between Okazaki and Chiryu, so the short day and the long day could not be traded against each other. The Toeicho crossing sits in that gap: 26.5 / 20.6, and the bed is 579 m off the road instead of the 3.4 km from Okazaki-juku to Okazaki Station. Walk 11 still finishes at Manba Ohashi and still rides back to Nagoya, but from twenty-one miles rather than twenty-seven.',
+    note: 'Extended past Okazaki. Okazaki-juku left this day at 19.9 mi and Walk 11 at 27.3 mi with no anchor in the nine miles between Okazaki and Chiryu, so the short day and the long day could not be traded against each other. The Toeicho crossing sits in that gap, and the bed is 579 m off the road instead of the 3.4 km from Okazaki-juku to Okazaki Station. At 42.7 km this is the longest day on the route.',
   },
-  11: {
-    titleJa: '岩塚駅南交差点',
-    note: 'Pulled back 1.91 km from Manba Ohashi to the point where the Saya Kaido crosses the road to Iwatsuka Station, 396 m from the platform. Manba has no station: finishing there meant walking the same 1.91 km back, or waiting on a bus, at the end of a day that already had to get to Nagoya. Finishing at the crossing walks that stretch ONCE, as the first two kilometres of Walk 12 on 2026-11-03, and turns both the evening and the return into a subway ride. The cost is Walk 12 at 27.6 mi / 44.4 km, the longest day on the route, with 0.6 km of headroom under the 45 km line — on the day whose crossing is still unresolved. Watch that.',
-  },
-  12: {
-    titleJa: '伊勢朝日駅前',
-    note: 'Pulled back from Yokkaichi. Walk 11 finishing at Iwatsuka handed this day the 1.91 km to Manba and made it 27.6 mi, the longest on the route, on the day whose Kiso Three Rivers crossing is still the largest unmeasured distance anywhere. Machiya Bridge was the first candidate at 20.9 mi, but it is 2.6 km from Kuwana Station; the Tokaido passes 55 m from the Ise-Asahi platform 0.6 mi further on, so the day ends by stepping off the road onto a train. Kuwana is one stop back on the Kintetsu Nagoya Line. Same principle as Iwatsuka on Walk 11: finish at a station, not at a bridge.',
-  },
-  13: {
-    titleJa: '小野町',
-    note: 'Two moves in one day, 2026-09-16. First back from Sakashita, which sits 5.8 km from any station and was the worst bed on the route. Then back again a further 1.3 mi from Seki-juku to Ono-cho, because lodging here is 274 m off the road. That second move is worth more than the mile it costs: finishing at Seki meant a one-stop hop to Kameyama in the evening and the 06:02 back out in the morning, which put a rural timetable in front of the Suzuka start. From Ono-cho the pass day begins on foot at whatever hour the weather and the legs allow, which is the whole point of a first-light start. Walk 14 carries the difference at 25.5 mi / 41.0 km.',
-  },
-  14: {
-    titleJa: '甲西駅前',
-    note: 'Pulled back 1.7 mi from Ishibe-juku to even out the last two days at 24.2 and 24.4 — and, more to the point, to take distance off the Suzuka day. This is the second of the two low-rail days, it carries a 378 m climb and an explicit weather gate, and nothing recovers after it. Kosei Station is 306 m off the road on the JR Kusatsu Line, so the day ends at a platform; the Nov 5 bed is about 500 m further on. Mikumo Station at 306.5 mi was the shorter alternative at 21.7 / 26.9 and stays the fallback if the forecast is bad.',
-  },
-  15: { titleJa: '三条大橋', note: 'The route terminus. Reached since the Kyoto approach was traced on 2026-08-22.' },
+  'd-2026-11-01': { titleJa: '岩塚駅南交差点' },
+  'd-2026-11-03': { titleJa: '伊勢朝日駅前' },
+  'd-2026-11-04': { titleJa: '小野町' },
+  'd-2026-11-05': { titleJa: '甲西駅前' },
+  'd-2026-11-06': { titleJa: '三条大橋' },
 };
+
 
 /** How far off the line an anchor may sit and still be a usable day finish. */
 export const ANCHOR_TOLERANCE_KM = 0.05;
@@ -156,15 +153,20 @@ export function buildDefaultDayPlans(
   anchors: readonly AnchorFeature[],
   days: readonly Day[],
 ): DayPlan[] {
+  // Every day with walking on it, in date order — not just the numbered stages.
+  // Keying this by walking-day number silently excluded Walk 8b, which has no
+  // number because it is a half day carved out of a recovery day, and the
+  // planner then handed its 15.8 km to the day after it.
   const walks = days
-    .filter((d) => d.kind === 'walk' && typeof d.walkingDayNumber === 'number')
-    .sort((a, b) => (a.walkingDayNumber ?? 0) - (b.walkingDayNumber ?? 0));
+    .filter((d) => d.kind === 'walk')
+    .slice()
+    .sort((a, b) => a.date.localeCompare(b.date));
 
   const plans: DayPlan[] = [];
   let previousKm = 0;
   for (const d of walks) {
-    const n = d.walkingDayNumber!;
-    const spec = DEFAULT_DAY_END_ANCHORS[n];
+    const n = d.walkingDayNumber ?? null;
+    const spec = DEFAULT_DAY_END_ANCHORS[d.id];
     const anchor = spec ? anchors.find((a) => a.properties.titleJa === spec.titleJa) : undefined;
     const fromAnchor = anchor ? anchorAlongKm(line, anchors, anchor.properties.id) : null;
     // Fall back to an even division of what remains, so a missing anchor never
@@ -234,7 +236,7 @@ export function buildLegs(
   let start = 0;
   let cumulative = 0;
 
-  const ordered = [...plans].sort((a, b) => a.walkingDayNumber - b.walkingDayNumber);
+  const ordered = [...plans].sort((a, b) => a.endAlongKm - b.endAlongKm);
 
   for (const plan of ordered) {
     // An anchor, when it resolves, beats a stored distance.
@@ -307,7 +309,7 @@ export function moveDayEnd(
   newAlongKm: number,
   newAnchorId: string | null = null,
 ): MoveResult {
-  const sorted = [...plans].sort((a, b) => a.walkingDayNumber - b.walkingDayNumber);
+  const sorted = [...plans].sort((a, b) => a.endAlongKm - b.endAlongKm);
   const i = sorted.findIndex((p) => p.dayId === dayId);
   if (i < 0) return { plans: sorted, ok: false, reason: 'No such walking day.' };
   if (i === sorted.length - 1) {
