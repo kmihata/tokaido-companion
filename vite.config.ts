@@ -82,7 +82,13 @@ export default defineConfig(() => ({
       workbox: {
         // Everything the app needs offline is precached, including the
         // versioned public trip data under public/data/.
-        globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest,json,geojson}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,webp,ico,webmanifest,json,geojson}'],
+        // webp was added 2026-10-01 with the fifty-five Hiroshige prints. They
+        // are 3.9 MB at 720 px, which roughly doubles the precache — deliberate,
+        // because a print you cannot see at the station is no use. 800 px cost
+        // twice that for nearly the same picture, since converting Commons' JPEG
+        // directly makes WebP encode the JPEG's own artefacts; resampling first
+        // avoids it.
         // The desk is never precached and never offline. It is a desk tool on a
         // machine with a network; putting it in the field app's cache would put
         // the editing surface on the phone, which is the thing the split

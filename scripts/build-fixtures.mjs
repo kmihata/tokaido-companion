@@ -70,21 +70,45 @@ const stations = [
   { id: 'st-hodogaya',    number: 4,    name: 'Hodogaya-juku',     modern: 'Yokohama',           lat: 35.4463, lon: 139.5980 },
   { id: 'st-totsuka',     number: 5,    name: 'Totsuka-juku',      modern: 'Yokohama',           lat: 35.4004, lon: 139.5340 },
   { id: 'st-fujisawa',    number: 6,    name: 'Fujisawa-juku',     modern: 'Fujisawa',           lat: 35.3390, lon: 139.4890 },
+  { id: 'st-hiratsuka',        number: 7,    name: 'Hiratsuka-juku',        modern: 'Hiratsuka',               lat: 35.3274, lon: 139.3377 },
+  { id: 'st-oiso',             number: 8,    name: 'Oiso-juku',             modern: 'Oiso',                    lat: 35.3085, lon: 139.3149 },
   { id: 'st-odawara',     number: 9,    name: 'Odawara-juku',      modern: 'Odawara',            lat: 35.2560, lon: 139.1550 },
   { id: 'st-hakone',      number: 10,   name: 'Hakone-juku',       modern: 'Hakone (Lake Ashi)', lat: 35.2020, lon: 139.0250 },
   { id: 'st-mishima',     number: 11,   name: 'Mishima-juku',      modern: 'Mishima',            lat: 35.1260, lon: 138.9110 },
+  { id: 'st-numazu',           number: 12,   name: 'Numazu-juku',           modern: 'Numazu',                  lat: 35.0964, lon: 138.8568 },
+  { id: 'st-hara',             number: 13,   name: 'Hara-juku',             modern: 'Numazu',                  lat: 35.1250, lon: 138.7989 },
+  { id: 'st-yoshiwara',        number: 14,   name: 'Yoshiwara-juku',        modern: 'Fuji',                    lat: 35.1636, lon: 138.6838 },
+  { id: 'st-kanbara',          number: 15,   name: 'Kanbara-juku',          modern: 'Shimizu-ku, Shizuoka',    lat: 35.1201, lon: 138.6057 },
   { id: 'st-yui',         number: 16,   name: 'Yui-shuku',         modern: 'Shizuoka (Yui)',     lat: 35.1030, lon: 138.5670 },
+  { id: 'st-okitsu',           number: 17,   name: 'Okitsu-juku',           modern: 'Shimizu-ku, Shizuoka',    lat: 35.0495, lon: 138.5189 },
+  { id: 'st-ejiri',            number: 18,   name: 'Ejiri-juku',            modern: 'Shimizu-ku, Shizuoka',    lat: 35.0197, lon: 138.4815 },
   { id: 'st-fuchu',       number: 19,   name: 'Fuchu-juku',        modern: 'Shizuoka',           lat: 34.9760, lon: 138.3830 },
   { id: 'st-mariko',      number: 20,   name: 'Mariko-juku',       modern: 'Shizuoka (Mariko)',  lat: 34.9550, lon: 138.3260 },
   { id: 'st-okabe',       number: 21,   name: 'Okabe-juku',        modern: 'Fujieda (Okabe)',    lat: 34.9210, lon: 138.2680 },
+  { id: 'st-fujieda',          number: 22,   name: 'Fujieda-juku',          modern: 'Fujieda',                 lat: 34.8698, lon: 138.2524 },
+  { id: 'st-shimada',          number: 23,   name: 'Shimada-juku',          modern: 'Shimada',                 lat: 34.8328, lon: 138.1761 },
+  { id: 'st-kanaya',           number: 24,   name: 'Kanaya-juku',           modern: 'Shimada',                 lat: 34.8226, lon: 138.1287 },
+  { id: 'st-nissaka',          number: 25,   name: 'Nissaka-juku',          modern: 'Kakegawa',                lat: 34.8042, lon: 138.0751 },
   { id: 'st-kakegawa',    number: 26,   name: 'Kakegawa-juku',     modern: 'Kakegawa',           lat: 34.7690, lon: 138.0140 },
+  { id: 'st-fukuroi',          number: 27,   name: 'Fukuroi-juku',          modern: 'Fukuroi',                 lat: 34.7472, lon: 137.9223 },
+  { id: 'st-mitsuke',          number: 28,   name: 'Mitsuke-juku',          modern: 'Iwata',                   lat: 34.7269, lon: 137.8576 },
   { id: 'st-hamamatsu',   number: 29,   name: 'Hamamatsu-juku',    modern: 'Hamamatsu',          lat: 34.7050, lon: 137.7340 },
+  { id: 'st-maisaka',          number: 30,   name: 'Maisaka-juku',          modern: 'Chuo-ku, Hamamatsu',      lat: 34.6846, lon: 137.6099 },
   { id: 'st-arai',        number: 31,   name: 'Arai-juku',         modern: 'Kosai (Arai)',       lat: 34.6970, lon: 137.5590 },
+  { id: 'st-shirasuka',        number: 32,   name: 'Shirasuka-juku',        modern: 'Kosai',                   lat: 34.6885, lon: 137.5009 },
+  { id: 'st-futagawa',         number: 33,   name: 'Futagawa-juku',         modern: 'Toyohashi',               lat: 34.7238, lon: 137.4500 },
   { id: 'st-yoshida',     number: 34,   name: 'Yoshida-juku',      modern: 'Toyohashi',          lat: 34.7630, lon: 137.3910 },
+  { id: 'st-goyu',             number: 35,   name: 'Goyu-juku',             modern: 'Toyokawa',                lat: 34.8448, lon: 137.3175 },
+  { id: 'st-akasaka',          number: 36,   name: 'Akasaka-juku',          modern: 'Toyokawa',                lat: 34.8559, lon: 137.3081 },
+  { id: 'st-fujikawa',         number: 37,   name: 'Fujikawa-juku',         modern: 'Okazaki',                 lat: 34.9113, lon: 137.2217 },
   { id: 'st-okazaki',     number: 38,   name: 'Okazaki-juku',      modern: 'Okazaki',            lat: 34.9540, lon: 137.1740 },
+  { id: 'st-chiryu',           number: 39,   name: 'Chiryu-juku',           modern: 'Chiryu',                  lat: 35.0087, lon: 137.0415 },
+  { id: 'st-narumi',           number: 40,   name: 'Narumi-juku',           modern: 'Midori-ku, Nagoya',       lat: 35.0807, lon: 136.9488 },
   { id: 'st-miya',        number: 41,   name: 'Miya-juku',         modern: 'Nagoya (Atsuta)',    lat: 35.1280, lon: 136.9080 },
   { id: 'st-kuwana',      number: 42,   name: 'Kuwana-juku',       modern: 'Kuwana',             lat: 35.0620, lon: 136.6930 },
   { id: 'st-yokkaichi',   number: 43,   name: 'Yokkaichi-juku',    modern: 'Yokkaichi',          lat: 34.9650, lon: 136.6240 },
+  { id: 'st-ishiyakushi',      number: 44,   name: 'Ishiyakushi-juku',      modern: 'Suzuka',                  lat: 34.9033, lon: 136.5477 },
+  { id: 'st-shono',            number: 45,   name: 'Shono-juku',            modern: 'Suzuka',                  lat: 34.8833, lon: 136.5247 },
   { id: 'st-kameyama',    number: 46,   name: 'Kameyama-juku',     modern: 'Kameyama',           lat: 34.8560, lon: 136.4520 },
   { id: 'st-seki',        number: 47,   name: 'Seki-juku',         modern: 'Kameyama (Seki)',    lat: 34.8500, lon: 136.3930 },
   { id: 'st-sakashita',   number: 48,   name: 'Sakashita-juku',    modern: 'Kameyama (Sakashita)', lat: 34.8720, lon: 136.3400 },
@@ -353,6 +377,79 @@ const days = [
 ];
 
 // ---------------------------------------------------------------------------
+// Which Hiroshige prints belong to which walking day — DERIVED, not written out.
+//
+// Each walking day passes a run of post stations and each station has a print.
+// Hard-coding the lists went stale the moment a stage endpoint moved, and six of
+// the sixteen days carried no prints at all because nobody had got round to
+// them. This walks the stations in route order and cuts them at each day's
+// cumulative distance, so moving an endpoint moves the prints with it.
+//
+// It runs AFTER `hiroshige` is defined, at the bottom of the file.
+// ---------------------------------------------------------------------------
+function attachHiroshigeToDays(days, stations, images) {
+  const printFor = new Map(images.map((i) => [i.stationId, i.id]));
+  // Station positions measured along the whole route, not along their own path.
+  //
+  // The obvious thing — reading `alongKm` off each anchor — is wrong, and wrong
+  // in a way that looks right: `alongKm` restarts at zero on every base path, so
+  // Kuwana at 5 km on path-west sorts next to Shinagawa at 8 km on path-east and
+  // Walk 1 gets handed four prints from three different prefectures. The same
+  // trap is written up in tests/unit/routeModel.test.ts. So: concatenate the
+  // base paths in order and project each station onto that.
+  const routeFile = JSON.parse(readFileSync(join(OUT, 'route.geojson'), 'utf8'));
+  const metaFile = JSON.parse(readFileSync(join(OUT, 'route-meta.json'), 'utf8'));
+  const line = metaFile.paths.flatMap(
+    (p) => routeFile.features.find((f) => f.properties.id === p.id)?.geometry.coordinates ?? [],
+  );
+  const hav = (a, b) => {
+    const R = 6371.0088;
+    const r = (d) => (d * Math.PI) / 180;
+    const dLa = r(b[1] - a[1]);
+    const dLo = r(b[0] - a[0]);
+    const x =
+      Math.sin(dLa / 2) ** 2 + Math.cos(r(a[1])) * Math.cos(r(b[1])) * Math.sin(dLo / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(x));
+  };
+  const cum = [0];
+  for (let i = 1; i < line.length; i++) cum.push(cum[i - 1] + hav(line[i - 1], line[i]));
+  const alongRoute = (lat, lon) => {
+    let best = Infinity;
+    let at = 0;
+    for (let i = 0; i < line.length; i++) {
+      const d = hav(line[i], [lon, lat]);
+      if (d < best) {
+        best = d;
+        at = i;
+      }
+    }
+    return cum[at];
+  };
+  const withKm = stations
+    .map((s) => ({ id: s.id, km: alongRoute(s.lat, s.lon) }))
+    .sort((a, b) => a.km - b.km);
+
+  let km = 0;
+  for (const d of days) {
+    if (d.kind !== 'walk') continue;
+    const span = d.nominalDistanceKm ?? 0;
+    const lo = km;
+    const hi = km + span;
+    km = hi;
+    // A quarter-kilometre of slack at each end: a station sitting metres either
+    // side of a boundary belongs to the day that walks past it, and the last
+    // day has to reach its own terminus.
+    const ids = withKm
+      .filter((x) => x.km >= lo - 0.25 && x.km <= hi + 0.25)
+      .map((x) => printFor.get(x.id))
+      .filter((x) => x !== undefined);
+    d.hiroshigeRefIds = [...new Set(ids)];
+  }
+  return days;
+}
+
+
+// ---------------------------------------------------------------------------
 // Waypoints. Operational features. Hotels here are OBVIOUSLY FICTIONAL
 // placeholders so the schema can be exercised without any real booking
 // entering a public repository.
@@ -487,10 +584,11 @@ function hr(o) {
     schemaVersion: 1,
     series: 'The Fifty-three Stations of the Tokaido (Hoeido edition, c. 1833-34)',
     artist: 'Utagawa Hiroshige',
-    institution: null,
+    institution: 'Wikimedia Commons',
     sourceUrl: null,
-    rightsStatus: 'unverified',
-    imageAvailableOffline: false,
+    rightsStatus: 'public-domain',
+    imageAvailableOffline: true,
+    imagePath: null,
     orientation: null,
     viewpointLat: null,
     viewpointLon: null,
@@ -503,15 +601,66 @@ function hr(o) {
 }
 
 const hiroshige = [
-  hr({ id: 'hr-nihonbashi', stationId: 'st-nihonbashi', title: 'Nihonbashi — Morning Scene (title unverified)', notes: 'Placeholder record. Print title, edition, institution and rights all still to be established.' }),
-  hr({ id: 'hr-kawasaki', stationId: 'st-kawasaki', title: 'Kawasaki — the Rokugo ferry (title unverified)', notes: 'Placeholder record. The ferry is now a bridge; whether a comparable viewpoint survives is unresearched.' }),
-  hr({ id: 'hr-hakone', stationId: 'st-hakone', title: 'Hakone — view of the lake (title unverified)', notes: 'Placeholder record. Widely understood to be compressed and dramatised rather than a literal viewpoint. Do not claim an exact standing position.' }),
-  hr({ id: 'hr-mishima', stationId: 'st-mishima', title: 'Mishima — morning mist (title unverified)', notes: 'Placeholder record.' }),
-  hr({ id: 'hr-yui-satta', stationId: 'st-yui', title: 'Yui — Satta Pass (title unverified)', notes: 'Placeholder record. One of the few where a modern comparison viewpoint is plausibly identifiable, but this is unverified.' }),
-  hr({ id: 'hr-mariko', stationId: 'st-mariko', title: 'Mariko — tea house (title unverified)', notes: 'Placeholder record.' }),
-  hr({ id: 'hr-miya', stationId: 'st-miya', title: 'Miya — festival scene (title unverified)', notes: 'Placeholder record.' }),
-  hr({ id: 'hr-kuwana', stationId: 'st-kuwana', title: 'Kuwana — the harbour (title unverified)', notes: 'Placeholder record.' }),
+  hr({ id: 'hr-nihonbashi', stationId: 'st-nihonbashi', number: 1, title: 'Nihonbashi', imagePath: 'images/hiroshige/01.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige01_nihonbashi.jpg', notes: 'Plate 1 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-shinagawa', stationId: 'st-shinagawa', number: 2, title: 'Shinagawa-juku', imagePath: 'images/hiroshige/02.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige02_shinagawa.jpg', notes: 'Plate 2 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-kawasaki', stationId: 'st-kawasaki', number: 3, title: 'Kawasaki-juku', imagePath: 'images/hiroshige/03.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige03_kawasaki.jpg', notes: 'Plate 3 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-kanagawa', stationId: 'st-kanagawa', number: 4, title: 'Kanagawa-juku', imagePath: 'images/hiroshige/04.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige04_kanagawa.jpg', notes: 'Plate 4 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-hodogaya', stationId: 'st-hodogaya', number: 5, title: 'Hodogaya-juku', imagePath: 'images/hiroshige/05.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige05_hodogaya.jpg', notes: 'Plate 5 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-totsuka', stationId: 'st-totsuka', number: 6, title: 'Totsuka-juku', imagePath: 'images/hiroshige/06.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige06_totsuka.jpg', notes: 'Plate 6 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-fujisawa', stationId: 'st-fujisawa', number: 7, title: 'Fujisawa-juku', imagePath: 'images/hiroshige/07.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige07_fujisawa.jpg', notes: 'Plate 7 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-hiratsuka', stationId: 'st-hiratsuka', number: 8, title: 'Hiratsuka-juku', imagePath: 'images/hiroshige/08.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige08_hiratsuka.jpg', notes: 'Plate 8 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-oiso', stationId: 'st-oiso', number: 9, title: 'Oiso-juku', imagePath: 'images/hiroshige/09.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige09_ohiso.jpg', notes: 'Plate 9 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-odawara', stationId: 'st-odawara', number: 10, title: 'Odawara-juku', imagePath: 'images/hiroshige/10.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige10_odawara.jpg', notes: 'Plate 10 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-hakone', stationId: 'st-hakone', number: 11, title: 'Hakone-juku', imagePath: 'images/hiroshige/11.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige11_hakone.jpg', notes: 'Plate 11 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-mishima', stationId: 'st-mishima', number: 12, title: 'Mishima-juku', imagePath: 'images/hiroshige/12.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige12_mishima.jpg', notes: 'Plate 12 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-numazu', stationId: 'st-numazu', number: 13, title: 'Numazu-juku', imagePath: 'images/hiroshige/13.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige13_numazu.jpg', notes: 'Plate 13 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-hara', stationId: 'st-hara', number: 14, title: 'Hara-juku', imagePath: 'images/hiroshige/14.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige14_hara.jpg', notes: 'Plate 14 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-yoshiwara', stationId: 'st-yoshiwara', number: 15, title: 'Yoshiwara-juku', imagePath: 'images/hiroshige/15.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige15_yoshiwara.jpg', notes: 'Plate 15 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-kanbara', stationId: 'st-kanbara', number: 16, title: 'Kanbara-juku', imagePath: 'images/hiroshige/16.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige16_kanbara.jpg', notes: 'Plate 16 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-yui', stationId: 'st-yui', number: 17, title: 'Yui-shuku', imagePath: 'images/hiroshige/17.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige17_yui.jpg', notes: 'Plate 17 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-okitsu', stationId: 'st-okitsu', number: 18, title: 'Okitsu-juku', imagePath: 'images/hiroshige/18.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige18_okitsu.jpg', notes: 'Plate 18 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-ejiri', stationId: 'st-ejiri', number: 19, title: 'Ejiri-juku', imagePath: 'images/hiroshige/19.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige19_ejiri.jpg', notes: 'Plate 19 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-fuchu', stationId: 'st-fuchu', number: 20, title: 'Fuchu-juku', imagePath: 'images/hiroshige/20.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige20_fuchu.jpg', notes: 'Plate 20 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-mariko', stationId: 'st-mariko', number: 21, title: 'Mariko-juku', imagePath: 'images/hiroshige/21.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige21_mariko.jpg', notes: 'Plate 21 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-okabe', stationId: 'st-okabe', number: 22, title: 'Okabe-juku', imagePath: 'images/hiroshige/22.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige22_okabe.jpg', notes: 'Plate 22 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-fujieda', stationId: 'st-fujieda', number: 23, title: 'Fujieda-juku', imagePath: 'images/hiroshige/23.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige23_fujieda.jpg', notes: 'Plate 23 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-shimada', stationId: 'st-shimada', number: 24, title: 'Shimada-juku', imagePath: 'images/hiroshige/24.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige24_shimada.jpg', notes: 'Plate 24 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-kanaya', stationId: 'st-kanaya', number: 25, title: 'Kanaya-juku', imagePath: 'images/hiroshige/25.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige25_kanaya.jpg', notes: 'Plate 25 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-nissaka', stationId: 'st-nissaka', number: 26, title: 'Nissaka-juku', imagePath: 'images/hiroshige/26.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige26_nissaka.jpg', notes: 'Plate 26 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-kakegawa', stationId: 'st-kakegawa', number: 27, title: 'Kakegawa-juku', imagePath: 'images/hiroshige/27.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige27_kakegawa.jpg', notes: 'Plate 27 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-fukuroi', stationId: 'st-fukuroi', number: 28, title: 'Fukuroi-juku', imagePath: 'images/hiroshige/28.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige28_fukuroi.jpg', notes: 'Plate 28 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-mitsuke', stationId: 'st-mitsuke', number: 29, title: 'Mitsuke-juku', imagePath: 'images/hiroshige/29.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Tokaido28_Mitsuke.jpg', notes: 'Plate 29 of 55. Public domain scan via Wikimedia Commons. Substituted from a different Commons scan: the canonical gallery set has no plate 29. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-hamamatsu', stationId: 'st-hamamatsu', number: 30, title: 'Hamamatsu-juku', imagePath: 'images/hiroshige/30.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige30_hamamatsu.jpg', notes: 'Plate 30 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-maisaka', stationId: 'st-maisaka', number: 31, title: 'Maisaka-juku', imagePath: 'images/hiroshige/31.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige31_maisaka.jpg', notes: 'Plate 31 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-arai', stationId: 'st-arai', number: 32, title: 'Arai-juku', imagePath: 'images/hiroshige/32.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige32_arai.jpg', notes: 'Plate 32 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-shirasuka', stationId: 'st-shirasuka', number: 33, title: 'Shirasuka-juku', imagePath: 'images/hiroshige/33.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige33_shirasuka.jpg', notes: 'Plate 33 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-futagawa', stationId: 'st-futagawa', number: 34, title: 'Futagawa-juku', imagePath: 'images/hiroshige/34.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige34_futakawa.jpg', notes: 'Plate 34 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-yoshida', stationId: 'st-yoshida', number: 35, title: 'Yoshida-juku', imagePath: 'images/hiroshige/35.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige35_yoshida.jpg', notes: 'Plate 35 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-goyu', stationId: 'st-goyu', number: 36, title: 'Goyu-juku', imagePath: 'images/hiroshige/36.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige36_goyu.jpg', notes: 'Plate 36 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-akasaka', stationId: 'st-akasaka', number: 37, title: 'Akasaka-juku', imagePath: 'images/hiroshige/37.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige37_akasaka.jpg', notes: 'Plate 37 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-fujikawa', stationId: 'st-fujikawa', number: 38, title: 'Fujikawa-juku', imagePath: 'images/hiroshige/38.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige38_fujikawa.jpg', notes: 'Plate 38 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-okazaki', stationId: 'st-okazaki', number: 39, title: 'Okazaki-juku', imagePath: 'images/hiroshige/39.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige39_okazaki.jpg', notes: 'Plate 39 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-chiryu', stationId: 'st-chiryu', number: 40, title: 'Chiryu-juku', imagePath: 'images/hiroshige/40.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige40_chirifu.jpg', notes: 'Plate 40 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-narumi', stationId: 'st-narumi', number: 41, title: 'Narumi-juku', imagePath: 'images/hiroshige/41.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige41_narumi.jpg', notes: 'Plate 41 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-miya', stationId: 'st-miya', number: 42, title: 'Miya-juku', imagePath: 'images/hiroshige/42.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige42_miya.jpg', notes: 'Plate 42 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-kuwana', stationId: 'st-kuwana', number: 43, title: 'Kuwana-juku', imagePath: 'images/hiroshige/43.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige43_kuwana.jpg', notes: 'Plate 43 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-yokkaichi', stationId: 'st-yokkaichi', number: 44, title: 'Yokkaichi-juku', imagePath: 'images/hiroshige/44.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige44_yokkaichi.jpg', notes: 'Plate 44 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-ishiyakushi', stationId: 'st-ishiyakushi', number: 45, title: 'Ishiyakushi-juku', imagePath: 'images/hiroshige/45.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige45_ishiyakushi.jpg', notes: 'Plate 45 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-shono', stationId: 'st-shono', number: 46, title: 'Shono-juku', imagePath: 'images/hiroshige/46.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige46_shono.jpg', notes: 'Plate 46 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-kameyama', stationId: 'st-kameyama', number: 47, title: 'Kameyama-juku', imagePath: 'images/hiroshige/47.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige47_kameyama.jpg', notes: 'Plate 47 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-seki', stationId: 'st-seki', number: 48, title: 'Seki-juku', imagePath: 'images/hiroshige/48.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige48_seki.jpg', notes: 'Plate 48 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-sakashita', stationId: 'st-sakashita', number: 49, title: 'Sakashita-juku', imagePath: 'images/hiroshige/49.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige49_sakanoshita.jpg', notes: 'Plate 49 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-tsuchiyama', stationId: 'st-tsuchiyama', number: 50, title: 'Tsuchiyama-juku', imagePath: 'images/hiroshige/50.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige50_tsuchiyama.jpg', notes: 'Plate 50 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-minakuchi', stationId: 'st-minakuchi', number: 51, title: 'Minakuchi-juku', imagePath: 'images/hiroshige/51.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige51_minakushi.jpg', notes: 'Plate 51 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-ishibe', stationId: 'st-ishibe', number: 52, title: 'Ishibe-juku', imagePath: 'images/hiroshige/52.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige52_ishibe.jpg', notes: 'Plate 52 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-kusatsu', stationId: 'st-kusatsu', number: 53, title: 'Kusatsu-juku', imagePath: 'images/hiroshige/53.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige53_kusatsu.jpg', notes: 'Plate 53 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-otsu', stationId: 'st-otsu', number: 54, title: 'Otsu-juku', imagePath: 'images/hiroshige/54.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige54_ohtsu.jpg', notes: 'Plate 54 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
+  hr({ id: 'hr-sanjoohashi', stationId: 'st-sanjo', number: 55, title: 'Sanjo Ohashi', imagePath: 'images/hiroshige/55.webp', sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hiroshige55_kyoto.jpg', notes: 'Plate 55 of 55. Public domain scan via Wikimedia Commons. Viewpoint not yet located on the ground.' }),
 ];
+
+// Prints are assigned to days here, where both arrays finally exist.
+attachHiroshigeToDays(days, stations, hiroshige);
+
 
 // ---------------------------------------------------------------------------
 const trip = {
@@ -556,7 +705,7 @@ const waypointCollection = {
 const files = {
   'trip.json': trip,
   'days.json': { schemaVersion: 1, dataVersion: DATA_VERSION, demonstration: true, navigational: false, days },
-  'stations.json': { schemaVersion: 1, dataVersion: DATA_VERSION, demonstration: true, navigational: false, complete: false, note: 'Deliberate subset. Building the full fifty-three-station ledger is later work.', stations },
+  'stations.json': { schemaVersion: 1, dataVersion: DATA_VERSION, demonstration: true, navigational: false, complete: true, note: 'All fifty-three post stations plus Nihonbashi and Sanjo Ohashi. Positions are snapped to the traced route anchors. Modern municipalities were reverse-geocoded against the Geospatial Information Authority of Japan on 2026-10-01, not recalled. What each station HAS on the ground — surviving remnants, markers, access — is still unresearched and the notes say so.', stations },
   'hiroshige.json': { schemaVersion: 1, dataVersion: DATA_VERSION, demonstration: true, note: 'Metadata only. No images are bundled or republished. Rights status must be verified per institution before any image is displayed.', images: hiroshige },
   'waypoints.geojson': waypointCollection,
 };

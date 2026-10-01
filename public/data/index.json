@@ -19,15 +19,15 @@
     },
     {
       "path": "days.json",
-      "bytes": 36712
+      "bytes": 37291
     },
     {
       "path": "stations.json",
-      "bytes": 14127
+      "bytes": 25222
     },
     {
       "path": "hiroshige.json",
-      "bytes": 5051
+      "bytes": 40623
     },
     {
       "path": "waypoints.geojson",

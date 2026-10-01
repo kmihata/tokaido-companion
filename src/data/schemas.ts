@@ -361,18 +361,28 @@ export const HiroshigeSchema = z.object({
   schemaVersion: z.number(),
   id: z.string(),
   stationId: z.string(),
+  /** Plate number within the series, 1 (Nihonbashi) to 55 (Kyoto). */
+  number: z.number(),
   title: z.string(),
   series: z.string(),
   artist: z.string(),
   institution: z.string().nullable(),
   sourceUrl: z.string().nullable(),
   /**
-   * `unverified` is the only value this build ever emits. No image may be
-   * displayed or cached until this says otherwise for that specific work and
-   * that specific reproduction.
+   * No image may be displayed or cached until this says so for that specific
+   * work AND that specific reproduction. Until 2026-10-01 `unverified` was the
+   * only value this build emitted and no image existed anywhere in it.
+   *
+   * The Hoeido prints are from 1833-34 and the works are long out of copyright,
+   * but a photograph of a print carries its own claim, so the reproduction is
+   * what had to be cleared. All fifty-five now ship from Wikimedia Commons
+   * scans that state Public domain, and each record carries the description
+   * page it came from so the claim can be rechecked rather than taken on faith.
    */
   rightsStatus: z.enum(['unverified', 'public-domain', 'licensed', 'restricted']),
   imageAvailableOffline: z.boolean(),
+  /** Path under the app base, or null when no image is bundled. */
+  imagePath: z.string().nullable(),
   orientation: z.string().nullable(),
   viewpointLat: z.number().nullable(),
   viewpointLon: z.number().nullable(),

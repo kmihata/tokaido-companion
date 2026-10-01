@@ -65,7 +65,7 @@
       ],
       "hiroshigeRefIds": [
         "hr-nihonbashi",
-        "hr-kawasaki"
+        "hr-shinagawa"
       ],
       "safetyNotes": [
         "Urban traffic and crowding, not exposure. The real risk today is doing more than 17.7 km because it feels easy.",
@@ -143,7 +143,12 @@
         "st-fujisawa"
       ],
       "editorialPrompts": [],
-      "hiroshigeRefIds": [],
+      "hiroshigeRefIds": [
+        "hr-kawasaki",
+        "hr-kanagawa",
+        "hr-hodogaya",
+        "hr-totsuka"
+      ],
       "safetyNotes": [],
       "verificationTasks": [],
       "weatherSensitive": [],
@@ -176,7 +181,11 @@
         "st-odawara"
       ],
       "editorialPrompts": [],
-      "hiroshigeRefIds": [],
+      "hiroshigeRefIds": [
+        "hr-fujisawa",
+        "hr-hiratsuka",
+        "hr-oiso"
+      ],
       "safetyNotes": [
         "Arriving at Odawara tired is a legitimate reason to spend a recovery token here rather than start Hakone short of sleep."
       ],
@@ -222,8 +231,7 @@
         "The checkpoint: permission, status, and controlled movement."
       ],
       "hiroshigeRefIds": [
-        "hr-hakone",
-        "hr-mishima"
+        "hr-odawara"
       ],
       "safetyNotes": [
         "Hakone Pass IC on the west slope: Route 1, Hakone Shindo, the old-road approaches and the Ashinoko Skyline access converge. The pedestrian margin is green paint on a highway shoulder. There is no curb and no barrier. Paint is not protection.",
@@ -273,7 +281,12 @@
         "st-yui"
       ],
       "editorialPrompts": [],
-      "hiroshigeRefIds": [],
+      "hiroshigeRefIds": [
+        "hr-hakone",
+        "hr-mishima",
+        "hr-numazu",
+        "hr-hara"
+      ],
       "safetyNotes": [],
       "verificationTasks": [],
       "weatherSensitive": [],
@@ -314,7 +327,11 @@
         "Satta Pass is the one view on the route that is still composed the way Hiroshige composed it — sea, road, and Fuji stacked in one frame."
       ],
       "hiroshigeRefIds": [
-        "hr-yui-satta"
+        "hr-yoshiwara",
+        "hr-kanbara",
+        "hr-yui",
+        "hr-okitsu",
+        "hr-ejiri"
       ],
       "safetyNotes": [],
       "verificationTasks": [
@@ -365,7 +382,10 @@
         "The Oi was unbridged by policy, not by engineering limits. The modern crossing is a different kind of decision about who may move."
       ],
       "hiroshigeRefIds": [
-        "hr-mariko"
+        "hr-fuchu",
+        "hr-mariko",
+        "hr-okabe",
+        "hr-fujieda"
       ],
       "safetyNotes": [
         "Utsunoya: repair work is scheduled during FY2026. Confirm the tunnel is open as a walking route shortly before the crossing."
@@ -410,7 +430,13 @@
         "st-hamamatsu"
       ],
       "editorialPrompts": [],
-      "hiroshigeRefIds": [],
+      "hiroshigeRefIds": [
+        "hr-shimada",
+        "hr-kanaya",
+        "hr-nissaka",
+        "hr-kakegawa",
+        "hr-fukuroi"
+      ],
       "safetyNotes": [],
       "verificationTasks": [
         "Tenryu crossing: confirm which span carries the walkway and that the under-bridge approach is open. Verified in Street View 2026-09-13, not on the ground."
@@ -450,7 +476,9 @@
         "st-hamamatsu"
       ],
       "editorialPrompts": [],
-      "hiroshigeRefIds": [],
+      "hiroshigeRefIds": [
+        "hr-mitsuke"
+      ],
       "safetyNotes": [],
       "verificationTasks": [
         "Tenryu crossing: confirm which span carries the walkway and that the under-bridge approach is open. Verified in Street View 2026-09-13, not on the ground."
@@ -491,7 +519,13 @@
       "editorialPrompts": [
         "Imagire/Arai was a water gap and a checkpoint. The bridge replaced the ferry; ask what else it replaced."
       ],
-      "hiroshigeRefIds": [],
+      "hiroshigeRefIds": [
+        "hr-hamamatsu",
+        "hr-maisaka",
+        "hr-arai",
+        "hr-shirasuka",
+        "hr-futagawa"
+      ],
       "safetyNotes": [
         "Verify pedestrian routing and legality across the Hamanako bridges before committing to the day."
       ],
@@ -532,7 +566,12 @@
         "st-okazaki"
       ],
       "editorialPrompts": [],
-      "hiroshigeRefIds": [],
+      "hiroshigeRefIds": [
+        "hr-yoshida",
+        "hr-goyu",
+        "hr-akasaka",
+        "hr-fujikawa"
+      ],
       "safetyNotes": [],
       "verificationTasks": [],
       "weatherSensitive": [],
@@ -571,7 +610,10 @@
       "editorialPrompts": [
         "Route 1, the rail line, the expressway and the old road occupy one corridor. Several Tokaidos, one strip of ground."
       ],
-      "hiroshigeRefIds": [],
+      "hiroshigeRefIds": [
+        "hr-okazaki",
+        "hr-chiryu"
+      ],
       "safetyNotes": [],
       "verificationTasks": [
         "Confirm the Kanayama hotel will hold a pack before check-in on Nov 1. The shape of this day rests on it.",
@@ -640,6 +682,7 @@
         "Many contemporary walkers take a train between the preserved ferry sites. That is a legible choice, not a failure — but it should be made deliberately."
       ],
       "hiroshigeRefIds": [
+        "hr-narumi",
         "hr-miya",
         "hr-kuwana"
       ],
@@ -687,7 +730,12 @@
         "st-sakashita"
       ],
       "editorialPrompts": [],
-      "hiroshigeRefIds": [],
+      "hiroshigeRefIds": [
+        "hr-yokkaichi",
+        "hr-ishiyakushi",
+        "hr-shono",
+        "hr-kameyama"
+      ],
       "safetyNotes": [
         "Last day with reasonable rail before Suzuka. Sort out tomorrow’s weather decision tonight, not in the morning — though note that KONAN-01 stops being cancellable at midnight entering Nov 4, so the real decision point is the night of Nov 3, in Kuwana, on a two-day forecast.",
         "Nothing about tomorrow morning depends on a timetable now. Set the alarm by the forecast and the sunrise, not by a train."
@@ -730,7 +778,12 @@
       "editorialPrompts": [
         "Direction matters. On the 2018 walk this was a descent from the Shiga side. It will not be the same pass."
       ],
-      "hiroshigeRefIds": [],
+      "hiroshigeRefIds": [
+        "hr-seki",
+        "hr-sakashita",
+        "hr-tsuchiyama",
+        "hr-minakuchi"
+      ],
       "safetyNotes": [
         "Modern Route 1 runs through the Suzuka Tunnel below the pass; the old road climbs over the saddle as part of the Tokai Nature Trail. Those are different lines with different exposure.",
         "If the weather is bad, this is what the second recovery token was being held for."
@@ -778,7 +831,11 @@
       "editorialPrompts": [
         "The road begins and ends on bridges over rivers."
       ],
-      "hiroshigeRefIds": [],
+      "hiroshigeRefIds": [
+        "hr-ishibe",
+        "hr-kusatsu",
+        "hr-otsu"
+      ],
       "safetyNotes": [],
       "verificationTasks": [],
       "weatherSensitive": [],

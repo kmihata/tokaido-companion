@@ -9,6 +9,7 @@ import { AiHandoff } from '../components/AiHandoff';
 import { formatClock, formatKmMi } from '../lib/time';
 import { formatDuration } from '../lib/pace';
 import { href } from '../router';
+import { assetUrl } from '../lib/base';
 
 /**
  * The full day card, with a tired-day view first.
@@ -224,23 +225,34 @@ export function DayDetail({ dayId }: { dayId: string }): ReactNode {
 
           {day.hiroshigeRefIds.length > 0 ? (
             <section className="card">
-              <h2>Hiroshige references</h2>
+              <h2>Hiroshige</h2>
               <p className="small muted">
-                Metadata only. No images are bundled and none may be displayed until rights are
-                verified for that specific reproduction.
+                Public-domain scans via Wikimedia Commons, bundled for offline use. Where the artist
+                stood is <em>not</em> established — the prints are compressed and dramatised, and no
+                viewpoint here has been located on the ground.
               </p>
-              <ul className="notes small">
-                {day.hiroshigeRefIds.map((id) => {
-                  const h = dataset.hiroshige.find((x) => x.id === id);
-                  if (!h) return <li key={id}>{id} (not found)</li>;
-                  return (
-                    <li key={id}>
-                      {h.title} — rights: {h.rightsStatus}; viewpoint confidence:{' '}
-                      {h.viewpointConfidence}
-                    </li>
-                  );
-                })}
-              </ul>
+              {day.hiroshigeRefIds.map((id) => {
+                const h = dataset.hiroshige.find((x) => x.id === id);
+                if (!h) return <p key={id} className="small">{id} (not found)</p>;
+                return (
+                  <figure key={id} style={{ margin: '12px 0 0' }} data-testid="hiroshige-figure">
+                    {h.imagePath ? (
+                      <img
+                        src={assetUrl(h.imagePath)}
+                        alt={`Hiroshige, plate ${h.number}: ${h.title}`}
+                        loading="lazy"
+                        style={{ width: '100%', height: 'auto', borderRadius: 6, display: 'block' }}
+                      />
+                    ) : null}
+                    <figcaption className="small muted" style={{ marginTop: 6 }}>
+                      Plate {h.number} of 55 — {h.title}. {h.series}.{' '}
+                      {h.viewpointConfidence === 'unknown'
+                        ? 'Viewpoint not located.'
+                        : `Viewpoint ${h.viewpointConfidence}.`}
+                    </figcaption>
+                  </figure>
+                );
+              })}
             </section>
           ) : null}
 

@@ -178,15 +178,30 @@ describe('provenance is recorded per record, not assumed', () => {
 describe('Hiroshige records claim no rights they do not have', () => {
   const images = read('hiroshige.json')['images'] as Record<string, unknown>[];
 
-  it('leaves rights unverified for every record', () => {
-    for (const i of images) expect(i['rightsStatus']).toBe('unverified');
+  /*
+   * These three used to assert the opposite: rights unverified, no institution,
+   * no source URL, and no image file anywhere in public/. That was correct for
+   * as long as it was true, and it is why no image shipped by accident for two
+   * months. On 2026-10-01 all fifty-five were cleared — the Hoeido prints are
+   * 1833-34 and the works are long out of copyright, but a photograph of a
+   * print carries its own claim, so what had to be cleared was the
+   * reproduction. Every one now comes from a Wikimedia Commons scan stating
+   * Public domain.
+   *
+   * So the rule inverts rather than relaxes: a record may now claim rights, but
+   * only by naming where the claim came from, and an image may only ship if a
+   * record points at it.
+   */
+  it('states a settled rights status for every record, never "unverified"', () => {
+    for (const i of images) {
+      expect(['public-domain', 'licensed'], String(i['id'])).toContain(i['rightsStatus']);
+    }
   });
 
-  it('claims no offline image and no institution', () => {
+  it('backs every rights claim with an institution and a source URL', () => {
     for (const i of images) {
-      expect(i['imageAvailableOffline']).toBe(false);
-      expect(i['institution']).toBeNull();
-      expect(i['sourceUrl']).toBeNull();
+      expect(i['institution'], String(i['id'])).toBeTruthy();
+      expect(String(i['sourceUrl'] ?? ''), String(i['id'])).toMatch(/^https:\/\//);
     }
   });
 
@@ -198,12 +213,26 @@ describe('Hiroshige records claim no rights they do not have', () => {
     }
   });
 
-  it('ships no image files in public/', () => {
+  it('ships no image file that no record points at', () => {
     const walk = (dir: string): string[] =>
       readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
         e.isDirectory() ? walk(join(dir, e.name)) : [join(dir, e.name)],
       );
-    expect(walk(join(process.cwd(), 'public')).filter((f) => /\.(jpe?g|tiff?|webp|gif)$/i.test(f))).toEqual([]);
+    const pub = join(process.cwd(), 'public');
+    const onDisk = walk(pub)
+      .filter((f) => /\.(jpe?g|tiff?|webp|gif|png)$/i.test(f))
+      .map((f) => f.slice(pub.length + 1).replaceAll('\\', '/'))
+      .filter((f) => f.startsWith('images/'));
+    const claimed = new Set(images.map((i) => String(i['imagePath'] ?? '')));
+    for (const f of onDisk) {
+      expect(claimed.has(f), `${f} is bundled but no Hiroshige record points at it`).toBe(true);
+    }
+    // ...and every record's image actually exists.
+    for (const i of images) {
+      const rel = String(i['imagePath'] ?? '');
+      expect(rel, String(i['id'])).not.toBe('');
+      expect(existsSync(join(pub, rel)), `${rel} is referenced but missing`).toBe(true);
+    }
   });
 });
 
