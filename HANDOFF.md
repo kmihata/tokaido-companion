@@ -275,6 +275,79 @@ Only 5 of the 15 walking days have full operational content: walks 1, 4 (Hakone)
 rail redundancy, sleep base and a tired-day line, which is enough to exercise the
 app but not enough to walk from.
 
+## The watch lost a track, and the phone/watch workflow is unsettled, 2026-10-01
+
+Field evidence from two training walks, recorded because it bears on what the
+app is for and has not been designed around yet.
+
+**25 mi walk.** The watch died around mile 22. Low power mode was switched on at
+10% battery, around mile 18 or 19 — too late. **The whole track up to that point
+was lost with it.** Not truncated: lost.
+
+**20 mi walk.** Low power from the start, and it was fine. Remaining battery at
+the end was not noted, which is the one number that would make this useful.
+
+The failure is worth stating precisely, because it changes the fix. The track
+was not lost because the battery ran out. It was lost because the battery ran
+out **before the track was stopped**. A deliberate stop writes the file; dying
+mid-recording does not. So the fallback is a deliberate handoff — stop the watch
+track while there is still charge, start recording on the phone, stitch the two
+afterwards. That costs a seam. Losing twenty-two miles costs twenty-two miles.
+
+**The asymmetry that decides this:** the phone can take an external battery on
+the road. The watch cannot. Any workflow that puts recording on the watch has a
+ceiling the phone does not have.
+
+**How the planned days compare.** Yesterday's 25 mi is close to the worst case,
+which makes it a fair test:
+
+| | door to door |
+| --- | --- |
+| Walk 5, Lake Ashi to Fuji | 26.7 mi |
+| Walk 6, Fuji over Satta to Shizuoka | 26.1 mi |
+| the other fourteen walking days | under 25 mi |
+
+Two days over, consecutive, Oct 25 and 26. Everything else has margin.
+
+**What to test before departure, in order of cost:**
+
+1. Ten minutes, not twenty miles: start a track, stop it at low battery, confirm
+   it saved, start the phone. Prove the handoff works before relying on it.
+2. A 20 mi walk with low power from the START, and **write down the remaining
+   percentage at the end**. That gives a per-mile burn rate to extrapolate to
+   26.7 mi. Another 25 is not required.
+
+**What is still undecided.** Whether navigation lives on the watch — glanceable,
+no need to pull the phone out — or whether the watch becomes a glance-only
+surface and the phone does the recording. Samwise assumes the phone today and
+has no watch surface at all. Nothing here argues it should; it argues the
+recording question must be settled first, because Samwise is not the track.
+`useGeolocation.ts` already says so: a browser PWA on iOS does not record in the
+background, and a dedicated app remains the authoritative track.
+
+## The map opens past the zoom where stations are drawn, 2026-10-01
+
+Reported as "I don't see the stations on the full map". They are there, as
+anchors — the 53 post stations are anchors carrying a `stationNumber`, drawn
+larger and lighter than bridges and passes. But:
+
+    scale = zoom <= 8 ? 0.42 : zoom <= 10 ? 0.7 : 1
+    if (showAnchors && scale > 0.5) { ...draw anchors... }
+
+At zoom 8 and below they are **skipped, not shrunk**, and the map opens at zoom
+7 framed on the whole route. So the first thing anyone sees is a map with no
+stations on it, and nothing says why.
+
+Two things follow, neither addressed yet:
+
+- **`stations.json` never reaches the map.** The map draws anchors; the station
+  ledger — modern municipality, its Hiroshige print, its notes — is a separate
+  list the map cannot see. To the operator those are one thing.
+- **A day view probably wants its own map.** There is a "Today's waypoints only"
+  toggle, but the view still opens on all 537 km. A day map would open framed on
+  today's stage with today's exits. Deferred deliberately: Kevin wants more real
+  usage before deciding, and that is the right order.
+
 ## Seven more sections, and the button that lost them, 2026-09-15
 
 Route went **0.13.0-traced → 0.16.0-traced**, 536.16 → **536.43 km**, sections at
