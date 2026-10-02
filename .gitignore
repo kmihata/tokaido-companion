@@ -22,3 +22,4 @@ samwise-private*.json
 !examples/private-data.example.json
 captures-export*.json
 captures-export*.ndjson
+.cache/

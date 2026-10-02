@@ -23,7 +23,8 @@
     "route:gpx": "node --experimental-strip-types scripts/export-master-gpx.mjs",
     "route:apply-edits": "node scripts/apply-route-edits.mjs",
     "route:import-upstream": "node scripts/import-kaidotrail.mjs",
-    "route:audit": "node scripts/audit-traced-files.mjs"
+    "route:audit": "node scripts/audit-traced-files.mjs",
+    "route:off-path": "node scripts/audit-off-path.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
