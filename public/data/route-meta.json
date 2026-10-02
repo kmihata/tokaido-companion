@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "dataVersion": "0.25.0-traced",
-  "generated": "2026-09-26",
+  "dataVersion": "0.26.0-traced",
+  "generated": "2026-10-02",
   "routeId": "tokaido-2026",
   "title": "Tokaido — Nihonbashi to Sanjo Ohashi",
   "direction": "Tokyo to Kyoto",
@@ -21,12 +21,12 @@
     "provenanceFile": "route-sources/kevin-traced-2026-08-22/PROVENANCE.md"
   },
   "totals": {
-    "activeWalkingKm": 537.21,
+    "activeWalkingKm": 537.3,
     "eastKm": 374.7,
     "sayaKm": 36.59,
     "westKm": 124.08,
     "missingKyotoApproachKmEstimate": 0,
-    "note": "Measured on the assembled active route, including the forty-three sections retraced in gpx.studio and baked in between 2026-09-13 and 2026-09-26. The leg figures below are the base paths as imported; a retraced section is layered over its leg as a variant, so the legs do not sum to the active total. 76 of 98 sections are at 65 m point spacing or better. Hotel access mileage is on top. The largest single step on the route is 712 m across the Tenryu river: a bridge is a straight line, so that is geometry, not sampling. On 2026-09-21 832 consecutive duplicate points were stripped from the geometry: they changed no distance, but they counted in the point totals that mean spacing divides by, so every spacing figure before that date was slightly flattering."
+    "note": "Measured on the assembled active route, including the forty-one sections retraced in gpx.studio and baked in between 2026-09-13 and 2026-10-01. The leg figures below are the base paths as imported; a retraced section is layered over its leg as a variant, so the legs do not sum to the active total. 81 of 102 sections are at 65 m point spacing or better. Hotel access mileage is on top. The largest single step on the route is 712 m across the Tenryu river: a bridge is a straight line, so that is geometry, not sampling. On 2026-09-21 832 consecutive duplicate points were stripped from the geometry: they changed no distance, but they counted in the point totals that mean spacing divides by, so every spacing figure before that date was slightly flattering."
   },
   "knownWork": [
     "Trace the coarsest remaining sections. 45 of 93 are at 60 m point spacing or better; the section screen ranks the rest. Worst now: Outside Kozu to Odawara, Mishima Taisha to Mishima, Shimada to Oigawa — all in the 130s-140s, where the list started at 270.",
@@ -572,6 +572,45 @@
       "lengthKm": 5.571,
       "active": true,
       "source": "imported: Section — Okitsu-juku to Ejiri-juku.gpx",
+      "confidence": "medium",
+      "verification": "manually-traced",
+      "lastChecked": null
+    },
+    {
+      "id": "edit-Section — Yoshiwara-juku to Fuji, 818 m west of Yoshiwara-juku",
+      "title": "Yoshiwara-juku to Fuji, 818 m west of Yoshiwara-juku, retraced",
+      "rationale": "Road-snapped in gpx.studio at walking density.",
+      "divergeAnchorId": "a-026",
+      "rejoinAnchorId": "a-106",
+      "lengthKm": 0.752,
+      "active": true,
+      "source": "imported: Section — Yoshiwara-juku to Fuji, 818 m west of Yoshiwara-juku.gpx",
+      "confidence": "medium",
+      "verification": "manually-traced",
+      "lastChecked": null
+    },
+    {
+      "id": "edit-Section — Akasaka-juku to Fujikawa-juku",
+      "title": "Akasaka-juku to Fujikawa-juku, retraced",
+      "rationale": "Road-snapped in gpx.studio at walking density.",
+      "divergeAnchorId": "a-062",
+      "rejoinAnchorId": "a-063",
+      "lengthKm": 10.494,
+      "active": true,
+      "source": "imported: Section — Akasaka-juku to Fujikawa-juku.gpx",
+      "confidence": "medium",
+      "verification": "manually-traced",
+      "lastChecked": null
+    },
+    {
+      "id": "edit-Section — Narumi-juku to Saya Kaido junction (on the Tokaido)",
+      "title": "Narumi-juku to Saya Kaido junction (on the Tokaido), retraced",
+      "rationale": "Road-snapped in gpx.studio at walking density.",
+      "divergeAnchorId": "a-068",
+      "rejoinAnchorId": "a-069",
+      "lengthKm": 7.094,
+      "active": true,
+      "source": "imported: Section — Narumi-juku to Saya Kaido junction (on the Tokaido).gpx",
       "confidence": "medium",
       "verification": "manually-traced",
       "lastChecked": null
