@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "kind": "tokaido-private-data",
   "label": "EXAMPLE FILE — entirely fictional",
   "generated": "2026-08-18T00:00:00.000Z",
@@ -15,7 +15,13 @@
       "lat": 35.532,
       "lon": 139.699,
       "cancellationDeadline": "2026-10-14",
-      "notes": "Fictional placeholder. Real cancellation deadlines belong in the at-risk ledger, not in a public repository."
+      "notes": "Fictional placeholder. Real cancellation deadlines belong in the at-risk ledger and in your own private file on your own device, never in this repository.",
+      "phone": "+00-000-000-0000",
+      "cancellationDeadlineIso": "2026-10-14T23:59:00+09:00",
+      "laterExposure": "EXAMPLE: 50% of the amount paid, then 100% after the night before.",
+      "bookingSource": "EXAMPLE booking site (not real)",
+      "paymentState": "EXAMPLE: nothing paid in advance",
+      "railNotes": "EXAMPLE: fictional station, fictional walk."
     }
   ],
   "transport": [

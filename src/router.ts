@@ -33,6 +33,7 @@ export type RouteName =
   | 'import-route'
   | 'section'
   | 'adjust'
+  | 'lodging'
   | 'offline'
   | 'settings'
   | 'about'
@@ -82,6 +83,8 @@ export function parseHash(hash: string): Route {
       return { name: 'places', param: null, raw };
     case 'place':
       return param ? { name: 'place', param, raw } : { name: 'places', param: null, raw };
+    case 'lodging':
+      return { name: 'lodging', param: null, raw };
     case 'offline':
       return { name: 'offline', param: null, raw };
     case 'settings':

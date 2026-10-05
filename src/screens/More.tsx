@@ -37,6 +37,12 @@ export function More(): ReactNode {
           </a>
         </li>
         <li>
+          <a className="list__item" href={href('/lodging')} data-testid="more-lodging">
+            <h3>Stays</h3>
+            <div className="list__meta">Private · cancellation deadlines and what a change costs</div>
+          </a>
+        </li>
+        <li>
           <a className="list__item" href={href('/offline')} data-testid="more-offline">
             <h3>Offline readiness</h3>
             <div className="list__meta">Data {sync.dataVersion ?? '—'}</div>

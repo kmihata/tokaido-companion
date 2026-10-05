@@ -18,6 +18,7 @@ import { AddPlaceScreen } from './screens/AddPlaceScreen';
 import { ImportRouteScreen } from './screens/ImportRouteScreen';
 import { SectionScreen } from './screens/SectionScreen';
 import { AdjustAnchorScreen } from './screens/AdjustAnchorScreen';
+import { LodgingScreen } from './screens/LodgingScreen';
 import { PlaceDetail } from './screens/PlaceDetail';
 import { Offline } from './screens/Offline';
 import { Settings } from './screens/Settings';
@@ -55,6 +56,8 @@ function Screen(): ReactNode {
       return <SectionScreen />;
     case 'adjust':
       return <AdjustAnchorScreen anchorId={route.param} />;
+    case 'lodging':
+      return <LodgingScreen />;
     case 'places':
       return <Places />;
     case 'place':

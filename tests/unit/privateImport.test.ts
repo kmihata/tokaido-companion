@@ -94,7 +94,7 @@ describe('parsePrivateData — refuses', () => {
   );
   refuses(
     'a future schema version',
-    json({ ...valid, schemaVersion: 2 }),
+    json({ ...valid, schemaVersion: 3 }),
     /unsupported schemaversion/i,
   );
   refuses(
@@ -164,5 +164,65 @@ describe('emptyPrivateData', () => {
   it('round-trips through the validator', () => {
     const r = parsePrivateData(JSON.stringify(emptyPrivateData()));
     expect(r.ok).toBe(true);
+  });
+});
+
+/**
+ * Version 1 files keep working.
+ *
+ * Kevin's own private file predates the lodging fields added on 2026-10-05,
+ * and refusing it in the week before departure would be a far worse outcome
+ * than a few empty fields. The file is read and relabelled as version 2 rather
+ * than left at 1, so only one shape is ever alive in the app at once.
+ */
+describe('parsePrivateData — version 1 compatibility', () => {
+  const v1 = JSON.stringify({
+    schemaVersion: 1,
+    kind: PRIVATE_KIND,
+    label: 'A version 1 file',
+    generated: '2026-09-01T00:00:00.000Z',
+    lodging: [
+      {
+        id: 'old-1',
+        name: 'Recorded before the new fields existed',
+        cancellationDeadline: '2026-10-16',
+      },
+    ],
+  });
+
+  it('imports, upgrades, and defaults the new fields', () => {
+    const r = parsePrivateData(v1);
+    expect(r.ok).toBe(true);
+    if (!r.ok) return;
+    expect(r.data.schemaVersion).toBe(2);
+    const stay = r.data.lodging[0]!;
+    expect(stay.phone).toBe('');
+    expect(stay.cancellationDeadlineIso).toBeNull();
+    expect(stay.cancellationDeadline).toBe('2026-10-16');
+  });
+
+  it('says the deadline is a date only, naming the stay', () => {
+    const r = parsePrivateData(v1);
+    expect(r.ok).toBe(true);
+    if (!r.ok) return;
+    const warnings = r.warnings.join(' ');
+    expect(warnings).toMatch(/version 1/i);
+    expect(warnings).toMatch(/date-only cancellation deadline/i);
+    expect(warnings).toContain('Recorded before the new fields existed');
+  });
+
+  it('refuses a deadline timestamp with no zone offset', () => {
+    const r = parsePrivateData(
+      JSON.stringify({
+        schemaVersion: 2,
+        kind: PRIVATE_KIND,
+        label: 'Zoneless',
+        generated: 'now',
+        lodging: [{ id: 'z', name: 'Zoneless', cancellationDeadlineIso: '2026-10-16T23:59:00' }],
+      }),
+    );
+    expect(r.ok).toBe(false);
+    if (r.ok) return;
+    expect(r.errors.join(' ')).toMatch(/zone offset/i);
   });
 });
