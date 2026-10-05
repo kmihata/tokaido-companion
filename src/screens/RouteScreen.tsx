@@ -81,7 +81,11 @@ export function RouteScreen(): ReactNode {
         <h2>Prepared alternatives</h2>
         <ul className="list">
           {routeMeta.variants.map((v) => (
-            <li key={v.id} className="list__item">
+            // The id is the stable handle. Matching these by title broke on
+            // 2026-10-02 when a retrace named "Narumi-juku to Saya Kaido
+            // junction" joined the list and made /Saya Kaido/ ambiguous — every
+            // retrace adds a title here, so titles will keep colliding.
+            <li key={v.id} className="list__item" data-testid={`variant-${v.id}`}>
               <h3>
                 {v.title} {v.active ? '· active' : '· not active'}
               </h3>

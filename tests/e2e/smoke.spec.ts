@@ -300,7 +300,11 @@ test.describe('route workbench', () => {
 
   test('offers the Saya Kaido as the active alternative that closes the crossing', async ({ page }) => {
     await page.goto('./#/route');
-    await expect(page.getByRole('heading', { name: /Saya Kaido/i })).toContainText(/active/i);
+    // By id, not by title. Every retrace adds its own entry to this list, and
+    // on 2026-10-02 "Narumi-juku to Saya Kaido junction, retraced" landed here
+    // and made a /Saya Kaido/ heading match two elements.
+    const saya = page.getByTestId('variant-variant-saya');
+    await expect(saya.getByRole('heading')).toContainText(/active/i);
     await expect(page.getByText(/Seven-ri sea crossing/i)).toBeVisible();
   });
 
@@ -771,7 +775,12 @@ test.describe('exporting a section', () => {
     // Assert that the list is ranked and that the screen defaults to its head,
     // which is the behaviour; the identity of the head is data.
     const rows = page.getByTestId('coarse-sections').locator('> li');
-    const spacings = (await rows.allInnerTexts()).map((t) => Number(/(\d+)\s*m/.exec(t)?.[1] ?? 0));
+    // Read the spacing from the meta line and say the word "spacing", because
+    // an anchor title can contain a distance. On 2026-10-02 a day end was added
+    // named "Fuji, 818 m west of Yoshiwara-juku", and the loose /(\d+)\s*m/
+    // pulled 818 out of the heading and reported the list as unsorted.
+    const metas = await rows.locator('.list__meta').allInnerTexts();
+    const spacings = metas.map((t) => Number(/(\d+)\s*m spacing/.exec(t)?.[1] ?? 0));
     expect(spacings.every((v) => v > 0)).toBe(true);
     expect([...spacings]).toEqual([...spacings].sort((a, b) => b - a));
     await expect(rows.first()).not.toContainText(/Nihonbashi/);
