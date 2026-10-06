@@ -37,6 +37,12 @@ if (!existsSync(ANCHOR_FILE)) {
 }
 const anchorFeatures = JSON.parse(readFileSync(ANCHOR_FILE, 'utf8')).features;
 
+const META_FILE = join(OUT, 'route-meta.json');
+if (!existsSync(META_FILE)) {
+  throw new Error('public/data/route-meta.json is missing. Run `npm run route:import` first.');
+}
+const routeMeta = JSON.parse(readFileSync(META_FILE, 'utf8'));
+
 /** Find an anchor by traditional station number. */
 const anchorByStation = (n) =>
   anchorFeatures.find((f) => f.properties.stationNumber === n) ?? null;
@@ -46,8 +52,23 @@ const anchorByJa = (ja) => anchorFeatures.find((f) => f.properties.titleJa === j
 
 const anchorPos = (f) => (f ? { lat: f.geometry.coordinates[1], lon: f.geometry.coordinates[0] } : null);
 
-const DATA_VERSION = '0.1.0-demo';
-const GENERATED = '2026-08-18';
+/**
+ * Track the route, do not restate it.
+ *
+ * This was frozen at '0.1.0-demo' from 2026-08-18 while the route moved to
+ * 0.28.0-traced, so More → Offline readiness — the one screen that answers
+ * "am I on the current build?" — showed the same string after every deploy and
+ * could not answer it. On 2026-10-05 Kevin checked it before a field test and
+ * found the number had not moved since August. A version nobody can use to
+ * tell two builds apart is not a version.
+ *
+ * The `-demo` suffix is kept deliberately: the fixtures ARE a demonstration
+ * dataset in the sense that matters — hotels are fictional, nothing is checked
+ * on the ground — and `demonstration: true` is also what stops the private-file
+ * importer accepting one of these by mistake.
+ */
+const DATA_VERSION = `${routeMeta.dataVersion}-demo`;
+const GENERATED = new Date().toISOString().slice(0, 10);
 
 /** Shared provenance stamp for every generated record. */
 const DEMO = {
@@ -679,13 +700,13 @@ const trip = {
   walkingDayCount: 15,
   recoveryDayCount: 1,
   flexDayCount: 1,
-  workingRouteKmMin: 500,
-  workingRouteKmMax: 525,
+  workingRouteKmMin: 537.5,
+  workingRouteKmMax: 537.5,
   nominalHistoricalKm: 495.5,
   navigational: false,
   demonstration: true,
   notice:
-    'MIXED PROVENANCE, NOTHING VERIFIED. The route comes from a real GPS-traced source (kaidotrail, CC BY-SA 4.0) and has not been checked on the ground by anyone on this trip; its last 6 km into Kyoto are missing. Day distances still come from a balancing draft of historical post-station figures, and hazards, bailouts and lodging are placeholders — the hotels are fictional. Every record carries its own provenance. Do not navigate from this.',
+    'MIXED PROVENANCE, NOT CHECKED ON THE GROUND. The route comes from a real GPS-traced source (kaidotrail, CC BY-SA 4.0), was road-snapped by hand, and reaches Sanjo Ohashi; nobody on this trip has walked it. Day distances are measured against that route and agree with it to within 50 m. Rail bailouts carry sourced coordinates. Hazards are partial and LODGING IN THIS PUBLIC DATASET IS FICTIONAL — real stays live only in the private file on the device. Every record carries its own provenance. Do not navigate from this alone.',
   source: 'STATUS.md and DAILY-SCHEDULE-DRAFT.md, tokaido-reset, 2026-08-16 to 2026-08-17; route from kaidotrail 2026-08-20',
 };
 
@@ -706,7 +727,7 @@ const files = {
   'trip.json': trip,
   'days.json': { schemaVersion: 1, dataVersion: DATA_VERSION, demonstration: true, navigational: false, days },
   'stations.json': { schemaVersion: 1, dataVersion: DATA_VERSION, demonstration: true, navigational: false, complete: true, note: 'All fifty-three post stations plus Nihonbashi and Sanjo Ohashi. Positions are snapped to the traced route anchors. Modern municipalities were reverse-geocoded against the Geospatial Information Authority of Japan on 2026-10-01, not recalled. What each station HAS on the ground — surviving remnants, markers, access — is still unresearched and the notes say so.', stations },
-  'hiroshige.json': { schemaVersion: 1, dataVersion: DATA_VERSION, demonstration: true, note: 'Metadata only. No images are bundled or republished. Rights status must be verified per institution before any image is displayed.', images: hiroshige },
+  'hiroshige.json': { schemaVersion: 1, dataVersion: DATA_VERSION, demonstration: true, note: 'Fifty-five prints. Phone-sized WebP copies ARE bundled under public/images/hiroshige/ and ship offline; the rights basis is that these are public-domain Edo-period works whose photographic reproductions were taken from Wikimedia Commons. Each record carries its own source. Viewpoints are not yet located.', images: hiroshige },
   'waypoints.geojson': waypointCollection,
 };
 

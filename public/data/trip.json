@@ -14,11 +14,11 @@
   "walkingDayCount": 15,
   "recoveryDayCount": 1,
   "flexDayCount": 1,
-  "workingRouteKmMin": 500,
-  "workingRouteKmMax": 525,
+  "workingRouteKmMin": 537.5,
+  "workingRouteKmMax": 537.5,
   "nominalHistoricalKm": 495.5,
   "navigational": false,
   "demonstration": true,
-  "notice": "MIXED PROVENANCE, NOTHING VERIFIED. The route comes from a real GPS-traced source (kaidotrail, CC BY-SA 4.0) and has not been checked on the ground by anyone on this trip; its last 6 km into Kyoto are missing. Day distances still come from a balancing draft of historical post-station figures, and hazards, bailouts and lodging are placeholders — the hotels are fictional. Every record carries its own provenance. Do not navigate from this.",
+  "notice": "MIXED PROVENANCE, NOT CHECKED ON THE GROUND. The route comes from a real GPS-traced source (kaidotrail, CC BY-SA 4.0), was road-snapped by hand, and reaches Sanjo Ohashi; nobody on this trip has walked it. Day distances are measured against that route and agree with it to within 50 m. Rail bailouts carry sourced coordinates. Hazards are partial and LODGING IN THIS PUBLIC DATASET IS FICTIONAL — real stays live only in the private file on the device. Every record carries its own provenance. Do not navigate from this alone.",
   "source": "STATUS.md and DAILY-SCHEDULE-DRAFT.md, tokaido-reset, 2026-08-16 to 2026-08-17; route from kaidotrail 2026-08-20"
 }

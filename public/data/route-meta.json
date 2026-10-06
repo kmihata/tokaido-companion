@@ -8,7 +8,7 @@
   "navigational": false,
   "demonstration": false,
   "verification": "manually-traced",
-  "notice": "TRACED BUT UNVERIFIED. Road-snapped in an external editor and reaching Sanjo Ohashi, but not checked on the ground by anyone on this trip. Two thirds of the sections are still coarsely sampled, the Hakone crossing follows the standard Old Tokaido rather than the hybrid line this project prefers, and the Hakone Pass IC shoulder is unresolved. Hazards, bailouts and lodging remain placeholders. Do not navigate from this alone.",
+  "notice": "TRACED BUT UNVERIFIED. Road-snapped in an external editor and reaching Sanjo Ohashi, but not checked on the ground by anyone on this trip. Eighty-five of 102 sections are at walking density; seventeen are still coarse, the coarsest at 99 m. The Hakone crossing follows the standard Old Tokaido by Kevin's decision of 2026-09-30 — there is no sensible alternative to the lake shore — and the Hakone Pass IC shoulder is unresolved. Rail bailouts are real and sourced; lodging in this public dataset is fictional placeholders. Do not navigate from this alone.",
   "source": {
     "name": "旧街道足跡マップ (kaidotrail), traced and extended by Kevin",
     "url": "https://kaidotrail.github.io/",

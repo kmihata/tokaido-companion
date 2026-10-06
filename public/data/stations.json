@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "dataVersion": "0.1.0-demo",
+  "dataVersion": "0.28.0-traced-demo",
   "demonstration": true,
   "navigational": false,
   "complete": true,
