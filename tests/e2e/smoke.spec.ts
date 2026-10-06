@@ -37,7 +37,11 @@ test.describe('shell and navigation', () => {
   test('shows connectivity and data version in the status strip', async ({ page }) => {
     await page.goto('./');
     await expect(page.getByTestId('online-chip')).toBeVisible();
-    await expect(page.getByTestId('data-version-chip')).toContainText('0.1.0-demo');
+    // The chip must track the route, not a literal. It read '0.1.0-demo' from
+    // 2026-08-18 to 2026-10-05 while the route moved to 0.28.0, so this
+    // assertion passed for seven weeks while the screen was useless for
+    // telling two builds apart. Assert the SHAPE: a real version, then -demo.
+    await expect(page.getByTestId('data-version-chip')).toContainText(/\d+\.\d+\.\d+-traced-demo/);
   });
 
   test('every tab is reachable and at least 48px tall', async ({ page }) => {
