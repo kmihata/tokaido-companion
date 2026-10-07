@@ -275,24 +275,35 @@ Only 5 of the 15 walking days have full operational content: walks 1, 4 (Hakone)
 rail redundancy, sleep base and a tired-day line, which is enough to exercise the
 app but not enough to walk from.
 
-## The watch lost a track, and the phone/watch workflow is unsettled, 2026-10-01
+## The phone/watch workflow is unsettled, 2026-10-01 (track-loss claim corrected 2026-10-07)
 
 Field evidence from two training walks, recorded because it bears on what the
 app is for and has not been designed around yet.
 
+**CORRECTED 2026-10-07: the track was not lost.** On the next walk, opening the
+Footpath watch app brought the interrupted recording back — still running from
+the day the battery died — and Kevin saved it. Footpath recovers an unstopped
+track on next launch. This section previously said the twenty-two miles were
+"not truncated: lost", stated twice and reasoned from at length. It was wrong,
+and it was wrong in the direction that invents urgency.
+
+One consequence to tidy: he may now have a duplicate, since the recovered track
+covers ground that was partly re-walked. Check Footpath's list before treating
+either as the record.
+
 **25 mi walk.** The watch died around mile 22. Low power mode was switched on at
-10% battery, around mile 18 or 19 — too late. **The whole track up to that point
-was lost with it.** Not truncated: lost.
+10% battery, around mile 18 or 19 — too late. The recording stopped there; the
+track itself survived and was recovered days later.
 
 **20 mi walk.** Low power from the start, and it was fine. Remaining battery at
 the end was not noted, which is the one number that would make this useful.
 
-The failure is worth stating precisely, because it changes the fix. The track
-was not lost because the battery ran out. It was lost because the battery ran
-out **before the track was stopped**. A deliberate stop writes the file; dying
-mid-recording does not. So the fallback is a deliberate handoff — stop the watch
-track while there is still charge, start recording on the phone, stitch the two
-afterwards. That costs a seam. Losing twenty-two miles costs twenty-two miles.
+**What this changes.** A dead watch costs the remainder of the day's recording,
+not the day. The mid-walk handoff at 10% is therefore a convenience rather than
+a rescue, and does not have to be fast or practised — which is the opposite of
+what the earlier text implied. What is still worth having is the battery number
+from a long walk in low power from the start, because that decides whether the
+watch reaches the end of a 42 km day at all.
 
 **The asymmetry that decides this:** the phone can take an external battery on
 the road. The watch cannot. Any workflow that puts recording on the watch has a
