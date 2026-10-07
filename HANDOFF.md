@@ -287,16 +287,46 @@ track on next launch. This section previously said the twenty-two miles were
 "not truncated: lost", stated twice and reasoned from at length. It was wrong,
 and it was wrong in the direction that invents urgency.
 
-One consequence to tidy: he may now have a duplicate, since the recovered track
-covers ground that was partly re-walked. Check Footpath's list before treating
-either as the record.
+Coach has already handled the duplicate question and has a standing rule for
+it: as of the 2026-10-06 filesystem check only that day's file was newly
+modified, the two September 30 exports kept their original timestamps, and
+**September 30's canonical total stays at 25.74 miles unless a revised file
+appears — an appended or overlapping record is never added as new mileage.**
+`Training/training-living-plan.md` owns that call.
 
 **25 mi walk.** The watch died around mile 22. Low power mode was switched on at
 10% battery, around mile 18 or 19 — too late. The recording stopped there; the
 track itself survived and was recovered days later.
 
 **20 mi walk.** Low power from the start, and it was fine. Remaining battery at
-the end was not noted, which is the one number that would make this useful.
+the end was not noted, which is the one number that would have made it useful.
+
+**14.29 mi walk, 2026-10-06 — the number arrived.** Low power from the start:
+**73% to 42% over 4:38:38**, which is **6.7 percentage points per hour**. Coach
+recorded it; `Training/training-living-plan.md` owns the physiology, this file
+owns what it means for the device workflow.
+
+Projected onto the route at that walk's own elapsed pace of 4.95 km/h including
+stops, starting from a full charge in low power:
+
+| day | km | hours | drain | left at finish |
+| --- | ---: | ---: | ---: | ---: |
+| Walk 10 | 42.7 | 8.6 | 58% | **42%** |
+| Walk 6 | 42.0 | 8.5 | 57% | 43% |
+| Walk 5 | 41.9 | 8.5 | 56% | 44% |
+| Walk 8 | 39.5 | 8.0 | 53% | 47% |
+
+**So the watch reaches the end of the longest day with room, provided it starts
+full.** The same day begun at 73%, as the test walk was, finishes at 15% — which
+is the whole lesson: the failure mode is not the walk, it is the overnight
+charge. Charging the watch every night is the fix, and it is cheaper than any
+handoff workflow.
+
+Two cautions on the projection. It assumes the trip days run at the training
+walk's elapsed pace, and the long days have research stops that the rehearsal
+did not. And 6.7 pp/h was measured with that day's incidental navigation and
+display use; a day spent checking the route more often will drain faster. Coach
+notes the same and declines to call it a field guarantee.
 
 **What this changes.** A dead watch costs the remainder of the day's recording,
 not the day. The mid-walk handoff at 10% is therefore a convenience rather than
