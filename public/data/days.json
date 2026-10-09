@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "dataVersion": "0.29.0-traced-demo",
+  "dataVersion": "0.30.0-traced-demo",
   "demonstration": true,
   "navigational": false,
   "days": [
@@ -303,13 +303,13 @@
       "plan": "Lake Ashi shore → Hakone Sekisho (first thing, in the morning, when it is open) → Hakone Pass → Mishima → Numazu → Hara → past Yoshiwara-juku to the Fuji hotel. Starts at 725 m and descends the west slope.",
       "from": "Lake Ashi shore (Moto-Hakone)",
       "to": "Fuji lodging, 818 m past Yoshiwara-juku",
-      "nominalDistanceKm": 41.9,
-      "likelyDoorToDoorKm": 42.9,
+      "nominalDistanceKm": 42,
+      "likelyDoorToDoorKm": 43,
       "terrain": "Long descent off the pass, then sustained pavement.",
       "elevationWarning": "Opens with 5.5 km of unpaved trail down the west slope — the largest single stretch of unpaved ground on the route — on cold legs, first thing. Wet stone is the hazard, not the gradient, exactly as on Walk 4.",
       "railRedundancy": "high",
       "sleepBase": "Fuji",
-      "sleepBaseNote": "The route passes 62 m from the door, so the day ends at the bed rather than walking to it. Third-longest day, behind Walk 10 and Walk 6.",
+      "sleepBaseNote": "The route passes 62 m from the door, so the day ends at the bed rather than walking to it. One of the three longest days, with Walk 10 and Walk 6 — and within 50 m of Walk 6, which is too close to rank honestly.",
       "startLightGuidance": "Opens with the Hakone west descent on cold legs. The descent, not the distance, is what to pace.",
       "tiredDaySummary": "Shortened to Yoshiwara so the Lake Ashi remainder spreads onto Walks 6 and 7 instead of landing here. The Tokaido Main Line parallels most of it, so stopping early and riding in is cheap."
     },

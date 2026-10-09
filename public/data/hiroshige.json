@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "dataVersion": "0.29.0-traced-demo",
+  "dataVersion": "0.30.0-traced-demo",
   "demonstration": true,
   "note": "Fifty-five prints. Phone-sized WebP copies ARE bundled under public/images/hiroshige/ and ship offline; the rights basis is that these are public-domain Edo-period works whose photographic reproductions were taken from Wikimedia Commons. Each record carries its own source. Viewpoints are not yet located.",
   "images": [

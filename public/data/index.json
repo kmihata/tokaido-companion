@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "dataVersion": "0.29.0-traced-demo",
+  "dataVersion": "0.30.0-traced-demo",
   "generated": "2026-10-09",
   "demonstration": true,
   "navigational": false,
@@ -19,7 +19,7 @@
     },
     {
       "path": "days.json",
-      "bytes": 39239
+      "bytes": 39312
     },
     {
       "path": "stations.json",
