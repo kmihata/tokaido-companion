@@ -187,7 +187,7 @@ async function overpass(query, label) {
     // query is bad, so re-resolve before sleeping rather than hammering a
     // host that has stopped answering.
     ENDPOINT = await resolveEndpoint();
-    await sleep(attempt * 5_000);
+    await sleep(attempt * 20_000);
   }
   return null;
 }
@@ -530,6 +530,13 @@ ENDPOINT = await resolveEndpoint();
 const results = [];
 for (const [i, s] of sections.entries()) {
   process.stderr.write(`  [${i + 1}/${sections.length}] ${s.key}  ${s.title}\n`);
+  // A pause between sections. Overpass allows four slots and the loop was
+  // issuing a new query the instant the last returned, which exhausted them
+  // and cost 98 failures on the 2026-10-09 run. Waiting two seconds between
+  // sections costs about three minutes over the whole route and is the
+  // difference between finishing and not. Skipped when the corridor is
+  // already cached, since that asks nothing of anyone.
+  if (!existsSync(join(CACHE, `${s.key}.json`))) await sleep(2_000);
   const ways = await corridorFor(s.key, s.line);
   if (!ways) {
     results.push({ ...s, error: 'no OSM data (fetch failed after retries)' });
