@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "dataVersion": "0.28.0-traced-demo",
+  "dataVersion": "0.29.0-traced-demo",
   "demonstration": true,
   "navigational": false,
   "days": [
@@ -630,8 +630,8 @@
       "plan": "Shin-Anjo → Chiryu → Narumi → Miya/Atsuta → Saya Kaido → Iwatsuka Station crossing.",
       "from": "Toeicho crossing (Shin-Anjo)",
       "to": "Iwatsuka Station crossing",
-      "nominalDistanceKm": 31.4,
-      "likelyDoorToDoorKm": 31.8,
+      "nominalDistanceKm": 31.6,
+      "likelyDoorToDoorKm": 32,
       "terrain": "Continuous urban corridor.",
       "railRedundancy": "high",
       "sleepBase": "Nagoya / Atsuta",
