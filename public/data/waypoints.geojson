@@ -1467,9 +1467,9 @@
         "schemaVersion": 1,
         "classification": "public",
         "lastChecked": null,
-        "operationalNotes": "Currently presented as a walking route, but repair work is scheduled during FY2026. Recheck status shortly before crossing.",
+        "operationalNotes": "THE WET-WEATHER CHOICE. The traced route goes OVER the pass on the old footway, which is what the Edo road did. The tunnel runs beneath it and rejoins the same road at both ends, so taking it costs almost no distance — it is a surface decision, not a detour. The tunnel is paved (paving_stones) and lit; the pass is an unpaved mountain footpath. In heavy rain, or on tired legs, the tunnel is the sensible crossing and Kevin has walked it before. Decide at the portal, not in advance.",
         "historicalNotes": "Opened 1876 as Japan’s first toll tunnel; rebuilt in brick 1904; present passage about 203 m. The portal inscription reads right-to-left. A Meiji-period transformation of the corridor, not the Edo path.",
-        "safetyNotes": "Confirm open before relying on it; the alternative adds distance to an already crowded day.",
+        "safetyNotes": "Repair work was scheduled during FY2026 — CONFIRM THE TUNNEL IS OPEN before counting on it as the rain option, because a closure removes the choice and leaves only the pass. Check the Shizuoka and Fujieda notices below shortly before Oct 27.",
         "links": [
           {
             "label": "Shizuoka City",
@@ -1481,7 +1481,7 @@
           }
         ],
         "dayIds": [
-          "d-2026-10-26"
+          "d-2026-10-27"
         ],
         "source": "kaidotrail 2026-08-20 (route anchor)",
         "confidence": "medium",
@@ -1679,8 +1679,8 @@
         "schemaVersion": 1,
         "classification": "public",
         "lastChecked": null,
-        "operationalNotes": "Weather-dependent and the reason to be there. Position approximate.",
-        "historicalNotes": "One of the most reproduced viewpoints on the road.",
+        "operationalNotes": "Weather-dependent and the reason to be there — if there is no view, the climb buys nothing but the climb. About 900 m of the descent west of the pass is unpaved trail, the only unpaved ground on Walk 6. In heavy rain, or if the forecast has already taken the view away, the coastal corridor through Yui and Okitsu is the alternative and the Tokaido Main Line parallels it the whole way. Position approximate.",
+        "historicalNotes": "One of the most reproduced viewpoints on the road. Three routes over Satta existed historically — upper, middle and lower. The lower ran along the shore and was the one that drowned people; the upper is the walked line today and the one Hiroshige composed from.",
         "safetyNotes": null,
         "links": [],
         "dayIds": [

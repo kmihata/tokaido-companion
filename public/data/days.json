@@ -289,7 +289,10 @@
       ],
       "safetyNotes": [],
       "verificationTasks": [],
-      "weatherSensitive": [],
+      "weatherSensitive": [
+        "THE WEST SLOPE IS WALKED ON THIS DAY, not Walk 4. Kannami Town asks walkers to avoid the upper west-slope old road in rain and for several days after; it reopened 2026-03-30 after typhoon restoration. Route 1 is the designated wet-weather detour — and Route 1 is where the unresolved Hakone Pass IC shoulder problem is, so neither option is free. Decide before leaving Lake Ashi, where there is still a bed and a recovery token.",
+        "If Walk 4 was wet, this descent is the reason to spend the token rather than the climb."
+      ],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
       "id": "d-2026-10-25",
       "date": "2026-10-25",
@@ -302,6 +305,7 @@
       "nominalDistanceKm": 41.9,
       "likelyDoorToDoorKm": 42.9,
       "terrain": "Long descent off the pass, then sustained pavement.",
+      "elevationWarning": "Opens with 5.5 km of unpaved trail down the west slope — the largest single stretch of unpaved ground on the route — on cold legs, first thing. Wet stone is the hazard, not the gradient, exactly as on Walk 4.",
       "railRedundancy": "high",
       "sleepBase": "Fuji",
       "sleepBaseNote": "The route passes 62 m from the door, so the day ends at the bed rather than walking to it. Third-longest day, behind Walk 10 and Walk 6.",
@@ -338,7 +342,8 @@
         "Confirm the Satta Pass path is open; it is the one view worth rescheduling for."
       ],
       "weatherSensitive": [
-        "Satta Pass viewpoint is weather-dependent and the reason to be there."
+        "Satta Pass viewpoint is weather-dependent and the reason to be there.",
+        "About 900 m of the descent west of Satta is unpaved trail — the only unpaved ground on this day. If the weather has already taken the view away, the coastal corridor through Yui and Okitsu is the alternative and the Tokaido Main Line parallels it the whole way."
       ],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
       "id": "d-2026-10-26",
@@ -393,7 +398,9 @@
       "verificationTasks": [
         "Recheck Utsunoya tunnel status against Shizuoka City and Fujieda City notices in October 2026."
       ],
-      "weatherSensitive": [],
+      "weatherSensitive": [
+        "Utsunoya is a choice, not a hazard: the traced line goes OVER the pass on the old footway, and the Meiji tunnel runs beneath it and rejoins the same road at both ends. Paved and lit against an unpaved mountain path, at almost no cost in distance. In heavy rain take the tunnel — but confirm it is open first, because FY2026 repair work could remove the option."
+      ],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
       "id": "d-2026-10-27",
       "date": "2026-10-27",
