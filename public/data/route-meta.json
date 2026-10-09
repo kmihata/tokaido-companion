@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "dataVersion": "0.30.0-traced",
+  "dataVersion": "0.31.0-traced",
   "generated": "2026-10-09",
   "routeId": "tokaido-2026",
   "title": "Tokaido — Nihonbashi to Sanjo Ohashi",
@@ -21,12 +21,12 @@
     "provenanceFile": "route-sources/kevin-traced-2026-08-22/PROVENANCE.md"
   },
   "totals": {
-    "activeWalkingKm": 537.79,
+    "activeWalkingKm": 537.84,
     "eastKm": 374.7,
     "sayaKm": 36.59,
     "westKm": 124.08,
     "missingKyotoApproachKmEstimate": 0,
-    "note": "Measured on the assembled active route, including the forty-eight sections retraced in gpx.studio and baked in between 2026-09-13 and 2026-10-09. The leg figures below are the base paths as imported; a retraced section is layered over its leg as a variant, so the legs do not sum to the active total. 88 of 102 sections are at 65 m point spacing or better. Hotel access mileage is on top. The largest single step on the route is 712 m across the Tenryu river: a bridge is a straight line, so that is geometry, not sampling. On 2026-09-21 832 consecutive duplicate points were stripped from the geometry: they changed no distance, but they counted in the point totals that mean spacing divides by, so every spacing figure before that date was slightly flattering."
+    "note": "Measured on the assembled active route, including the fifty-three sections retraced in gpx.studio and baked in between 2026-09-13 and 2026-10-09. The leg figures below are the base paths as imported; a retraced section is layered over its leg as a variant, so the legs do not sum to the active total. 91 of 102 sections are at 65 m point spacing or better. Hotel access mileage is on top. The largest single step on the route is 712 m across the Tenryu river: a bridge is a straight line, so that is geometry, not sampling. On 2026-09-21 832 consecutive duplicate points were stripped from the geometry: they changed no distance, but they counted in the point totals that mean spacing divides by, so every spacing figure before that date was slightly flattering."
   },
   "knownWork": [
     "Trace the coarsest remaining sections. 45 of 93 are at 60 m point spacing or better; the section screen ranks the rest. Worst now: Outside Kozu to Odawara, Mishima Taisha to Mishima, Shimada to Oigawa — all in the 130s-140s, where the list started at 270.",
@@ -702,6 +702,71 @@
       "lengthKm": 14.392,
       "active": true,
       "source": "imported: Section — Hakone Sekisho (checkpoint) to Mishima Taisha.gpx",
+      "confidence": "medium",
+      "verification": "manually-traced",
+      "lastChecked": null
+    },
+    {
+      "id": "edit-Section — Odawara-juku to Sanmaibashi",
+      "title": "Odawara-juku to Sanmaibashi, retraced",
+      "rationale": "Road-snapped in gpx.studio at walking density.",
+      "divergeAnchorId": "a-016",
+      "rejoinAnchorId": "a-017",
+      "lengthKm": 5.497,
+      "active": true,
+      "source": "imported: Section — Odawara-juku to Sanmaibashi.gpx",
+      "confidence": "medium",
+      "verification": "manually-traced",
+      "lastChecked": null
+    },
+    {
+      "id": "edit-Section — Kuwana-juku to Machiya Bridge",
+      "title": "Shichiri-no-watashi site (Kuwana landing) to Machiya Bridge, retraced",
+      "rationale": "Road-snapped in gpx.studio at walking density.",
+      "divergeAnchorId": "a-076",
+      "rejoinAnchorId": "a-078",
+      "lengthKm": 4.358,
+      "active": true,
+      "source": "imported: Section — Kuwana-juku to Machiya Bridge.gpx",
+      "confidence": "medium",
+      "verification": "manually-traced",
+      "lastChecked": null
+    },
+    {
+      "id": "edit-Section — Fujikawa-juku to Okazaki-juku",
+      "title": "Fujikawa-juku to Okazaki-juku, retraced",
+      "rationale": "Road-snapped in gpx.studio at walking density.",
+      "divergeAnchorId": "a-063",
+      "rejoinAnchorId": "a-064",
+      "lengthKm": 7.886,
+      "active": true,
+      "source": "imported: Section — Fujikawa-juku to Okazaki-juku.gpx",
+      "confidence": "medium",
+      "verification": "manually-traced",
+      "lastChecked": null
+    },
+    {
+      "id": "edit-Section — Shizuoka, 1,091 m west of Fuchu-juku to Abekawa Bridge",
+      "title": "Shizuoka, 1,091 m west of Fuchu-juku to Abekawa Bridge, retraced",
+      "rationale": "Road-snapped in gpx.studio at walking density.",
+      "divergeAnchorId": "a-107",
+      "rejoinAnchorId": "a-038",
+      "lengthKm": 2.257,
+      "active": true,
+      "source": "imported: Section — Shizuoka, 1,091 m west of Fuchu-juku to Abekawa Bridge.gpx",
+      "confidence": "medium",
+      "verification": "manually-traced",
+      "lastChecked": null
+    },
+    {
+      "id": "edit-Section — Hiratsuka-juku to Oiso-juku",
+      "title": "Hiratsuka-juku to Oiso-juku, retraced",
+      "rationale": "Road-snapped in gpx.studio at walking density.",
+      "divergeAnchorId": "a-012",
+      "rejoinAnchorId": "a-013",
+      "lengthKm": 3.105,
+      "active": true,
+      "source": "imported: Section — Hiratsuka-juku to Oiso-juku.gpx",
       "confidence": "medium",
       "verification": "manually-traced",
       "lastChecked": null
