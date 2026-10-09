@@ -1392,7 +1392,7 @@
         "schemaVersion": 1,
         "classification": "public",
         "lastChecked": null,
-        "operationalNotes": "Alternatives to map continuously before departure: the old-road/golf-road loop, and the wooded connector between the Hakone Yasuragi-no-Mori bus stop and Roadside Station Hakone-toge reported May 2026.",
+        "operationalNotes": "KEVIN WALKED ROUTE 1 UP THIS SLOPE ON AN EARLIER TRIP, EASTBOUND, AND REMEMBERS A SIDEWALK THE WHOLE WAY UP UNTIL AN UNDERPASS SECTION CLOSE TO THE LAKE — which is this junction. First-hand evidence that the problem is local to the top rather than the length of the climb, and it matches both the 2018 run and the reports below. Treat the sidewalk as present lower down and the hazard as concentrated here. Alternatives still to map continuously before departure: the old-road/golf-road loop, and the wooded connector between the Hakone Yasuragi-no-Mori bus stop and Roadside Station Hakone-toge reported May 2026. NOTE ALSO that a guide source records about 600 m from the Hakone Pass OLD-ROAD entrance as blocked since September 2022 (page last updated July 2025, not confirmed for 2026) — if that is still true, the old road and Route 1 are constrained at the same place.",
         "historicalNotes": null,
         "safetyNotes": "Route 1, Hakone Shindo, old-road approaches and the Ashinoko Skyline access converge. Several hundred metres without sidewalk plus an unprotected crossing near the Shindo merge. The green pedestrian paint is paint: no curb, no barrier, no separation. Kevin and Kai ran this section in 2018.",
         "links": [
@@ -1406,7 +1406,8 @@
           }
         ],
         "dayIds": [
-          "d-2026-10-24"
+          "d-2026-10-24",
+          "d-2026-10-25"
         ],
         "source": "demonstration-fixture",
         "confidence": "demonstration",
