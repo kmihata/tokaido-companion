@@ -278,16 +278,36 @@ async function tile(x0, y0, size, depth = 0) {
   const bbox = `${(x0 - pad).toFixed(5)},${(y0 - pad).toFixed(5)},${(x0 + size + pad).toFixed(5)},${(y0 + size + pad).toFixed(5)}`;
   const res = await politeFetch(`https://api.openstreetmap.org/api/0.6/map?bbox=${bbox}`);
 
-  if (res.status === 400 || res.status === 509) {
-    if (depth >= 4) return [];
+  // 509 is NOT "too much data" — it is the server asking us to slow down.
+  //
+  // This originally lumped 509 in with 400 and split the tile, which fired four
+  // more requests, which earned four more 509s. Combined with the Promise.all
+  // below defeating the rate limiter, the whole run melted down: 5,953 of 6,119
+  // tiles cached EMPTY, and because an empty tile looks exactly like a tile
+  // with no roads in it, the audit then reported a correct section of the route
+  // — Futagawa to Iwaya Ryokuchi — as sitting 129 m off the road. It is on
+  // 旧東海道 at 0 m. A cascade of rate limits became a false finding about the
+  // route, which is the worst thing this tool can do.
+  if (res.status === 509 || res.status === 429) {
+    throw new Error(`OSM API ${res.status} (rate limited) — slow down, do not split`);
+  }
+  if (res.status === 400) {
+    if (depth >= 4) {
+      throw new Error(`tile ${x0},${y0} still too large at depth ${depth}`);
+    }
     const h = size / 2;
-    const parts = await Promise.all([
-      tile(x0, y0, h, depth + 1),
-      tile(x0 + h, y0, h, depth + 1),
-      tile(x0, y0 + h, h, depth + 1),
-      tile(x0 + h, y0 + h, h, depth + 1),
-    ]);
-    const merged = parts.flat();
+    // Sequential, not Promise.all. Parallel children all read the same
+    // `lastApiCall` before any of them writes it, so the 1.1 s gate lets four
+    // requests through at once and the politeness is imaginary.
+    const merged = [];
+    for (const [cx, cy] of [
+      [x0, y0],
+      [x0 + h, y0],
+      [x0, y0 + h],
+      [x0 + h, y0 + h],
+    ]) {
+      merged.push(...(await tile(cx, cy, h, depth + 1)));
+    }
     writeFileSync(file, JSON.stringify(merged));
     return merged;
   }
@@ -377,25 +397,26 @@ async function corridorFor(key, line) {
   return ways;
 }
 
-/** Does this way set actually span the line, with room for the corridor? */
+/**
+ * Does this way set actually cover the line — not merely surround it?
+ *
+ * The first version tested the ways' BOUNDING BOX against the line's, which a
+ * corridor with a hole in the middle passes trivially. Futagawa to Iwaya
+ * Ryokuchi had 427 ways spanning the section comfortably and was missing the
+ * one road the route runs along; the bbox check waved it through and the audit
+ * reported a correct section as 129 m off the road.
+ *
+ * So check the thing we actually rely on: the query asked for every way within
+ * CORRIDOR_M of the line, so each vertex should have one. A vertex with nothing
+ * within that radius means EITHER the fetch is incomplete OR the route really
+ * does leave every mapped way there — and from the data alone those are
+ * indistinguishable. Treat it as a bad fetch, because a false alarm about the
+ * route costs an evening of retracing something that was already right.
+ */
 function covers(ways, line) {
   if (!ways.length) return false;
-  let wx0 = Infinity;
-  let wy0 = Infinity;
-  let wx1 = -Infinity;
-  let wy1 = -Infinity;
-  for (const w of ways) {
-    for (const p of w.geometry) {
-      if (p[0] < wx0) wx0 = p[0];
-      if (p[0] > wx1) wx1 = p[0];
-      if (p[1] < wy0) wy0 = p[1];
-      if (p[1] > wy1) wy1 = p[1];
-    }
-  }
-  const slack = 0.0005; // ~55 m, for a line ending on a dead-end way
   for (const p of line) {
-    if (p[0] < wx0 - slack || p[0] > wx1 + slack) return false;
-    if (p[1] < wy0 - slack || p[1] > wy1 + slack) return false;
+    if (distToWays(p, ways).d > CORRIDOR_M) return false;
   }
   return true;
 }
