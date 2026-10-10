@@ -219,3 +219,31 @@ export function stakesOfRouteChange(
 
 
 
+
+/**
+ * The arrival cut-off for a day's stay, for the night-before plan.
+ *
+ * WHY this is a function and not a filter inlined in the screen: the answer
+ * has three shapes and only one of them is a time. A property that says "any
+ * time" has no constraint; a property that says NOTHING has an unknown
+ * constraint, and those two must not render the same way. Kevin's own framing
+ * is the test — "as long as I know what my cutoff is I can plan" — and an
+ * unknown cut-off reported as no cut-off is the one answer that breaks it.
+ *
+ * Returns null when no stay is attached to the day, which is the ordinary case
+ * for a rest day, a day whose stay is a continuing multi-night booking, or any
+ * day at all when no private file has been imported.
+ */
+export function arrivalCutoffForDay(
+  lodging: readonly PrivateLodging[],
+  dayId: string,
+): { text: string; known: boolean; stay: string } | null {
+  const stay = lodging.find((l) => l.dayId === dayId && l.arrivalCutoff.trim() !== '');
+  if (!stay) return null;
+  const text = stay.arrivalCutoff.trim();
+  return {
+    text,
+    known: !/^(not stated|unknown|unstated)$/i.test(text),
+    stay: stay.name,
+  };
+}

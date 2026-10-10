@@ -5,6 +5,7 @@ import {
   resolveDeadline,
   stakesOfRouteChange,
   urgencyOf,
+  arrivalCutoffForDay,
 } from '../../src/lib/lodging';
 import type { PrivateLodging } from '../../src/data/privateSchema';
 
@@ -23,6 +24,7 @@ const stay = (over: Partial<PrivateLodging> = {}): PrivateLodging => ({
   laterExposure: '',
   bookingSource: '',
   paymentState: '',
+  arrivalCutoff: '',
   railNotes: '',
   notes: '',
   ...over,
@@ -145,5 +147,45 @@ describe('distance to the route', () => {
   it('is null without coordinates', () => {
     const [v] = buildLodgingViews([stay()], new Date(), line);
     expect(v!.distanceKm).toBeNull();
+  });
+});
+
+
+describe('the arrival cut-off for a day', () => {
+  it('finds the stay attached to the day', () => {
+    const got = arrivalCutoffForDay(
+      [stay({ id: 'a', dayId: 'd-1', arrivalCutoff: '21:00', name: 'Lake hotel' })],
+      'd-1',
+    );
+    expect(got).toEqual({ text: '21:00', known: true, stay: 'Lake hotel' });
+  });
+
+  it('returns null for a day with no stay, and for a stay with no cut-off recorded', () => {
+    expect(arrivalCutoffForDay([stay({ dayId: 'd-1', arrivalCutoff: '21:00' })], 'd-2')).toBeNull();
+    expect(arrivalCutoffForDay([stay({ dayId: 'd-1', arrivalCutoff: '' })], 'd-1')).toBeNull();
+    expect(arrivalCutoffForDay([], 'd-1')).toBeNull();
+  });
+
+  /**
+   * The distinction the whole field exists for. A property that says "any
+   * time" has told us there is no constraint. A property that says nothing has
+   * told us nothing, and rendering those the same way would turn an unknown
+   * into a guarantee — on Walk 14, after Suzuka, which is exactly the day you
+   * would not want to discover it.
+   */
+  it('separates an unlimited cut-off from an unstated one', () => {
+    expect(arrivalCutoffForDay([stay({ dayId: 'd-1', arrivalCutoff: 'any time' })], 'd-1')?.known).toBe(
+      true,
+    );
+    expect(arrivalCutoffForDay([stay({ dayId: 'd-1', arrivalCutoff: 'not stated' })], 'd-1')?.known).toBe(
+      false,
+    );
+    expect(arrivalCutoffForDay([stay({ dayId: 'd-1', arrivalCutoff: 'Not Stated' })], 'd-1')?.known).toBe(
+      false,
+    );
+  });
+
+  it('ignores whitespace-only cut-offs rather than reporting a blank one', () => {
+    expect(arrivalCutoffForDay([stay({ dayId: 'd-1', arrivalCutoff: '   ' })], 'd-1')).toBeNull();
   });
 });

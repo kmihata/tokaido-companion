@@ -41,7 +41,12 @@ export function DayDetail({ dayId }: { dayId: string }): ReactNode {
   const privateNotes = (privateData?.notes ?? []).filter((n) => n.dayId === day.id);
 
   const privateLines = [
-    ...lodging.map((l) => `Lodging: ${l.name}${l.address ? `, ${l.address}` : ''}`),
+    ...lodging.map(
+      (l) =>
+        `Lodging: ${l.name}${l.address ? `, ${l.address}` : ''}` +
+        (l.arrivalCutoff ? ` — check-in closes ${l.arrivalCutoff}` : '') +
+        (l.phone ? ` — ${l.phone}` : ''),
+    ),
     ...privateNotes.map((n) => `Private note: ${n.title}${n.body ? ` — ${n.body}` : ''}`),
   ];
 

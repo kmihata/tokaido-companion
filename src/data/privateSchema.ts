@@ -66,6 +66,16 @@ export const PrivateLodgingSchema = z.strictObject({
   bookingSource: z.string().default(''),
   /** Paid, due at property, part-paid: whatever the confirmation says. */
   paymentState: z.string().default(''),
+  /**
+   * When the desk stops letting you check in, short enough to read at a glance.
+   *
+   * WHY its own field: this is the only lodging fact that changes how a walking
+   * day is planned the night before, so it has to reach the Prepare screen as a
+   * value rather than as a sentence inside railNotes. Free text, because the
+   * honest answers include "any time" and "not stated" — and "not stated" is
+   * not the same as unlimited, which is the distinction that matters.
+   */
+  arrivalCutoff: z.string().default(''),
   /** Getting there and back to the route: last train, walk from the station. */
   railNotes: z.string().default(''),
   notes: z.string().default(''),

@@ -199,6 +199,10 @@ describe('parsePrivateData — version 1 compatibility', () => {
     expect(stay.phone).toBe('');
     expect(stay.cancellationDeadlineIso).toBeNull();
     expect(stay.cancellationDeadline).toBe('2026-10-16');
+    // Added 2026-10-10. An absent cut-off must default to empty rather than to
+    // anything a screen could read as "no constraint" — a file that predates
+    // the field knows nothing about arrival times and must not imply it does.
+    expect(stay.arrivalCutoff).toBe('');
   });
 
   it('says the deadline is a date only, naming the stay', () => {

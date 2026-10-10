@@ -17,6 +17,7 @@ import {
 } from '../state/dayPlanStore';
 import type { ChecklistId, PreparedRecord } from '../state/dayPlanStore';
 import { OVER_LONG_KM } from '../lib/dayPlan';
+import { arrivalCutoffForDay } from '../lib/lodging';
 import type { DayLeg } from '../lib/dayPlan';
 
 /**
@@ -32,7 +33,7 @@ import type { DayLeg } from '../lib/dayPlan';
  * save-or-lose imports is the wrong thing to ask of a tired person.
  */
 export function PrepareScreen({ dayId }: { dayId: string | null }): ReactNode {
-  const { dataset, plan, effectiveDate, userPoints } = useAppState();
+  const { dataset, plan, effectiveDate, userPoints, privateData } = useAppState();
   const [prepared, setPrepared] = useState<Record<string, PreparedRecord>>({});
   const [note, setNote] = useState<string | null>(null);
   // A mirror of `prepared` for the tick handler, so several rapid taps compose
@@ -85,6 +86,8 @@ export function PrepareScreen({ dayId }: { dayId: string | null }): ReactNode {
     dataset.anchors.find((a) => a.properties.id === leg.endAnchorId)?.properties.title ??
     `${leg.endAlongKm.toFixed(1)} km along the route`;
   const complete = checklistComplete(record);
+  // The night-before question: is the desk still open when I expect to arrive?
+  const cutoff = arrivalCutoffForDay(privateData?.lodging ?? [], leg.plan.dayId);
 
   return (
     <>
@@ -156,6 +159,14 @@ export function PrepareScreen({ dayId }: { dayId: string | null }): ReactNode {
             value={formatDuration(ctx?.dayLengthMinutes ?? null)}
             note={day?.railRedundancy ? `rail ${day.railRedundancy}` : undefined}
           />
+          {cutoff ? (
+            <Metric
+              label="Check-in closes"
+              value={cutoff.text}
+              note={cutoff.known ? cutoff.stay : `${cutoff.stay} — no cut-off stated, so unknown`}
+              testId="prepare-arrival-cutoff"
+            />
+          ) : null}
         </div>
 
         {leg.draftKm !== null ? (
