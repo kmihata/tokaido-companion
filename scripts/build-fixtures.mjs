@@ -221,8 +221,8 @@ function day(o) {
 }
 
 const days = [
-  day({ id: 'd-2026-10-18', date: '2026-10-18', kind: 'travel', label: 'Travel', plan: 'SEA 13:20 departure, AS 123.', sleepBase: 'Aircraft', tiredDaySummary: 'No walking target. Pack is cabin baggage.' }),
-  day({ id: 'd-2026-10-19', date: '2026-10-19', kind: 'travel', label: 'Arrival', plan: 'NRT 16:00. Immigration, transfer, food, sleep.', sleepBase: 'Tokyo (Ueno or Nihonbashi area)', tiredDaySummary: 'Ordinary arrival walking only. Favour daylight and a normal bedtime.' }),
+  day({ id: 'd-2026-10-18', date: '2026-10-18', kind: 'travel', label: 'Travel', plan: 'Depart Seattle. Flight details are private data — see the imported private file.', sleepBase: 'Aircraft', tiredDaySummary: 'No walking target. Pack is cabin baggage.' }),
+  day({ id: 'd-2026-10-19', date: '2026-10-19', kind: 'travel', label: 'Arrival', plan: 'Arrive Narita. Immigration, pocket WiFi, cash, train to Tokyo, sleep. Times, order numbers and the hotel are private data — see the imported private file.', sleepBase: 'Tokyo (Ueno or Nihonbashi area)', tiredDaySummary: 'Ordinary arrival walking only. Favour daylight and a normal bedtime.' }),
   day({
     id: 'd-2026-10-20', date: '2026-10-20', kind: 'walk', walkingDayNumber: 1,
     label: 'Walk 1 — Nihonbashi to Kawasaki',
