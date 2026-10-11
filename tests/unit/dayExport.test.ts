@@ -7,6 +7,7 @@ import {
   RouteFileSchema,
   RouteMetaSchema,
   WaypointsFileSchema,
+  StationsFileSchema,
 } from '../../src/data/schemas';
 import { buildStretches } from '../../src/data/load';
 import type { Dataset } from '../../src/data/load';
@@ -25,6 +26,7 @@ const anchors = AnchorsFileSchema.parse(read('anchors.geojson')).features;
 const waypoints = WaypointsFileSchema.parse(read('waypoints.geojson')).features;
 const days = DaysFileSchema.parse(read('days.json')).days;
 
+const stations = StationsFileSchema.parse(read('stations.json')).stations;
 const { stretches, breaks } = buildStretches(routeMeta, routeFeatures, anchors);
 const line = buildPlanningLine(stretches, breaks);
 const defaults = buildDefaultDayPlans(line, anchors, days);
@@ -34,6 +36,7 @@ const dataset = {
   routeFeatures,
   anchors,
   waypoints,
+  stations,
   days,
   stretches,
   breaks,

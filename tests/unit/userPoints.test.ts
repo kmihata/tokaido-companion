@@ -1,7 +1,9 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { AnchorsFileSchema, RouteFileSchema, RouteMetaSchema, WaypointsFileSchema, DaysFileSchema } from '../../src/data/schemas';
+import { AnchorsFileSchema, RouteFileSchema, RouteMetaSchema, WaypointsFileSchema, DaysFileSchema,
+  StationsFileSchema,
+} from '../../src/data/schemas';
 import { buildStretches } from '../../src/data/load';
 import type { Dataset } from '../../src/data/load';
 import {
@@ -28,6 +30,7 @@ const routeFeatures = RouteFileSchema.parse(read('route.geojson')).features;
 const anchors = AnchorsFileSchema.parse(read('anchors.geojson')).features;
 const waypoints = WaypointsFileSchema.parse(read('waypoints.geojson')).features;
 const days = DaysFileSchema.parse(read('days.json')).days;
+const stations = StationsFileSchema.parse(read('stations.json')).stations;
 const { stretches, breaks } = buildStretches(routeMeta, routeFeatures, anchors);
 const line = buildPlanningLine(stretches, breaks);
 
@@ -192,6 +195,7 @@ describe('privacy in exports', () => {
     routeFeatures,
     anchors,
     waypoints,
+    stations,
     days,
     stretches,
     breaks,

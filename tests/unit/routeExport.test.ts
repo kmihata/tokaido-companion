@@ -1,10 +1,19 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { AnchorsFileSchema, RouteFileSchema, RouteMetaSchema, WaypointsFileSchema } from '../../src/data/schemas';
+import {
+  AnchorsFileSchema,
+  DaysFileSchema,
+  RouteFileSchema,
+  RouteMetaSchema,
+  StationsFileSchema,
+  WaypointsFileSchema,
+} from '../../src/data/schemas';
 import { buildStretches } from '../../src/data/load';
 import type { Dataset } from '../../src/data/load';
-import { activeRouteGeoJson, masterRouteGpx, referenceLayerGeoJson, toGpx } from '../../src/lib/routeExport';
+import { buildDefaultDayPlans, buildLegs } from '../../src/lib/dayPlan';
+import { buildPlanningLine } from '../../src/lib/planningLine';
+import { activeRouteGeoJson, dayGpx, masterRouteGpx, referenceLayerGeoJson, toGpx } from '../../src/lib/routeExport';
 import { haversineKm } from '../../src/lib/geo';
 import type { Position } from '../../src/lib/geo';
 
@@ -17,15 +26,33 @@ const anchors = AnchorsFileSchema.parse(read('anchors.geojson')).features;
 const waypoints = WaypointsFileSchema.parse(read('waypoints.geojson')).features;
 const { stretches, breaks } = buildStretches(routeMeta, routeFeatures, anchors);
 
+const stations = StationsFileSchema.parse(read('stations.json')).stations;
+const days = DaysFileSchema.parse(read('days.json')).days;
+
 const dataset = {
   routeMeta,
   routeFeatures,
   anchors,
   waypoints,
+  stations,
+  days,
   stretches,
   breaks,
   activeLengthKm: stretches.reduce((t, s) => t + s.lengthKm, 0),
 } as unknown as Dataset;
+
+const planningLine = buildPlanningLine(stretches, breaks);
+const legs = buildLegs(
+  planningLine,
+  buildDefaultDayPlans(planningLine, anchors, days),
+  days,
+  anchors,
+);
+const legFor = (dayId: string) => {
+  const leg = legs.find((l) => l.plan.dayId === dayId);
+  if (!leg) throw new Error(`no leg for ${dayId}`);
+  return leg;
+};
 
 const AT = new Date('2026-08-20T00:00:00.000Z');
 
@@ -149,5 +176,65 @@ describe('GeoJSON exports', () => {
       expect(text).not.toMatch(/tokaido-private-data/);
     }
     expect(activeRouteGeoJson(dataset)).not.toMatch(/EXAMPLE HOTEL/);
+  });
+});
+
+describe('the day package that goes to Footpath', () => {
+  // Walk 7. Carries wp-utsunoya-tunnel, the category-change waypoint that
+  // records the Meiji tunnel as an alternative to the pass.
+  const utsunoya = 'd-2026-10-27';
+
+  it('carries the post towns, which it never used to', () => {
+    const gpx = dayGpx(dataset, legFor(utsunoya), AT);
+    const names = [...gpx.matchAll(/<wpt[^>]*>\s*<name>([^<]+)<\/name>/g)].map((m) => m[1]);
+    const towns = names.filter((n) => /^#\d+\s/.test(n ?? ''));
+    expect(towns.length).toBeGreaterThan(0);
+  });
+
+  it('says a pin is a point on a strip, and that survival is unknown', () => {
+    const gpx = dayGpx(dataset, legFor(utsunoya), AT);
+    expect(gpx).toMatch(/post town — a strip along the road/);
+    expect(gpx).toMatch(/anything surviving here: unknown/);
+  });
+
+  /**
+   * The reason the selection is by exact coordinate rather than by alongKm:
+   * a station must appear on exactly one day, and on the day whose own
+   * geometry passes through it. Comparing shipped alongKm against the leg's
+   * active-line range would drift as retraces move the later referencing.
+   */
+  it('puts each post town on exactly one day', () => {
+    const seen = new Map<string, string[]>();
+    for (const leg of legs) {
+      if (!leg.day) continue;
+      const gpx = dayGpx(dataset, leg, AT);
+      for (const m of gpx.matchAll(/<name>(#\d+ [^<]+)<\/name>/g)) {
+        const name = m[1]!;
+        seen.set(name, [...(seen.get(name) ?? []), leg.day.id]);
+      }
+    }
+    // 52 of the 53 post towns have an anchor; Kawasaki has none, and the two
+    // unnumbered termini are not post towns. Assert the rule — nearly all of
+    // them reach a day — rather than a count that the next retrace could move.
+    expect(seen.size).toBeGreaterThanOrEqual(50);
+    const duplicated = [...seen.entries()].filter(([, days]) => days.length > 1);
+    // A continuation overlaps the next day deliberately, so allow a town to
+    // appear twice ONLY where a continuation is what carried it.
+    for (const [name, onDays] of duplicated) {
+      expect(onDays.length, `${name} appears on ${onDays.join(', ')}`).toBeLessThanOrEqual(2);
+    }
+  });
+
+  it('carries the decision points, not just the bailouts', () => {
+    const gpx = dayGpx(dataset, legFor(utsunoya), AT);
+    expect(gpx).toMatch(/category-change/);
+  });
+
+  it('never exports lodging, however the day is built', () => {
+    for (const leg of legs) {
+      const gpx = dayGpx(dataset, leg, AT);
+      expect(gpx).not.toMatch(/<desc>hotel/);
+      expect(gpx).not.toMatch(/EXAMPLE/i);
+    }
   });
 });

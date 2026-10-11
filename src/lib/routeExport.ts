@@ -19,6 +19,8 @@
  */
 import type { Dataset, RouteStretch } from '../data/load';
 import type { DayLeg } from './dayPlan';
+import { anchorAlongKm } from './dayPlan';
+import { buildPlanningLine } from './planningLine';
 import type { UserPoint } from './userPoints';
 import { publicOnly } from './userPoints';
 import type { Position } from './geo';
@@ -30,6 +32,31 @@ const esc = (s: string): string =>
   );
 
 const coord = (n: number): string => n.toFixed(6);
+
+/**
+ * Waypoint types that ride along to Footpath.
+ *
+ * The safety layer was always here. `category-change` and `research` were
+ * added 2026-10-10 because Footpath is Kevin's primary navigator and those two
+ * types are where the road offers a CHOICE — the Meiji tunnel under Utsunoya
+ * instead of the pass, and Satta's upper/middle/lower lines. A decision point
+ * that only exists at the desk is not a decision point on a wet afternoon.
+ *
+ * `hotel` stays out: property identity is private and must never reach an
+ * exported file. `day-start` and `day-end` stay out as redundant — the track
+ * names already carry both ends.
+ */
+const EXPORTED_WAYPOINT_TYPES: readonly string[] = [
+  'rail-bailout',
+  'hazard',
+  'water',
+  'food',
+  'resupply',
+  'ferry-gap',
+  'river-crossing',
+  'category-change',
+  'research',
+];
 
 export interface GpxTrack {
   name: string;
@@ -272,9 +299,7 @@ export function dayGpx(
     .filter(
       (w) =>
         w.properties.dayIds.some((id) => dayIds.includes(id)) &&
-        ['rail-bailout', 'hazard', 'water', 'food', 'resupply', 'ferry-gap', 'river-crossing'].includes(
-          w.properties.type,
-        ),
+        EXPORTED_WAYPOINT_TYPES.includes(w.properties.type),
     )
     .map((w) => ({
       name: w.properties.title,
@@ -288,10 +313,66 @@ export function dayGpx(
       position: [w.geometry.coordinates[0], w.geometry.coordinates[1]] as Position,
     }));
 
+  const [fromKm, toKm] = [leg.startAlongKm, leg.continuation?.toAlongKm ?? leg.endAlongKm];
+
+  // The post stations, which never used to reach Footpath at all: they are
+  // anchors, and only waypoints were exported. Walking the Tokaido in Footpath
+  // with the bailouts visible and none of the stations was the wrong trade.
+  //
+  // Selected by LINEAR REFERENCE on the active line, via the same
+  // `anchorAlongKm` the day planner uses.
+  //
+  // The first version of this matched anchors by exact coordinate against the
+  // day's own positions, reasoning that anchors sit precisely on a vertex so
+  // set membership would be exact. It dropped 28 of 52 post towns, and the unit
+  // test caught it. The flaw: a retraced section replaces the base geometry it
+  // supersedes, so a mid-section anchor's vertex is no longer in the active
+  // positions at all — and 53 of 102 sections now carry a retrace. Only the
+  // structural endpoint anchors survived, which is exactly the half that showed
+  // up. Projecting onto the active line is the project's existing answer to
+  // this, and it is why `anchorAlongKm` exists.
+  //
+  // Driven by the station ledger rather than by `kind`, so Hakone (a
+  // checkpoint) and Miya (a ferry site) come along as stations 10 and 41
+  // instead of being dropped for not being labelled `post-station`.
+  const planningLine = buildPlanningLine(dataset.stretches, dataset.breaks);
+  const stationByAnchor = new Map(
+    dataset.stations.filter((s) => s.anchorId !== null).map((s) => [s.anchorId as string, s]),
+  );
+  for (const a of dataset.anchors) {
+    const station = stationByAnchor.get(a.properties.id);
+    if (!station) continue;
+    const km = anchorAlongKm(planningLine, dataset.anchors, a.properties.id);
+    if (km === null || km < fromKm || km > toKm) continue;
+    wpts.push({
+      // Number first: Footpath truncates labels at roughly 25 characters.
+      name: station.number === null ? station.name : `#${station.number} ${station.name}`,
+      // Says what the pin IS, without overstating either way.
+      //
+      // Every one of these coordinates came off the traced line
+      // (`positionSource: source-route-anchor`), so it is not an independent
+      // survey — stations.json and anchors.geojson agree to 0.0 m because they
+      // are literally the same point. But Kevin's 2026-10-10 observation is the
+      // right correction to make here: a shukuba was a STRIP of frontage along
+      // the highway, not a point, so a vertex on the road inside that strip is
+      // close to the correct abstraction rather than a poor substitute for one.
+      //
+      // What is genuinely unknown is what is still THERE: `visibility` is
+      // 'unknown' for all 55 and `lastChecked` is null throughout. So the pin
+      // claims the road passed through the post town here, and claims nothing
+      // about a marker being standing.
+      description: [
+        'post town — a strip along the road; this is a point on it',
+        `anything surviving here: ${station.visibility}`,
+        `${station.confidence} / ${station.verification}`,
+      ].join(' · '),
+      position: [a.geometry.coordinates[0], a.geometry.coordinates[1]] as Position,
+    });
+  }
+
   // Kevin's own public points that fall inside this day, so a station or a
   // water stop he added shows up in Footpath while he is walking. Private
   // points — lodging especially — never leave the device.
-  const [fromKm, toKm] = [leg.startAlongKm, leg.continuation?.toAlongKm ?? leg.endAlongKm];
   for (const p of publicOnly(userPoints)) {
     if (!p.onRoute) continue;
     if (p.onRoute.alongKm < fromKm || p.onRoute.alongKm > toKm) continue;
