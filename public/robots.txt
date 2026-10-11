@@ -1,0 +1,7 @@
+# The follower page and the route data are public on purpose.
+# The desk is the route-editing surface. It is deployed because it shares the
+# build, not because it is for anyone else, and it has no business in search
+# results.
+User-agent: *
+Disallow: /tokaido-companion/desk.html
+Allow: /

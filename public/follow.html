@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Tōkaidō — Tokyo to Kyoto on foot</title>
+<meta name="description" content="A walk of the old Tōkaidō from Nihonbashi to Sanjō Ōhashi: 537.84 km, fifty-three post towns, October and November 2026.">
+
+<!--
+  A PUBLIC PAGE. Anyone with the URL opens it; search engines will index it.
+
+  It is deliberately NOT part of the field app. It is a plain static file in
+  public/, which Vite copies to dist/ verbatim, so it adds no build input and
+  shares no code with the app Kevin walks with. It is in `globIgnores` so it
+  never enters the service-worker precache, the same treatment desk.html gets
+  and for the same reason: the field app's offline budget is for the field.
+
+  IT READS AN ALLOW-LIST, NOT A DENY-LIST. Only the fields named in PICK below
+  are ever displayed. Everything else in the published data — bailouts,
+  hazards, sleep bases, front-desk hours, the fictional placeholder hotels,
+  confidence and verification metadata, tired-day guidance — is invisible here
+  by construction. That is the same reasoning as the repository's own
+  lodging-leak test: a list of things to hide has to be maintained and will one
+  day be out of date, while a list of things to show cannot leak a field that
+  did not exist when it was written.
+-->
+
+<style>
+  :root {
+    --ink: #1b1a17; --muted: #6b655c; --rule: #ddd6c9;
+    --paper: #faf7f0; --accent: #7a2e2e; --panel: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #ece7dd; --muted: #a09a90; --rule: #3a3630;
+      --paper: #16150f; --accent: #d98b8b; --panel: #1e1c16;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #ece7dd; --muted: #a09a90; --rule: #3a3630;
+    --paper: #16150f; --accent: #d98b8b; --panel: #1e1c16;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 16px/1.6 Georgia, "Times New Roman", serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 64px; }
+  header { padding: 56px 0 28px; border-bottom: 1px solid var(--rule); }
+  h1 { font-size: clamp(28px, 6vw, 44px); line-height: 1.1; margin: 0 0 10px; font-weight: 400; }
+  h1 .ja { display: block; font-size: 0.5em; color: var(--muted); letter-spacing: 0.12em; margin-bottom: 10px; }
+  .lede { color: var(--muted); margin: 0; font-size: 18px; }
+  h2 {
+    font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); font-weight: 400; margin: 48px 0 16px;
+    font-family: system-ui, sans-serif;
+  }
+  .figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .fig { background: var(--panel); padding: 18px 16px; }
+  .fig b { display: block; font-size: 26px; font-weight: 400; }
+  .fig span { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-family: system-ui, sans-serif; }
+  svg.route { width: 100%; height: auto; display: block; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--rule); vertical-align: baseline; }
+  th { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 400; font-family: system-ui, sans-serif; }
+  td.n { text-align: right; white-space: nowrap; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .towns { columns: 2 180px; column-gap: 28px; font-size: 15px; }
+  .towns div { break-inside: avoid; padding: 2px 0; }
+  .towns i { color: var(--muted); font-style: normal; font-variant-numeric: tabular-nums; }
+  .prints { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+  .prints figure { margin: 0; }
+  .prints img { width: 100%; height: auto; display: block; background: var(--rule); border: 1px solid var(--rule); }
+  .prints figcaption { font-size: 12px; color: var(--muted); margin-top: 5px; line-height: 1.35; }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); }
+  footer a { color: var(--accent); }
+  .err { padding: 18px; border: 1px solid var(--accent); color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1><span class="ja">東海道</span>The Tōkaidō, on foot</h1>
+  <p class="lede">Nihonbashi to Sanjō Ōhashi — Tokyo to Kyoto, by the old road, in October and November 2026.</p>
+</header>
+
+<div id="app"><p class="lede" style="margin-top:32px">Loading…</p></div>
+
+<footer>
+  <p id="attrib"></p>
+  <p>
+    Hiroshige prints are public-domain Edo-period works; the photographic
+    reproductions come from Wikimedia Commons, and each is credited above.
+  </p>
+  <p id="ver"></p>
+</footer>
+
+</div>
+
+<script>
+// The allow-list. Nothing outside this is read, let alone shown.
+const PICK = {
+  trip:    ['title', 'direction', 'routeStart', 'routeEnd', 'walkingDayCount'],
+  meta:    ['dataVersion'],
+  day:     ['date', 'label', 'from', 'to', 'nominalDistanceKm', 'walkingDayNumber'],
+  station: ['number', 'name', 'modern'],
+  print:   ['number', 'title', 'series', 'artist', 'imagePath', 'institution', 'rightsStatus', 'sourceUrl'],
+};
+const only = (obj, keys) => Object.fromEntries(keys.filter((k) => k in obj).map((k) => [k, obj[k]]));
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const KM_MI = 0.621371;
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const pretty = (iso) => { const [y, m, d] = iso.split('-'); return `${+d} ${MONTHS[+m - 1]}`; };
+
+async function get(p) {
+  const r = await fetch(p, { cache: 'no-cache' });
+  if (!r.ok) throw new Error(`${p}: ${r.status}`);
+  return r.json();
+}
+
+// An equirectangular sketch with a latitude correction. Deliberately not a
+// slippy map: no tile server is contacted, so this page cannot run up against
+// OpenStreetMap's tile policy the way the field app once did, and it works
+// with scripting restricted to this file.
+function routeSvg(features) {
+  const lines = [];
+  for (const f of features) {
+    const g = f.geometry;
+    if (g.type === 'LineString') lines.push(g.coordinates);
+    else if (g.type === 'MultiLineString') lines.push(...g.coordinates);
+  }
+  const pts = lines.flat();
+  if (!pts.length) return '';
+  const lat0 = pts.reduce((t, p) => t + p[1], 0) / pts.length;
+  const k = Math.cos((lat0 * Math.PI) / 180);
+  const xs = pts.map((p) => p[0] * k), ys = pts.map((p) => p[1]);
+  const [x0, x1] = [Math.min(...xs), Math.max(...xs)];
+  const [y0, y1] = [Math.min(...ys), Math.max(...ys)];
+  const W = 1000, PAD = 14;
+  const s = (W - PAD * 2) / (x1 - x0);
+  const H = Math.round((y1 - y0) * s + PAD * 2);
+  const px = (p) => `${((p[0] * k - x0) * s + PAD).toFixed(1)},${(H - PAD - (p[1] - y0) * s).toFixed(1)}`;
+  const paths = lines
+    .filter((l) => l.length > 1)
+    .map((l) => `<path d="M${l.map(px).join('L')}" fill="none" stroke="var(--accent)" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/>`)
+    .join('');
+  return `<svg class="route" viewBox="0 0 ${W} ${H}" role="img" aria-label="The route from Tokyo to Kyoto">${paths}</svg>`;
+}
+
+(async () => {
+  const app = document.getElementById('app');
+  try {
+    const [metaRaw, tripRaw, daysRaw, stationsRaw, printsRaw, routeRaw] = await Promise.all([
+      get('data/route-meta.json'), get('data/trip.json'), get('data/days.json'),
+      get('data/stations.json'), get('data/hiroshige.json'), get('data/route.geojson'),
+    ]);
+
+    const km = metaRaw.totals.activeWalkingKm;
+    const trip = only(tripRaw, PICK.trip);
+    const meta = only(metaRaw, PICK.meta);
+    const days = daysRaw.days.filter((d) => d.kind === 'walk').map((d) => only(d, PICK.day))
+      .sort((a, b) => a.date.localeCompare(b.date));
+    const towns = stationsRaw.stations.map((s) => only(s, PICK.station))
+      .filter((s) => typeof s.number === 'number').sort((a, b) => a.number - b.number);
+    const prints = printsRaw.images.map((p) => only(p, PICK.print)).sort((a, b) => a.number - b.number);
+
+    app.innerHTML = `
+      <h2>The walk</h2>
+      <div class="figures">
+        <div class="fig"><b>${km.toFixed(1)}</b><span>kilometres</span></div>
+        <div class="fig"><b>${(km * KM_MI).toFixed(0)}</b><span>miles</span></div>
+        <div class="fig"><b>${towns.length}</b><span>post towns</span></div>
+        <div class="fig"><b>${trip.walkingDayCount}</b><span>walking days</span></div>
+      </div>
+      <p class="lede" style="margin-top:18px">
+        ${esc(pretty(trip.routeStart))} to ${esc(pretty(trip.routeEnd))}, 2026.
+        The Tōkaidō was the coast road between the shogun's capital and the emperor's,
+        and its fifty-three post towns were strips of inn and shop frontage strung along it.
+      </p>
+
+      <h2>The route</h2>
+      ${routeSvg(routeRaw.features)}
+      <p class="lede" style="font-size:15px">Tokyo at the east end, Kyoto at the west. The southward loop is the Saya Kaidō, the land detour around the Seven-ri sea crossing.</p>
+
+      <h2>The days</h2>
+      <table><thead><tr><th>Day</th><th>Date</th><th>From</th><th>To</th><th class="n">km</th><th class="n">mi</th></tr></thead><tbody>
+      ${days.map((d) => `<tr>
+        <td>${d.walkingDayNumber ?? '—'}</td>
+        <td class="n" style="text-align:left">${esc(pretty(d.date))}</td>
+        <td>${esc(d.from)}</td><td>${esc(d.to)}</td>
+        <td class="n">${(d.nominalDistanceKm ?? 0).toFixed(1)}</td>
+        <td class="n">${((d.nominalDistanceKm ?? 0) * KM_MI).toFixed(1)}</td>
+      </tr>`).join('')}
+      </tbody></table>
+
+      <h2>The fifty-three post towns</h2>
+      <div class="towns">
+        ${towns.map((s) => `<div><i>${s.number}</i> ${esc(s.name)}${s.modern && s.modern !== s.name.replace(/-juku$/, '') ? ` <i>· ${esc(s.modern)}</i>` : ''}</div>`).join('')}
+      </div>
+
+      <h2>Hiroshige's fifty-three stations</h2>
+      <p class="lede" style="font-size:15px">${esc(prints[0]?.series ?? '')}, by ${esc(prints[0]?.artist ?? '')}.</p>
+      <div class="prints">
+        ${prints.map((p) => `<figure>
+          <img src="${esc(p.imagePath)}" alt="${esc(p.title)}" loading="lazy" width="720" height="480">
+          <figcaption><b>${p.number}</b> ${esc(p.title)}<br><a href="${esc(p.sourceUrl)}" rel="noreferrer">${esc(p.institution)}</a></figcaption>
+        </figure>`).join('')}
+      </div>`;
+
+    document.getElementById('attrib').innerHTML =
+      `Route derived from <a href="${esc(metaRaw.source.url)}" rel="noreferrer">${esc(metaRaw.source.name)}</a> — ${esc(metaRaw.source.attribution)}. Shared under the same licence.`;
+    document.getElementById('ver').textContent =
+      `Route data ${meta.dataVersion}. Distances are measured on the traced line; nobody has yet walked it on the ground.`;
+  } catch (e) {
+    app.innerHTML = `<p class="err">The route data did not load. ${esc(e.message)}</p>`;
+  }
+})();
+</script>
+</body>
+</html>

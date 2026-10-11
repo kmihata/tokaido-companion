@@ -93,12 +93,17 @@ export default defineConfig(() => ({
         // machine with a network; putting it in the field app's cache would put
         // the editing surface on the phone, which is the thing the split
         // exists to prevent — and would cost offline budget for it.
-        globIgnores: ['**/*.map', 'examples/**', 'desk.html', 'assets/desk-*'],
+        // follow.html joins desk.html here for the same reason: it is a public
+        // page about the walk, not part of the walk, and the field app's
+        // offline budget is for the field. It is a plain static file in
+        // public/ with no shared code, so this one line is the whole of its
+        // interaction with the app.
+        globIgnores: ['**/*.map', 'examples/**', 'desk.html', 'assets/desk-*', 'follow.html'],
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         navigateFallback: 'index.html',
         // Never hand a desk URL to the field app's fallback: it would answer
         // with the field app and look like the desk had silently vanished.
-        navigateFallbackDenylist: [/desk/],
+        navigateFallbackDenylist: [/desk/, /follow/],
         cleanupOutdatedCaches: true,
         clientsClaim: false, // paired with registerType: 'prompt'
         skipWaiting: false,

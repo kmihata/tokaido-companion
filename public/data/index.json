@@ -15,11 +15,11 @@
   "files": [
     {
       "path": "trip.json",
-      "bytes": 1160
+      "bytes": 1162
     },
     {
       "path": "days.json",
-      "bytes": 39476
+      "bytes": 36189
     },
     {
       "path": "stations.json",

@@ -331,3 +331,72 @@ describe('the shipped data still declares itself non-navigational', () => {
     expect(appJs).toMatch(/unverified/i);
   });
 });
+
+/**
+ * The public follower page, added 2026-10-11.
+ *
+ * It is a plain static file in public/ so that it shares no code with the app
+ * Kevin walks with, and it is in `globIgnores` so it never enters the field
+ * app's precache — the same treatment desk.html gets, for the same reason.
+ *
+ * It is also PUBLIC in a way nothing else here is: the field app is public but
+ * nobody is meant to read it, whereas this page exists to be read by strangers
+ * and will be indexed. So it gets its own leak assertions, built the same way
+ * the page is: an allow-list. The page displays only route totals, day dates
+ * and endpoints, post-town names and the prints. These tests pin the things it
+ * must never grow into.
+ */
+describe('the public follower page', () => {
+  const follow = readFileSync(join(DIST, 'follow.html'), 'utf8');
+
+  it('ships', () => {
+    expect(follow.length).toBeGreaterThan(2000);
+  });
+
+  it('is never precached by the field app', () => {
+    const urls = [...swJs.matchAll(/url:"([^"]+)"/g)].map((m) => m[1]!);
+    expect(urls).not.toContain('follow.html');
+    expect(urls.some((u) => u.includes('follow'))).toBe(false);
+  });
+
+  it('reads an allow-list rather than filtering a deny-list', () => {
+    // If this ever becomes a deny-list the test is worthless, so assert the
+    // construction itself: the page picks named fields out of each record.
+    expect(follow).toMatch(/const PICK = \{/);
+    expect(follow).toMatch(/const only = \(obj, keys\)/);
+  });
+
+  it('names no field that would expose the operational plan', () => {
+    for (const field of [
+      'sleepBase',
+      'sleepBaseNote',
+      'bailoutWaypointIds',
+      'hazardWaypointIds',
+      'verificationTasks',
+      'tiredDaySummary',
+      'startLightGuidance',
+      'weatherSensitive',
+      'elevationWarning',
+      'editorialPrompts',
+      'waypoints',
+      'privateData',
+    ]) {
+      expect(follow.includes(field), `follow.html references "${field}"`).toBe(false);
+    }
+  });
+
+  it('contacts no tile server, so it cannot breach the tile usage policy', () => {
+    expect(follow).not.toMatch(/tile\.openstreetmap|tile\.opentopomap|leaflet/i);
+  });
+
+  /** CC BY-SA 4.0 is a condition, not a courtesy. */
+  it('carries the route attribution the licence requires', () => {
+    expect(follow).toMatch(/source\.attribution/);
+    expect(follow).toMatch(/same licence/i);
+  });
+
+  it('keeps the desk out of search results', () => {
+    const robots = readFileSync(join(DIST, 'robots.txt'), 'utf8');
+    expect(robots).toMatch(/Disallow:.*desk\.html/);
+  });
+});

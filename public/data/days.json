@@ -10,7 +10,6 @@
       "bailoutWaypointIds": [],
       "hazardWaypointIds": [],
       "stationIds": [],
-      "editorialPrompts": [],
       "hiroshigeRefIds": [],
       "safetyNotes": [],
       "verificationTasks": [],
@@ -30,7 +29,6 @@
       "bailoutWaypointIds": [],
       "hazardWaypointIds": [],
       "stationIds": [],
-      "editorialPrompts": [],
       "hiroshigeRefIds": [],
       "safetyNotes": [],
       "verificationTasks": [],
@@ -56,12 +54,6 @@
         "st-nihonbashi",
         "st-shinagawa",
         "st-kawasaki"
-      ],
-      "editorialPrompts": [
-        "The first ichirizuka stood one ri out, not at Nihonbashi. Look for whether anything marks a zero point here, and who put it there.",
-        "What is the bridge doing today, as a piece of working infrastructure, rather than as a starting line.",
-        "Hiroshige’s first print is a DAWN scene — Nihonbashi, asa no kei, the daimyo procession crossing as the gates open at ake-mutsu, the hour of the rabbit, roughly six. Late-October sunrise in Tokyo is close to the same hour. Being on the bridge at six is the one chance on the whole route to stand in a print at its own time of day. Verify the sunrise time before setting the alarm.",
-        "You cross Nihonbashi twice: once walking out on Oct 20, once passing through on Oct 22 on the way to the train, having seen the print in between. Notice what the second crossing knows that the first did not."
       ],
       "hiroshigeRefIds": [
         "hr-nihonbashi",
@@ -104,10 +96,6 @@
       "bailoutWaypointIds": [],
       "hazardWaypointIds": [],
       "stationIds": [],
-      "editorialPrompts": [
-        "The exhibition rotates three times and this window is the Tokaido one. The Kisokaido replaces it on Oct 27, so there is no second chance later in the trip.",
-        "You have now walked the first stage. Look at the first print again knowing what the ground under it feels like."
-      ],
       "hiroshigeRefIds": [
         "hr-nihonbashi"
       ],
@@ -143,7 +131,6 @@
         "st-totsuka",
         "st-fujisawa"
       ],
-      "editorialPrompts": [],
       "hiroshigeRefIds": [
         "hr-kanagawa",
         "hr-hodogaya",
@@ -181,7 +168,6 @@
         "st-fujisawa",
         "st-odawara"
       ],
-      "editorialPrompts": [],
       "hiroshigeRefIds": [
         "hr-hiratsuka",
         "hr-oiso",
@@ -226,10 +212,6 @@
         "st-odawara",
         "st-hakone",
         "st-mishima"
-      ],
-      "editorialPrompts": [
-        "Which road counts. The hybrid line trades exact Edo alignment for an older road and less traffic — that trade is the subject, not a failure of continuity.",
-        "The checkpoint: permission, status, and controlled movement."
       ],
       "hiroshigeRefIds": [],
       "safetyNotes": [
@@ -279,7 +261,6 @@
         "st-mishima",
         "st-yui"
       ],
-      "editorialPrompts": [],
       "hiroshigeRefIds": [
         "hr-hakone",
         "hr-mishima",
@@ -327,9 +308,6 @@
         "st-fuchu",
         "st-mariko",
         "st-okabe"
-      ],
-      "editorialPrompts": [
-        "Satta Pass is the one view on the route that is still composed the way Hiroshige composed it — sea, road, and Fuji stacked in one frame."
       ],
       "hiroshigeRefIds": [
         "hr-kanbara",
@@ -382,11 +360,6 @@
         "st-mariko",
         "st-okabe"
       ],
-      "editorialPrompts": [
-        "The Meiji tunnel is the road surviving by changing category — 1876 toll tunnel, rebuilt in brick 1904, now a walking route. Photograph the portal inscription; it reads right to left.",
-        "This is the tunnel misfiled as Suzuka for eight years. Notice what the place actually looks like before checking it against the memory.",
-        "The Oi was unbridged by policy, not by engineering limits. The modern crossing is a different kind of decision about who may move."
-      ],
       "hiroshigeRefIds": [
         "hr-mariko",
         "hr-okabe",
@@ -437,7 +410,6 @@
         "st-kakegawa",
         "st-hamamatsu"
       ],
-      "editorialPrompts": [],
       "hiroshigeRefIds": [
         "hr-kanaya",
         "hr-nissaka",
@@ -483,7 +455,6 @@
       "stationIds": [
         "st-hamamatsu"
       ],
-      "editorialPrompts": [],
       "hiroshigeRefIds": [
         "hr-hamamatsu"
       ],
@@ -523,9 +494,6 @@
         "st-hamamatsu",
         "st-arai",
         "st-yoshida"
-      ],
-      "editorialPrompts": [
-        "Imagire/Arai was a water gap and a checkpoint. The bridge replaced the ferry; ask what else it replaced."
       ],
       "hiroshigeRefIds": [
         "hr-maisaka",
@@ -573,7 +541,6 @@
         "st-yoshida",
         "st-okazaki"
       ],
-      "editorialPrompts": [],
       "hiroshigeRefIds": [
         "hr-goyu",
         "hr-akasaka",
@@ -615,9 +582,6 @@
         "st-okazaki",
         "st-miya"
       ],
-      "editorialPrompts": [
-        "Route 1, the rail line, the expressway and the old road occupy one corridor. Several Tokaidos, one strip of ground."
-      ],
       "hiroshigeRefIds": [
         "hr-chiryu",
         "hr-narumi",
@@ -652,9 +616,6 @@
       "bailoutWaypointIds": [],
       "hazardWaypointIds": [],
       "stationIds": [],
-      "editorialPrompts": [
-        "Miya, the missing ferry interval, and how a route contains a gap."
-      ],
       "hiroshigeRefIds": [],
       "safetyNotes": [],
       "verificationTasks": [],
@@ -685,10 +646,6 @@
         "st-miya",
         "st-kuwana",
         "st-yokkaichi"
-      ],
-      "editorialPrompts": [
-        "The road admits it is not a road at the water. Whatever gets chosen here is an answer to \"did I walk the whole thing\".",
-        "Many contemporary walkers take a train between the preserved ferry sites. That is a legible choice, not a failure — but it should be made deliberately."
       ],
       "hiroshigeRefIds": [
         "hr-kuwana",
@@ -737,7 +694,6 @@
         "st-seki",
         "st-sakashita"
       ],
-      "editorialPrompts": [],
       "hiroshigeRefIds": [
         "hr-ishiyakushi",
         "hr-shono",
@@ -784,9 +740,6 @@
         "st-tsuchiyama",
         "st-minakuchi",
         "st-ishibe"
-      ],
-      "editorialPrompts": [
-        "Direction matters. On the 2018 walk this was a descent from the Shiga side. It will not be the same pass."
       ],
       "hiroshigeRefIds": [
         "hr-minakuchi",
@@ -837,9 +790,6 @@
         "st-otsu",
         "st-sanjo"
       ],
-      "editorialPrompts": [
-        "The road begins and ends on bridges over rivers."
-      ],
       "hiroshigeRefIds": [
         "hr-otsu",
         "hr-sanjoohashi"
@@ -870,7 +820,6 @@
       "bailoutWaypointIds": [],
       "hazardWaypointIds": [],
       "stationIds": [],
-      "editorialPrompts": [],
       "hiroshigeRefIds": [],
       "safetyNotes": [],
       "verificationTasks": [],
@@ -891,7 +840,6 @@
       "bailoutWaypointIds": [],
       "hazardWaypointIds": [],
       "stationIds": [],
-      "editorialPrompts": [],
       "hiroshigeRefIds": [],
       "safetyNotes": [],
       "verificationTasks": [],
@@ -912,9 +860,6 @@
       "bailoutWaypointIds": [],
       "hazardWaypointIds": [],
       "stationIds": [],
-      "editorialPrompts": [
-        "The same corridor in two and a half hours. The Tokaido made again."
-      ],
       "hiroshigeRefIds": [],
       "safetyNotes": [],
       "verificationTasks": [],
@@ -934,7 +879,6 @@
       "bailoutWaypointIds": [],
       "hazardWaypointIds": [],
       "stationIds": [],
-      "editorialPrompts": [],
       "hiroshigeRefIds": [],
       "safetyNotes": [],
       "verificationTasks": [],
@@ -955,7 +899,6 @@
       "bailoutWaypointIds": [],
       "hazardWaypointIds": [],
       "stationIds": [],
-      "editorialPrompts": [],
       "hiroshigeRefIds": [],
       "safetyNotes": [],
       "verificationTasks": [],
@@ -975,7 +918,6 @@
       "bailoutWaypointIds": [],
       "hazardWaypointIds": [],
       "stationIds": [],
-      "editorialPrompts": [],
       "hiroshigeRefIds": [],
       "safetyNotes": [],
       "verificationTasks": [],

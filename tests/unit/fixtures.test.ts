@@ -251,3 +251,75 @@ describe('the private example file is not bundled into the app', () => {
     }
   });
 });
+
+/**
+ * trip.json summarises days.json, and a summary that nobody recomputes goes
+ * stale silently. All four of these were wrong on 2026-10-11: `orientationDay`
+ * and `routeStart` were SWAPPED, surviving from before the 2026-09-15 reorder
+ * that moved Walk 1 to Oct 20, so Today counted nine days to the first walk
+ * when it was eight and the banner claimed the route ran Oct 21 to Nov 7.
+ * `workingRouteKm` still read 537.5 against a measured 537.84.
+ *
+ * Derived from the source at test time rather than written down, so these
+ * cannot drift apart again — the rule, not the reading.
+ */
+describe('trip.json agrees with the days and the route it summarises', () => {
+  const trip = read('trip.json');
+  const days = read('days.json')['days'] as Record<string, unknown>[];
+  const walks = days
+    .filter((d) => d['kind'] === 'walk')
+    .sort((a, b) => String(a['date']).localeCompare(String(b['date'])));
+
+  it('starts the route on the first walking day', () => {
+    expect(trip['routeStart']).toBe(walks[0]!['date']);
+  });
+
+  it('ends the route on the last walking day', () => {
+    expect(trip['routeEnd']).toBe(walks.at(-1)!['date']);
+  });
+
+  it('points orientationDay at a day that is actually an orientation day', () => {
+    const day = days.find((d) => d['date'] === trip['orientationDay']);
+    expect(day, `no day on ${String(trip['orientationDay'])}`).toBeDefined();
+    expect(day!['kind']).toBe('orientation');
+  });
+
+  it('quotes the measured route length, not a remembered one', () => {
+    const measured = (meta['totals'] as Record<string, number>)['activeWalkingKm'];
+    expect(trip['workingRouteKmMin']).toBeCloseTo(measured!, 2);
+    expect(trip['workingRouteKmMax']).toBeCloseTo(measured!, 2);
+  });
+
+  /**
+   * NUMBERED walks, which is 15 — Walk 8b is a walking day with no number,
+   * being a half day carved out of a recovery day. `buildDefaultDayPlans` has
+   * the same trap written into its own comment: keying by walking-day number
+   * silently excluded 8b and handed its 15.8 km to the day after it.
+   *
+   * The first version of this test filtered `n !== null` and counted 16,
+   * because an absent key reads as `undefined`, not `null`. The data was right
+   * and the test was wrong.
+   */
+  it('counts the numbered walking days, which excludes the unnumbered half day', () => {
+    const numbered = new Set(
+      walks.map((d) => d['walkingDayNumber']).filter((n) => typeof n === 'number'),
+    );
+    expect(numbered.size).toBe(walks.length - 1);
+    expect(trip['walkingDayCount']).toBe(numbered.size);
+  });
+});
+
+/**
+ * Kevin's editorial prompts were personal notes to himself about his own
+ * memory — "the tunnel misfiled as Suzuka for eight years" — and they were
+ * shipped in the public dataset. They moved to the private file on 2026-10-11,
+ * where they reach him on the day they are for and nowhere else.
+ */
+describe('writing prompts are not public', () => {
+  it('ships no editorialPrompts on any day', () => {
+    const days = read('days.json')['days'] as Record<string, unknown>[];
+    for (const d of days) {
+      expect(d['editorialPrompts'] ?? [], String(d['id'])).toEqual([]);
+    }
+  });
+});

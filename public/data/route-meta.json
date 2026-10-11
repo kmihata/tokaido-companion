@@ -8,7 +8,7 @@
   "navigational": false,
   "demonstration": false,
   "verification": "manually-traced",
-  "notice": "TRACED BUT UNVERIFIED. Road-snapped in an external editor and reaching Sanjo Ohashi, but not checked on the ground by anyone on this trip. Eighty-five of 102 sections are at walking density; seventeen are still coarse, the coarsest at 99 m. The Hakone crossing follows the standard Old Tokaido by Kevin's decision of 2026-09-30 — there is no sensible alternative to the lake shore — and the Hakone Pass IC shoulder is unresolved. Rail bailouts are real and sourced; lodging in this public dataset is fictional placeholders. Do not navigate from this alone.",
+  "notice": "TRACED BUT UNVERIFIED. Road-snapped in an external editor and reaching Sanjo Ohashi, but not checked on the ground by anyone on this trip. Ninety of 102 sections are at walking density; twelve are still coarse, the coarsest at 97 m. The Hakone crossing follows the standard Old Tokaido by Kevin's decision of 2026-09-30 — there is no sensible alternative to the lake shore — and the Hakone Pass IC shoulder is unresolved. Rail bailouts are real and sourced; lodging in this public dataset is fictional placeholders. Do not navigate from this alone.",
   "source": {
     "name": "旧街道足跡マップ (kaidotrail), traced and extended by Kevin",
     "url": "https://kaidotrail.github.io/",
@@ -29,7 +29,7 @@
     "note": "Measured on the assembled active route, including the fifty-three sections retraced in gpx.studio and baked in between 2026-09-13 and 2026-10-09. The leg figures below are the base paths as imported; a retraced section is layered over its leg as a variant, so the legs do not sum to the active total. 91 of 102 sections are at 65 m point spacing or better. Hotel access mileage is on top. The largest single step on the route is 712 m across the Tenryu river: a bridge is a straight line, so that is geometry, not sampling. On 2026-09-21 832 consecutive duplicate points were stripped from the geometry: they changed no distance, but they counted in the point totals that mean spacing divides by, so every spacing figure before that date was slightly flattering."
   },
   "knownWork": [
-    "Trace the coarsest remaining sections. 45 of 93 are at 60 m point spacing or better; the section screen ranks the rest. Worst now: Outside Kozu to Odawara, Mishima Taisha to Mishima, Shimada to Oigawa — all in the 130s-140s, where the list started at 270.",
+    "Trace the coarsest remaining sections. 90 of 102 are at 65 m point spacing or better; the section screen ranks the rest. The twelve remaining run 97, 84, 82, 82, 82, 77 m and down — but Kuwana to Machiya Bridge (97 m) and Shizuoka to Abekawa Bridge (84 m) should STAY on the list and should NOT be retraced: their spacing is carried by dead-straight roads named 旧東海道 that the line already follows to within a metre, and mean point spacing cannot tell a straight road from a coarse one. Adding points there would move a number, not a line.",
     "Replace the Hakone east slope between Hatajuku and the checkpoint with the Hiryu Falls / Ashinoyu hybrid, per FOUNDATION.md. The branch anchor exists at Hatajuku Honjin.",
     "Resolve the Hakone Pass IC interchange on the west slope — a route decision needing Street View, not more points.",
     "Verify the Saya Kaido bridges over the Kiso Three Rivers for pedestrian legality.",
