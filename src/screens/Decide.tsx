@@ -7,7 +7,12 @@ import { DemoBanner } from '../components/DemoBanner';
 import { Metric } from '../components/Metric';
 import { evaluateDecision, POSTURE_LABEL } from '../lib/decision';
 import type { DecisionInput } from '../lib/decision';
-import { formatDuration, paceKmh as computePace } from '../lib/pace';
+import {
+  formatDuration,
+  paceKmh as computePace,
+  walkingTimeLeft,
+  TARGET_MOVING_MPH,
+} from '../lib/pace';
 import { formatClock, formatKmMi, parseLocalTime } from '../lib/time';
 import { useGeolocation } from '../state/useGeolocation';
 import { waypointPosition } from '../data/load';
@@ -21,7 +26,7 @@ import { AiHandoff } from '../components/AiHandoff';
  * saying so.
  */
 export function Decide(): ReactNode {
-  const { dataset, effectiveDate, settings, updateSettings } = useAppState();
+  const { dataset, effectiveDate, settings, updateSettings, plan } = useAppState();
   const geo = useGeolocation();
 
   const [completedKm, setCompletedKm] = useState('');
@@ -54,6 +59,20 @@ export function Decide(): ReactNode {
   const projection = useMemo(
     () => (dataset && fromPos ? projectOntoRoute(dataset.stretches, fromPos) : null),
     [dataset, fromPos],
+  );
+
+  // Measured from the line, not from what was typed. Kevin, 2026-10-10:
+  // "really how far I have left and time left at three mile per hour pace.
+  // That's really all I need to know." Deliberately not fed into the posture
+  // below — he said plainly he does not want that judgment delegated.
+  const legForDay = useMemo(
+    () => plan.legs.find((l) => l.plan.dayId === day?.id) ?? null,
+    [plan.legs, day?.id],
+  );
+  const measured = useMemo(
+    () =>
+      projection && legForDay ? walkingTimeLeft(projection.alongKm, legForDay.endAlongKm) : null,
+    [projection, legForDay],
   );
 
   const nearBailouts = useMemo(() => {
@@ -142,6 +161,35 @@ export function Decide(): ReactNode {
           </>
         ) : null}
       </section>
+
+      {measured ? (
+        <section className="card card--ok" data-testid="measured-remaining">
+          <div className="card__label">From here, along the path</div>
+          <div className="card__big" data-testid="measured-remaining-km">
+            {formatKmMi(measured.remainingKm)}
+          </div>
+          <div className="metrics" style={{ marginTop: 12 }}>
+            <Metric
+              label={`Walking time at ${TARGET_MOVING_MPH.toFixed(1)} mph`}
+              value={formatDuration(measured.movingMinutes)}
+              note="moving only — stops are yours to add"
+              testId="measured-walking-time"
+            />
+          </div>
+          <p className="small muted" style={{ marginTop: 8 }}>
+            {measured.pastFinish
+              ? 'You are at or past the planned finish for this day.'
+              : `Measured along the route to the day's finish, not straight to it.` +
+                (projection && projection.offRouteKm >= 0.15
+                  ? ` You are ${projection.offRouteKm.toFixed(1)} km off the line, so add the walk back on.`
+                  : '')}
+          </p>
+          <p className="small muted">
+            <strong>This is a floor, not an arrival time.</strong> It is the walking alone. What is
+            left over between this and your deadline is the stop budget.
+          </p>
+        </section>
+      ) : null}
 
       <section className="card">
         <h2>Where things stand</h2>

@@ -50,3 +50,68 @@ export function formatDuration(minutes: number | null): string {
   const body = h > 0 ? `${h}h ${m}m` : `${m}m`;
   return neg ? `-${body}` : body;
 }
+
+/** Kevin's target moving pace, mph. Stated 2026-10-10: "3.0 mph moving would be my target anyway." */
+export const TARGET_MOVING_MPH = 3.0;
+export const KM_PER_MILE = 1.609344;
+
+export interface WalkingTimeLeft {
+  /** Distance still to cover along the designated path. */
+  remainingKm: number;
+  remainingMi: number;
+  /**
+   * Minutes of WALKING left, stops excluded. A FLOOR, never an arrival time.
+   *
+   * WHY this exists next to a module whose header says pace means km/h
+   * INCLUDING stops, and warns that a moving pace "will quietly promise
+   * daylight that is not there" — that warning is about PREDICTING ARRIVAL,
+   * and it still stands. `evaluateDecision` owns that question and must keep
+   * using blended pace.
+   *
+   * This answers a different question, and Kevin stated it exactly: "if you
+   * told me this is how many hours, then I'd know if I had time for breaks."
+   * The whole value is that stops are EXCLUDED, so what is left over is the
+   * stop budget he spends himself. Reported as a floor it cannot mislead;
+   * reported as an ETA it would be the exact defect the header warns about.
+   * Label it as walking time wherever it is shown. It is not an ETA.
+   *
+   * Calibration, from the 2026-10-06 walk: 14.29 mi in 4:38:38 elapsed is
+   * 3.08 mph INCLUDING stops. So 3.0 mph moving is conservative — the figure
+   * here will usually exceed the time the day actually takes. That errs long,
+   * which is the safe direction for a bailout call, but it is why this must
+   * never be presented as a prediction.
+   */
+  movingMinutes: number;
+  /** The projection puts you at or beyond the day's finish. */
+  pastFinish: boolean;
+}
+
+/**
+ * How far is left along the designated path, and how long that is on foot.
+ *
+ * Both arguments are linear references on the active route, so this measures
+ * along the line rather than straight to the finish — the distinction that
+ * makes it usable in Hakone, where the two differ by kilometres.
+ *
+ * Returns null rather than a wrong number when an input is unusable.
+ */
+export function walkingTimeLeft(
+  alongKm: number,
+  finishAlongKm: number,
+  mph: number = TARGET_MOVING_MPH,
+): WalkingTimeLeft | null {
+  if (!Number.isFinite(alongKm) || !Number.isFinite(finishAlongKm)) return null;
+  if (!Number.isFinite(mph) || mph <= 0) return null;
+
+  const raw = finishAlongKm - alongKm;
+  const pastFinish = raw <= 0;
+  const remainingKm = pastFinish ? 0 : raw;
+  const kmh = mph * KM_PER_MILE;
+
+  return {
+    remainingKm,
+    remainingMi: remainingKm / KM_PER_MILE,
+    movingMinutes: (remainingKm / kmh) * 60,
+    pastFinish,
+  };
+}

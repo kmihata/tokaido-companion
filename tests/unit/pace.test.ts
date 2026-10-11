@@ -6,6 +6,8 @@ import {
   minutesBetween,
   minutesFor,
   paceKmh,
+  walkingTimeLeft,
+  KM_PER_MILE,
 } from '../../src/lib/pace';
 
 describe('paceKmh', () => {
@@ -90,5 +92,55 @@ describe('formatDuration', () => {
   it('renders nothing available as an em dash rather than NaN', () => {
     expect(formatDuration(null)).toBe('—');
     expect(formatDuration(Number.NaN)).toBe('—');
+  });
+});
+
+describe('walking time left along the path', () => {
+  it('measures the gap to the day finish and converts at 3.0 mph', () => {
+    const r = walkingTimeLeft(10, 25)!;
+    expect(r.remainingKm).toBeCloseTo(15, 6);
+    expect(r.remainingMi).toBeCloseTo(9.3206, 3);
+    // 15 km at 3.0 mph (4.828032 km/h) = 3.1067 h = 186.4 min
+    expect(r.movingMinutes).toBeCloseTo(186.4, 1);
+    expect(r.pastFinish).toBe(false);
+  });
+
+  it('clamps to zero once past the finish rather than reporting negative distance', () => {
+    const r = walkingTimeLeft(30, 25)!;
+    expect(r.remainingKm).toBe(0);
+    expect(r.movingMinutes).toBe(0);
+    expect(r.pastFinish).toBe(true);
+  });
+
+  it('treats landing exactly on the finish as past it', () => {
+    expect(walkingTimeLeft(25, 25)!.pastFinish).toBe(true);
+  });
+
+  it('honours a pace other than the default', () => {
+    const slow = walkingTimeLeft(0, 10, 2)!;
+    const fast = walkingTimeLeft(0, 10, 4)!;
+    expect(slow.movingMinutes).toBeCloseTo(fast.movingMinutes * 2, 6);
+  });
+
+  it('returns null rather than a wrong number for unusable input', () => {
+    expect(walkingTimeLeft(Number.NaN, 25)).toBeNull();
+    expect(walkingTimeLeft(10, Number.NaN)).toBeNull();
+    expect(walkingTimeLeft(10, 25, 0)).toBeNull();
+    expect(walkingTimeLeft(10, 25, -3)).toBeNull();
+    expect(walkingTimeLeft(10, 25, Number.POSITIVE_INFINITY)).toBeNull();
+  });
+
+  /**
+   * The honesty check. 3.0 mph MOVING is slower than Kevin's own measured
+   * 3.08 mph INCLUDING stops on 2026-10-06, so for a real day's distance the
+   * figure must come out longer than that day actually took. If this ever
+   * flips, the number has started predicting arrival instead of flooring it,
+   * and the label on screen would become a lie.
+   */
+  it('errs long against the measured 2026-10-06 walk, which is the safe direction', () => {
+    const oct6Mi = 14.29;
+    const r = walkingTimeLeft(0, oct6Mi * KM_PER_MILE)!;
+    const actualElapsedMinutes = 4 * 60 + 38 + 38 / 60;
+    expect(r.movingMinutes).toBeGreaterThan(actualElapsedMinutes);
   });
 });
