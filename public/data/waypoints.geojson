@@ -102,6 +102,39 @@
     },
     {
       "type": "Feature",
+      "id": "wp-kawasaki-juku",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.70281,
+          35.532619
+        ]
+      },
+      "properties": {
+        "schemaVersion": 1,
+        "classification": "public",
+        "lastChecked": null,
+        "operationalNotes": "The ONLY post town with no route anchor, so it reaches the map and the Footpath export as a waypoint instead. The old road passes directly in front of the referenced building — Kevin checked it on 2026-10-10 and put it at touching distance from the near pavement. Nothing surviving here has been confirmed on the ground.",
+        "historicalNotes": "Post station #2. The juku began just past the Rokugo crossing of the Tama River and ran as a strip of frontage along the highway.",
+        "safetyNotes": null,
+        "links": [],
+        "dayIds": [
+          "d-2026-10-20"
+        ],
+        "source": "Kevin, Google Maps check 2026-10-10 against the referenced building",
+        "confidence": "low",
+        "verification": "desk-checked",
+        "id": "wp-kawasaki-juku",
+        "type": "landmark",
+        "title": "#2 Kawasaki-juku",
+        "positionSource": "reference-lookup",
+        "anchorId": null,
+        "navigational": false,
+        "demonstration": true
+      }
+    },
+    {
+      "type": "Feature",
       "id": "wp-rail-kawasaki",
       "geometry": {
         "type": "Point",
@@ -1460,15 +1493,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          138.302969,
-          34.93298
+          138.303659,
+          34.934358
         ]
       },
       "properties": {
         "schemaVersion": 1,
         "classification": "public",
         "lastChecked": null,
-        "operationalNotes": "THE WET-WEATHER CHOICE. The traced route goes OVER the pass on the old footway, which is what the Edo road did. The tunnel runs beneath it and rejoins the same road at both ends, so taking it costs almost no distance — it is a surface decision, not a detour. The tunnel is paved (paving_stones) and lit; the pass is an unpaved mountain footpath. In heavy rain, or on tired legs, the tunnel is the sensible crossing and Kevin has walked it before. Decide at the portal, not in advance.",
+        "operationalNotes": "THE WET-WEATHER CHOICE, AND THIS PIN IS THE DECISION POINT — the east portal, which is the one you reach walking from Tokyo. The traced route goes OVER the pass on the old footway, which is what the Edo road did. The tunnel runs beneath it and rejoins the same road at the west portal (34.932644, 138.302693), 210 m away in a straight line against 191 m over the top: the same distance, a different surface. Paved (paving_stones) and lit, against an unpaved mountain footpath. In heavy rain, or on tired legs, the tunnel is the sensible crossing and Kevin has walked it before. Decide HERE, at this portal — once you are on the pass you have chosen.",
         "historicalNotes": "Opened 1876 as Japan’s first toll tunnel; rebuilt in brick 1904; present passage about 203 m. The portal inscription reads right-to-left. A Meiji-period transformation of the corridor, not the Edo path.",
         "safetyNotes": "Repair work was scheduled during FY2026 — CONFIRM THE TUNNEL IS OPEN before counting on it as the rain option, because a closure removes the choice and leaves only the pass. Check the Shizuoka and Fujieda notices below shortly before Oct 27.",
         "links": [
@@ -1484,14 +1517,14 @@
         "dayIds": [
           "d-2026-10-27"
         ],
-        "source": "kaidotrail 2026-08-20 (route anchor)",
+        "source": "OSM footway named 宇津ノ谷隧道 明治トンネル (tunnel=yes, surface=paving_stones), EAST portal node; read 2026-10-10",
         "confidence": "medium",
-        "verification": "imported",
+        "verification": "desk-checked",
         "id": "wp-utsunoya-tunnel",
         "type": "category-change",
-        "title": "Meiji Utsunoya Tunnel",
-        "anchorId": "a-041",
-        "positionSource": "source-route-anchor",
+        "title": "Utsunoya — tunnel or pass: decide here",
+        "positionSource": "reference-lookup",
+        "anchorId": null,
         "navigational": false,
         "demonstration": true
       }

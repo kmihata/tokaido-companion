@@ -86,7 +86,12 @@ const DEMO = {
 const stations = [
   { id: 'st-nihonbashi',  number: null, name: 'Nihonbashi',        modern: 'Chuo, Tokyo',        lat: 35.6841, lon: 139.7743 },
   { id: 'st-shinagawa',   number: 1,    name: 'Shinagawa-juku',    modern: 'Shinagawa, Tokyo',   lat: 35.6285, lon: 139.7387 },
-  { id: 'st-kawasaki',    number: 2,    name: 'Kawasaki-juku',     modern: 'Kawasaki',           lat: 35.5308, lon: 139.7029 },
+  // Kevin read this off Google Maps on 2026-10-10 against the referenced
+  // building: the old road runs directly in front of it, so the coordinate is
+  // the street, not an estimate of a district. It lands 39.8 m from path-east,
+  // which for a post town — a STRIP of frontage along the highway, not a point
+  // — is within the town rather than off it. Still unresearched on the ground.
+  { id: 'st-kawasaki',    number: 2,    name: 'Kawasaki-juku',     modern: 'Kawasaki',           lat: 35.532619, lon: 139.702810, source: 'Kevin, Google Maps check 2026-10-10 against the referenced building', confidence: 'low', verification: 'desk-checked', positionSource: 'reference-lookup' },
   { id: 'st-kanagawa',    number: 3,    name: 'Kanagawa-juku',     modern: 'Yokohama',           lat: 35.4657, lon: 139.6220 },
   { id: 'st-hodogaya',    number: 4,    name: 'Hodogaya-juku',     modern: 'Yokohama',           lat: 35.4463, lon: 139.5980 },
   { id: 'st-totsuka',     number: 5,    name: 'Totsuka-juku',      modern: 'Yokohama',           lat: 35.4004, lon: 139.5340 },
@@ -164,9 +169,25 @@ const stations = [
           verification: 'imported',
         }
       : {}),
+    // A station WITHOUT a route anchor may still have a better-than-nothing
+    // coordinate, and the blanket DEMO stamp said otherwise. Kawasaki (#2) was
+    // reading `confidence: demonstration`, `source: demonstration-fixture`
+    // after Kevin read its position off the map against the referenced building
+    // on 2026-10-10 — which made the record claim less than was known. An
+    // explicit value on the station wins, the same rule `wp()` already follows
+    // and for the same reason.
+    ...(s.source ? { source: s.source } : {}),
+    ...(s.confidence ? { confidence: s.confidence } : {}),
+    ...(s.verification ? { verification: s.verification } : {}),
     kind: 'tokaido-station',
     anchorId: anchor?.properties.id ?? null,
-    positionSource: real ? 'source-route-anchor' : 'operator-estimate',
+    // `operator-estimate` is the fallback, and `fixtures.test.ts` holds it to
+    // `verification: unverified` — correctly, because an estimate IS a guess.
+    // A coordinate read off a published map against a named building is not a
+    // guess, it is a `reference-lookup`, and the taxonomy already had the right
+    // word for it. Kawasaki was first written as an operator-estimate that
+    // claimed `desk-checked`, which the test refused, and the test was right.
+    positionSource: real ? 'source-route-anchor' : (s.positionSource ?? 'operator-estimate'),
     notes:
       s.number === null
         ? 'Route terminus, not a numbered post station.'
@@ -482,7 +503,23 @@ function attachHiroshigeToDays(days, stations, images) {
  */
 const WAYPOINT_ANCHORS = {
   'wp-hazard-suzuka-pass': '鈴鹿峠',
-  'wp-utsunoya-tunnel': '宇津ノ谷峠',
+  // NOTE ON THE SOURCE STRING for wp-utsunoya-tunnel below: it names the OSM
+  // footway but carries no way or node id. Two shipped-data gates in
+  // `bundle.test.ts` forbid them. One refuses any run of nine or more digits,
+  // because it cannot distinguish an element id from a booking reference — and
+  // both ids are nine and ten digits. The other refuses a list of forbidden
+  // phrases; a first attempt at this very explanation was written INTO the
+  // shipped `source` field and tripped it by naming one of them. Both refusals
+  // were right. The reasoning lives here, in the generator, which ships
+  // nothing; the record names the way, which is unique and findable.
+  //
+  // 'wp-utsunoya-tunnel' deliberately NOT mapped to '宇津ノ谷峠'. It used to be,
+  // and the mapping silently overrode the waypoint's own coordinate with the
+  // PASS anchor's — so a waypoint titled for the tunnel sat 166 m from the east
+  // portal and 45 m from the west one. Walking Tokyo to Kyoto you reach the
+  // east portal first, so the pin appeared only AFTER the choice had been made.
+  // Kevin found this on the map on 2026-10-10. It now carries its own
+  // coordinate, the east portal, which is where the decision is.
   'wp-research-satta': '薩埵峠',
   'wp-bus-hatajuku': '畑宿本陣',
   'wp-water-hatajuku': '畑宿本陣',
@@ -531,6 +568,7 @@ const waypoints = [
   wp({ id: 'wp-end-d1', type: 'day-end', title: 'Kawasaki-juku — Walk 1 finish', lat: 35.5308, lon: 139.7029, dayIds: ['d-2026-10-20'], operationalNotes: 'Planned walk endpoint. Distinct from the hotel until lodging is chosen.' }),
 
   wp({ id: 'wp-rail-shinagawa', type: 'rail-bailout', title: 'Shinagawa Station', lat: 35.62822222, lon: 139.73869444, source: 'ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m', confidence: 'medium', verification: 'desk-checked', demonstration: false, positionSource: 'reference-lookup', dayIds: ['d-2026-10-20'], operationalNotes: 'Dense service. Bailing out here is trivial.' }),
+  wp({ id: 'wp-kawasaki-juku', type: 'landmark', title: '#2 Kawasaki-juku', lat: 35.532619, lon: 139.702810, source: 'Kevin, Google Maps check 2026-10-10 against the referenced building', confidence: 'low', verification: 'desk-checked', positionSource: 'reference-lookup', dayIds: ['d-2026-10-20'], historicalNotes: 'Post station #2. The juku began just past the Rokugo crossing of the Tama River and ran as a strip of frontage along the highway.', operationalNotes: 'The ONLY post town with no route anchor, so it reaches the map and the Footpath export as a waypoint instead. The old road passes directly in front of the referenced building — Kevin checked it on 2026-10-10 and put it at touching distance from the near pavement. Nothing surviving here has been confirmed on the ground.' }),
   wp({ id: 'wp-rail-kawasaki', type: 'rail-bailout', title: 'Kawasaki Station', lat: 35.53138889, lon: 139.69694444, source: 'ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m', confidence: 'medium', verification: 'desk-checked', demonstration: false, positionSource: 'reference-lookup', dayIds: ['d-2026-10-20'] }),
   wp({ id: 'wp-rail-totsuka', type: 'rail-bailout', title: 'Totsuka Station', lat: 35.40061111, lon: 139.53419444, source: 'ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m', confidence: 'medium', verification: 'desk-checked', demonstration: false, positionSource: 'reference-lookup', dayIds: ['d-2026-10-22'] }),
   wp({ id: 'wp-rail-fujisawa', type: 'rail-bailout', title: 'Fujisawa Station', lat: 35.33888889, lon: 139.48722222, source: 'ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m', confidence: 'medium', verification: 'desk-checked', demonstration: false, positionSource: 'reference-lookup', dayIds: ['d-2026-10-22'] }),
@@ -572,7 +610,7 @@ const waypoints = [
 
   wp({ id: 'wp-hazard-hakone-pass-ic', type: 'hazard', title: 'Hakone Pass IC — highway shoulder', lat: 35.1830, lon: 139.0090, dayIds: ['d-2026-10-24','d-2026-10-25'], safetyNotes: 'Route 1, Hakone Shindo, old-road approaches and the Ashinoko Skyline access converge. Several hundred metres without sidewalk plus an unprotected crossing near the Shindo merge. The green pedestrian paint is paint: no curb, no barrier, no separation. Kevin and Kai ran this section in 2018.', operationalNotes: 'KEVIN WALKED ROUTE 1 UP THIS SLOPE ON AN EARLIER TRIP, EASTBOUND, AND REMEMBERS A SIDEWALK THE WHOLE WAY UP UNTIL AN UNDERPASS SECTION CLOSE TO THE LAKE — which is this junction. First-hand evidence that the problem is local to the top rather than the length of the climb, and it matches both the 2018 run and the reports below. Treat the sidewalk as present lower down and the hazard as concentrated here. Alternatives still to map continuously before departure: the old-road/golf-road loop, and the wooded connector between the Hakone Yasuragi-no-Mori bus stop and Roadside Station Hakone-toge reported May 2026. NOTE ALSO that a guide source records about 600 m from the Hakone Pass OLD-ROAD entrance as blocked since September 2022 (page last updated July 2025, not confirmed for 2026) — if that is still true, the old road and Route 1 are constrained at the same place.', links: [{ label: 'Account of the junction', url: 'https://ossanpo.hatenablog.com/entry/hakone' }, { label: 'Wooded connector report (May 2026)', url: 'https://busmagazine.bestcarweb.jp/feature/column/209862' }] }),
   wp({ id: 'wp-hazard-hiryu-trail', type: 'hazard', title: 'Hiryu Falls — Ashinoyu nature trail', lat: 35.2230, lon: 139.0400, dayIds: ['d-2026-10-24'], safetyNotes: 'Steep 2.3 km maintained nature trail. Kanagawa Prefecture advises against use during or just after rain; parts are prone to crumbling.', operationalNotes: 'Part of the preferred hybrid east-slope line: Old Tokaido to Hatajuku, then this trail toward Ashinoyu and Lake Ashi. Position approximate.' }),
-  wp({ id: 'wp-utsunoya-tunnel', type: 'category-change', title: 'Meiji Utsunoya Tunnel', lat: 34.9450, lon: 138.2860, dayIds: ['d-2026-10-27'], historicalNotes: 'Opened 1876 as Japan’s first toll tunnel; rebuilt in brick 1904; present passage about 203 m. The portal inscription reads right-to-left. A Meiji-period transformation of the corridor, not the Edo path.', operationalNotes: 'THE WET-WEATHER CHOICE. The traced route goes OVER the pass on the old footway, which is what the Edo road did. The tunnel runs beneath it and rejoins the same road at both ends, so taking it costs almost no distance — it is a surface decision, not a detour. The tunnel is paved (paving_stones) and lit; the pass is an unpaved mountain footpath. In heavy rain, or on tired legs, the tunnel is the sensible crossing and Kevin has walked it before. Decide at the portal, not in advance.', safetyNotes: 'Repair work was scheduled during FY2026 — CONFIRM THE TUNNEL IS OPEN before counting on it as the rain option, because a closure removes the choice and leaves only the pass. Check the Shizuoka and Fujieda notices below shortly before Oct 27.', links: [{ label: 'Shizuoka City', url: 'https://www.city.shizuoka.lg.jp/s5984/s005526.html' }, { label: 'Fujieda City trail notices', url: 'https://www.city.fujieda.shizuoka.jp/soshiki/sports_bunka/kankokoryu/oshirase/19928.html' }] }),
+  wp({ id: 'wp-utsunoya-tunnel', type: 'category-change', title: 'Utsunoya — tunnel or pass: decide here', lat: 34.934358, lon: 138.303659, source: 'OSM footway named 宇津ノ谷隧道 明治トンネル (tunnel=yes, surface=paving_stones), EAST portal node; read 2026-10-10', confidence: 'medium', verification: 'desk-checked', positionSource: 'reference-lookup', dayIds: ['d-2026-10-27'], historicalNotes: 'Opened 1876 as Japan’s first toll tunnel; rebuilt in brick 1904; present passage about 203 m. The portal inscription reads right-to-left. A Meiji-period transformation of the corridor, not the Edo path.', operationalNotes: 'THE WET-WEATHER CHOICE, AND THIS PIN IS THE DECISION POINT — the east portal, which is the one you reach walking from Tokyo. The traced route goes OVER the pass on the old footway, which is what the Edo road did. The tunnel runs beneath it and rejoins the same road at the west portal (34.932644, 138.302693), 210 m away in a straight line against 191 m over the top: the same distance, a different surface. Paved (paving_stones) and lit, against an unpaved mountain footpath. In heavy rain, or on tired legs, the tunnel is the sensible crossing and Kevin has walked it before. Decide HERE, at this portal — once you are on the pass you have chosen.', safetyNotes: 'Repair work was scheduled during FY2026 — CONFIRM THE TUNNEL IS OPEN before counting on it as the rain option, because a closure removes the choice and leaves only the pass. Check the Shizuoka and Fujieda notices below shortly before Oct 27.', links: [{ label: 'Shizuoka City', url: 'https://www.city.shizuoka.lg.jp/s5984/s005526.html' }, { label: 'Fujieda City trail notices', url: 'https://www.city.fujieda.shizuoka.jp/soshiki/sports_bunka/kankokoryu/oshirase/19928.html' }] }),
   // Verified in Street View by Kevin, 2026-09-13, after the desk's revisit check
   // flagged 423 m of apparent detour here and it was nearly straightened as an
   // artifact. It is not an artifact. Three spans cross the Tenryu — one two-way

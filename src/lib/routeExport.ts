@@ -56,6 +56,11 @@ const EXPORTED_WAYPOINT_TYPES: readonly string[] = [
   'river-crossing',
   'category-change',
   'research',
+  // Added 2026-10-10 for Kawasaki-juku, the one post town with no route anchor
+  // and therefore the one the station-ledger loop below cannot reach. There are
+  // no other `landmark` WAYPOINTS — the 14 landmarks in the data are anchors —
+  // so this widens the export by exactly one pin.
+  'landmark',
 ];
 
 export interface GpxTrack {

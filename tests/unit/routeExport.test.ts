@@ -238,3 +238,51 @@ describe('the day package that goes to Footpath', () => {
     }
   });
 });
+
+describe('the two points Kevin found on the map, 2026-10-10', () => {
+  /**
+   * `wp-utsunoya-tunnel` used to be snapped to the 宇津ノ谷峠 PASS anchor by
+   * WAYPOINT_ANCHORS, which overrode its own coordinate. The pin therefore sat
+   * 166 m from the east portal and 45 m from the west — and walking Tokyo to
+   * Kyoto you reach the east portal first, so the only waypoint telling you a
+   * tunnel exists appeared after you had already committed to the pass.
+   */
+  it('puts the Utsunoya choice at the east portal, the one reached from Tokyo', () => {
+    const wp = dataset.waypoints.find((w) => w.properties.id === 'wp-utsunoya-tunnel');
+    expect(wp).toBeDefined();
+    const [lon, lat] = wp!.geometry.coordinates;
+    // OSM way 128178246, node 1417009087.
+    expect(lat).toBeCloseTo(34.934358, 5);
+    expect(lon).toBeCloseTo(138.303659, 5);
+    // And it must NOT have been re-snapped onto an anchor.
+    expect(wp!.properties.positionSource).not.toBe('source-route-anchor');
+  });
+
+  it('reaches the Walk 7 package, where the decision is actually made', () => {
+    const gpx = dayGpx(dataset, legFor('d-2026-10-27'), AT);
+    expect(gpx).toMatch(/decide here/);
+  });
+
+  it('carries Kawasaki-juku as a waypoint, since it is the one post town with no anchor', () => {
+    const kawasaki = dataset.stations.find((s) => s.id === 'st-kawasaki');
+    expect(kawasaki?.anchorId).toBeNull();
+    const gpx = dayGpx(dataset, legFor('d-2026-10-20'), AT);
+    expect(gpx).toMatch(/#2 Kawasaki-juku/);
+  });
+
+  /**
+   * The record must not claim less than is known, which is why `station()`
+   * takes an explicit source. Kawasaki read `confidence: demonstration` and
+   * `source: demonstration-fixture` after Kevin had checked it on the map.
+   */
+  it('does not describe a checked coordinate as a demonstration fixture', () => {
+    const kawasaki = dataset.stations.find((s) => s.id === 'st-kawasaki');
+    expect(kawasaki?.confidence).not.toBe('demonstration');
+    expect(kawasaki?.source).not.toMatch(/demonstration-fixture/);
+    // But it is a map READ, not a survey: `reference-lookup` is the taxonomy's
+    // word for that, and it is what `fixtures.test.ts` requires alongside
+    // `desk-checked`. Nothing here is confirmed on the ground.
+    expect(kawasaki?.positionSource).toBe('reference-lookup');
+    expect(kawasaki?.visibility).toBe('unknown');
+  });
+});
