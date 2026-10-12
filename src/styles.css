@@ -286,6 +286,10 @@ p { margin: 0 0 0.8em; }
 
 .notes { margin: 0; padding-left: 1.1em; }
 .notes li { margin-bottom: 6px; }
+/* A private note is written as short lines. Without this the day card
+   ran them together into one block of small text, which is what Kevin
+   saw on the phone on 2026-10-11: structure written, structure lost. */
+.notes .body { white-space: pre-line; margin-top: 3px; }
 
 /* ---------- forms ---------- */
 

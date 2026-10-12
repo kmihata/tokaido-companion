@@ -40,13 +40,25 @@ export function DayDetail({ dayId }: { dayId: string }): ReactNode {
   const lodging = (privateData?.lodging ?? []).filter((l) => l.dayId === day.id);
   const privateNotes = (privateData?.notes ?? []).filter((n) => n.dayId === day.id);
 
+  // Transport reached NO screen before 2026-10-11: it was in the private file
+  // and counted in Settings, and that was all. So the pocket-WiFi order number
+  // Kevin has to show at the counter, and the train he is aiming for, lived in
+  // a file the app never displayed.
+  const transport = (privateData?.transport ?? []).filter((x) => x.dayId === day.id);
+
+  const lodgingLines = lodging.map(
+    (l) =>
+      `Lodging: ${l.name}${l.address ? `, ${l.address}` : ''}` +
+      (l.arrivalCutoff ? ` — check-in closes ${l.arrivalCutoff}` : '') +
+      (l.phone ? ` — ${l.phone}` : ''),
+  );
+  const hasPrivate = lodgingLines.length + transport.length + privateNotes.length > 0;
+
+  // Flattened for the AI packet, which is one block of text and cannot carry
+  // structure. Still off by default on every screen that offers it.
   const privateLines = [
-    ...lodging.map(
-      (l) =>
-        `Lodging: ${l.name}${l.address ? `, ${l.address}` : ''}` +
-        (l.arrivalCutoff ? ` — check-in closes ${l.arrivalCutoff}` : '') +
-        (l.phone ? ` — ${l.phone}` : ''),
-    ),
+    ...lodgingLines,
+    ...transport.map((x) => `Transport: ${x.description}${x.notes ? ` — ${x.notes}` : ''}`),
     ...privateNotes.map((n) => `Private note: ${n.title}${n.body ? ` — ${n.body}` : ''}`),
   ];
 
@@ -272,15 +284,27 @@ export function DayDetail({ dayId }: { dayId: string }): ReactNode {
             </section>
           ) : null}
 
-          {privateLines.length > 0 ? (
+          {hasPrivate ? (
             <section className="card">
               <h2>Private data for this day</h2>
               <p className="small muted">
                 From your imported private file. Stored only on this device.
               </p>
               <ul className="notes small">
-                {privateLines.map((l) => (
+                {lodgingLines.map((l) => (
                   <li key={l}>{l}</li>
+                ))}
+                {transport.map((x) => (
+                  <li key={x.id}>
+                    <strong>{x.description}</strong>
+                    {x.notes ? <div className="body">{x.notes}</div> : null}
+                  </li>
+                ))}
+                {privateNotes.map((n) => (
+                  <li key={n.id}>
+                    <strong>{n.title}</strong>
+                    {n.body ? <div className="body">{n.body}</div> : null}
+                  </li>
                 ))}
               </ul>
             </section>
