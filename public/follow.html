@@ -119,7 +119,7 @@ const COAST = '134.600,35.660|134.798,35.666|134.834,35.657|134.842,35.645|134.8
 const PICK = {
   trip:    ['title', 'direction', 'routeStart', 'routeEnd', 'walkingDayCount'],
   meta:    ['dataVersion'],
-  day:     ['date', 'label', 'from', 'to', 'nominalDistanceKm', 'walkingDayNumber'],
+  day:     ['date', 'label', 'nominalDistanceKm', 'walkingDayNumber', 'publicEnd'],
   station: ['number', 'name', 'modern'],
   print:   ['number', 'title', 'series', 'artist', 'imagePath', 'institution', 'rightsStatus', 'sourceUrl'],
 };
@@ -184,8 +184,9 @@ function routeSvg(features, labels) {
   const marks = (labels ?? []).map((m) => {
     const anchor = m.align === 'end' ? 'end' : m.align === 'middle' ? 'middle' : 'start';
     const dx = anchor === 'end' ? -7 : anchor === 'middle' ? 0 : 7;
-    return `<circle cx="${X(m.lon)}" cy="${Y(m.lat)}" r="3" fill="var(--ink)"/>` +
-      `<text x="${+X(m.lon) + dx}" y="${+Y(m.lat) + (m.below ? 15 : -7)}" text-anchor="${anchor}"${m.big ? ' class="big"' : ''}>${esc(m.name)}</text>`;
+    const y = +Y(m.lat) + (m.below ? 15 : -7) + (m.dy ?? 0);
+    return `<circle cx="${X(m.lon)}" cy="${Y(m.lat)}" r="3.2" fill="var(--ink)"/>` +
+      `<text x="${+X(m.lon) + dx}" y="${y}" text-anchor="${anchor}"${m.big ? ' class="big"' : ''}>${esc(m.name)}</text>`;
   }).join('');
 
   return `<svg class="route" viewBox="0 0 ${W} ${H}" role="img" aria-label="The Tokaido from Tokyo to Kyoto, drawn along the Pacific coast of Honshu">`
@@ -193,20 +194,31 @@ function routeSvg(features, labels) {
     + route + marks + `</svg>`;
 }
 
-/** A handful of places, so the line is somewhere rather than anywhere. */
-function labelsFrom(stations) {
-  const want = [
-    ['st-nihonbashi', 'Tokyo', { big: true, align: 'end' }],
-    ['st-hakone', 'Hakone', { below: true, align: 'middle' }],
-    ['st-fuchu', 'Shizuoka', { below: true, align: 'middle' }],
-    ['st-miya', 'Nagoya', { align: 'middle' }],
-    ['st-sanjo', 'Kyoto', { big: true, align: 'start' }],
-  ];
-  const out = [];
-  for (const [id, name, opt] of want) {
-    const s = stations.find((x) => x.id === id);
-    if (s && typeof s.lat === 'number') out.push({ name, lat: s.lat, lon: s.lon, ...opt });
-  }
+/**
+ * The day stops, which is the whole question the page exists to answer:
+ * where is he on a given day. Named as CITIES — family cannot place
+ * "Iwatsuka Station crossing", and for the rest of the world that is Nagoya.
+ */
+const NUDGE = { Kuwana: { below: true, dy: 13 } };
+
+function labelsFrom(days, startPos) {
+  const out = [{ name: 'Tokyo', lat: startPos[1], lon: startPos[0], big: true, align: 'end', below: false }];
+  days.forEach((d, i) => {
+    if (!d.publicEnd) return;
+    out.push({
+      name: d.publicEnd.city,
+      lat: d.publicEnd.lat,
+      lon: d.publicEnd.lon,
+      // Alternate above and below so sixteen labels on one coast do not pile up.
+      below: i % 2 === 1,
+      align: 'middle',
+      big: d.publicEnd.city === 'Kyoto',
+      // Alternation resolves every collision but one: Kuwana sits south-west of
+      // Nagoya, so its label rises into Nagoya's. Measured, not guessed — the
+      // page was checked for overlapping label boxes and this was the only pair.
+      ...(NUDGE[d.publicEnd.city] ?? {}),
+    });
+  });
   return out;
 }
 
@@ -219,6 +231,9 @@ function labelsFrom(stations) {
     ]);
 
     const km = metaRaw.totals.activeWalkingKm;
+    const totalMi = km * KM_MI;
+    const startPos = (routeRaw.features.find((f) => f.geometry.type === 'LineString')?.geometry.coordinates
+      ?? routeRaw.features[0].geometry.coordinates[0])[0];
     const trip = only(tripRaw, PICK.trip);
     const meta = only(metaRaw, PICK.meta);
     const days = daysRaw.days.filter((d) => d.kind === 'walk').map((d) => only(d, PICK.day))
@@ -242,18 +257,25 @@ function labelsFrom(stations) {
       </p>
 
       <h2>The route</h2>
-      ${routeSvg(routeRaw.features, labelsFrom(stationsRaw.stations))}
+      ${routeSvg(routeRaw.features, labelsFrom(days, startPos))}
       <p class="lede" style="font-size:15px">The road runs along the Pacific coast of Honshū, Tokyo at the east end and Kyoto at the west. The southward loop before Nagoya is the Saya Kaidō, the land detour around the Seven-ri sea crossing. Coastline from Natural Earth, public domain.</p>
 
       <h2>The days</h2>
-      <table><thead><tr><th>Day</th><th>Date</th><th>From</th><th>To</th><th class="n">km</th><th class="n">mi</th></tr></thead><tbody>
-      ${days.map((d) => `<tr>
-        <td>${d.walkingDayNumber ?? '—'}</td>
-        <td class="n" style="text-align:left">${esc(pretty(d.date))}</td>
-        <td>${esc(d.from)}</td><td>${esc(d.to)}</td>
-        <td class="n">${(d.nominalDistanceKm ?? 0).toFixed(1)}</td>
-        <td class="n">${((d.nominalDistanceKm ?? 0) * KM_MI).toFixed(1)}</td>
-      </tr>`).join('')}
+      <p class="lede" style="font-size:15px;margin-bottom:14px">Where he finishes each day, how far he has walked, and how much is left.</p>
+      <table><thead><tr><th>Day</th><th>Date</th><th>Finishes at</th><th class="n">Miles</th><th class="n">Walked so far</th><th class="n">Left</th></tr></thead><tbody>
+      ${(() => { let cum = 0; return days.map((d) => {
+        const mi = (d.nominalDistanceKm ?? 0) * KM_MI;
+        cum += mi;
+        const n = d.walkingDayNumber ?? (/Walk\s+(\S+)/.exec(d.label ?? '')?.[1] ?? '');
+        return `<tr>
+          <td>${esc(n)}</td>
+          <td style="white-space:nowrap">${esc(pretty(d.date))}</td>
+          <td><b>${esc(d.publicEnd?.city ?? '')}</b></td>
+          <td class="n">${mi.toFixed(1)}</td>
+          <td class="n">${cum.toFixed(0)}</td>
+          <td class="n">${(totalMi - cum).toFixed(0)}</td>
+        </tr>`;
+      }).join(''); })()}
       </tbody></table>
 
       <h2>The fifty-three post towns</h2>

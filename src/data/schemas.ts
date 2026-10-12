@@ -110,6 +110,11 @@ export const DaySchema = z.object({
   weatherSensitive: z.array(z.string()).default([]),
   safetyNotes: z.array(z.string()).default([]),
   editorialPrompts: z.array(z.string()).default([]),
+  /** Where this day ends, named for a stranger. Public follower page only. */
+  publicEnd: z
+    .object({ city: z.string(), lat: z.number(), lon: z.number() })
+    .nullable()
+    .default(null),
   hiroshigeRefIds: z.array(z.string()).default([]),
   verificationTasks: z.array(z.string()).default([]),
   tiredDaySummary: z.string(),

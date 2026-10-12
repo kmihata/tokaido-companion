@@ -70,6 +70,11 @@
       ],
       "weatherSensitive": [],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Kawasaki",
+        "lat": 35.5235,
+        "lon": 139.6917
+      },
       "id": "d-2026-10-20",
       "date": "2026-10-20",
       "kind": "walk",
@@ -141,6 +146,11 @@
       "verificationTasks": [],
       "weatherSensitive": [],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Fujisawa",
+        "lat": 35.3477,
+        "lon": 139.4824
+      },
       "id": "d-2026-10-22",
       "date": "2026-10-22",
       "kind": "walk",
@@ -179,6 +189,11 @@
       "verificationTasks": [],
       "weatherSensitive": [],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Odawara",
+        "lat": 35.2484,
+        "lon": 139.16
+      },
       "id": "d-2026-10-23",
       "date": "2026-10-23",
       "kind": "walk",
@@ -229,6 +244,11 @@
         "Upper west-slope old road reopened 2026-03-30 after typhoon restoration; Kannami Town asks walkers to avoid it in rain and for several days after. Route 1 is the designated wet-weather detour — and Route 1 is where the shoulder problem is."
       ],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Hakone",
+        "lat": 35.2011,
+        "lon": 139.0307
+      },
       "id": "d-2026-10-24",
       "date": "2026-10-24",
       "kind": "walk",
@@ -276,6 +296,11 @@
         "ROUTE 1 IS NOT AN UNCONDITIONAL DETOUR. The Route 1 section through Kannami — 茨ケ平 to 枯木, 103.0–106.7 kp, 3.7 km — is a rainfall-regulated stretch that CLOSES at 250 mm cumulative rainfall, with recorded closures in 2007, 2011 and 2012. That is typhoon rain rather than ordinary rain, so it is a tail risk, not a daily one — but it is the same ground the wet-weather detour sends you to, so in genuinely heavy weather both options can be shut and the answer is the train from Mishima, not a third road."
       ],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Fuji",
+        "lat": 35.1605,
+        "lon": 138.678
+      },
       "id": "d-2026-10-25",
       "date": "2026-10-25",
       "kind": "walk",
@@ -325,6 +350,11 @@
         "About 900 m of the descent west of Satta is unpaved trail — the only unpaved ground on this day. If the weather has already taken the view away, the coastal corridor through Yui and Okitsu is the alternative and the Tokaido Main Line parallels it the whole way."
       ],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Shizuoka",
+        "lat": 34.9725,
+        "lon": 138.3802
+      },
       "id": "d-2026-10-26",
       "date": "2026-10-26",
       "kind": "walk",
@@ -376,6 +406,11 @@
         "Utsunoya is a choice, not a hazard: the traced line goes OVER the pass on the old footway, and the Meiji tunnel runs beneath it and rejoins the same road at both ends. Paved and lit against an unpaved mountain path, at almost no cost in distance. In heavy rain take the tunnel — but confirm it is open first, because FY2026 repair work could remove the option."
       ],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Shimada",
+        "lat": 34.8328,
+        "lon": 138.1761
+      },
       "id": "d-2026-10-27",
       "date": "2026-10-27",
       "kind": "walk",
@@ -423,6 +458,11 @@
       ],
       "weatherSensitive": [],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Iwata",
+        "lat": 34.7118,
+        "lon": 137.8516
+      },
       "id": "d-2026-10-28",
       "date": "2026-10-28",
       "kind": "walk",
@@ -464,6 +504,11 @@
       ],
       "weatherSensitive": [],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Hamamatsu",
+        "lat": 34.7052,
+        "lon": 137.7286
+      },
       "id": "d-2026-10-29",
       "date": "2026-10-29",
       "kind": "walk",
@@ -512,6 +557,11 @@
         "High wind on the exposed Hamanako bridges is a real stop condition. Rail parallels the whole crossing."
       ],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Toyohashi",
+        "lat": 34.7665,
+        "lon": 137.3902
+      },
       "id": "d-2026-10-30",
       "date": "2026-10-30",
       "kind": "walk",
@@ -551,6 +601,11 @@
       "verificationTasks": [],
       "weatherSensitive": [],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Anjo",
+        "lat": 34.9923,
+        "lon": 137.085
+      },
       "id": "d-2026-10-31",
       "date": "2026-10-31",
       "kind": "walk",
@@ -594,6 +649,11 @@
       ],
       "weatherSensitive": [],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Nagoya",
+        "lat": 35.1549,
+        "lon": 136.854
+      },
       "id": "d-2026-11-01",
       "date": "2026-11-01",
       "kind": "walk",
@@ -661,6 +721,11 @@
       ],
       "weatherSensitive": [],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Kuwana",
+        "lat": 35.0386,
+        "lon": 136.6686
+      },
       "id": "d-2026-11-03",
       "date": "2026-11-03",
       "kind": "walk",
@@ -709,6 +774,11 @@
       "verificationTasks": [],
       "weatherSensitive": [],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Kameyama",
+        "lat": 34.8549,
+        "lon": 136.413
+      },
       "id": "d-2026-11-04",
       "date": "2026-11-04",
       "kind": "walk",
@@ -758,6 +828,11 @@
         "Cold and wind at the saddle. Put the midlayer and shell on before the descent, not after the sweat cools."
       ],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Konan",
+        "lat": 34.9984,
+        "lon": 136.0804
+      },
       "id": "d-2026-11-05",
       "date": "2026-11-05",
       "kind": "walk",
@@ -798,6 +873,11 @@
       "verificationTasks": [],
       "weatherSensitive": [],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Kyoto",
+        "lat": 35.009,
+        "lon": 135.7727
+      },
       "id": "d-2026-11-06",
       "date": "2026-11-06",
       "kind": "walk",

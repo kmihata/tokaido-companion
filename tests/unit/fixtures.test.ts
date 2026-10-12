@@ -2,6 +2,10 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { NAV_WARNING_HEADLINE, NAV_WARNING_FALLBACK } from '../../src/components/DemoBanner';
+import { AnchorsFileSchema, DaysFileSchema, RouteFileSchema, RouteMetaSchema } from '../../src/data/schemas';
+import { buildStretches } from '../../src/data/load';
+import { buildPlanningLine } from '../../src/lib/planningLine';
+import { buildDefaultDayPlans, buildLegs } from '../../src/lib/dayPlan';
 import { haversineKm } from '../../src/lib/geo';
 import type { Position } from '../../src/lib/geo';
 
@@ -320,6 +324,58 @@ describe('writing prompts are not public', () => {
     const days = read('days.json')['days'] as Record<string, unknown>[];
     for (const d of days) {
       expect(d['editorialPrompts'] ?? [], String(d['id'])).toEqual([]);
+    }
+  });
+});
+
+/**
+ * `publicEnd` is the one field written for strangers: the follower page answers
+ * "where is he on a given day" for family who cannot place a post-station name,
+ * so "Iwatsuka Station crossing" has to read as Nagoya.
+ *
+ * Its COORDINATE is a derived value sitting in a hand-maintained file, which is
+ * precisely the shape that produced trip.json's swapped dates and the ledger's
+ * stale review queue. So it is re-derived here from the route geometry at test
+ * time: if a retrace moves a day's end, this fails and says which day.
+ */
+describe('the public day-end cities track the route', () => {
+  const days = read('days.json')['days'] as Record<string, unknown>[];
+  const walks = days.filter((d) => d['kind'] === 'walk');
+
+  it('names an end city for every walking day and none of the others', () => {
+    for (const d of walks) expect(d['publicEnd'], String(d['id'])).toBeTruthy();
+    for (const d of days.filter((x) => x['kind'] !== 'walk')) {
+      expect(d['publicEnd'] ?? null, String(d['id'])).toBeNull();
+    }
+  });
+
+  it("places each city within 150 m of that day's measured route end", () => {
+    const anchors = AnchorsFileSchema.parse(read('anchors.geojson')).features;
+    const { stretches, breaks } = buildStretches(
+      RouteMetaSchema.parse(read('route-meta.json')),
+      RouteFileSchema.parse(read('route.geojson')).features,
+      anchors,
+    );
+    const line = buildPlanningLine(stretches, breaks);
+    const parsedDays = DaysFileSchema.parse(read('days.json')).days;
+    const legs = buildLegs(line, buildDefaultDayPlans(line, anchors, parsedDays), parsedDays, anchors);
+
+    for (const leg of legs) {
+      if (!leg.day?.publicEnd) continue;
+      const end = leg.positions.at(-1)!;
+      const metres =
+        haversineKm([leg.day.publicEnd.lon, leg.day.publicEnd.lat] as Position, end as Position) * 1000;
+      expect(
+        metres,
+        `${leg.day.id} (${leg.day.publicEnd.city}) is ${metres.toFixed(0)} m from where the route now ends — regenerate publicEnd`,
+      ).toBeLessThan(150);
+    }
+  });
+
+  it('uses plain city names, not post stations or stations', () => {
+    for (const d of walks) {
+      const city = (d['publicEnd'] as { city: string }).city;
+      expect(city, String(d['id'])).not.toMatch(/-juku|Station|crossing|shore|lodging|\d/);
     }
   });
 });
