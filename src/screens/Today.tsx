@@ -55,7 +55,9 @@ export function Today(): ReactNode {
       <header className="pagehead">
         <h1>{formatDayLabel(new Date(`${effectiveDate}T12:00:00+09:00`))}</h1>
         <p className="muted">
-          {trip.title} · {trip.direction}
+          {/* The title already ends with the direction, so printing both read
+              "Tokaido — Tokyo to Kyoto · Tokyo to Kyoto" every morning. */}
+          {trip.title.includes(trip.direction) ? trip.title : `${trip.title} · ${trip.direction}`}
           {dateIsOverridden ? ' · previewing a future date' : ''}
         </p>
       </header>

@@ -203,6 +203,21 @@ export function Settings(): ReactNode {
               <th>Currently loaded</th>
               <td data-testid="private-status">{privateData ? privateData.label : 'none'}</td>
             </tr>
+            {/* The file's own date, which is how to tell one export from the
+                next. The app has no backend and cannot know whether a newer
+                file exists elsewhere, so it says which one it is holding
+                rather than claiming to be current. */}
+            <tr>
+              <th>File date</th>
+              <td data-testid="private-generated">
+                {privateData ? privateData.generated : '—'}
+                {privateData ? (
+                  <div className="small muted">
+                    This is the file on this device. Compare it with the newest export you made.
+                  </div>
+                ) : null}
+              </td>
+            </tr>
             <tr>
               <th>Records</th>
               <td>

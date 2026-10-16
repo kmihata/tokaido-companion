@@ -19,8 +19,21 @@ import { href } from '../router';
  */
 export function StatusStrip(): ReactNode {
   const online = useOnline();
-  const { sync, dataset, dateIsOverridden, effectiveDate, settings, updateSettings } =
+  const { sync, dataset, dateIsOverridden, effectiveDate, settings, updateSettings, privateData } =
     useAppState();
+
+  // The route's own version, not the fixture bundle's. They differ by a
+  // '-demo' suffix that the generator adds to the public dataset, and which
+  // stays in the data because `demonstration: true` is what stops the private
+  // importer accepting a public fixture by mistake. What changes when the
+  // route changes is this, so this is what a version chip should show.
+  const routeVersion =
+    dataset?.routeMeta.dataVersion ?? sync.dataVersion ?? dataset?.index.dataVersion ?? '—';
+
+  // Which private file is on this device. The app has no backend and cannot
+  // know whether a newer one exists somewhere else, so it does not pretend to:
+  // it states the date of the file it is holding, and Kevin compares.
+  const privateStamp = privateData ? privateData.generated.slice(0, 10) : null;
 
   return (
     <div className="statusstrip" role="status" aria-live="polite">
@@ -37,7 +50,20 @@ export function StatusStrip(): ReactNode {
       </span>
 
       <a className="chip chip--info" href={href('/offline')} data-testid="data-version-chip">
-        Data {sync.dataVersion ?? dataset?.index.dataVersion ?? '—'}
+        Route {routeVersion}
+      </a>
+
+      <a
+        className={privateStamp ? 'chip chip--ok' : 'chip chip--warn'}
+        href={href('/settings')}
+        data-testid="private-version-chip"
+        title={
+          privateData
+            ? `${privateData.label}. Generated ${privateData.generated}.`
+            : 'No private file on this device: no lodging, transport or arrival notes.'
+        }
+      >
+        {privateStamp ? `Private ${privateStamp}` : '⚠ No private data'}
       </a>
 
       {dateIsOverridden ? (

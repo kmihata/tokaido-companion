@@ -109,8 +109,11 @@ test.describe('offline', () => {
     // The chip must track the route, not a literal. It read '0.1.0-demo' from
     // 2026-08-18 to 2026-10-05 while the route moved to 0.28.0, so this
     // assertion passed for seven weeks while the screen was useless for
-    // telling two builds apart. Assert the SHAPE: a real version, then -demo.
-    await expect(page.getByTestId('data-version-chip')).toContainText(/\d+\.\d+\.\d+-traced-demo/);
+    // telling two builds apart. Assert the SHAPE: a real route version.
+    // The '-demo' suffix left the chip on 2026-10-16 — it belongs to the
+    // fixture bundle, not the route, and tests/unit/fixtures.test.ts asserts
+    // it is still on the data, which is where it does its work.
+    await expect(page.getByTestId('data-version-chip')).toContainText(/Route \d+\.\d+\.\d+-traced/);
     await context.setOffline(false);
   });
 

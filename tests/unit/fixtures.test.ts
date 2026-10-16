@@ -54,6 +54,26 @@ describe('nothing claims to be navigational', () => {
     expect(NAV_WARNING_FALLBACK.toLowerCase()).not.toContain('schematic');
   });
 
+  /**
+   * The chip on the status strip stopped showing the '-demo' suffix on
+   * 2026-10-16, because it belongs to the fixture bundle rather than to the
+   * route and Kevin reasonably read it as "not finished". That was a display
+   * change. The suffix and the flag it travels with still have a job: the
+   * private-file importer refuses anything carrying `demonstration: true`, so
+   * the public dataset cannot be loaded as a private file by mistake. Taking
+   * it off the data would remove that guard silently.
+   */
+  it('the public dataset is still marked as the demonstration bundle', () => {
+    expect(String(read('index.json')['dataVersion'])).toMatch(/-demo$/);
+    for (const f of ['days.json', 'stations.json', 'hiroshige.json']) {
+      expect(read(f)['demonstration'], `${f}`).toBe(true);
+    }
+    // And the route version it is derived from carries no such suffix, which
+    // is why the chip can show one and not the other.
+    expect(String(meta['dataVersion'])).not.toMatch(/-demo/);
+    expect(String(read('index.json')['dataVersion'])).toBe(`${String(meta['dataVersion'])}-demo`);
+  });
+
   it('the route notice states what is actually wrong with it', () => {
     const notice = String(meta['notice']);
     expect(notice).toMatch(/unverified/i);

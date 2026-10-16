@@ -12,7 +12,7 @@ import { href } from '../router';
 import { formatDateTime } from '../lib/time';
 
 export function Offline(): ReactNode {
-  const { sync, dataset, reloadDataset } = useAppState();
+  const { sync, dataset, reloadDataset, privateData } = useAppState();
   const online = useOnline();
   const [report, setReport] = useState<ReadinessReport | null>(null);
   const [busy, setBusy] = useState(false);
@@ -137,8 +137,26 @@ export function Offline(): ReactNode {
         <table className="kv">
           <tbody>
             <tr>
-              <th>Data version</th>
-              <td>{sync.dataVersion ?? dataset?.index.dataVersion ?? '—'}</td>
+              <th>Route version</th>
+              <td>{dataset?.routeMeta.dataVersion ?? '—'}</td>
+            </tr>
+            <tr>
+              <th>Fixture bundle</th>
+              <td>
+                {sync.dataVersion ?? dataset?.index.dataVersion ?? '—'}
+                <div className="small muted">
+                  The <span className="mono">-demo</span> suffix marks the public dataset, where
+                  the lodging is invented placeholders. It is also the flag that stops this public
+                  file being imported as your private one by mistake. Your real stays come from
+                  the private file below.
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>Private file</th>
+              <td data-testid="offline-private-file">
+                {privateData ? `${privateData.generated} — ${privateData.label}` : 'none on this device'}
+              </td>
             </tr>
             <tr>
               <th>Last synchronised</th>

@@ -15,6 +15,12 @@ import { useAppState } from '../state/AppState';
  *
  * What does NOT change is the headline: nothing here is verified for
  * navigation. `tests/unit/fixtures.test.ts` asserts that.
+ *
+ * The detail is behind a disclosure as of 2026-10-16. On a phone the open
+ * paragraph took half of Today, every day, and Kevin is in fact navigating
+ * from this — which is the point: the warning is not there to stop him, it is
+ * there so he never trusts the line without checking it. A line he reads every
+ * morning does that. Half a screen he learns to scroll past does not.
  */
 export const NAV_WARNING_HEADLINE = 'Unverified route — not for navigation';
 
@@ -26,18 +32,25 @@ export function DemoBanner({ inline = false }: { inline?: boolean }): ReactNode 
   const { dataset } = useAppState();
   const detail = dataset?.routeMeta.notice ?? NAV_WARNING_FALLBACK;
 
+  if (inline) {
+    return (
+      <div className="demobanner demobanner--inline" role="note" data-testid="demo-banner">
+        <strong>{NAV_WARNING_HEADLINE}</strong>
+      </div>
+    );
+  }
+
   return (
-    <div
-      className={inline ? 'demobanner demobanner--inline' : 'demobanner'}
-      role="note"
-      data-testid="demo-banner"
-    >
-      <strong>{NAV_WARNING_HEADLINE}</strong>
-      {inline ? null : (
-        <p style={{ margin: '6px 0 0' }} data-testid="demo-banner-detail">
+    <div className="demobanner" role="note" data-testid="demo-banner">
+      <details className="demobanner__details">
+        <summary data-testid="demo-banner-toggle">
+          <strong>{NAV_WARNING_HEADLINE}</strong>
+          <span className="demobanner__hint">why</span>
+        </summary>
+        <p style={{ margin: '8px 0 0' }} data-testid="demo-banner-detail">
           {detail}
         </p>
-      )}
+      </details>
     </div>
   );
 }

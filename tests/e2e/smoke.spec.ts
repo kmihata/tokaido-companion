@@ -40,8 +40,11 @@ test.describe('shell and navigation', () => {
     // The chip must track the route, not a literal. It read '0.1.0-demo' from
     // 2026-08-18 to 2026-10-05 while the route moved to 0.28.0, so this
     // assertion passed for seven weeks while the screen was useless for
-    // telling two builds apart. Assert the SHAPE: a real version, then -demo.
-    await expect(page.getByTestId('data-version-chip')).toContainText(/\d+\.\d+\.\d+-traced-demo/);
+    // telling two builds apart. Assert the SHAPE: a real route version.
+    // The '-demo' suffix left the chip on 2026-10-16 — it belongs to the
+    // fixture bundle, not the route, and tests/unit/fixtures.test.ts asserts
+    // it is still on the data, which is where it does its work.
+    await expect(page.getByTestId('data-version-chip')).toContainText(/Route \d+\.\d+\.\d+-traced/);
   });
 
   test('every tab is reachable and at least 48px tall', async ({ page }) => {
@@ -231,6 +234,42 @@ test.describe('app version', () => {
     await expect(page.getByTestId('check-update-result')).toContainText(
       /newest build|waiting|no network|no service worker|check failed/i,
     );
+  });
+});
+
+// 2026-10-16: the open paragraph took half of Today on a phone, every day.
+// The headline has to survive; the evidence behind it does not have to be open.
+test.describe('the navigation warning', () => {
+  test('shows the headline every day and keeps the detail one tap away', async ({ page }) => {
+    await page.goto('./');
+    const banner = page.getByTestId('demo-banner').first();
+    await expect(banner).toContainText(/not for navigation/i);
+    await expect(page.getByTestId('demo-banner-detail')).not.toBeVisible();
+    await page.getByTestId('demo-banner-toggle').click();
+    await expect(page.getByTestId('demo-banner-detail')).toBeVisible();
+    await expect(page.getByTestId('demo-banner-detail')).toContainText(/do not navigate/i);
+  });
+});
+
+// 2026-10-16: Kevin could not tell from the phone which private file he was
+// carrying. The app has no backend, so it states what it holds rather than
+// claiming to be current.
+test.describe('which private file is on this device', () => {
+  test('says so on every screen and in settings', async ({ page }) => {
+    await page.goto('./');
+    await expect(page.getByTestId('private-version-chip')).toContainText(/no private data/i);
+    await page.goto('./#/settings');
+    await expect(page.getByTestId('private-status')).toHaveText('none');
+    await expect(page.getByTestId('private-generated')).toContainText('—');
+  });
+
+  test('names the route version without the fixture suffix', async ({ page }) => {
+    await page.goto('./');
+    const chip = page.getByTestId('data-version-chip');
+    await expect(chip).toContainText(/^Route /);
+    await expect(chip).not.toContainText(/-demo/);
+    await page.goto('./#/offline');
+    await expect(page.getByTestId('offline-private-file')).toContainText(/none on this device/i);
   });
 });
 

@@ -222,6 +222,28 @@ button.chip {
   font-size: 0.83rem;
 }
 
+/* One line until asked. The headline is the warning; the paragraph is the
+   evidence for it, and evidence does not need to be on screen every morning. */
+.demobanner__details > summary {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  cursor: pointer;
+  list-style: none;
+}
+.demobanner__details > summary::-webkit-details-marker { display: none; }
+.demobanner__details > summary strong { flex: 1 1 auto; }
+.demobanner__hint {
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+  white-space: nowrap;
+}
+.demobanner__hint::after { content: ' ▸'; }
+.demobanner__details[open] .demobanner__hint::after { content: ' ▾'; }
+
 /* ---------- cards ---------- */
 
 .card {
