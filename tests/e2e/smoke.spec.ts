@@ -219,6 +219,21 @@ test.describe('decision support', () => {
   });
 });
 
+// Regression, 2026-10-16: a fix was deployed and the phone had no way to ask
+// for it. A home-screen web app is resumed, not reloaded, so the page-load
+// update check may not run for days.
+test.describe('app version', () => {
+  test('offers a way to ask for a newer build and says what it found', async ({ page }) => {
+    await page.goto('./#/offline');
+    await expect(page.getByTestId('check-update')).toBeVisible();
+    await page.getByTestId('check-update').click();
+    await expect(page.getByTestId('check-update-result')).toBeVisible();
+    await expect(page.getByTestId('check-update-result')).toContainText(
+      /newest build|waiting|no network|no service worker|check failed/i,
+    );
+  });
+});
+
 test.describe('capture', () => {
   test('saves a note to the device and offers an export', async ({ page }) => {
     await page.goto('./#/capture');

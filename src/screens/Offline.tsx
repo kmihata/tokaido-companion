@@ -5,8 +5,8 @@ import type { ReadinessReport } from '../lib/offlineCheck';
 import { requestPersistence, storageEstimate } from '../lib/idb';
 import { useAppState } from '../state/AppState';
 import { useOnline } from '../state/useOnline';
-import { subscribeSW } from '../pwa/register';
-import type { SWState } from '../pwa/register';
+import { checkForUpdate, subscribeSW } from '../pwa/register';
+import type { SWCheck, SWState } from '../pwa/register';
 import { UpdatePrompt } from '../components/UpdatePrompt';
 import { href } from '../router';
 import { formatDateTime } from '../lib/time';
@@ -23,6 +23,8 @@ export function Offline(): ReactNode {
     persisted: null,
   });
   const [sw, setSw] = useState<SWState>({ needRefresh: false, offlineReady: false, registered: false, error: null });
+  const [checking, setChecking] = useState(false);
+  const [checkResult, setCheckResult] = useState<SWCheck | null>(null);
 
   useEffect(() => subscribeSW(setSw), []);
 
@@ -89,6 +91,45 @@ export function Offline(): ReactNode {
           </button>
         </div>
         {note ? <p className="small">{note}</p> : null}
+      </section>
+
+      <section className="card">
+        <h2>App version</h2>
+        <p className="small">
+          A home-screen app is resumed, not reloaded, so it can run for days without ever asking
+          whether a newer build exists. This asks. It downloads a newer build if there is one but
+          does not install it — the prompt above still waits for a tap.
+        </p>
+        <div className="btnrow">
+          <button
+            type="button"
+            className="btn btn--primary"
+            data-testid="check-update"
+            disabled={checking}
+            onClick={() => {
+              setChecking(true);
+              setCheckResult(null);
+              void checkForUpdate()
+                .then(setCheckResult)
+                .finally(() => setChecking(false));
+            }}
+          >
+            {checking ? 'Checking…' : 'Check for an update'}
+          </button>
+        </div>
+        {checkResult !== null ? (
+          <p className="small" role="status" data-testid="check-update-result">
+            {checkResult === 'update-waiting'
+              ? 'A newer build has downloaded and is waiting. The prompt to install it is at the top of this screen and on Today.'
+              : checkResult === 'up-to-date'
+                ? 'This is the newest build. Nothing to install.'
+                : checkResult === 'offline'
+                  ? 'No network, so there is nothing to ask. Try again on signal.'
+                  : checkResult === 'unsupported'
+                    ? 'No service worker is registered on this device, so there is nothing to update.'
+                    : 'The check failed. See the service-worker error below.'}
+          </p>
+        ) : null}
       </section>
 
       <section className="card">
