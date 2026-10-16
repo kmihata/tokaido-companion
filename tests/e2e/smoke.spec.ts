@@ -179,6 +179,44 @@ test.describe('decision support', () => {
     await page.getByTestId('tab-today').click();
     await expect(page.getByTestId('date-override-chip')).toBeVisible();
   });
+
+  // Regression, 2026-10-16: the preview date could be set from an iPhone and
+  // then not cleared from one. iOS Safari's date picker has no empty state, so
+  // the input was a one-way door. Both of these are the way back out.
+  test('clears the preview date from the chip, on any screen', async ({ page }) => {
+    await page.goto('./#/settings');
+    await page.getByTestId('date-override').fill('2026-11-05');
+    await page.getByTestId('tab-today').click();
+    await page.getByTestId('date-override-chip').click();
+    await expect(page.getByTestId('date-override-chip')).toHaveCount(0);
+    await page.goto('./#/settings');
+    await expect(page.getByTestId('date-override')).toHaveValue('');
+  });
+
+  test('clears the preview date from the settings button', async ({ page }) => {
+    await page.goto('./#/settings');
+    await page.getByTestId('date-override').fill('2026-11-05');
+    await page.getByTestId('clear-date-override').click();
+    await expect(page.getByTestId('date-override-chip')).toHaveCount(0);
+    await expect(page.getByTestId('date-override')).toHaveValue('');
+    await expect(page.getByTestId('clear-date-override')).toBeDisabled();
+  });
+
+  test('clears the pretend position from the chip and the button', async ({ page }) => {
+    await page.goto('./#/settings');
+    await page.getByTestId('position-override').fill('34.8300, 138.1742');
+    await page.getByTestId('position-override').blur();
+    await expect(page.getByTestId('position-override-chip')).toBeVisible();
+    await page.getByTestId('position-override-chip').click();
+    await expect(page.getByTestId('position-override-chip')).toHaveCount(0);
+    await expect(page.getByTestId('position-override')).toHaveValue('');
+
+    await page.getByTestId('position-override').fill('34.8300, 138.1742');
+    await page.getByTestId('position-override').blur();
+    await page.getByTestId('clear-position-override').click();
+    await expect(page.getByTestId('position-override-chip')).toHaveCount(0);
+    await expect(page.getByTestId('position-override')).toHaveValue('');
+  });
 });
 
 test.describe('capture', () => {

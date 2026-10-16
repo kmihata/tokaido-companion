@@ -191,6 +191,18 @@ p { margin: 0 0 0.8em; }
 .chip--stop { color: var(--stop); border-color: currentColor; }
 .chip--info { color: var(--info); border-color: currentColor; }
 
+/* An override chip is a button, so it has to shed the UA button styling and
+   be big enough to hit with a thumb. 34px keeps the strip the same height
+   while giving the tap target some room above and below the visible pill. */
+button.chip {
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.chip--clear { min-height: 34px; }
+.chip--clear:active { background: var(--bg-sunken, var(--bg-raised)); }
+
 /* ---------- demonstration banner ---------- */
 
 .demobanner {
@@ -317,6 +329,9 @@ textarea { min-height: 120px; resize: vertical; line-height: 1.45; }
 
 .field { margin-bottom: 14px; }
 .field__hint { font-size: 0.8rem; color: var(--text-dim); margin-top: 4px; }
+.field__row { display: flex; gap: 8px; align-items: stretch; }
+.field__row > input { flex: 1 1 auto; min-width: 0; }
+.field__row > .btn { flex: 0 0 auto; }
 
 .checkline {
   display: flex;

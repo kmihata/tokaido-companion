@@ -12,6 +12,7 @@ export function Settings(): ReactNode {
   const { settings, updateSettings, privateData, setPrivateData, dataset, userPoints, plan } =
     useAppState();
   const fileRef = useRef<HTMLInputElement | null>(null);
+  const posRef = useRef<HTMLInputElement | null>(null);
   const [importErrors, setImportErrors] = useState<string[]>([]);
   const [importWarnings, setImportWarnings] = useState<string[]>([]);
   const [note, setNote] = useState<string | null>(null);
@@ -77,22 +78,43 @@ export function Settings(): ReactNode {
 
         <div className="field">
           <label htmlFor="set-date">Preview a date (YYYY-MM-DD)</label>
-          <input
-            id="set-date"
-            type="date"
-            data-testid="date-override"
-            value={settings.dateOverride ?? ''}
-            onChange={(e) => updateSettings({ dateOverride: e.target.value || null })}
-          />
+          <div className="field__row">
+            <input
+              id="set-date"
+              type="date"
+              data-testid="date-override"
+              value={settings.dateOverride ?? ''}
+              onChange={(e) => updateSettings({ dateOverride: e.target.value || null })}
+            />
+            {/* iOS Safari's date picker cannot empty the field, so without this
+                button a preview date set on the phone could not be undone. */}
+            <button
+              type="button"
+              className="btn"
+              data-testid="clear-date-override"
+              disabled={settings.dateOverride === null}
+              onClick={() => updateSettings({ dateOverride: null })}
+            >
+              Clear
+            </button>
+          </div>
           <p className="field__hint">
             For reviewing walking days before the trip starts. While set, a warning chip stays at
-            the top of every screen. Clear it before you leave.
+            the top of every screen; tapping that chip clears it from anywhere. Clear it before you
+            leave.
           </p>
         </div>
 
         <div className="field">
           <label htmlFor="set-position">Pretend I am here (lat, lon)</label>
+          <div className="field__row">
           <input
+            ref={posRef}
+            /* Uncontrolled, because it only commits on blur. The key makes it
+               remount when the override is cleared from somewhere else — the
+               warning chip on another screen — so the box cannot keep showing
+               a position the app is no longer using. */
+            key={settings.positionOverride ? 'set' : 'empty'}
             id="set-position"
             type="text"
             inputMode="text"
@@ -119,11 +141,28 @@ export function Settings(): ReactNode {
               if (!ok) e.target.value = '';
             }}
           />
+            {/* The field only commits on blur, which on a phone means tapping
+                somewhere else and hoping. This clears both the box and the
+                stored value in one tap. */}
+            <button
+              type="button"
+              className="btn"
+              data-testid="clear-position-override"
+              disabled={settings.positionOverride === null}
+              onClick={() => {
+                if (posRef.current) posRef.current.value = '';
+                updateSettings({ positionOverride: null });
+              }}
+            >
+              Clear
+            </button>
+          </div>
           <p className="field__hint">
             Rehearsal only. The device treats this as where you are standing, so the decision
             calculator, the off-route distance and the nearest exit all become real from home. It
             overrides the actual GPS completely and never falls back to it. A warning chip stays on
-            every screen while it is set, and the map dot turns amber. Clear it before you leave.
+            every screen while it is set, and the map dot turns amber; tapping that chip clears it from
+            anywhere. Clear it before you leave.
           </p>
         </div>
       </section>
