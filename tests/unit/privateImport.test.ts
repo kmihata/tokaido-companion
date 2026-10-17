@@ -168,6 +168,42 @@ describe('emptyPrivateData', () => {
 });
 
 /**
+ * Export, edit, re-import — the only way private data can change on the road.
+ *
+ * There is no in-app editor and no backend: Settings exports
+ * `JSON.stringify(privateData, null, 2)` and the import reads it back. From
+ * Japan that round trip is the whole mechanism, so it has to hold for a
+ * populated file and not just the empty one. Checked against Kevin's real
+ * file on 2026-10-16; this is the version that can live in the repository.
+ */
+describe('a populated file survives the export and import that Settings performs', () => {
+  it('re-imports byte-for-byte equal, with every record type present', () => {
+    const populated = {
+      ...valid,
+      transport: [
+        { id: 't1', dayId: 'd-2026-10-19', description: 'Pocket WiFi pickup', notes: 'Counter B' },
+      ],
+      contacts: [{ id: 'c1', label: 'Someone', detail: '000-000-0000', notes: '' }],
+      health: [{ id: 'h1', label: 'A note', detail: 'Something' }],
+      notes: [{ id: 'n1', dayId: 'd-2026-10-19', title: 'Arrival', body: 'Line one\nLine two' }],
+    };
+    const first = parsePrivateData(json(populated));
+    expect(first.ok).toBe(true);
+    if (!first.ok) return;
+
+    const exported = JSON.stringify(first.data, null, 2);
+    const second = parsePrivateData(exported);
+    expect(second.ok).toBe(true);
+    if (!second.ok) return;
+
+    expect(second.data).toEqual(first.data);
+    // The line breaks in a note body are the thing a careless round trip eats,
+    // and they are what makes the airport notes readable on a phone.
+    expect(second.data.notes[0]?.body).toContain('\n');
+  });
+});
+
+/**
  * Version 1 files keep working.
  *
  * Kevin's own private file predates the lodging fields added on 2026-10-05,
