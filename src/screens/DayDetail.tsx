@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { useAppState } from '../state/AppState';
 import { dayById } from '../data/load';
 import { buildDayContext } from '../lib/dayContext';
+import { hiroshigeForDay } from '../lib/hiroshigeForDay';
 import { DemoBanner } from '../components/DemoBanner';
 import { Metric } from '../components/Metric';
 import { AiHandoff } from '../components/AiHandoff';
@@ -19,7 +20,7 @@ import { assetUrl } from '../lib/base';
  * of text to wade through to find out whether to keep going.
  */
 export function DayDetail({ dayId }: { dayId: string }): ReactNode {
-  const { dataset, privateData } = useAppState();
+  const { dataset, privateData, plan } = useAppState();
   const [full, setFull] = useState(false);
 
   if (!dataset) return <p>Loading…</p>;
@@ -37,6 +38,10 @@ export function DayDetail({ dayId }: { dayId: string }): ReactNode {
   }
 
   const ctx = buildDayContext(dataset, day);
+  // Measured on the planning line, not read from the generated field — see
+  // lib/hiroshigeForDay.ts for the two rulers that disagreed.
+  const leg = plan.legs.find((l) => l.plan.dayId === day.id) ?? null;
+  const prints = hiroshigeForDay(dataset, day, leg);
   const lodging = (privateData?.lodging ?? []).filter((l) => l.dayId === day.id);
   const privateNotes = (privateData?.notes ?? []).filter((n) => n.dayId === day.id);
 
@@ -240,7 +245,7 @@ export function DayDetail({ dayId }: { dayId: string }): ReactNode {
             </section>
           ) : null}
 
-          {day.hiroshigeRefIds.length > 0 ? (
+          {prints.length > 0 ? (
             <section className="card">
               <h2>Hiroshige</h2>
               <p className="small muted">
@@ -248,7 +253,7 @@ export function DayDetail({ dayId }: { dayId: string }): ReactNode {
                 stood is <em>not</em> established — the prints are compressed and dramatised, and no
                 viewpoint here has been located on the ground.
               </p>
-              {day.hiroshigeRefIds.map((id) => {
+              {prints.map((id) => {
                 const h = dataset.hiroshige.find((x) => x.id === id);
                 if (!h) return <p key={id} className="small">{id} (not found)</p>;
                 return (

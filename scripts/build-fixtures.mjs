@@ -314,6 +314,11 @@ const days = [
     railRedundancy: 'high',
     sleepBase: 'Shizuoka',
     sleepBaseNote: 'The route passes 26 m from the door. Fuchu-juku and JR Shizuoka Station are both passed 1,091 m earlier.',
+    // Mariko and Okabe sit past this day's finish at Shizuoka, and Walk 7
+    // lists them too. That is the convention across the file, not an error:
+    // Walk 4 lists Mishima, Walk 5 lists Yui, Walk 12 lists Yokkaichi. A day
+    // names what it came from and what it is heading toward. Checked and put
+    // back on 2026-10-16 after being briefly "corrected" away.
     stationIds: ['st-yui', 'st-fuchu', 'st-mariko', 'st-okabe'],
     bailoutWaypointIds: ['wp-rail-yui', 'wp-rail-shizuoka', 'wp-rail-fujieda'],
     weatherSensitive: ['Satta Pass viewpoint is weather-dependent and the reason to be there.', 'About 900 m of the descent west of Satta is unpaved trail — the only unpaved ground on this day. If the weather has already taken the view away, the coastal corridor through Yui and Okitsu is the alternative and the Tokaido Main Line parallels it the whole way.'],
@@ -396,77 +401,35 @@ const days = [
 ];
 
 // ---------------------------------------------------------------------------
-// Which Hiroshige prints belong to which walking day — DERIVED, not written out.
+// Which Hiroshige prints belong to which walking day — the part that can be
+// known HERE, which is less than this file used to claim.
 //
-// Each walking day passes a run of post stations and each station has a print.
-// Hard-coding the lists went stale the moment a stage endpoint moved, and six of
-// the sixteen days carried no prints at all because nobody had got round to
-// them. This walks the stations in route order and cuts them at each day's
-// cumulative distance, so moving an endpoint moves the prints with it.
+// Until 2026-10-16 this projected every station onto a line it built by
+// concatenating the base paths, then cut the stations at a running total of
+// `nominalDistanceKm`. Those are two different rulers. The base concatenation
+// is 518.53 km; the active route, with the fifty-three retraced variants and
+// the Saya detour, is 537.84 km, and the ferry gap is silently dropped from
+// the concatenation besides. Nineteen kilometres of drift accumulate between
+// them, so Walk 4 — the Hakone crossing — ended up with no prints at all and
+// Walk 5 showed Hakone's. Kevin found it on the phone, which is where these
+// things get found.
 //
-// It runs AFTER `hiroshige` is defined, at the bottom of the file.
+// This script cannot build the planning line: that lives in TypeScript, in
+// buildStretches/buildPlanningLine, and reimplementing it here is how the two
+// rulers came to exist in the first place. So the generator now writes only
+// what it can be sure of — the stations the day itself names — and the app
+// adds the ones the day walks past, measured on the real line, in
+// src/lib/hiroshigeForDay.ts. A generated file should not contain a guess.
 // ---------------------------------------------------------------------------
 function attachHiroshigeToDays(days, stations, images) {
   const printFor = new Map(images.map((i) => [i.stationId, i.id]));
-  // Station positions measured along the whole route, not along their own path.
-  //
-  // The obvious thing — reading `alongKm` off each anchor — is wrong, and wrong
-  // in a way that looks right: `alongKm` restarts at zero on every base path, so
-  // Kuwana at 5 km on path-west sorts next to Shinagawa at 8 km on path-east and
-  // Walk 1 gets handed four prints from three different prefectures. The same
-  // trap is written up in tests/unit/routeModel.test.ts. So: concatenate the
-  // base paths in order and project each station onto that.
-  const routeFile = JSON.parse(readFileSync(join(OUT, 'route.geojson'), 'utf8'));
-  const metaFile = JSON.parse(readFileSync(join(OUT, 'route-meta.json'), 'utf8'));
-  const line = metaFile.paths.flatMap(
-    (p) => routeFile.features.find((f) => f.properties.id === p.id)?.geometry.coordinates ?? [],
-  );
-  const hav = (a, b) => {
-    const R = 6371.0088;
-    const r = (d) => (d * Math.PI) / 180;
-    const dLa = r(b[1] - a[1]);
-    const dLo = r(b[0] - a[0]);
-    const x =
-      Math.sin(dLa / 2) ** 2 + Math.cos(r(a[1])) * Math.cos(r(b[1])) * Math.sin(dLo / 2) ** 2;
-    return 2 * R * Math.asin(Math.sqrt(x));
-  };
-  const cum = [0];
-  for (let i = 1; i < line.length; i++) cum.push(cum[i - 1] + hav(line[i - 1], line[i]));
-  const alongRoute = (lat, lon) => {
-    let best = Infinity;
-    let at = 0;
-    for (let i = 0; i < line.length; i++) {
-      const d = hav(line[i], [lon, lat]);
-      if (d < best) {
-        best = d;
-        at = i;
-      }
-    }
-    return cum[at];
-  };
-  const withKm = stations
-    .map((s) => ({ id: s.id, km: alongRoute(s.lat, s.lon) }))
-    .sort((a, b) => a.km - b.km);
-
-  let km = 0;
   for (const d of days) {
     if (d.kind !== 'walk') continue;
-    const span = d.nominalDistanceKm ?? 0;
-    const lo = km;
-    const hi = km + span;
-    km = hi;
-    // A quarter-kilometre of slack at each end: a station sitting metres either
-    // side of a boundary belongs to the day that walks past it, and the last
-    // day has to reach its own terminus.
-    const ids = withKm
-      .filter((x) => x.km >= lo - 0.25 && x.km <= hi + 0.25)
-      .map((x) => printFor.get(x.id))
-      .filter((x) => x !== undefined);
+    const ids = (d.stationIds ?? []).map((id) => printFor.get(id)).filter((x) => x !== undefined);
     d.hiroshigeRefIds = [...new Set(ids)];
   }
   return days;
 }
-
 
 // ---------------------------------------------------------------------------
 // Waypoints. Operational features. Hotels here are OBVIOUSLY FICTIONAL
