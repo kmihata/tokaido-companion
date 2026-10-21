@@ -213,6 +213,12 @@ Documented in full in `PRIVACY-AND-THREAT-MODEL.md`. Format summary:
 }
 ```
 
+`lodging[].routeAccessKm` (added 2026-10-21) is the walking distance between
+the door and the route, one way, in km, entered by hand. Null means the stay is
+reached by rail or the figure is unknown. Prepare tomorrow's "Leave by" adds it
+on the check-in day (walking in) and the check-out day (walking out). A file
+that carries this field needs a build from 2026-10-21 or later to import.
+
 The importer is **strict**: an unrecognised key is a refusal, not a warning. A
 file with unexpected structure is more likely the wrong file than a newer one,
 and silently storing the wrong file on a phone is the failure worth preventing.

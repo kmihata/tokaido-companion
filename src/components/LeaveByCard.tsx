@@ -8,6 +8,7 @@ import {
   clampMph,
   computeLeaveBy,
   DEFAULT_ALL_IN_MPH,
+  defaultAccessKm,
   MPH_STEP,
   readCutoff,
 } from '../lib/leaveBy';
@@ -19,10 +20,13 @@ export const LEAVE_BY_KEY = 'leaveby.v1';
 interface DayExtras {
   /** Hotel to route start, minutes: a train on days that do not start at the door. */
   travelMinutes: number;
-  /** Walking off the route at either end, km: hotel approaches. */
-  extraKm: number;
+  /**
+   * Walking off the route at either end, km: hotel approaches. Null means use
+   * the default from the private file's routeAccessKm figures.
+   */
+  extraKm: number | null;
 }
-const NO_EXTRAS: DayExtras = { travelMinutes: 0, extraKm: 0 };
+const NO_EXTRAS: DayExtras = { travelMinutes: 0, extraKm: null };
 
 /**
  * Night-before planning: what time to leave. See lib/leaveBy.ts.
@@ -63,7 +67,10 @@ export function LeaveByCard({
   const stay = (privateData?.lodging ?? []).find((l) => l.dayId === dayId && l.arrivalCutoff.trim() !== '');
   const cutoff = stay ? readCutoff(stay.arrivalCutoff) : null;
   const target = arriveByFor(sunset, settings.safetyBufferMinutes, cutoff, dayIso);
-  const distanceKm = routeKm + extras.extraKm;
+  const access = defaultAccessKm(privateData?.lodging ?? [], dayIso);
+  const extraKm = extras.extraKm ?? access.km;
+  const extraIsDefault = extras.extraKm === null;
+  const distanceKm = routeKm + extraKm;
 
   const main = target
     ? computeLeaveBy({ distanceKm, allInMph: mph, arriveBy: target.at, travelMinutes: extras.travelMinutes })
@@ -140,12 +147,31 @@ export function LeaveByCard({
       />
       <Stepper
         label="Extra walking off the route"
-        value={`${extras.extraKm.toFixed(1)} km`}
+        value={`${extraKm.toFixed(1)} km`}
         note={`hotel approaches · total ${formatKmMi(distanceKm)}`}
-        onMinus={() => setExtras({ extraKm: Math.max(0, Math.round((extras.extraKm - 0.5) * 10) / 10) })}
-        onPlus={() => setExtras({ extraKm: Math.round((extras.extraKm + 0.5) * 10) / 10 })}
+        onMinus={() => setExtras({ extraKm: Math.max(0, Math.round((extraKm - 0.1) * 10) / 10) })}
+        onPlus={() => setExtras({ extraKm: Math.round((extraKm + 0.1) * 10) / 10 })}
         testId="leave-by-extra"
       />
+      <p className="small muted" style={{ margin: '2px 0 0' }} data-testid="leave-by-extra-source">
+        {extraIsDefault
+          ? access.parts.length > 0
+            ? `From your hotel file: ${access.parts
+                .map((p) => `${p.km.toFixed(2)} km ${p.when === 'morning' ? 'out from' : 'in to'} ${p.stay}`)
+                .join(', ')}.`
+            : 'No hotel walking distance in your hotel file for today.'
+          : `Set by hand for this day.`}{' '}
+        {!extraIsDefault ? (
+          <button
+            type="button"
+            className="btn btn--small"
+            onClick={() => setExtras({ extraKm: null })}
+            data-testid="leave-by-extra-reset"
+          >
+            Use the hotel file
+          </button>
+        ) : null}
+      </p>
 
       {whatIfStart && whatIfArrive ? (
         <div style={{ marginTop: 12 }} data-testid="leave-by-whatif">

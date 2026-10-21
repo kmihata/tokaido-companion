@@ -14,6 +14,7 @@
  * Pure. Unit-tested in tests/unit/leaveBy.test.ts.
  */
 import { KM_PER_MILE } from './pace';
+import type { PrivateLodging } from '../data/privateSchema';
 
 /**
  * Default all-in pace, stops included.
@@ -119,4 +120,29 @@ export function arriveByFor(
   if (fromSunset) return { at: fromSunset, reason: 'sunset' };
   if (fromCutoff) return { at: fromCutoff, reason: 'check-in' };
   return null;
+}
+
+export interface AccessPart {
+  stay: string;
+  km: number;
+  when: 'morning' | 'evening';
+}
+
+/**
+ * Default off-route walking for a day, from the private file: walking out from
+ * last night's stay in the morning, plus walking in to tonight's stay in the
+ * evening. Only stays with a `routeAccessKm` count; null means rail or
+ * unknown. A stay that covers several nights only counts on the day you check
+ * in and the day you check out.
+ */
+export function defaultAccessKm(
+  lodging: readonly PrivateLodging[],
+  dayIso: string,
+): { km: number; parts: AccessPart[] } {
+  const parts: AccessPart[] = [];
+  const morning = lodging.find((l) => l.checkOut === dayIso && l.routeAccessKm != null);
+  if (morning) parts.push({ stay: morning.name, km: morning.routeAccessKm!, when: 'morning' });
+  const evening = lodging.find((l) => l.checkIn === dayIso && l.routeAccessKm != null);
+  if (evening) parts.push({ stay: evening.name, km: evening.routeAccessKm!, when: 'evening' });
+  return { km: parts.reduce((t, p) => t + p.km, 0), parts };
 }

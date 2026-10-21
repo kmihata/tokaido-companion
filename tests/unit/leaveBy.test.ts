@@ -5,8 +5,10 @@ import {
   clampMph,
   computeLeaveBy,
   DEFAULT_ALL_IN_MPH,
+  defaultAccessKm,
   readCutoff,
 } from '../../src/lib/leaveBy';
+import { PrivateLodgingSchema } from '../../src/data/privateSchema';
 
 const jst = (iso: string): Date => new Date(`${iso}+09:00`);
 const hhmm = (d: Date): string =>
@@ -87,5 +89,31 @@ describe('arriveByFor', () => {
   });
   it('ignores an evening cut-off that falls after sunset', () => {
     expect(arriveByFor(sunset, 45, readCutoff('21:00'), '2026-10-22')!.reason).toBe('sunset');
+  });
+});
+
+describe('defaultAccessKm', () => {
+  const stay = (name: string, checkIn: string, checkOut: string, routeAccessKm: number | null) =>
+    PrivateLodgingSchema.parse({ id: name, name, checkIn, checkOut, routeAccessKm });
+  const lodging = [
+    stay('Tokyo', '2026-10-19', '2026-10-22', null),
+    stay('Fujisawa', '2026-10-22', '2026-10-23', 0.74),
+    stay('Odawara', '2026-10-23', '2026-10-24', 0.69),
+  ];
+  it('adds the evening walk in to tonight’s stay', () => {
+    const r = defaultAccessKm(lodging, '2026-10-22');
+    expect(r.km).toBeCloseTo(0.74, 6);
+    expect(r.parts).toEqual([{ stay: 'Fujisawa', km: 0.74, when: 'evening' }]);
+  });
+  it('adds the morning walk out from last night’s stay too', () => {
+    const r = defaultAccessKm(lodging, '2026-10-23');
+    expect(r.km).toBeCloseTo(1.43, 6);
+    expect(r.parts.map((p) => p.when)).toEqual(['morning', 'evening']);
+  });
+  it('adds nothing for a stay reached by rail', () => {
+    expect(defaultAccessKm(lodging, '2026-10-21').km).toBe(0);
+  });
+  it('old files without the field still import, as unknown', () => {
+    expect(PrivateLodgingSchema.parse({ id: 'x', name: 'x' }).routeAccessKm).toBeNull();
   });
 });

@@ -76,6 +76,16 @@ export const PrivateLodgingSchema = z.strictObject({
    * not the same as unlimited, which is the distinction that matters.
    */
   arrivalCutoff: z.string().default(''),
+  /**
+   * Walking distance between the door and the route, km, one way.
+   *
+   * WHY a number and not coordinates: lat/lon stay null on purpose, because a
+   * badly geocoded Japanese address gives a confidently wrong distance. This is
+   * a checked figure, entered by hand. Null means the stay is reached by rail
+   * rather than on foot, or the figure is not known; either way Prepare adds
+   * nothing for it. Added 2026-10-21 so "Leave by" counts the hotel approach.
+   */
+  routeAccessKm: z.number().min(0).max(20).nullable().default(null),
   /** Getting there and back to the route: last train, walk from the station. */
   railNotes: z.string().default(''),
   notes: z.string().default(''),

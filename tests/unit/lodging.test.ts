@@ -25,6 +25,7 @@ const stay = (over: Partial<PrivateLodging> = {}): PrivateLodging => ({
   bookingSource: '',
   paymentState: '',
   arrivalCutoff: '',
+  routeAccessKm: null,
   railNotes: '',
   notes: '',
   ...over,
