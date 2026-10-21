@@ -18,6 +18,8 @@ import {
 import type { ChecklistId, PreparedRecord } from '../state/dayPlanStore';
 import { OVER_LONG_KM } from '../lib/dayPlan';
 import { arrivalCutoffForDay } from '../lib/lodging';
+import { readCutoff } from '../lib/leaveBy';
+import { LeaveByCard } from '../components/LeaveByCard';
 import type { DayLeg } from '../lib/dayPlan';
 
 /**
@@ -121,6 +123,15 @@ export function PrepareScreen({ dayId }: { dayId: string | null }): ReactNode {
         </select>
       </div>
 
+      {day ? (
+        <LeaveByCard
+          dayId={leg.plan.dayId}
+          dayIso={day.date}
+          routeKm={leg.distanceKm}
+          sunset={ctx?.sunset ?? null}
+        />
+      ) : null}
+
       <section className={leg.distanceKm > OVER_LONG_KM ? 'card card--stop' : 'card card--ok'}>
         <div className="card__label">The day</div>
         <div className="card__big" data-testid="prepare-active-km">
@@ -162,7 +173,7 @@ export function PrepareScreen({ dayId }: { dayId: string | null }): ReactNode {
           {cutoff ? (
             <Metric
               label="Check-in closes"
-              value={cutoff.text}
+              value={readCutoff(cutoff.text).label}
               note={cutoff.known ? cutoff.stay : `${cutoff.stay} — no cut-off stated, so unknown`}
               testId="prepare-arrival-cutoff"
             />

@@ -11,6 +11,7 @@ import { formatClock, formatKmMi } from '../lib/time';
 import { formatDuration } from '../lib/pace';
 import { href } from '../router';
 import { assetUrl } from '../lib/base';
+import { readCutoff } from '../lib/leaveBy';
 
 /**
  * The full day card, with a tired-day view first.
@@ -55,7 +56,7 @@ export function DayDetail({ dayId }: { dayId: string }): ReactNode {
   const lodgingLines = lodging.map(
     (l) =>
       `Lodging: ${l.name}${l.address ? `, ${l.address}` : ''}` +
-      (l.arrivalCutoff ? ` — check-in closes ${l.arrivalCutoff}` : '') +
+      (l.arrivalCutoff ? ` — check-in closes ${readCutoff(l.arrivalCutoff).label}` : '') +
       (l.phone ? ` — ${l.phone}` : ''),
   );
   const hasPrivate = lodgingLines.length + transport.length + privateNotes.length > 0;
