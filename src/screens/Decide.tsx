@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { useAppState } from '../state/AppState';
 import { currentOrNextDay } from '../data/load';
 import { buildDayContext, measureBailouts, projectOntoRoute } from '../lib/dayContext';
+import { locateOnLeg } from '../lib/whereAmI';
 import { DemoBanner } from '../components/DemoBanner';
 import { Metric } from '../components/Metric';
 import { evaluateDecision, POSTURE_LABEL } from '../lib/decision';
@@ -63,17 +64,39 @@ export function Decide(): ReactNode {
 
   // Measured from the line, not from what was typed. Kevin, 2026-10-10:
   // "really how far I have left and time left at three mile per hour pace.
-  // That's really all I need to know." Deliberately not fed into the posture
-  // below — he said plainly he does not want that judgment delegated.
+  // That's really all I need to know."
+  //
+  // Kevin, 2026-10-22, mid-walk: "Where things stand" ignored his location
+  // while the card above it used it, because Completed came only from the
+  // typed field. Now, when nothing is typed and there is a real fix, Completed
+  // is measured along today's section (the same search as the Today card),
+  // and everything computed from it follows. Typing still overrides.
   const legForDay = useMemo(
     () => plan.legs.find((l) => l.plan.dayId === day?.id) ?? null,
     [plan.legs, day?.id],
   );
-  const measured = useMemo(
+  const legPos = useMemo(
     () =>
-      projection && legForDay ? walkingTimeLeft(projection.alongKm, legForDay.endAlongKm) : null,
-    [projection, legForDay],
+      position && plan.line && legForDay
+        ? locateOnLeg(plan.line, legForDay, [position.lon, position.lat])
+        : null,
+    [position, plan.line, legForDay],
   );
+  const measured = useMemo(() => {
+    if (legPos && legForDay) return walkingTimeLeft(legPos.alongKm, legForDay.endAlongKm);
+    return projection && legForDay ? walkingTimeLeft(projection.alongKm, legForDay.endAlongKm) : null;
+  }, [legPos, projection, legForDay]);
+  const measuredCompletedKm =
+    legPos && legForDay && legPos.status !== 'far-from-section'
+      ? legPos.alongKm - legForDay.startAlongKm
+      : null;
+  const typedCompleted = completedKm.trim() !== '' && !Number.isNaN(Number(completedKm));
+  const effectiveCompletedKm = typedCompleted ? Number(completedKm) : (measuredCompletedKm ?? 0);
+  const completedNote = typedCompleted
+    ? 'as entered'
+    : measuredCompletedKm !== null
+      ? 'from your location'
+      : 'turn on location, or enter it below';
 
   const nearBailouts = useMemo(() => {
     if (!ctx || !dataset) return [];
@@ -102,8 +125,8 @@ export function Decide(): ReactNode {
 
   const input: DecisionInput = {
     now: new Date(),
-    plannedDistanceKm: day.nominalDistanceKm ?? 0,
-    completedKm: Number(completedKm) || 0,
+    plannedDistanceKm: legForDay ? legForDay.distanceKm : (day.nominalDistanceKm ?? 0),
+    completedKm: effectiveCompletedKm,
     paceKmh: effectivePace !== null && Number.isFinite(effectivePace) ? effectivePace : null,
     daylightDeadline: deadline,
     nextBailout:
@@ -194,8 +217,17 @@ export function Decide(): ReactNode {
       <section className="card">
         <h2>Where things stand</h2>
         <div className="metrics">
-          <Metric label="Planned today" value={formatKmMi(day.nominalDistanceKm)} note="provisional" />
-          <Metric label="Completed" value={formatKmMi(Number(completedKm) || 0)} note="as entered" />
+          <Metric
+            label="Planned today"
+            value={formatKmMi(legForDay ? legForDay.distanceKm : day.nominalDistanceKm)}
+            note={legForDay ? 'measured on the route' : 'provisional'}
+          />
+          <Metric
+            label="Completed"
+            value={formatKmMi(effectiveCompletedKm)}
+            note={completedNote}
+            testId="completed"
+          />
           <Metric label="Remaining" value={formatKmMi(r.remainingKm)} testId="remaining" />
           <Metric
             label="Time to finish"
