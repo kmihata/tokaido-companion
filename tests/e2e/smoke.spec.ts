@@ -121,7 +121,8 @@ test.describe('decision support', () => {
     const completed = 3;
     const remaining = total - completed;
 
-    await page.getByTestId('input-pace').fill('4');
+    // The box is in mph; this is exactly 4 km/h, so the arithmetic below stays exact.
+    await page.getByTestId('input-pace').fill(String(4 / 1.609344));
     await page.getByTestId('input-completed').fill(String(completed));
     await page.getByTestId('input-deadline').fill('16:56');
 
@@ -139,8 +140,8 @@ test.describe('decision support', () => {
     await page.goto('./#/decide');
     // 14:30 to a 16:56 deadline is 146 minutes; the default 45-minute buffer
     // leaves 101. 'Thin' is a finish margin under an hour, so aim for 5 km left
-    // at 4 km/h — 75 minutes of walking, 26 minutes of margin.
-    await page.getByTestId('input-pace').fill('4');
+    // at 2.5 mph (4.02 km/h) — about 75 minutes of walking, 26 of margin.
+    await page.getByTestId('input-pace').fill('2.5');
     await page.getByTestId('input-completed').fill(String(dayKm('d-2026-10-24') - 5));
     await page.getByTestId('input-deadline').fill('16:56');
     await expect(page.getByTestId('posture-card')).toHaveClass(/card--warn/);
@@ -150,7 +151,7 @@ test.describe('decision support', () => {
   test('says stop, and says why, when the light runs out', async ({ page }) => {
     await page.clock.setFixedTime(AT_1430_JST);
     await page.goto('./#/decide');
-    await page.getByTestId('input-pace').fill('3');
+    await page.getByTestId('input-pace').fill('1.85'); // about 3 km/h
     await page.getByTestId('input-completed').fill('2');
     await page.getByTestId('input-deadline').fill('16:56');
     await expect(page.getByTestId('posture-card')).toHaveClass(/card--stop/);

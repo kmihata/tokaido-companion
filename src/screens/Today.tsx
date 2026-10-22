@@ -94,7 +94,7 @@ export function Today(): ReactNode {
       </section>
 
       <p className="small muted">
-        Pace in use: {settings.paceKmh !== null ? `${settings.paceKmh.toFixed(1)} km/h` : 'not set'}.
+        Pace in use: {settings.paceKmh !== null ? `${(settings.paceKmh / 1.609344).toFixed(2)} mph` : 'not set'}.
         Daylight buffer: {formatDuration(settings.safetyBufferMinutes)}.
       </p>
     </>

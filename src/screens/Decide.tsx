@@ -11,6 +11,7 @@ import type { DecisionInput } from '../lib/decision';
 import {
   formatDuration,
   paceKmh as computePace,
+  KM_PER_MILE,
   walkingTimeLeft,
   TARGET_MOVING_MPH,
 } from '../lib/pace';
@@ -31,8 +32,10 @@ export function Decide(): ReactNode {
   const geo = useGeolocation();
 
   const [completedKm, setCompletedKm] = useState('');
+  // Pace is entered in mph (Kevin thinks in mph; 2026-10-22) and stored, like
+  // everywhere else, in km/h.
   const [paceInput, setPaceInput] = useState(
-    settings.paceKmh !== null ? String(settings.paceKmh) : '',
+    settings.paceKmh !== null ? String(Math.round((settings.paceKmh / KM_PER_MILE) * 100) / 100) : '',
   );
   const [elapsedMin, setElapsedMin] = useState('');
   const [deadlineText, setDeadlineText] = useState('');
@@ -110,7 +113,7 @@ export function Decide(): ReactNode {
     return computePace(d, m);
   }, [completedKm, elapsedMin]);
 
-  const effectivePace = paceInput.trim() !== '' ? Number(paceInput) : derivedPace;
+  const effectivePace = paceInput.trim() !== '' ? Number(paceInput) * KM_PER_MILE : derivedPace;
 
   const chosenBailout =
     nearBailouts.find((b) => b.feature.properties.id === bailoutId) ?? nearBailouts[0] ?? null;
@@ -353,25 +356,25 @@ export function Decide(): ReactNode {
         </div>
 
         <div className="field">
-          <label htmlFor="in-pace">Pace including stops (km/h)</label>
+          <label htmlFor="in-pace">Pace including stops (mph)</label>
           <input
             id="in-pace"
             type="number"
             inputMode="decimal"
-            step="0.1"
+            step="0.05"
             min="0"
             value={paceInput}
             data-testid="input-pace"
             onChange={(e) => {
               setPaceInput(e.target.value);
               const n = Number(e.target.value);
-              updateSettings({ paceKmh: e.target.value.trim() === '' || Number.isNaN(n) ? null : n });
+              updateSettings({ paceKmh: e.target.value.trim() === '' || Number.isNaN(n) ? null : n * KM_PER_MILE });
             }}
           />
           <p className="field__hint">
             Including stops, not moving pace. A moving pace promises daylight that is not there.
             {derivedPace !== null
-              ? ` From the elapsed time below, that works out at ${derivedPace.toFixed(1)} km/h.`
+              ? ` From the elapsed time below, that works out at ${(derivedPace / KM_PER_MILE).toFixed(2)} mph.`
               : ''}
           </p>
         </div>

@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { useAppState } from '../state/AppState';
 import { parsePrivateData } from '../data/privateSchema';
@@ -7,6 +7,7 @@ import { dayPlanExport } from '../state/dayPlanStore';
 import { href } from '../router';
 import { listCaptures, capturesToNdjson } from '../lib/capture';
 import { assetUrl } from '../lib/base';
+import { KM_PER_MILE } from '../lib/pace';
 
 export function Settings(): ReactNode {
   const { settings, updateSettings, privateData, setPrivateData, dataset, userPoints, plan } =
@@ -43,18 +44,11 @@ export function Settings(): ReactNode {
         <h2>Field</h2>
 
         <div className="field">
-          <label htmlFor="set-pace">Default pace including stops (km/h)</label>
-          <input
+          <label htmlFor="set-pace">Default pace including stops (mph)</label>
+          <PaceMphInput
             id="set-pace"
-            type="number"
-            inputMode="decimal"
-            step="0.1"
-            min="0"
-            value={settings.paceKmh ?? ''}
-            onChange={(e) => {
-              const n = Number(e.target.value);
-              updateSettings({ paceKmh: e.target.value.trim() === '' || Number.isNaN(n) ? null : n });
-            }}
+            kmh={settings.paceKmh}
+            onChange={(kmh) => updateSettings({ paceKmh: kmh })}
           />
         </div>
 
@@ -373,5 +367,40 @@ export function Settings(): ReactNode {
 
       <p className="small muted">Data version {dataset?.index.dataVersion ?? '—'}.</p>
     </>
+  );
+}
+
+/** Pace typed in mph, stored in km/h. Local text state so partial input like "2." is not rewritten. */
+function PaceMphInput({
+  id,
+  kmh,
+  onChange,
+}: {
+  id: string;
+  kmh: number | null;
+  onChange: (kmh: number | null) => void;
+}): ReactNode {
+  const fmt = (v: number | null): string => (v !== null ? String(Math.round((v / KM_PER_MILE) * 100) / 100) : '');
+  const [text, setText] = useState(fmt(kmh));
+  // Settings load asynchronously; follow outside changes without fighting typing.
+  useEffect(() => {
+    const typed = Number(text) * KM_PER_MILE;
+    if (kmh === null ? text.trim() !== '' : Math.abs(typed - kmh) > 0.01) setText(fmt(kmh));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [kmh]);
+  return (
+    <input
+      id={id}
+      type="number"
+      inputMode="decimal"
+      step="0.05"
+      min="0"
+      value={text}
+      onChange={(e) => {
+        setText(e.target.value);
+        const n = Number(e.target.value);
+        onChange(e.target.value.trim() === '' || Number.isNaN(n) ? null : n * KM_PER_MILE);
+      }}
+    />
   );
 }

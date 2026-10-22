@@ -85,7 +85,7 @@ test.describe('offline', () => {
     await expect(page.locator('.card--stop').getByText(/green paint/i).first()).toBeVisible();
 
     await page.goto('./#/decide');
-    await page.getByTestId('input-pace').fill('4');
+    await page.getByTestId('input-pace').fill('2.5');
     await page.getByTestId('input-completed').fill('10');
     await expect(page.getByTestId('remaining')).not.toContainText('—');
     await expect(page.getByTestId('time-to-finish')).not.toContainText('—');
