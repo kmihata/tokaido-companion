@@ -277,8 +277,7 @@
       "schemaVersion": 1,
       "provisional": true,
       "bailoutWaypointIds": [
-        "wp-rail-mishima",
-        "wp-rail-yui"
+        "wp-rail-mishima"
       ],
       "hazardWaypointIds": [],
       "stationIds": [
