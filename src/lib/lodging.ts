@@ -247,3 +247,40 @@ export function arrivalCutoffForDay(
     stay: stay.name,
   };
 }
+
+/**
+ * The Stays list in trip order, with tonight's bed pulled out.
+ *
+ * Kevin, 2026-10-23, on the road: he uses this screen to find the hotel for
+ * tonight and was scrolling the whole deadline-sorted list to reach it. The
+ * deadline view stays as the summary card; the list itself is an itinerary.
+ *
+ * `tonight` is the stay covering the night of `todayIso` (check-in on or
+ * before today, check-out after today). If there is none, it is the next stay
+ * to come. `upcoming` is every later stay by check-in date; `past` is every
+ * stay already checked out of, most recent first.
+ */
+export function splitForTrip(
+  views: readonly LodgingView[],
+  todayIso: string,
+): { tonight: LodgingView | null; tonightIsNext: boolean; upcoming: LodgingView[]; past: LodgingView[] } {
+  const byIn = [...views].sort((a, b) =>
+    (a.lodging.checkIn ?? '9999') < (b.lodging.checkIn ?? '9999') ? -1 : 1,
+  );
+  const covers = (v: LodgingView): boolean =>
+    v.lodging.checkIn !== null &&
+    v.lodging.checkOut !== null &&
+    v.lodging.checkIn <= todayIso &&
+    todayIso < v.lodging.checkOut;
+  const isPast = (v: LodgingView): boolean => v.lodging.checkOut !== null && v.lodging.checkOut <= todayIso;
+
+  let tonight = byIn.find(covers) ?? null;
+  let tonightIsNext = false;
+  if (!tonight) {
+    tonight = byIn.find((v) => !isPast(v) && (v.lodging.checkIn ?? '') > todayIso) ?? null;
+    tonightIsNext = tonight !== null;
+  }
+  const upcoming = byIn.filter((v) => v !== tonight && !isPast(v));
+  const past = byIn.filter((v) => v !== tonight && isPast(v)).reverse();
+  return { tonight, tonightIsNext, upcoming, past };
+}

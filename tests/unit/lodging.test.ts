@@ -6,6 +6,7 @@ import {
   stakesOfRouteChange,
   urgencyOf,
   arrivalCutoffForDay,
+  splitForTrip,
 } from '../../src/lib/lodging';
 import type { PrivateLodging } from '../../src/data/privateSchema';
 
@@ -188,5 +189,34 @@ describe('the arrival cut-off for a day', () => {
 
   it('ignores whitespace-only cut-offs rather than reporting a blank one', () => {
     expect(arrivalCutoffForDay([stay({ dayId: 'd-1', arrivalCutoff: '   ' })], 'd-1')).toBeNull();
+  });
+});
+
+describe('splitForTrip', () => {
+  const now = new Date('2026-10-23T05:00:00Z');
+  const views = buildLodgingViews(
+    [
+      stay({ id: 'tokyo', name: 'Tokyo', checkIn: '2026-10-19', checkOut: '2026-10-22' }),
+      stay({ id: 'fuji', name: 'Fuji', checkIn: '2026-10-25', checkOut: '2026-10-26' }),
+      stay({ id: 'odawara', name: 'Odawara', checkIn: '2026-10-23', checkOut: '2026-10-24' }),
+      stay({ id: 'fujisawa', name: 'Fujisawa', checkIn: '2026-10-22', checkOut: '2026-10-23' }),
+      stay({ id: 'hakone', name: 'Hakone', checkIn: '2026-10-24', checkOut: '2026-10-25' }),
+    ],
+    now,
+  );
+  it('puts tonight on top, then the rest in trip order, past at the bottom', () => {
+    const r = splitForTrip(views, '2026-10-23');
+    expect(r.tonight?.lodging.id).toBe('odawara');
+    expect(r.tonightIsNext).toBe(false);
+    expect(r.upcoming.map((v) => v.lodging.id)).toEqual(['hakone', 'fuji']);
+    expect(r.past.map((v) => v.lodging.id)).toEqual(['fujisawa', 'tokyo']);
+  });
+  it('a multi-night stay is tonight on every night it covers', () => {
+    expect(splitForTrip(views, '2026-10-20').tonight?.lodging.id).toBe('tokyo');
+  });
+  it('with no bed tonight, shows the next one and says so', () => {
+    const r = splitForTrip(views, '2026-10-18');
+    expect(r.tonight?.lodging.id).toBe('tokyo');
+    expect(r.tonightIsNext).toBe(true);
   });
 });

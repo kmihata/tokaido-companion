@@ -5,8 +5,10 @@ import { href } from '../router';
 import {
   ROUTE_CHANGE_HORIZON_DAYS,
   buildLodgingViews,
+  splitForTrip,
   stakesOfRouteChange,
 } from '../lib/lodging';
+import { readCutoff } from '../lib/leaveBy';
 import type { LodgingView } from '../lib/lodging';
 import type { Position } from '../lib/geo';
 
@@ -17,8 +19,10 @@ import type { Position } from '../lib/geo';
  * records come from the file Kevin imports in Settings and live in IndexedDB
  * on one device. The public build renders an empty state and an explanation.
  *
- * It is sorted by deadline rather than by date, because the list is a list of
- * decisions, not an itinerary. The itinerary is on the Days screen.
+ * Order, since 2026-10-23: tonight's bed first, because on the road this is
+ * where Kevin looks up the hotel he is walking to. Then the deadline summary,
+ * then every later stay in trip order, then stays already done. Deadlines are
+ * still on every card; the summary card is where they are ranked.
  */
 function Field({ label, value }: { label: string; value: string }): ReactNode {
   if (!value) return null;
@@ -55,7 +59,7 @@ function Copyable({ label, value }: { label: string; value: string }): ReactNode
   );
 }
 
-function Card({ view }: { view: LodgingView }): ReactNode {
+function Card({ view, tonight = false }: { view: LodgingView; tonight?: boolean }): ReactNode {
   const { lodging: l, deadline, urgency, countdown, distanceKm } = view;
   const cls =
     urgency === 'passed' || urgency === 'today'
@@ -70,6 +74,14 @@ function Card({ view }: { view: LodgingView }): ReactNode {
       <p className="muted" style={{ marginTop: 0 }}>
         {l.checkIn ?? '—'} → {l.checkOut ?? '—'}
       </p>
+
+      {tonight ? (
+        <>
+          <Field label="Address" value={l.address} />
+          <Copyable label="Phone" value={l.phone} />
+          <Field label="Check-in closes" value={l.arrivalCutoff ? readCutoff(l.arrivalCutoff).label : ''} />
+        </>
+      ) : null}
 
       <p style={{ margin: '8px 0 0', fontWeight: 600 }} data-testid={`countdown-${l.id}`}>
         Free cancellation: {countdown}
@@ -86,8 +98,13 @@ function Card({ view }: { view: LodgingView }): ReactNode {
         </p>
       ) : null}
 
-      <Field label="Address" value={l.address} />
-      <Copyable label="Phone" value={l.phone} />
+      {!tonight ? (
+        <>
+          <Field label="Address" value={l.address} />
+          <Copyable label="Phone" value={l.phone} />
+          <Field label="Check-in closes" value={l.arrivalCutoff ? readCutoff(l.arrivalCutoff).label : ''} />
+        </>
+      ) : null}
       <Field label="After the window" value={l.laterExposure} />
       <Field label="Payment" value={l.paymentState} />
       <Field label="Manage at" value={l.bookingSource} />
@@ -107,7 +124,7 @@ function Card({ view }: { view: LodgingView }): ReactNode {
 }
 
 export function LodgingScreen(): ReactNode {
-  const { privateData, dataset } = useAppState();
+  const { privateData, dataset, effectiveDate } = useAppState();
 
   // Ticks the countdowns without re-rendering the world. A minute is fine:
   // nothing here is decided in seconds.
@@ -129,6 +146,7 @@ export function LodgingScreen(): ReactNode {
     [lodging, now, routePoints],
   );
   const stakes = useMemo(() => stakesOfRouteChange(views), [views]);
+  const trip = useMemo(() => splitForTrip(views, effectiveDate), [views, effectiveDate]);
 
   return (
     <>
@@ -148,7 +166,7 @@ export function LodgingScreen(): ReactNode {
           <h2>Nothing imported</h2>
           <p>
             This screen reads the <strong>lodging</strong> records from your private file. Import one
-            in <a href={href('/settings')}>Settings</a> and they appear here, soonest deadline first.
+            in <a href={href('/settings')}>Settings</a> and they appear here, tonight’s bed first.
           </p>
           <p className="small muted">
             The hotels in the public demonstration data are invented, and this screen deliberately
@@ -157,6 +175,13 @@ export function LodgingScreen(): ReactNode {
         </section>
       ) : (
         <>
+          {trip.tonight ? (
+            <div data-testid="lodging-tonight">
+              <h2 style={{ margin: '4px 0 8px' }}>{trip.tonightIsNext ? 'Next stay' : 'Tonight'}</h2>
+              <Card view={trip.tonight} tonight />
+            </div>
+          ) : null}
+
           <section className="card">
             <h2>If you changed the route today</h2>
             {stakes.closingFirst.length === 0 && stakes.alreadyLocked.length === 0 ? (
@@ -193,13 +218,31 @@ export function LodgingScreen(): ReactNode {
             </p>
           </section>
 
-          <ul className="list" data-testid="lodging-list" style={{ listStyle: 'none', padding: 0 }}>
-            {views.map((v) => (
-              <li key={v.lodging.id}>
-                <Card view={v} />
-              </li>
-            ))}
-          </ul>
+          {trip.upcoming.length > 0 ? (
+            <>
+              <h2 style={{ margin: '16px 0 8px' }}>Coming up</h2>
+              <ul className="list" data-testid="lodging-list" style={{ listStyle: 'none', padding: 0 }}>
+                {trip.upcoming.map((v) => (
+                  <li key={v.lodging.id}>
+                    <Card view={v} />
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : null}
+
+          {trip.past.length > 0 ? (
+            <details data-testid="lodging-past" style={{ marginTop: 12 }}>
+              <summary className="muted">Already stayed ({trip.past.length})</summary>
+              <ul className="list" style={{ listStyle: 'none', padding: 0 }}>
+                {trip.past.map((v) => (
+                  <li key={v.lodging.id}>
+                    <Card view={v} />
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ) : null}
         </>
       )}
     </>
