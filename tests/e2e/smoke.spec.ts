@@ -591,6 +591,32 @@ test.describe('prepare tomorrow', () => {
   });
 });
 
+test.describe('importing places from a GPX file', () => {
+  test('waypoints become places and ride along in that day\'s file', async ({ page }) => {
+    await page.goto('./#/places');
+    await page
+      .getByTestId('import-gpx-places')
+      .setInputFiles('tests/e2e/fixtures/rain-detour-waypoints.gpx');
+    await expect(page.getByTestId('import-gpx-result')).toContainText(/Added 3 places/);
+    await expect(page.getByTestId('import-gpx-result')).toContainText(/1 are more than 3 km/);
+    await expect(page.getByTestId('places-list')).toContainText('WET: leave old road here');
+
+    // Importing the same file again adds nothing.
+    await page
+      .getByTestId('import-gpx-places')
+      .setInputFiles('tests/e2e/fixtures/rain-detour-waypoints.gpx');
+    await expect(page.getByTestId('import-gpx-result')).toContainText(/Added 0 places.*3 were already here/);
+
+    await page.goto('./#/prepare/d-2026-10-25');
+    const wait = page.waitForEvent('download');
+    await page.getByTestId('export-day-gpx').click();
+    const gpx = readFileSync(await (await wait).path(), 'utf8');
+    expect(gpx).toContain('WET: leave old road here');
+    expect(gpx).toContain('Rejoin: Settai-chaya bus');
+    expect(gpx).not.toContain('Far away test point');
+  });
+});
+
 test.describe('planning snapshots', () => {
   test('saves the plan, restores it, and deletes it', async ({ page }) => {
     await page.goto('./#/plan');

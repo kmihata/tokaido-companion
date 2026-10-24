@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="test" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata><name>Rain detour decision points (test copy)</name></metadata>
+  <wpt lat="35.1785361" lon="139.0139331"><name>WET: leave old road here</name><desc>Stay on Route 1 &amp; keep going downhill.</desc></wpt>
+  <wpt lat="35.1720264" lon="139.0081007"><name>Rejoin: Settai-chaya bus</name><desc>Back on the old road.</desc></wpt>
+  <wpt lat="34.0" lon="135.0"><name>Far away test point</name></wpt>
+</gpx>

@@ -380,6 +380,9 @@ export function dayGpx(
   // points — lodging especially — never leave the device.
   for (const p of publicOnly(userPoints)) {
     if (!p.onRoute) continue;
+    // A place far from the line still projects onto SOME day; keep it out of
+    // that day's file rather than put a pin 20 km off in Footpath.
+    if (p.onRoute.offRouteKm > 3) continue;
     if (p.onRoute.alongKm < fromKm || p.onRoute.alongKm > toKm) continue;
     wpts.push({
       name: p.title,
