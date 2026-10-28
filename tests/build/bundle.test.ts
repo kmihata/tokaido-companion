@@ -59,6 +59,7 @@ describe('the build produces what a PWA needs', () => {
       'route.geojson',
       'anchors.geojson',
       'hiroshige.json',
+      'restrooms.json',
     ]) {
       expect(existsSync(join(DIST, 'data', f)), `data/${f} missing`).toBe(true);
     }
@@ -98,11 +99,11 @@ describe('GitHub Pages subpath operation', () => {
     expect(all).toContain(`${BASE}sw.js`);
   });
 
-  it('precaches the shell, the styles, the script and all nine data files', () => {
+  it('precaches the shell, the styles, the script and all ten data files', () => {
     const urls = [...swJs.matchAll(/url:"([^"]+)"/g)].map((m) => m[1]!);
     expect(urls).toContain('index.html');
     expect(urls).toContain('manifest.webmanifest');
-    expect(urls.filter((u) => u.startsWith('data/'))).toHaveLength(9);
+    expect(urls.filter((u) => u.startsWith('data/'))).toHaveLength(10);
     expect(urls.some((u) => u.endsWith('.css'))).toBe(true);
     expect(urls.some((u) => u.startsWith('assets/') && u.endsWith('.js'))).toBe(true);
   });

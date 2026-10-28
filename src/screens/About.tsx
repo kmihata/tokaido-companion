@@ -100,7 +100,9 @@ export function About(): ReactNode {
       <section className="card">
         <h2>Attribution</h2>
         <p className="small">
-          Map tiles © OpenStreetMap contributors, ODbL. Mapping by Leaflet. Schedule and route
+          Map tiles © OpenStreetMap contributors, ODbL. Restroom, station, park and store
+          locations from OpenStreetMap via the Overpass API (October 2026), © OpenStreetMap
+          contributors, ODbL. Mapping by Leaflet. Schedule and route
           research from the tokaido-reset project files.
         </p>
       </section>

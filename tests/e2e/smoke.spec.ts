@@ -223,6 +223,24 @@ test.describe('decision support', () => {
   });
 });
 
+// Kevin, 2026-10-29: one tap for the next restrooms ahead and the gap after
+// each, with a convenience store only as the fallback.
+test.describe('next restroom', () => {
+  test('lists the restrooms ahead with the gap after each', async ({ page }) => {
+    await page.goto('./#/settings');
+    await page.getByTestId('date-override').fill('2026-11-05');
+    await page.getByTestId('position-override').fill('34.8496, 136.3936');
+    await page.getByTestId('position-override').blur();
+    await page.getByTestId('tab-today').click();
+    await page.getByTestId('next-restroom-button').click();
+    const card = page.getByTestId('next-restroom');
+    await expect(card.locator('li')).toHaveCount(3);
+    await expect(card).toContainText(/Roadside station/);
+    await expect(card).toContainText(/to the next public one|nothing public on file/);
+    await card.screenshot({ path: 'test-results/next-restroom.png' });
+  });
+});
+
 // Regression, 2026-10-16: a fix was deployed and the phone had no way to ask
 // for it. A home-screen web app is resumed, not reloaded, so the page-load
 // update check may not run for days.

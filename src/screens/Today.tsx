@@ -6,6 +6,7 @@ import { DemoBanner } from '../components/DemoBanner';
 import { Metric } from '../components/Metric';
 import { UpdatePrompt } from '../components/UpdatePrompt';
 import { WhereAmICard } from '../components/WhereAmICard';
+import { NextRestroomCard } from '../components/NextRestroomCard';
 import { formatClock, formatDayLabel, formatKmMi, daysBetweenIso } from '../lib/time';
 import { formatDuration } from '../lib/pace';
 import { href } from '../router';
@@ -116,6 +117,7 @@ function TodayDay({ dayId }: { dayId: string }): ReactNode {
   return (
     <>
       {day.kind === 'walk' && leg ? <WhereAmICard dayId={day.id} /> : null}
+      {day.kind === 'walk' && leg ? <NextRestroomCard dayId={day.id} /> : null}
 
       <section className={day.kind === 'walk' ? 'card card--ok' : 'card'}>
         <div className="card__label">
