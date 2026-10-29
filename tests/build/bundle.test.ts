@@ -294,6 +294,7 @@ describe('nothing sensitive reaches the bundle', () => {
       'www.topografix.com', // GPX XML namespace identifier, never fetched
       'kaidotrail.github.io', // route source, linked from the Route screen
       'creativecommons.org', // licence link
+      'maps.apple.com', // "Show in Maps" on a restroom: a link Kevin taps, opens the Maps app, never fetched
     ]);
     for (const h of hosts) {
       expect(allowed.has(h), `unexpected host referenced in the bundle: ${h}`).toBe(true);
