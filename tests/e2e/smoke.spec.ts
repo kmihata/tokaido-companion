@@ -238,6 +238,20 @@ test.describe('next restroom', () => {
     await expect(card).toContainText(/Roadside station/);
     await expect(card).toContainText(/to the next public one|nothing public on file/);
     await card.screenshot({ path: 'test-results/next-restroom.png' });
+    const link = card.getByTestId('restroom-map-link').first();
+    await expect(link).toHaveAttribute('href', /^https:\/\/maps\.apple\.com\/\?daddr=\d+\.\d+,\d+\.\d+&dirflg=w/);
+  });
+
+  test('the day file carries the day\'s restrooms as pins', async ({ page }) => {
+    await page.goto('./#/prepare/d-2026-11-05');
+    // The restroom list loads in the background; give it a moment.
+    await page.waitForTimeout(1500);
+    const wait = page.waitForEvent('download');
+    await page.getByTestId('export-day-gpx').click();
+    const gpx = readFileSync(await (await wait).path(), 'utf8');
+    const wc = gpx.match(/<name>WC [^<]*<\/name>/g) ?? [];
+    expect(wc.length).toBeGreaterThan(3);
+    expect(gpx).not.toMatch(/<name>WC Store/);
   });
 });
 

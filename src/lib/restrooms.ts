@@ -218,3 +218,68 @@ export function collapse(sorted: readonly PlacedRestroom[]): PlacedRestroom[] {
   }
   return out;
 }
+
+/**
+ * Open a restroom in Apple Maps with walking directions from where you are.
+ *
+ * Kevin, 2026-10-29: the card says "Train station, 1.2 km ahead, 80 m off the
+ * route" but not where exactly. A maps.apple.com link opens the Maps app on
+ * iPhone (not a web page), shows the pin, and starts a walking route to it.
+ */
+export function appleMapsUrl(r: Pick<Restroom, 'lat' | 'lon' | 'name' | 'kind'>): string {
+  const label = r.name || KIND_LABEL[r.kind];
+  const ll = `${r.lat.toFixed(6)},${r.lon.toFixed(6)}`;
+  return `https://maps.apple.com/?daddr=${ll}&dirflg=w&q=${encodeURIComponent(`Toilet: ${label}`)}`;
+}
+
+/** In a day file, at most one restroom pin per this much route. */
+export const GPX_PIN_SPACING_KM = 0.75;
+
+const SHORT_KIND: Record<RestroomKind, string> = {
+  roadside: 'Michi-no-eki',
+  station: 'Station',
+  park: 'Park',
+  shrine: 'Shrine',
+  public: 'Public',
+  store: 'Store',
+};
+
+/**
+ * Public restrooms between two distances on the line, as GPX waypoints for a
+ * day file. Names start "WC" and stay short, because Footpath truncates labels
+ * at about 25 characters. Stores are left out; they are a fallback, not a pin.
+ */
+export function restroomWaypoints(
+  placed: readonly PlacedRestroom[],
+  fromKm: number,
+  toKm: number,
+): { name: string; description: string; position: Position }[] {
+  const inRange = placed
+    .filter((r) => r.tier <= PUBLIC_MAX_TIER && r.alongKm >= fromKm && r.alongKm <= toKm)
+    .sort((a, b) => a.alongKm - b.alongKm);
+  // Some days have 50-75 restrooms in town; as pins that buries the route.
+  // Keep the best one in each stretch of GPX_PIN_SPACING_KM.
+  const thinned: PlacedRestroom[] = [];
+  for (const r of inRange) {
+    const last = thinned[thinned.length - 1];
+    if (last && r.alongKm - last.alongKm < GPX_PIN_SPACING_KM) {
+      if (r.tier < last.tier || (r.tier === last.tier && r.offRouteKm < last.offRouteKm)) {
+        thinned[thinned.length - 1] = r;
+      }
+      continue;
+    }
+    thinned.push(r);
+  }
+  return thinned
+    .map((r) => ({
+      name: `WC ${SHORT_KIND[r.kind]}${r.name ? ` ${r.name}` : ''}`.slice(0, 25),
+      description: [
+        `Restroom: ${KIND_LABEL[r.kind]}${r.name ? `, ${r.name}` : ''}`,
+        r.offRouteKm >= 0.05 ? `${Math.round(r.offRouteKm * 1000)} m off the route` : 'on the route',
+        ...r.notes,
+        r.mapped ? 'toilet mapped in OpenStreetMap' : 'inferred from the place, toilet not mapped',
+        'OpenStreetMap (ODbL), not checked on the ground',
+      ].join(' · '),
+      position: [r.lon, r.lat] as Position,
+    }));
+}

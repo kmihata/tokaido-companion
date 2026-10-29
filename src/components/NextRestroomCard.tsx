@@ -5,7 +5,7 @@ import { useLocationFix } from '../state/useLocationFix';
 import type { LocationFix } from '../state/useLocationFix';
 import { assetUrl } from '../lib/base';
 import { locateOnLeg } from '../lib/whereAmI';
-import { KIND_LABEL, nextRestrooms, placeOnLine } from '../lib/restrooms';
+import { KIND_LABEL, appleMapsUrl, nextRestrooms, placeOnLine } from '../lib/restrooms';
 import type { AheadRestroom, RestroomsFile } from '../lib/restrooms';
 import { formatClock, formatKmMi } from '../lib/time';
 
@@ -157,6 +157,16 @@ function RestroomRow({ a, best, last }: { a: AheadRestroom; best: boolean; last:
         {r.notes.length ? ` · ${r.notes.join(', ')}` : ''}
       </div>
       <div className="small muted">{gap}</div>
+      <a
+        className="btn btn--small"
+        href={appleMapsUrl(r)}
+        target="_blank"
+        rel="noreferrer noopener"
+        style={{ marginTop: 4 }}
+        data-testid="restroom-map-link"
+      >
+        Show in Maps
+      </a>
     </li>
   );
 }

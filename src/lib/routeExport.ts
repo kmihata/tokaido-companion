@@ -17,6 +17,8 @@
  * Pure functions over already-loaded data. No network, no file system; the
  * caller hands the string to the share sheet.
  */
+import { restroomWaypoints } from './restrooms';
+import type { PlacedRestroom } from './restrooms';
 import type { Dataset, RouteStretch } from '../data/load';
 import type { DayLeg } from './dayPlan';
 import { anchorAlongKm } from './dayPlan';
@@ -280,6 +282,7 @@ export function dayGpx(
   leg: DayLeg,
   generatedAt: Date = new Date(),
   userPoints: readonly UserPoint[] = [],
+  restrooms: readonly PlacedRestroom[] = [],
 ): string {
   const n = String(leg.plan.walkingDayNumber).padStart(2, '0');
   const day = leg.day;
@@ -390,6 +393,10 @@ export function dayGpx(
       position: [p.lon, p.lat] as Position,
     });
   }
+
+  // Public restrooms along this day, so they show as pins in Footpath while
+  // walking (Kevin, 2026-10-29). Stores are left out.
+  wpts.push(...restroomWaypoints(restrooms, fromKm, toKm));
 
   const desc = [
     `Walking day ${leg.plan.walkingDayNumber}${dateLabel ? `, ${dateLabel}` : ''}.`,

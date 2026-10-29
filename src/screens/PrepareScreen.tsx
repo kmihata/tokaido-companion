@@ -20,6 +20,7 @@ import { OVER_LONG_KM } from '../lib/dayPlan';
 import { arrivalCutoffForDay } from '../lib/lodging';
 import { readCutoff } from '../lib/leaveBy';
 import { LeaveByCard } from '../components/LeaveByCard';
+import { usePlacedRestrooms } from '../state/useRestrooms';
 import type { DayLeg } from '../lib/dayPlan';
 
 /**
@@ -37,6 +38,7 @@ import type { DayLeg } from '../lib/dayPlan';
 export function PrepareScreen({ dayId }: { dayId: string | null }): ReactNode {
   const { dataset, plan, effectiveDate, userPoints, privateData } = useAppState();
   const [prepared, setPrepared] = useState<Record<string, PreparedRecord>>({});
+  const restrooms = usePlacedRestrooms(plan.line);
   const [note, setNote] = useState<string | null>(null);
   // A mirror of `prepared` for the tick handler, so several rapid taps compose
   // instead of racing the IndexedDB round trip and losing one another.
@@ -234,7 +236,7 @@ export function PrepareScreen({ dayId }: { dayId: string | null }): ReactNode {
             onClick={() => {
               try {
                 downloadText(
-                  dayGpx(dataset, leg, new Date(), userPoints.points),
+                  dayGpx(dataset, leg, new Date(), userPoints.points, restrooms),
                   dayGpxFilename(leg),
                   'application/gpx+xml',
                 );

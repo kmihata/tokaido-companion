@@ -4,7 +4,7 @@ import { buildPlanningLine } from '../../src/lib/planningLine';
 import { lineLengthKm } from '../../src/lib/geo';
 import type { Position } from '../../src/lib/geo';
 import type { RouteStretch } from '../../src/data/load';
-import { collapse, nextRestrooms, placeOnLine } from '../../src/lib/restrooms';
+import { appleMapsUrl, collapse, nextRestrooms, placeOnLine, restroomWaypoints } from '../../src/lib/restrooms';
 import type { PlacedRestroom, Restroom, RestroomsFile } from '../../src/lib/restrooms';
 
 const KM_PER_DEG_LAT = 111.195;
@@ -135,3 +135,23 @@ describe('shipped restrooms.json', () => {
     }
   });
 });
+
+describe('restroomWaypoints', () => {
+  const placed = placeOnLine(line, [r('a', 10, 1), r('b', 12, 2), r('c', 14, 5), r('d', 40, 3)]);
+  it('keeps public ones inside the range, in order, and leaves stores out', () => {
+    const w = restroomWaypoints(placed, 5, 20);
+    expect(w).toHaveLength(2);
+    expect(w.every((x) => x.name.startsWith('WC '))).toBe(true);
+    expect(w.every((x) => x.name.length <= 25)).toBe(true);
+    expect(w[0]!.description).toMatch(/OpenStreetMap/);
+  });
+});
+
+describe('appleMapsUrl', () => {
+  it('opens Apple Maps with walking directions to the point', () => {
+    const u = appleMapsUrl({ lat: 34.70001, lon: 137.72999, name: '浜松駅', kind: 'station' });
+    expect(u.startsWith('https://maps.apple.com/?daddr=34.700010,137.729990&dirflg=w')).toBe(true);
+    expect(decodeURIComponent(u)).toContain('Toilet: 浜松駅');
+  });
+});
+
