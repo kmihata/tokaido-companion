@@ -356,6 +356,18 @@ test.describe('AI handoff', () => {
     expect(value.toLowerCase()).not.toContain('claude');
     expect(value.toLowerCase()).not.toContain('chatgpt');
   });
+
+  test('Copy puts the packet on the clipboard, with the question, and says so', async ({ page, context, browserName }) => {
+    test.skip(browserName !== 'chromium', 'clipboard permissions are Chromium-only in Playwright');
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+    await page.goto('./#/day/d-2026-10-26');
+    await page.locator('#ai-question').fill('Is the tunnel open today?');
+    await page.getByTestId('copy-packet').click();
+    await expect(page.getByTestId('packet-status')).toContainText(/Copied .* paste/);
+    const clip = await page.evaluate(() => navigator.clipboard.readText());
+    expect(clip.startsWith('PROVENANCE WARNING')).toBe(true);
+    expect(clip).toContain('Is the tunnel open today?');
+  });
 });
 
 test.describe('private data import', () => {

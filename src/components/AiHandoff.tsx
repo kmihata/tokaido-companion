@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
-import { buildContextPacket, sharePacket } from '../lib/contextPacket';
+import { buildContextPacket, copyPacket, sharePacket } from '../lib/contextPacket';
 import type { PacketInput } from '../lib/contextPacket';
 import { useAppState } from '../state/AppState';
 
@@ -52,7 +52,7 @@ export function AiHandoff({
       <h2 id="ai-handoff-heading">{heading}</h2>
       <p className="small muted">
         This builds a block of text. It does not call any AI service and sends nothing anywhere.
-        Read it, edit it, then copy or share it into whichever assistant you are using.
+        Tap Copy, open the Claude or ChatGPT app, and paste.
       </p>
 
       <div className="field">
@@ -107,6 +107,22 @@ export function AiHandoff({
           className="btn btn--primary"
           data-testid="copy-packet"
           onClick={() => {
+            void copyPacket(packet).then((r) => {
+              setStatus(
+                r.ok
+                  ? `Copied (${packet.length} characters). Open the Claude or ChatGPT app and paste.`
+                  : 'Could not copy automatically. Open "Preview and edit the packet" above, select all the text, and copy it by hand.',
+              );
+            });
+          }}
+        >
+          Copy
+        </button>
+        <button
+          type="button"
+          className="btn"
+          data-testid="share-packet"
+          onClick={() => {
             void sharePacket(packet).then((r) => {
               setStatus(
                 r.ok
@@ -120,7 +136,7 @@ export function AiHandoff({
             });
           }}
         >
-          Copy / share packet
+          Share…
         </button>
       </div>
 
@@ -131,10 +147,13 @@ export function AiHandoff({
       ) : null}
 
       {settings.aiLinks.length > 0 ? (
-        <>
-          <hr className="divider" />
+        <details style={{ marginTop: 8 }}>
+          <summary className="small muted" style={{ minHeight: 44, display: 'flex', alignItems: 'center' }}>
+            Open a web version instead
+          </summary>
           <p className="small muted">
-            Open an assistant, then paste. These links are yours to change under More → Settings.
+            These open the website in the browser, not the app, and may ask you to log in. Change
+            them under More → Settings.
           </p>
           <div className="btnrow">
             {settings.aiLinks
@@ -148,7 +167,7 @@ export function AiHandoff({
           <p className="small muted">
             Those links need a network. Nothing else on this screen does.
           </p>
-        </>
+        </details>
       ) : null}
     </section>
   );

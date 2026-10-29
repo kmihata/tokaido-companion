@@ -156,3 +156,42 @@ export async function sharePacket(text: string, title = 'Tokaido context'): Prom
   }
   return { method: 'manual', ok: false, error: 'No share or clipboard API available.' };
 }
+
+/**
+ * Plain copy, no share sheet.
+ *
+ * Kevin, 2026-10-29, on the road: the old button opened the share sheet,
+ * which was not useful; he uses the Claude and ChatGPT apps and just wants the
+ * text on the clipboard, with a clear "copied". The async clipboard API is
+ * tried first; if the browser refuses it, the old select-and-execCommand path
+ * still works on iOS inside a tap.
+ */
+export async function copyPacket(text: string): Promise<{ ok: boolean; error?: string }> {
+  if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return { ok: true };
+    } catch {
+      // fall through to the legacy path
+    }
+  }
+  if (typeof document !== 'undefined') {
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.top = '-1000px';
+      ta.style.fontSize = '16px'; // stops iOS zooming the page
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      const ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      if (ok) return { ok: true };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
+  }
+  return { ok: false, error: 'This browser would not copy.' };
+}
