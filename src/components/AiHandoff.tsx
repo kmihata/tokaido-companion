@@ -20,10 +20,16 @@ export function AiHandoff({
   base,
   privateLines = [],
   heading = 'Ask an AI about this',
+  onQuestionFocus,
+  locationNote,
 }: {
   base: Omit<PacketInput, 'question' | 'includePrivateLines' | 'generatedAt' | 'dataVersion'>;
   privateLines?: readonly string[];
   heading?: string;
+  /** Called when Kevin starts on a question: the moment to fetch a fresh location. */
+  onQuestionFocus?: () => void;
+  /** One line saying what location the packet will carry. */
+  locationNote?: ReactNode;
 }): ReactNode {
   const { settings, dataset } = useAppState();
   const [question, setQuestion] = useState('');
@@ -61,12 +67,18 @@ export function AiHandoff({
           id="ai-question"
           value={question}
           placeholder="What am I actually looking at here?"
+          onFocus={onQuestionFocus}
           onChange={(e) => {
             setQuestion(e.target.value);
             setEdited(null);
           }}
           style={{ minHeight: 80 }}
         />
+        {locationNote ? (
+          <p className="small muted" style={{ margin: '4px 0 0' }} data-testid="packet-location">
+            {locationNote}
+          </p>
+        ) : null}
       </div>
 
       {privateLines.length > 0 ? (

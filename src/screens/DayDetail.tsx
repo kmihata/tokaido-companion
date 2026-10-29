@@ -12,6 +12,9 @@ import { formatDuration } from '../lib/pace';
 import { href } from '../router';
 import { assetUrl } from '../lib/base';
 import { readCutoff } from '../lib/leaveBy';
+import { useDayLocation } from '../state/useDayLocation';
+import { measureWhereAmI } from '../lib/whereAmI';
+import type { PacketInput } from '../lib/contextPacket';
 
 /**
  * The full day card, with a tired-day view first.
@@ -21,8 +24,12 @@ import { readCutoff } from '../lib/leaveBy';
  * of text to wade through to find out whether to keep going.
  */
 export function DayDetail({ dayId }: { dayId: string }): ReactNode {
-  const { dataset, privateData, plan } = useAppState();
+  const { dataset, privateData, plan, effectiveDate } = useAppState();
   const [full, setFull] = useState(false);
+  // Location for the AI packet, only on today's card: a fix means nothing on
+  // another day's card.
+  const isToday = (dataset ? dayById(dataset.days, dayId)?.date : null) === effectiveDate;
+  const loc = useDayLocation(isToday ? dayId : null);
 
   if (!dataset) return <p>Loading…</p>;
   const day = dayById(dataset.days, dayId);
@@ -325,13 +332,44 @@ export function DayDetail({ dayId }: { dayId: string }): ReactNode {
           waypoint: null,
           // The same list the card shows, so the packet cannot disagree with it.
           stations: stationsToday,
-          position: null,
+          position: loc.fix ? { lat: loc.fix.lat, lon: loc.fix.lon, accuracyM: loc.fix.accuracyM } : null,
+          positionAt: loc.fix ? new Date(loc.fix.at) : null,
+          progress: progressFor(plan.line, leg, loc.fix),
           completedKm: null,
           paceKmh: null,
           sunset: ctx.sunset,
         }}
         privateLines={privateLines}
+        onQuestionFocus={isToday ? loc.refresh : undefined}
+        locationNote={
+          !isToday
+            ? 'No location in the packet: this is not today’s card.'
+            : loc.locating
+              ? 'Finding your location for the AI…'
+              : loc.fix
+                ? `Location for the AI: fix at ${formatClock(new Date(loc.fix.at))}${loc.fix.accuracyM != null ? `, ±${Math.round(loc.fix.accuracyM)} m` : ''}${loc.fix.pretend ? ' (pretend position)' : ''}.`
+                : loc.error
+                  ? `No location: ${loc.error}`
+                  : 'Start typing and Samwise will add your location.'
+        }
       />
     </>
   );
+}
+
+function progressFor(
+  line: Parameters<typeof measureWhereAmI>[0] | null,
+  leg: { startAlongKm: number; endAlongKm: number; distanceKm: number } | null,
+  fix: { lat: number; lon: number } | null,
+): PacketInput['progress'] {
+  if (!line || !leg || !fix) return null;
+  const r = measureWhereAmI(line, leg, [fix.lon, fix.lat]);
+  if (!r) return null;
+  return {
+    kmIn: r.walkedKm,
+    kmLeft: r.left.remainingKm,
+    dayKm: leg.distanceKm,
+    offRouteKm: r.position.offRouteKm,
+    status: r.position.status,
+  };
 }

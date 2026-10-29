@@ -109,4 +109,21 @@ describe('buildContextPacket — provider neutrality', () => {
   it('stays short enough to paste into a mobile chat box', () => {
     expect(buildContextPacket(input()).length).toBeLessThan(6000);
   });
+
+  it('carries the measured position on the route, with its age', () => {
+    const p = buildContextPacket(
+      input({
+        positionAt: new Date('2026-10-24T02:48:00Z'),
+        progress: { kmIn: 9.2, kmLeft: 6.3, dayKm: 15.5, offRouteKm: 0.02, status: 'on-section' },
+      }),
+    );
+    expect(p).toMatch(/taken \d\d:\d\d \(12 min before this packet\)/);
+    expect(p).toMatch(/on the route line/);
+    expect(p).toMatch(/Walked so far: 9\.2 km .* of 15\.5 km/);
+    expect(p).toMatch(/Left to the planned finish: 6\.3 km/);
+  });
+
+  it('gives pace in mph as well as km/h', () => {
+    expect(buildContextPacket(input({ paceKmh: 4.4 }))).toMatch(/2\.73 mph \(4\.4 km\/h\)/);
+  });
 });

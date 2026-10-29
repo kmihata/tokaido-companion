@@ -474,10 +474,33 @@ export function Decide(): ReactNode {
             : null,
           stations: ctx.stations,
           position,
+          positionAt: position && geo.timestamp ? new Date(geo.timestamp) : null,
+          progress:
+            legPos && legForDay && measured
+              ? {
+                  kmIn: legPos.alongKm - legForDay.startAlongKm,
+                  kmLeft: measured.remainingKm,
+                  dayKm: legForDay.distanceKm,
+                  offRouteKm: legPos.offRouteKm,
+                  status: legPos.status,
+                }
+              : null,
           completedKm: completedKm.trim() ? Number(completedKm) : null,
           paceKmh: input.paceKmh,
           sunset: ctx.sunset,
         }}
+        onQuestionFocus={() => {
+          if (geo.status === 'idle' && !position) geo.start();
+        }}
+        locationNote={
+          position
+            ? `Location for the AI: ${geo.overridden ? 'pretend position from Settings' : `live GPS${geo.accuracyM != null ? `, ±${Math.round(geo.accuracyM)} m` : ''}`}.`
+            : geo.status === 'requesting'
+              ? 'Finding your location for the AI…'
+              : geo.status === 'error'
+                ? `No location: ${geo.error ?? 'GPS unavailable'}`
+                : 'Start typing and Samwise will add your location.'
+        }
       />
     </>
   );

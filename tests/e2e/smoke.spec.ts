@@ -357,6 +357,30 @@ test.describe('AI handoff', () => {
     expect(value.toLowerCase()).not.toContain('chatgpt');
   });
 
+  test('today\'s day card adds a fresh location and where you are on the route', async ({ page, context, browserName }) => {
+    test.skip(browserName !== 'chromium', 'clipboard permissions are Chromium-only in Playwright');
+    await context.grantPermissions(['geolocation', 'clipboard-read', 'clipboard-write']);
+    await context.setGeolocation({ latitude: 35.0642, longitude: 138.536, accuracy: 20 });
+    await page.goto('./#/settings');
+    await page.getByTestId('date-override').fill('2026-10-26');
+    await page.goto('./#/day/d-2026-10-26');
+    await expect(page.getByTestId('packet-location')).toContainText(/Start typing/);
+    await page.locator('#ai-question').click();
+    await expect(page.getByTestId('packet-location')).toContainText(/Location for the AI: fix at/, { timeout: 20_000 });
+    await page.locator('#ai-question').fill('How far to the next station?');
+    await page.getByTestId('copy-packet').click();
+    const clip = await page.evaluate(() => navigator.clipboard.readText());
+    expect(clip).toMatch(/Device position: 35\.06\d+, 138\.53\d+/);
+    expect(clip).toMatch(/Walked so far: .* Left to the planned finish:/);
+  });
+
+  test('another day\'s card says it carries no location', async ({ page }) => {
+    await page.goto('./#/settings');
+    await page.getByTestId('date-override').fill('2026-10-26');
+    await page.goto('./#/day/d-2026-10-30');
+    await expect(page.getByTestId('packet-location')).toContainText(/not today/);
+  });
+
   test('Copy puts the packet on the clipboard, with the question, and says so', async ({ page, context, browserName }) => {
     test.skip(browserName !== 'chromium', 'clipboard permissions are Chromium-only in Playwright');
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);

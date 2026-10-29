@@ -25,6 +25,16 @@ export interface PacketInput {
   waypoint: (WaypointProps & { lat: number; lon: number }) | null;
   stations: readonly Station[];
   position: { lat: number; lon: number; accuracyM: number | null } | null;
+  /** When `position` was taken, if known. Lets the packet say how old it is. */
+  positionAt?: Date | null;
+  /** Measured from the position along today's section, when one is available. */
+  progress?: {
+    kmIn: number;
+    kmLeft: number;
+    dayKm: number;
+    offRouteKm: number;
+    status: 'before-start' | 'on-section' | 'past-finish' | 'far-from-section';
+  } | null;
   completedKm: number | null;
   paceKmh: number | null;
   sunset: Date | null;
@@ -95,12 +105,30 @@ export function buildContextPacket(input: PacketInput): string {
   push('--- CURRENT STATE ---');
   if (input.position) {
     const acc = input.position.accuracyM !== null ? ` (±${Math.round(input.position.accuracyM)} m)` : '';
-    push(`Device position: ${input.position.lat.toFixed(5)}, ${input.position.lon.toFixed(5)}${acc}`);
+    const at = input.positionAt
+      ? `, taken ${formatClock(input.positionAt)} (${Math.max(0, Math.round((input.generatedAt.getTime() - input.positionAt.getTime()) / 60000))} min before this packet)`
+      : '';
+    push(`Device position: ${input.position.lat.toFixed(5)}, ${input.position.lon.toFixed(5)}${acc}${at}`);
   } else {
     push('Device position: not available.');
   }
+  if (input.progress) {
+    const g = input.progress;
+    const where =
+      g.status === 'before-start'
+        ? 'not yet at the start of today\'s section'
+        : g.status === 'past-finish'
+          ? 'at or past today\'s planned finish'
+          : g.status === 'far-from-section'
+            ? `about ${g.offRouteKm.toFixed(1)} km from today's section, so the figures below may not apply`
+            : g.offRouteKm >= 0.15
+              ? `${g.offRouteKm.toFixed(1)} km off the route line`
+              : 'on the route line';
+    push(`Position on today's route (measured along the traced line from the position above): ${where}.`);
+    push(`  Walked so far: ${formatKmMi(g.kmIn)} of ${formatKmMi(g.dayKm)}. Left to the planned finish: ${formatKmMi(g.kmLeft)}.`);
+  }
   push(`Distance walked today (as entered): ${input.completedKm !== null ? formatKmMi(input.completedKm) : 'not entered'}`);
-  push(`Pace including stops (as entered): ${input.paceKmh !== null ? `${input.paceKmh.toFixed(1)} km/h` : 'not entered'}`);
+  push(`Pace including stops (as entered): ${input.paceKmh !== null ? `${(input.paceKmh / 1.609344).toFixed(2)} mph (${input.paceKmh.toFixed(1)} km/h)` : 'not entered'}`);
   push(`Computed sunset (astronomical, ignores terrain): ${input.sunset ? formatClock(input.sunset) : 'not computed'}`);
   push();
 
