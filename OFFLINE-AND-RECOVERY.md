@@ -169,7 +169,7 @@ npm run verify        # typecheck, lint, unit tests, build, build assertions
 npm run preview       # serve dist/ locally
 ```
 
-To publish, see `GITHUB-PAGES-DEPLOYMENT.md`. Rollback is `git revert` plus a
+Publishing is by push to `main`; see `.github/workflows/deploy.yml`. Rollback is `git revert` plus a
 redeploy; the data version in the status strip tells you which dataset a phone is
 actually holding.
 

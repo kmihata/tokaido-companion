@@ -8,7 +8,7 @@
  *    bridges multiple segments inside one track — on this route that draws
  *    21 km straight across Ise Bay — but treats multiple `<trk>` elements as
  *    separate routes and offers to save them as a named list. See the Footpath
- *    section of HANDOFF.md.
+ *    section of the project working notes (kept outside this repository).
  *
  *  - **GeoJSON for an external editor.** A reference layer of anchors, hazards
  *    and waypoints to load underneath while tracing in gpx.studio or similar,

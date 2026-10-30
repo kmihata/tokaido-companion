@@ -962,7 +962,7 @@
       "label": "Tokyo buffer",
       "plan": "Repack, research, contingency.",
       "nominalDistanceKm": 0,
-      "sleepBase": "Tokyo / Haneda area",
+      "sleepBase": "Tokyo",
       "tiredDaySummary": "Protected buffer."
     },
     {
@@ -979,9 +979,9 @@
       "id": "d-2026-11-11",
       "date": "2026-11-11",
       "kind": "travel",
-      "label": "Return via Honolulu",
-      "plan": "HND 21:20 to HNL 09:35; 14h24 layover; HNL 23:59 departure.",
-      "sleepBase": "Aircraft",
+      "label": "Leave Japan",
+      "plan": "Leave Japan. Flight details are private data — see the imported private file.",
+      "sleepBase": "Travel",
       "tiredDaySummary": "Build immigration, ground-transport, and airport-return margins."
     },
     {
@@ -998,8 +998,8 @@
       "id": "d-2026-11-12",
       "date": "2026-11-12",
       "kind": "travel",
-      "label": "Arrival Seattle",
-      "plan": "SEA 07:41.",
+      "label": "Home",
+      "plan": "Home. Details are private data.",
       "sleepBase": "Home",
       "tiredDaySummary": "Recovery. No commitments assumed."
     }

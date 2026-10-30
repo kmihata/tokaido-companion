@@ -35,7 +35,7 @@ assistant Kevin is talking to.
 
 ## Current development status
 
-Initial vertical slice, complete and verified locally. Not deployed anywhere.
+Deployed to GitHub Pages from `main` by `.github/workflows/deploy.yml`.
 
 | Area | State |
 | --- | --- |
@@ -64,7 +64,7 @@ Initial vertical slice, complete and verified locally. Not deployed anywhere.
 | **Route edits** | **Working; device-local delta, switchable, exportable, bakeable into shipped data** |
 | In-app tracing | **Phase 3c.** Not started |
 | Adjust Today (on-road) | **Phase 4.** Not started |
-| Deployment | **Not done.** Prepared only; needs Kevin's approval |
+| Deployment | GitHub Pages, from `main` |
 
 ## Setup
 
@@ -187,7 +187,7 @@ These are properties of the platform, not bugs to be fixed later.
 
 ## Next decisions
 
-Named in `HANDOFF.md` with the reasoning. In short: which source route to adopt,
+Named in the project's working notes, which are kept outside this repository. In short: which source route to adopt,
 how to represent the Miya–Kuwana discontinuity, and whether to deploy to GitHub
 Pages now or after the route data is real.
 

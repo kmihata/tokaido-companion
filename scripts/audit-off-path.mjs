@@ -54,7 +54,7 @@ const OFF_PATH_M = 25;
 /** Simplify the query polyline to about this, to keep Overpass cheap. */
 const QUERY_STEP_M = 120;
 
-const UA = 'samwise-route-audit/1.0 (kmihata@gmail.com)';
+const UA = 'samwise-route-audit/1.0 (+https://github.com/kmihata/tokaido-companion)';
 const FRONT = 'https://overpass-api.de';
 
 /**

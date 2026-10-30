@@ -5,7 +5,7 @@
  * assumption — that a GPX file produced by this app can reach Footpath on an
  * iPhone and be used to navigate. Before building an export system, test the
  * chain with hand-made files. Each file isolates one question. See the
- * "Footpath handoff" section of HANDOFF.md for results.
+ * "Footpath handoff" section of the project working notes for results.
  *
  * The coordinates are approximate placemarks, like everything else in this
  * build. They are not a road. That does not matter here: this tests file

@@ -17,7 +17,7 @@ Miya–Kuwana bay. They are not roads. This tests file plumbing, not navigation.
 
 | `TEST-D-two-track-elements.gpx` | Two separate `<trk>` elements — kept apart, or joined? |
 
-**Results are recorded in `../HANDOFF.md` under "Footpath handoff".** Summary:
+**Results are recorded in the project working notes (kept outside this repository) under "Footpath handoff".** Summary:
 C was bridged into one line across the bay; D was kept apart as two routes in a
 named list. The export shape is therefore one file per day with several `<trk>`
 elements, never several `<trkseg>`.

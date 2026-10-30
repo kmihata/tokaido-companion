@@ -59,7 +59,7 @@ describe('clampMph', () => {
 
 describe('readCutoff', () => {
   it('reads an early-morning hour as overnight, not afternoon', () => {
-    // KOKO STAY Shonan Fujisawa: "Check-in time ends at 4:00 AM".
+    // Real-world case: a hotel whose check-in ends at 4:00 AM.
     const c = readCutoff('04:00');
     expect(c.label).toBe('4:00 a.m. (overnight)');
     expect(c.sameDayMinutes).toBeNull();
