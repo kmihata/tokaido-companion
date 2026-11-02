@@ -101,8 +101,8 @@ export const DEFAULT_DAY_END_ANCHORS: Record<string, { titleJa?: string; alongKm
   // moved to Wednesday for the weather; Iwatsuka → Kameyama is ridden.
   'd-2026-11-03': { titleJa: '小野町', note: 'Short day after the train from Nagoya: Kameyama-juku to the Ono-chō bed.' },
   'd-2026-11-04': {
-    alongKm: 490.41,
-    note: 'The point on the road nearest the Minakuchi bed, 2.7 km past Minakuchi-juku; the bed is about 0.6 km off the road (Codex measurement, 2026-11-01). A distance, not an anchor: no anchor sits here. Recheck it if the route geometry changes.',
+    alongKm: 489.985,
+    note: 'Turn right (north) here, 2.3 km past Minakuchi-juku, onto the road up to the Nishinasaka (西名坂) signals; cross Route 1 there and walk west along its north side to the Minakuchi bed, about 1.0 km. Moved back 0.4 km on 2026-11-02 at Kevin\'s request: the road point due south of the bed has no road to it and Route 1 has no crossing there (OpenStreetMap check). A distance, not an anchor.',
   },
   // Changed again the evening of 2026-11-02: a Kusatsu room came free, so
   // Thursday ends at Kusatsu-juku instead of Tehara, evening out Thu and Fri.
