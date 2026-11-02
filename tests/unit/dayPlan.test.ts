@@ -85,8 +85,8 @@ describe('buildDefaultDayPlans', () => {
   });
 
   it('snaps every default endpoint to a named anchor, unless it is declared as a distance', () => {
-    // Since 2026-11-02 two endpoints (the Minakuchi hotel's road point and
-    // Tehara) sit where no anchor exists and are declared as distances.
+    // Since 2026-11-02 one endpoint (the Minakuchi hotel's road point) sits
+    // where no anchor exists and is declared as a distance.
     for (const p of defaults) {
       if (DEFAULT_DAY_END_ANCHORS[p.dayId]?.alongKm !== undefined) continue;
       expect(p.endAnchorId, `day ${p.walkingDayNumber}`).toBeTruthy();

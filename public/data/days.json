@@ -786,14 +786,17 @@
       "provisional": true,
       "bailoutWaypointIds": [
         "wp-rail-kibukawa",
-        "wp-rail-kosei"
+        "wp-rail-kosei",
+        "wp-rail-kusatsu"
       ],
       "hazardWaypointIds": [],
       "stationIds": [
-        "st-ishibe"
+        "st-ishibe",
+        "st-kusatsu"
       ],
       "hiroshigeRefIds": [
-        "hr-ishibe"
+        "hr-ishibe",
+        "hr-kusatsu"
       ],
       "safetyNotes": [],
       "verificationTasks": [],
@@ -802,27 +805,27 @@
       ],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
       "publicEnd": {
-        "city": "Ritto",
-        "lat": 35.026,
-        "lon": 136
+        "city": "Kusatsu",
+        "lat": 35.0175,
+        "lon": 135.9604
       },
       "id": "d-2026-11-05",
       "date": "2026-11-05",
       "kind": "walk",
       "walkingDayNumber": 14,
-      "label": "Walk 14 — Minakuchi to Tehara",
-      "plan": "Minakuchi → Mikumo → Ishibe → Tehara, 4.6 km before Kusatsu-juku. Replanned 2026-11-02: the expected wet day falls on the flat, rail-dense stretch.",
+      "label": "Walk 14 — Minakuchi to Kusatsu",
+      "plan": "Minakuchi → Mikumo → Ishibe → Tehara → Kusatsu-juku. Replanned 2026-11-02: the expected wet day falls on the flat, rail-dense stretch; changed that evening from Tehara to Kusatsu when a room came free.",
       "from": "Minakuchi, 2.7 km past Minakuchi-juku",
-      "to": "Tehara (JR Kusatsu Line)",
-      "nominalDistanceKm": 17.1,
-      "likelyDoorToDoorKm": 17.9,
+      "to": "Kusatsu-juku (JR Kusatsu Station)",
+      "nominalDistanceKm": 21.7,
+      "likelyDoorToDoorKm": 22.9,
       "terrain": "Flat, beside the JR Kusatsu Line.",
       "elevationWarning": null,
-      "startLightGuidance": "No hurry: the Tehara hotel does not check in until 18:00. Ask about leaving the bag earlier.",
+      "startLightGuidance": "No hurry: check-in from 15:00. The rain is the reason for this day, not the distance.",
       "railRedundancy": "high",
-      "sleepBase": "Tehara, Ritto",
-      "sleepBaseNote": "Check-in 18:00 to midnight only. JR Tehara Station is about 150 m off the road.",
-      "tiredDaySummary": "About 11 mi, flat, train alongside the whole way. Check-in not until 6 p.m."
+      "sleepBase": "Kusatsu",
+      "sleepBaseNote": "Beside JR Kusatsu Station, about 0.6 km off the road at Kusatsu-juku. Check-in 15:00.",
+      "tiredDaySummary": "About 14 mi, flat, train alongside the whole way."
     },
     {
       "schemaVersion": 1,
@@ -855,17 +858,17 @@
       "date": "2026-11-06",
       "kind": "walk",
       "walkingDayNumber": 15,
-      "label": "Walk 15 — Tehara to Sanjo Ohashi",
-      "plan": "Tehara → Kusatsu-juku → Seta → Otsu → Sanjo Ohashi, Kyoto.",
-      "from": "Tehara",
+      "label": "Walk 15 — Kusatsu to Sanjo Ohashi",
+      "plan": "Kusatsu-juku → Seta → Otsu → Sanjo Ohashi, Kyoto.",
+      "from": "Kusatsu-juku",
       "to": "Sanjo Ohashi, Kyoto",
-      "nominalDistanceKm": 30.3,
-      "likelyDoorToDoorKm": 31.8,
+      "nominalDistanceKm": 25.7,
+      "likelyDoorToDoorKm": 27.8,
       "terrain": "Flat to Otsu along Biwa, then the final climb into Kyoto.",
       "railRedundancy": "high",
       "sleepBase": "Kyoto",
       "startLightGuidance": "Rail-dense the whole way, and the whole point of the trip is at the end of it. Nov 7 is still free if the day needs splitting.",
-      "tiredDaySummary": "About 19 mi into Kyoto. Rail all the way if needed."
+      "tiredDaySummary": "About 16 mi into Kyoto. Rail all the way if needed."
     },
     {
       "schemaVersion": 1,

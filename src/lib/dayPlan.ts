@@ -104,9 +104,11 @@ export const DEFAULT_DAY_END_ANCHORS: Record<string, { titleJa?: string; alongKm
     alongKm: 490.41,
     note: 'The point on the road nearest the Minakuchi bed, 2.7 km past Minakuchi-juku; the bed is about 0.6 km off the road (Codex measurement, 2026-11-01). A distance, not an anchor: no anchor sits here. Recheck it if the route geometry changes.',
   },
+  // Changed again the evening of 2026-11-02: a Kusatsu room came free, so
+  // Thursday ends at Kusatsu-juku instead of Tehara, evening out Thu and Fri.
   'd-2026-11-05': {
-    alongKm: 507.53,
-    note: 'Tehara, 4.6 km before Kusatsu-juku; JR Tehara Station is about 150 m off the road; the bed checks in from 18:00. A distance, not an anchor.',
+    titleJa: '草津宿',
+    note: 'Kusatsu-juku. The bed is beside JR Kusatsu Station, about 0.6 km off the road.',
   },
   'd-2026-11-06': { titleJa: '三条大橋' },
 };

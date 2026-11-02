@@ -1053,7 +1053,7 @@
         "schemaVersion": 1,
         "classification": "public",
         "lastChecked": null,
-        "operationalNotes": "About 306 m off the road on the JR Kusatsu Line, partway through the Nov 5 Minakuchi → Tehara day (replanned 2026-11-02).",
+        "operationalNotes": "About 306 m off the road on the JR Kusatsu Line, partway through the Nov 5 Minakuchi → Kusatsu day (replanned 2026-11-02).",
         "historicalNotes": null,
         "safetyNotes": null,
         "links": [],
@@ -1319,6 +1319,7 @@
         "safetyNotes": null,
         "links": [],
         "dayIds": [
+          "d-2026-11-05",
           "d-2026-11-06"
         ],
         "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
