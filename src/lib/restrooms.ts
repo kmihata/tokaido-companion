@@ -272,7 +272,11 @@ export function restroomWaypoints(
   }
   return thinned
     .map((r) => ({
-      name: `WC ${SHORT_KIND[r.kind]}${r.name ? ` ${r.name}` : ''}`.slice(0, 25),
+      // "WC 10.8km Public", "WC 16.9km Ai-no Tsuchiyama": the distance into the
+      // day first, so an unnamed pin still says where it is, then the kind or
+      // the name. Roadside-station names drop their "Michi-no-Eki" prefix,
+      // which otherwise ate the whole label.
+      name: `WC ${(r.alongKm - fromKm).toFixed(1)}km ${pinLabel(r)}`.slice(0, 25),
       description: [
         `Restroom: ${KIND_LABEL[r.kind]}${r.name ? `, ${r.name}` : ''}`,
         r.offRouteKm >= 0.05 ? `${Math.round(r.offRouteKm * 1000)} m off the route` : 'on the route',
@@ -282,4 +286,10 @@ export function restroomWaypoints(
       ].join(' · '),
       position: [r.lon, r.lat] as Position,
     }));
+}
+
+function pinLabel(r: PlacedRestroom): string {
+  const stripped = r.name.replace(/^(michi-no-eki|道の駅)\s*/i, '').trim();
+  if (r.kind === 'roadside') return `MNE ${stripped || 'roadside stn'}`;
+  return stripped ? `${SHORT_KIND[r.kind]} ${stripped}` : SHORT_KIND[r.kind];
 }

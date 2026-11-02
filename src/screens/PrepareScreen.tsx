@@ -235,13 +235,13 @@ export function PrepareScreen({ dayId }: { dayId: string | null }): ReactNode {
             data-testid="export-day-gpx"
             onClick={() => {
               try {
-                downloadText(
-                  dayGpx(dataset, leg, new Date(), userPoints.points, restrooms),
-                  dayGpxFilename(leg),
-                  'application/gpx+xml',
-                );
+                const gpx = dayGpx(dataset, leg, new Date(), userPoints.points, restrooms);
+                downloadText(gpx, dayGpxFilename(leg), 'application/gpx+xml');
+                const wc = (gpx.match(/<name>WC /g) ?? []).length;
+                // Say how many restroom pins went in, so a file exported before
+                // the restroom list loaded is obvious rather than silently bare.
                 setNote(
-                  'Saved. On iOS this opens the share sheet — Save to Files, then open it from Footpath and choose Save to list.',
+                  `Saved, with ${wc} restroom pin${wc === 1 ? '' : 's'}${restrooms.length === 0 ? ' — the restroom list had not loaded yet; wait a moment and export again' : ''}. On iOS this opens the share sheet — Save to Files, then open it from Footpath and choose Save to list.`,
                 );
               } catch (e) {
                 setNote(`Export failed: ${e instanceof Error ? e.message : String(e)}`);
