@@ -216,7 +216,9 @@ describe('the day package that goes to Footpath', () => {
     // 52 of the 53 post towns have an anchor; Kawasaki has none, and the two
     // unnumbered termini are not post towns. Assert the rule — nearly all of
     // them reach a day — rather than a count that the next retrace could move.
-    expect(seen.size).toBeGreaterThanOrEqual(50);
+    // Since 2026-11-02, Kuwana, Yokkaichi, Ishiyakushi and Shono (42-45) sit in
+    // the ridden Iwatsuka → Kameyama stretch and are on no day.
+    expect(seen.size).toBeGreaterThanOrEqual(46);
     const duplicated = [...seen.entries()].filter(([, days]) => days.length > 1);
     // A continuation overlaps the next day deliberately, so allow a town to
     // appear twice ONLY where a continuation is what carried it.

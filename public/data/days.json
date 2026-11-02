@@ -685,80 +685,18 @@
       "schemaVersion": 1,
       "provisional": true,
       "bailoutWaypointIds": [
-        "wp-rail-atsuta",
-        "wp-rail-kuwana",
-        "wp-rail-yokkaichi"
-      ],
-      "hazardWaypointIds": [
-        "wp-crossing-miya-kuwana"
-      ],
-      "stationIds": [
-        "st-miya",
-        "st-kuwana",
-        "st-yokkaichi"
-      ],
-      "hiroshigeRefIds": [
-        "hr-miya",
-        "hr-kuwana",
-        "hr-yokkaichi"
-      ],
-      "safetyNotes": [
-        "The 40.2 km figure is the HISTORICAL equivalent: 27.5 km of it is the Seven-ri sea crossing, which no ordinary ferry now reproduces. The safe modern walking line is a different and unmeasured distance.",
-        "A land substitute over the Kiso Three Rivers must be checked for pedestrian legality and shoulder quality bridge by bridge."
-      ],
-      "verificationTasks": [
-        "Decide explicitly: walk a safe modern land replacement, use transit to enact the historical discontinuity, or split a long substitute across the flex day.",
-        "Measure the chosen line on a GPX. This is the largest unresolved distance on the route."
-      ],
-      "weatherSensitive": [],
-      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
-      "publicEnd": {
-        "city": "Kuwana",
-        "lat": 35.0386,
-        "lon": 136.6686
-      },
-      "id": "d-2026-11-03",
-      "date": "2026-11-03",
-      "kind": "walk",
-      "walkingDayNumber": 12,
-      "label": "Walk 12 — Iwatsuka to Ise-Asahi",
-      "plan": "Iwatsuka Station crossing → Manba Ohashi → modern Kiso Three Rivers substitute → Kuwana-juku → Machiya Bridge → Outside Ise-Asahi Station.",
-      "from": "Iwatsuka Station crossing",
-      "to": "Outside Ise-Asahi Station",
-      "nominalDistanceKm": 34.8,
-      "likelyDoorToDoorKm": 35,
-      "terrain": "Unresolved. Depends entirely on which crossing is chosen.",
-      "elevationWarning": null,
-      "startLightGuidance": "Do not start this day without having settled the crossing decision in advance. It opens with a twenty-minute subway ride out from Kanayama and the 1.91 km to Manba Ohashi that Walk 11 deliberately left behind, so the first hour is easy and the unknowns are all later.",
-      "railRedundancy": "moderate",
-      "sleepBase": "Kuwana",
-      "sleepBaseNote": "Shortened from Yokkaichi on 2026-09-16. The day ends 55 m from the Ise-Asahi platform on the Kintetsu Nagoya Line, one stop from the Kuwana bed and one stop back out in the morning. Machiya Bridge was the first candidate but sits 2.6 km from any station; the extra 0.6 mi buys a finish you can step onto a train from. The six miles this sheds go onto Walks 13 and 14, which were the two shortest days in the west.",
-      "tiredDaySummary": "The biggest open question on the route, now carried on a twenty-one mile day instead of a twenty-eight. Distance still unknown until the crossing is chosen; the Nov 7 flex day exists partly for this."
-    },
-    {
-      "schemaVersion": 1,
-      "provisional": true,
-      "bailoutWaypointIds": [
-        "wp-rail-yokkaichi",
-        "wp-rail-kameyama",
-        "wp-rail-seki"
+        "wp-rail-kameyama"
       ],
       "hazardWaypointIds": [],
       "stationIds": [
-        "st-yokkaichi",
-        "st-kameyama",
-        "st-seki",
-        "st-sakashita"
+        "st-kameyama"
       ],
       "hiroshigeRefIds": [
-        "hr-yokkaichi",
-        "hr-kameyama",
-        "hr-seki",
-        "hr-sakashita"
+        "hr-kameyama"
       ],
       "safetyNotes": [
-        "Last day with reasonable rail before Suzuka. Sort out tomorrow’s weather decision tonight, not in the morning — though note that KONAN-01 stops being cancellable at midnight entering Nov 4, so the real decision point is the night of Nov 3, in Kuwana, on a two-day forecast.",
-        "Nothing about tomorrow morning depends on a timetable now. Set the alarm by the forecast and the sunrise, not by a train."
+        "Iwatsuka → Kameyama was dropped in the 2026-11-02 replan, with no make-up mileage.",
+        "Sort out tomorrow’s weather decision tonight: Suzuka is tomorrow."
       ],
       "verificationTasks": [],
       "weatherSensitive": [],
@@ -768,21 +706,23 @@
         "lat": 34.8549,
         "lon": 136.413
       },
-      "id": "d-2026-11-04",
-      "date": "2026-11-04",
+      "id": "d-2026-11-03",
+      "date": "2026-11-03",
       "kind": "walk",
-      "walkingDayNumber": 13,
-      "label": "Walk 13 — Ise-Asahi to Ono-cho",
-      "plan": "Outside Ise-Asahi Station → Yokkaichi → Ishiyakushi → Shono → Kameyama-juku → Ono-cho.",
-      "from": "Outside Ise-Asahi Station",
+      "walkingDayNumber": 12,
+      "label": "Walk 12 — Kameyama to Ono-cho (train from Nagoya)",
+      "plan": "JR from Nagoya on the Kansai Line to Kameyama; walk Kameyama-juku → Ono-cho. Replanned 2026-11-02: Iwatsuka → Kuwana → Yokkaichi → Kameyama is ridden, not walked.",
+      "from": "Kameyama-juku (after the train)",
       "to": "Ono-cho, Kameyama",
-      "nominalDistanceKm": 38.5,
-      "likelyDoorToDoorKm": 38.8,
-      "terrain": "Gradual climb toward the Suzuka approach.",
+      "nominalDistanceKm": 4.2,
+      "likelyDoorToDoorKm": 5.5,
+      "terrain": "Town streets, short.",
+      "elevationWarning": null,
+      "startLightGuidance": "No early start needed. The day exists to arrive rested at the foot of Suzuka. Kameyama Station is about 0.6 km from Kameyama-juku.",
       "railRedundancy": "moderate",
       "sleepBase": "Ono-cho, Kameyama",
-      "sleepBaseNote": "The bed is 274 m off the road — walk off the Tokaido into it and back onto it in the morning. No train either way. That is the reason this day stops 1.3 mi short of Seki-juku: finishing at Seki meant a one-stop hop to Kameyama and the 06:02 back out, and the Suzuka day should not open by catching a rural train. Seki-juku itself has little lodging; Seki Station is 408 m from that anchor and Kameyama Station 628 m from its own, both on the JR Kansai Line at roughly hourly, if a fallback is needed.",
-      "tiredDaySummary": "Ends 274 m off the road with the pass still ahead. Twenty-four miles, then sleep where you stopped."
+      "sleepBaseNote": "The bed is about 250 m off the road. Check-in any time.",
+      "tiredDaySummary": "Train, then about 3 mi of town walking to the hotel. Rest for Suzuka."
     },
     {
       "schemaVersion": 1,
@@ -795,20 +735,20 @@
         "wp-hazard-suzuka-pass"
       ],
       "stationIds": [
+        "st-seki",
         "st-sakashita",
         "st-tsuchiyama",
-        "st-minakuchi",
-        "st-ishibe"
+        "st-minakuchi"
       ],
       "hiroshigeRefIds": [
+        "hr-seki",
         "hr-sakashita",
         "hr-tsuchiyama",
-        "hr-minakuchi",
-        "hr-ishibe"
+        "hr-minakuchi"
       ],
       "safetyNotes": [
-        "Modern Route 1 runs through the Suzuka Tunnel below the pass; the old road climbs over the saddle as part of the Tokai Nature Trail. Those are different lines with different exposure.",
-        "If the weather is bad, this is what the second recovery token was being held for."
+        "Seki is the last easy train exit before the pass. There is no rail between Seki and Tsuchiyama.",
+        "Modern Route 1 runs through the Suzuka Tunnel below the pass; the old road climbs over the saddle as part of the Tokai Nature Trail. Those are different lines with different exposure."
       ],
       "verificationTasks": [
         "Confirm Tokai Nature Trail condition and any closures.",
@@ -819,27 +759,70 @@
       ],
       "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
       "publicEnd": {
-        "city": "Konan",
-        "lat": 34.9984,
-        "lon": 136.0804
+        "city": "Minakuchi",
+        "lat": 34.9747,
+        "lon": 136.1575
+      },
+      "id": "d-2026-11-04",
+      "date": "2026-11-04",
+      "kind": "walk",
+      "walkingDayNumber": 13,
+      "label": "Walk 13 — Ono-cho over Suzuka to Minakuchi",
+      "plan": "Ono-cho → Seki → Sakashita → Suzuka Pass → Tsuchiyama → Minakuchi-juku → the road point nearest the Minakuchi hotel, 2.7 km on. Moved to Wednesday on 2026-11-02 for the weather.",
+      "from": "Ono-cho, Kameyama",
+      "to": "Minakuchi, 2.7 km past Minakuchi-juku",
+      "nominalDistanceKm": 32.8,
+      "likelyDoorToDoorKm": 33.7,
+      "terrain": "Forested Mie-side ascent to roughly 378 m, then the gentler Shiga-side descent.",
+      "elevationWarning": "Modest in absolute height, but exposed, cool, and windy, and the Mie-side approach feels remote. Walking Tokyo-to-Kyoto makes the steep side the ascent.",
+      "startLightGuidance": "First-light start and an explicit weather gate. Nothing stands between the bed and the road: the night before ends about 250 m off the Tokaido. The pass falls about 10.7 km in, after Seki and Sakashita. Climb it early.",
+      "railRedundancy": "low",
+      "sleepBase": "Minakuchi (Koka)",
+      "sleepBaseNote": "The bed is about 0.6 km off the road from this finish point. Check-in until midnight, no after-hours arrival.",
+      "tiredDaySummary": "The mountain day: about 20.7 mi, low rail, first light, warm layers before the descent. Seki is the last easy exit."
+    },
+    {
+      "schemaVersion": 1,
+      "provisional": true,
+      "bailoutWaypointIds": [
+        "wp-rail-kibukawa",
+        "wp-rail-kosei"
+      ],
+      "hazardWaypointIds": [],
+      "stationIds": [
+        "st-ishibe"
+      ],
+      "hiroshigeRefIds": [
+        "hr-ishibe"
+      ],
+      "safetyNotes": [],
+      "verificationTasks": [],
+      "weatherSensitive": [
+        "The day most likely to be wet. Flat and beside the railway, so heavy rain means a train, not a risk."
+      ],
+      "source": "DAILY-SCHEDULE-DRAFT.md (2026-08-16 balancing draft)",
+      "publicEnd": {
+        "city": "Ritto",
+        "lat": 35.026,
+        "lon": 136
       },
       "id": "d-2026-11-05",
       "date": "2026-11-05",
       "kind": "walk",
       "walkingDayNumber": 14,
-      "label": "Walk 14 — Ono-cho over Suzuka to Kosei",
-      "plan": "Ono-cho → Seki → Sakashita → Suzuka Pass → Tsuchiyama → Minakuchi → Mikumo → Outside Kosei Station.",
-      "from": "Ono-cho, Kameyama",
-      "to": "Outside Kosei Station",
-      "nominalDistanceKm": 41,
-      "likelyDoorToDoorKm": 41.7,
-      "terrain": "Forested Mie-side ascent to roughly 378 m, then the gentler Shiga-side descent.",
-      "elevationWarning": "Modest in absolute height, but exposed, cool, and windy, and the Mie-side approach feels remote. Walking Tokyo-to-Kyoto makes the steep side the ascent.",
-      "startLightGuidance": "First-light start and an explicit weather gate, and for once nothing stands between the bed and the road: the night before ends 274 m off the Tokaido, so the start time is yours. This day carries the 6.6 mi from Ono-cho through Seki up to Sakashita as its opening, and the pass falls about a quarter of the way into 25.5 mi. Climb it early; the approach is the warm-up, not an extra.",
-      "railRedundancy": "low",
-      "sleepBase": "Konan (Kosei)",
-      "sleepBaseNote": "The day ends 306 m from the Kosei platform on the JR Kusatsu Line and the bed is about 500 m further on, so the hardest day on the route finishes on foot with no train at the end of it. Shortened from Ishibe-juku on 2026-09-16 to even the last two days and take distance off the pass. If the forecast is bad, Mikumo Station at 306.5 mi is the short version — 21.7 mi instead of 24.2 — and it is one stop east on the same line.",
-      "tiredDaySummary": "Hard mountain day, low rail, the longest in the west at 25.5 mi, and it starts and finishes on foot with no train at either end. First light, weather gate, warm layers before the descent. Nothing recovers after it, so a bad forecast spends the second token here."
+      "label": "Walk 14 — Minakuchi to Tehara",
+      "plan": "Minakuchi → Mikumo → Ishibe → Tehara, 4.6 km before Kusatsu-juku. Replanned 2026-11-02: the expected wet day falls on the flat, rail-dense stretch.",
+      "from": "Minakuchi, 2.7 km past Minakuchi-juku",
+      "to": "Tehara (JR Kusatsu Line)",
+      "nominalDistanceKm": 17.1,
+      "likelyDoorToDoorKm": 17.9,
+      "terrain": "Flat, beside the JR Kusatsu Line.",
+      "elevationWarning": null,
+      "startLightGuidance": "No hurry: the Tehara hotel does not check in until 18:00. Ask about leaving the bag earlier.",
+      "railRedundancy": "high",
+      "sleepBase": "Tehara, Ritto",
+      "sleepBaseNote": "Check-in 18:00 to midnight only. JR Tehara Station is about 150 m off the road.",
+      "tiredDaySummary": "About 11 mi, flat, train alongside the whole way. Check-in not until 6 p.m."
     },
     {
       "schemaVersion": 1,
@@ -850,13 +833,11 @@
       ],
       "hazardWaypointIds": [],
       "stationIds": [
-        "st-ishibe",
         "st-kusatsu",
         "st-otsu",
         "st-sanjo"
       ],
       "hiroshigeRefIds": [
-        "hr-ishibe",
         "hr-kusatsu",
         "hr-otsu",
         "hr-sanjoohashi"
@@ -874,17 +855,17 @@
       "date": "2026-11-06",
       "kind": "walk",
       "walkingDayNumber": 15,
-      "label": "Walk 15 — Kosei to Sanjo Ohashi",
-      "plan": "Outside Kosei Station → Ishibe → Kusatsu → Otsu → Sanjo Ohashi, Kyoto.",
-      "from": "Outside Kosei Station",
+      "label": "Walk 15 — Tehara to Sanjo Ohashi",
+      "plan": "Tehara → Kusatsu-juku → Seta → Otsu → Sanjo Ohashi, Kyoto.",
+      "from": "Tehara",
       "to": "Sanjo Ohashi, Kyoto",
-      "nominalDistanceKm": 39.3,
-      "likelyDoorToDoorKm": 40.8,
-      "terrain": "Long approach along Biwa, then the final climb into Kyoto.",
+      "nominalDistanceKm": 30.3,
+      "likelyDoorToDoorKm": 31.8,
+      "terrain": "Flat to Otsu along Biwa, then the final climb into Kyoto.",
       "railRedundancy": "high",
       "sleepBase": "Kyoto",
-      "startLightGuidance": "Evened against Walk 14 on 2026-09-16 so the pass day and the Kyoto day are the same length. Flat, rail-dense, and the whole point of the trip is at the end of it. If the flex day is still unused, finishing at Kusatsu or Otsu and arriving on Nov 7 is the cleanest late edit.",
-      "tiredDaySummary": "Long but rail-dense. Splitting it across Nov 7 costs nothing if the flex day is unspent."
+      "startLightGuidance": "Rail-dense the whole way, and the whole point of the trip is at the end of it. Nov 7 is still free if the day needs splitting.",
+      "tiredDaySummary": "About 19 mi into Kyoto. Rail all the way if needed."
     },
     {
       "schemaVersion": 1,

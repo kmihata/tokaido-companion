@@ -34,9 +34,20 @@ describe('the walking days account for the whole route', () => {
   const meta = RouteMetaSchema.parse(read('route-meta.json'));
   const walks = days.filter((d) => d.kind === 'walk');
 
-  it('sums the day distances to the active route, within a kilometre', () => {
+  it('sums the day distances plus any ridden stretch to the active route, within a kilometre', () => {
+    // Since 2026-11-02 one stretch (Iwatsuka → Kameyama-juku) is ridden. It is
+    // measured from the plans: the gap before any day that declares its start.
+    const anchors = AnchorsFileSchema.parse(read('anchors.geojson')).features;
+    const { stretches, breaks } = buildStretches(meta, RouteFileSchema.parse(read('route.geojson')).features, anchors);
+    const plans = buildDefaultDayPlans(buildPlanningLine(stretches, breaks), anchors, days);
+    let skipped = 0;
+    for (let i = 1; i < plans.length; i++) {
+      const s = plans[i]!.startAlongKm;
+      if (s != null) skipped += s - plans[i - 1]!.endAlongKm;
+    }
+    expect(skipped).toBeGreaterThan(60);
     const sum = walks.reduce((t, d) => t + (d.nominalDistanceKm ?? 0), 0);
-    expect(Math.abs(sum - meta.totals.activeWalkingKm)).toBeLessThan(1);
+    expect(Math.abs(sum + skipped - meta.totals.activeWalkingKm)).toBeLessThan(1);
   });
 
   /**
@@ -58,6 +69,8 @@ describe('the walking days account for the whole route', () => {
     const plans = buildDefaultDayPlans(buildPlanningLine(stretches, breaks), anchors, days);
     let previous = 0;
     for (const p of plans) {
+      // A day that starts past yesterday's end (a ridden stretch) is measured from its own start.
+      if (p.startAlongKm != null && p.startAlongKm > previous) previous = p.startAlongKm;
       const measured = p.endAlongKm - previous;
       previous = p.endAlongKm;
       const day = walks.find((d) => d.id === p.dayId);

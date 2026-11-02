@@ -10,6 +10,8 @@ import {
   applyOverrides,
   buildDefaultDayPlans,
   buildLegs,
+  DEFAULT_DAY_END_ANCHORS,
+  DEFAULT_DAY_START_ANCHORS,
   emptyDayPlanDocument,
   moveDayEnd,
   planTotals,
@@ -82,21 +84,33 @@ describe('buildDefaultDayPlans', () => {
     expect(defaults.at(-1)!.endAlongKm).toBeCloseTo(line.lengthKm, 6);
   });
 
-  it('snaps every default endpoint to a named anchor', () => {
+  it('snaps every default endpoint to a named anchor, unless it is declared as a distance', () => {
+    // Since 2026-11-02 two endpoints (the Minakuchi hotel's road point and
+    // Tehara) sit where no anchor exists and are declared as distances.
     for (const p of defaults) {
+      if (DEFAULT_DAY_END_ANCHORS[p.dayId]?.alongKm !== undefined) continue;
       expect(p.endAnchorId, `day ${p.walkingDayNumber}`).toBeTruthy();
     }
   });
 });
 
 describe('buildLegs', () => {
-  it('accounts for the whole route with no gaps or overlaps', () => {
+  it('accounts for the whole route: walked once, or skipped where a day says so, never overlapping', () => {
+    // Since the 2026-11-02 replan, Iwatsuka → Kameyama is ridden, not walked.
+    // A gap is allowed only where a day declares its own start.
     expect(legs[0]!.startAlongKm).toBe(0);
+    let skipped = 0;
     for (let i = 1; i < legs.length; i++) {
-      expect(legs[i]!.startAlongKm).toBeCloseTo(legs[i - 1]!.endAlongKm, 9);
+      const gap = legs[i]!.startAlongKm - legs[i - 1]!.endAlongKm;
+      if (DEFAULT_DAY_START_ANCHORS[legs[i]!.plan.dayId]) {
+        expect(gap, legs[i]!.plan.dayId).toBeGreaterThan(0);
+        skipped += gap;
+      } else {
+        expect(legs[i]!.startAlongKm).toBeCloseTo(legs[i - 1]!.endAlongKm, 9);
+      }
     }
     expect(legs.at(-1)!.endAlongKm).toBeCloseTo(line.lengthKm, 6);
-    expect(legs.reduce((t, l) => t + l.distanceKm, 0)).toBeCloseTo(line.lengthKm, 6);
+    expect(legs.reduce((t, l) => t + l.distanceKm, 0) + skipped).toBeCloseTo(line.lengthKm, 6);
   });
 
   it('measures each leg geometry as the distance it reports', () => {
@@ -127,8 +141,12 @@ describe('buildLegs', () => {
    * stays a recovery day. The delta against the draft is the part that still
    * matters: the draft figure was never a walkable distance and still is not.
    */
-  it('no longer leaves Day 12 unwalkable, and the distance it shed is still on the route', () => {
+  it('Day 12 is the short Kameyama day after the train, and only the declared stretch is skipped', () => {
+    // 2026-11-02 replan: the day starts at Kameyama-juku, not Iwatsuka.
     const d12 = legs.find((l) => l.plan.walkingDayNumber === 12)!;
+    const d11 = legs.find((l) => l.plan.walkingDayNumber === 11)!;
+    expect(d12.distanceKm).toBeLessThan(6);
+    expect(d12.startAlongKm - d11.endAlongKm).toBeGreaterThan(60);
     expect(d12.distanceKm).toBeLessThan(45);
 
     // The delta has to be VISIBLE, not positive. For every other day a positive
@@ -150,10 +168,10 @@ describe('buildLegs', () => {
     // The ground is. However the boundaries inside it move, Walks 10 to 12
     // cover exactly the stretch between where Walk 9 stops and where Walk 12
     // ends, and none of them may be unwalkable.
-    const block = [10, 11, 12].map((n) => legs.find((l) => l.plan.walkingDayNumber === n)!);
+    const block = [10, 11].map((n) => legs.find((l) => l.plan.walkingDayNumber === n)!);
     const d9 = legs.find((l) => l.plan.walkingDayNumber === 9)!;
     const walked = block.reduce((t, l) => t + l.distanceKm, 0);
-    expect(walked).toBeCloseTo(block[2]!.endAlongKm - d9.endAlongKm, 1);
+    expect(walked).toBeCloseTo(block[1]!.endAlongKm - d9.endAlongKm, 1);
     for (const l of block) expect(l.distanceKm).toBeLessThan(45);
   });
 
@@ -172,10 +190,13 @@ describe('buildLegs', () => {
     expect(over45).toEqual([]);
   });
 
-  it('totals close to the route length with a mean around 35 km', () => {
+  it('totals the route less the skipped stretch, with a mean around 30 km', () => {
+    // Before 2026-11-02 this was the whole route at a mean near 35 km. The
+    // replan rides Iwatsuka → Kameyama and adds a 4 km day, so both drop.
     const t = planTotals(legs);
-    expect(t.totalKm).toBeCloseTo(line.lengthKm, 6);
-    expect(t.meanKm).toBeGreaterThan(33);
+    const skipped = legs.reduce((s, l, i) => (i === 0 ? 0 : s + Math.max(0, l.startAlongKm - legs[i - 1]!.endAlongKm)), 0);
+    expect(t.totalKm + skipped).toBeCloseTo(line.lengthKm, 6);
+    expect(t.meanKm).toBeGreaterThan(27);
     expect(t.meanKm).toBeLessThan(37);
   });
 

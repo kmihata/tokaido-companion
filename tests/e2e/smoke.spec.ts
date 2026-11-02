@@ -86,8 +86,9 @@ test.describe('shell and navigation', () => {
 
 test.describe('day card', () => {
   test('leads with the tired-day view and expands to the full card', async ({ page }) => {
-    await page.goto('./#/day/d-2026-11-05');
-    await expect(page.getByText(/Hard mountain day, low rail/i)).toBeVisible();
+    // Suzuka moved to Nov 4 in the 2026-11-02 replan.
+    await page.goto('./#/day/d-2026-11-04');
+    await expect(page.getByText(/The mountain day/i)).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Still to verify' })).toHaveCount(0);
     await expect(page.getByRole('heading', { name: 'Safety' })).toHaveCount(0);
     await page.getByTestId('toggle-full-card').click();
@@ -228,7 +229,8 @@ test.describe('decision support', () => {
 test.describe('next restroom', () => {
   test('lists the restrooms ahead with the gap after each', async ({ page }) => {
     await page.goto('./#/settings');
-    await page.getByTestId('date-override').fill('2026-11-05');
+    // Seki, on the Nov 4 Suzuka day since the 2026-11-02 replan.
+    await page.getByTestId('date-override').fill('2026-11-04');
     await page.getByTestId('position-override').fill('34.8496, 136.3936');
     await page.getByTestId('position-override').blur();
     await page.getByTestId('tab-today').click();
@@ -243,7 +245,7 @@ test.describe('next restroom', () => {
   });
 
   test('the day file carries the day\'s restrooms as pins', async ({ page }) => {
-    await page.goto('./#/prepare/d-2026-11-05');
+    await page.goto('./#/prepare/d-2026-11-04');
     // The restroom list loads in the background; give it a moment.
     await page.waitForTimeout(1500);
     const wait = page.waitForEvent('download');
@@ -377,6 +379,8 @@ test.describe('AI handoff', () => {
     await context.setGeolocation({ latitude: 35.0642, longitude: 138.536, accuracy: 20 });
     await page.goto('./#/settings');
     await page.getByTestId('date-override').fill('2026-10-26');
+    await page.getByTestId('date-override').blur();
+    await page.getByTestId('tab-today').click();
     await page.goto('./#/day/d-2026-10-26');
     await expect(page.getByTestId('packet-location')).toContainText(/Start typing/);
     await page.locator('#ai-question').click();
@@ -516,7 +520,13 @@ test.describe('planning the days', () => {
       }
     ).days.filter((d) => d.kind === 'walk').length;
     await expect(page.getByTestId('plan-days').locator('> li')).toHaveCount(walkingDays);
-    await expect(page.getByTestId('plan-total')).toContainText(/53[0-9]\.\d km/);
+    // Since the 2026-11-02 replan rides Iwatsuka → Kameyama, the walked total
+    // is the shipped day distances, not the whole route.
+    const shippedKm = (
+      JSON.parse(readFileSync('public/data/days.json', 'utf8')) as { days: { kind: string; nominalDistanceKm: number | null }[] }
+    ).days.filter((d) => d.kind === 'walk').reduce((t, d) => t + (d.nominalDistanceKm ?? 0), 0);
+    const shownKm = Number(/([\d.]+) km/.exec((await page.getByTestId('plan-total').textContent()) ?? '')?.[1] ?? 0);
+    expect(Math.abs(shownKm - shippedKm)).toBeLessThan(1.5);
     // The mean fell when the sixteenth day joined: the same road over one more
     // day. Assert it against the total rather than a literal band.
     const totalText = (await page.getByTestId('plan-total').textContent()) ?? '';

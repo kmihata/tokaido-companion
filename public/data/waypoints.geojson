@@ -960,8 +960,7 @@
         "safetyNotes": null,
         "links": [],
         "dayIds": [
-          "d-2026-11-01",
-          "d-2026-11-03"
+          "d-2026-11-01"
         ],
         "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
         "confidence": "medium",
@@ -1027,10 +1026,7 @@
         "historicalNotes": null,
         "safetyNotes": null,
         "links": [],
-        "dayIds": [
-          "d-2026-11-03",
-          "d-2026-11-04"
-        ],
+        "dayIds": [],
         "source": "Mapion station record, read 2026-09-16",
         "confidence": "medium",
         "verification": "desk-checked",
@@ -1057,13 +1053,12 @@
         "schemaVersion": 1,
         "classification": "public",
         "lastChecked": null,
-        "operationalNotes": "NOT an emergency exit — this is where Walk 14 is planned to finish, 306 m off the road, with the bed about 500 m beyond it. It is also the first rail on the Shiga side that is actually near the route: Kibukawa, the recorded bailout for the Suzuka day, is 8.4 km away. Walk 15 starts here.",
+        "operationalNotes": "About 306 m off the road on the JR Kusatsu Line, partway through the Nov 5 Minakuchi → Tehara day (replanned 2026-11-02).",
         "historicalNotes": null,
         "safetyNotes": null,
         "links": [],
         "dayIds": [
-          "d-2026-11-05",
-          "d-2026-11-06"
+          "d-2026-11-05"
         ],
         "source": "Mapion station record, read 2026-09-16",
         "confidence": "medium",
@@ -1096,8 +1091,7 @@
         "safetyNotes": null,
         "links": [],
         "dayIds": [
-          "d-2026-11-01",
-          "d-2026-11-03"
+          "d-2026-11-01"
         ],
         "source": "Mapion station record, read 2026-09-16",
         "confidence": "medium",
@@ -1130,8 +1124,7 @@
         "safetyNotes": null,
         "links": [],
         "dayIds": [
-          "d-2026-11-01",
-          "d-2026-11-03"
+          "d-2026-11-01"
         ],
         "source": "Mapion station record, read 2026-09-16",
         "confidence": "medium",
@@ -1163,9 +1156,7 @@
         "historicalNotes": null,
         "safetyNotes": null,
         "links": [],
-        "dayIds": [
-          "d-2026-11-03"
-        ],
+        "dayIds": [],
         "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
         "confidence": "medium",
         "verification": "desk-checked",
@@ -1196,10 +1187,7 @@
         "historicalNotes": null,
         "safetyNotes": null,
         "links": [],
-        "dayIds": [
-          "d-2026-11-03",
-          "d-2026-11-04"
-        ],
+        "dayIds": [],
         "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
         "confidence": "medium",
         "verification": "desk-checked",
@@ -1231,7 +1219,7 @@
         "safetyNotes": null,
         "links": [],
         "dayIds": [
-          "d-2026-11-04"
+          "d-2026-11-03"
         ],
         "source": "Mapion station record, read 2026-09-16",
         "confidence": "medium",
@@ -1264,8 +1252,7 @@
         "safetyNotes": null,
         "links": [],
         "dayIds": [
-          "d-2026-11-04",
-          "d-2026-11-05"
+          "d-2026-11-04"
         ],
         "source": "Mapion station record, read 2026-09-16",
         "confidence": "medium",
@@ -1298,6 +1285,7 @@
         "safetyNotes": null,
         "links": [],
         "dayIds": [
+          "d-2026-11-04",
           "d-2026-11-05"
         ],
         "source": "ja.wikipedia station coordinates, read 2026-09-16; Fujieda cross-checked against Mapion to 11 m",
@@ -1651,9 +1639,7 @@
             "url": "https://www.city.nagoya.jp/atsuta/miryoku/1022287/1022299/1022302.html"
           }
         ],
-        "dayIds": [
-          "d-2026-11-03"
-        ],
+        "dayIds": [],
         "source": "demonstration-fixture",
         "confidence": "demonstration",
         "verification": "unverified",
@@ -1685,7 +1671,7 @@
         "safetyNotes": "Roughly 378 m saddle. Exposed, cool, windy; the Mie-side approach feels remote. Low rail redundancy on both sides.",
         "links": [],
         "dayIds": [
-          "d-2026-11-05"
+          "d-2026-11-04"
         ],
         "source": "kaidotrail 2026-08-20 (route anchor)",
         "confidence": "medium",
@@ -1818,8 +1804,7 @@
         "safetyNotes": null,
         "links": [],
         "dayIds": [
-          "d-2026-11-04",
-          "d-2026-11-05"
+          "d-2026-11-04"
         ],
         "source": "kaidotrail 2026-08-20 (route anchor)",
         "confidence": "medium",

@@ -29,6 +29,14 @@ export interface DayPlan {
   /** Anchor the end snaps to, when it does. Takes precedence over endAlongKm. */
   endAnchorId: string | null;
   /**
+   * Where this day starts, when it does not start where the day before ended:
+   * the stretch in between is ridden, not walked. Absent or null means the
+   * ordinary case, a start where yesterday finished. Added 2026-11-02 for the
+   * replan that drops Iwatsuka → Kameyama.
+   */
+  startAlongKm?: number | null;
+  startAnchorId?: string | null;
+  /**
    * How far beyond the planned end the prepared continuation route runs, km.
    * Null means no continuation has been chosen.
    */
@@ -55,7 +63,7 @@ export function emptyDayPlanDocument(): DayPlanDocument {
  * sits between Rokugobashi and Hatchonawate, and the final day ends where the
  * source data ends rather than at Sanjo Ohashi.
  */
-export const DEFAULT_DAY_END_ANCHORS: Record<string, { titleJa: string; note?: string }> = {
+export const DEFAULT_DAY_END_ANCHORS: Record<string, { titleJa?: string; alongKm?: number; note?: string }> = {
   'd-2026-10-20': { titleJa: '八丁畷駅', note: 'Kawasaki-juku is not labelled upstream; Hatchonawate is the nearest anchor.' },
   'd-2026-10-22': { titleJa: '藤沢宿' },
   'd-2026-10-23': { titleJa: '小田原宿' },
@@ -89,10 +97,29 @@ export const DEFAULT_DAY_END_ANCHORS: Record<string, { titleJa: string; note?: s
     note: 'Extended past Okazaki. Okazaki-juku left this day at 19.9 mi and Walk 11 at 27.3 mi with no anchor in the nine miles between Okazaki and Chiryu, so the short day and the long day could not be traded against each other. The Toeicho crossing sits in that gap, and the bed is 579 m off the road instead of the 3.4 km from Okazaki-juku to Okazaki Station. At 42.7 km this is the longest day on the route.',
   },
   'd-2026-11-01': { titleJa: '岩塚駅南交差点' },
-  'd-2026-11-03': { titleJa: '伊勢朝日駅前' },
-  'd-2026-11-04': { titleJa: '小野町' },
-  'd-2026-11-05': { titleJa: '甲西駅前' },
+  // Nov 3-6 replanned 2026-11-02 (STATUS.md, "November 3-6 replan"): Suzuka
+  // moved to Wednesday for the weather; Iwatsuka → Kameyama is ridden.
+  'd-2026-11-03': { titleJa: '小野町', note: 'Short day after the train from Nagoya: Kameyama-juku to the Ono-chō bed.' },
+  'd-2026-11-04': {
+    alongKm: 490.41,
+    note: 'The point on the road nearest the Minakuchi bed, 2.7 km past Minakuchi-juku; the bed is about 0.6 km off the road (Codex measurement, 2026-11-01). A distance, not an anchor: no anchor sits here. Recheck it if the route geometry changes.',
+  },
+  'd-2026-11-05': {
+    alongKm: 507.53,
+    note: 'Tehara, 4.6 km before Kusatsu-juku; JR Tehara Station is about 150 m off the road; the bed checks in from 18:00. A distance, not an anchor.',
+  },
   'd-2026-11-06': { titleJa: '三条大橋' },
+};
+
+/**
+ * Days that start somewhere other than where the day before finished. The
+ * stretch between is not walked. Same lookup rules as the end anchors.
+ */
+export const DEFAULT_DAY_START_ANCHORS: Record<string, { titleJa?: string; alongKm?: number; note?: string }> = {
+  'd-2026-11-03': {
+    titleJa: '亀山宿',
+    note: 'Starts at Kameyama-juku after JR from Nagoya. Iwatsuka → Kuwana → Yokkaichi → Kameyama was dropped on 2026-11-02, with no make-up mileage.',
+  },
 };
 
 
@@ -167,8 +194,25 @@ export function buildDefaultDayPlans(
   for (const d of walks) {
     const n = d.walkingDayNumber ?? null;
     const spec = DEFAULT_DAY_END_ANCHORS[d.id];
-    const anchor = spec ? anchors.find((a) => a.properties.titleJa === spec.titleJa) : undefined;
-    const fromAnchor = anchor ? anchorAlongKm(line, anchors, anchor.properties.id) : null;
+    const anchor = spec?.titleJa ? anchors.find((a) => a.properties.titleJa === spec.titleJa) : undefined;
+    const fromAnchor =
+      spec?.alongKm !== undefined
+        ? Math.min(spec.alongKm, line.lengthKm)
+        : anchor
+          ? anchorAlongKm(line, anchors, anchor.properties.id)
+          : null;
+
+    const startSpec = DEFAULT_DAY_START_ANCHORS[d.id];
+    const startAnchor = startSpec?.titleJa
+      ? anchors.find((a) => a.properties.titleJa === startSpec.titleJa)
+      : undefined;
+    const startKm =
+      startSpec?.alongKm !== undefined
+        ? startSpec.alongKm
+        : startAnchor
+          ? anchorAlongKm(line, anchors, startAnchor.properties.id)
+          : null;
+    if (startKm !== null && startKm > previousKm) previousKm = startKm;
     // Fall back to an even division of what remains, so a missing anchor never
     // produces a zero-length day.
     const remainingDays = walks.length - plans.length;
@@ -180,6 +224,8 @@ export function buildDefaultDayPlans(
       walkingDayNumber: n,
       endAlongKm,
       endAnchorId: fromAnchor !== null && fromAnchor > previousKm ? (anchor?.properties.id ?? null) : null,
+      startAlongKm: startKm !== null && startKm === previousKm ? startKm : null,
+      startAnchorId: startKm !== null && startKm === previousKm ? (startAnchor?.properties.id ?? null) : null,
       continueToAlongKm: null,
       continueToAnchorId: null,
     });
@@ -239,6 +285,11 @@ export function buildLegs(
   const ordered = [...plans].sort((a, b) => a.endAlongKm - b.endAlongKm);
 
   for (const plan of ordered) {
+    // A day that starts past where yesterday ended skips the gap: it is ridden.
+    const startFromAnchor = plan.startAnchorId ? anchorAlongKm(line, anchors, plan.startAnchorId) : null;
+    const startOverride = startFromAnchor ?? plan.startAlongKm ?? null;
+    const skipped = startOverride !== null && startOverride > start;
+    if (skipped) start = startOverride;
     // An anchor, when it resolves, beats a stored distance.
     const fromAnchor = plan.endAnchorId ? anchorAlongKm(line, anchors, plan.endAnchorId) : null;
     // The last walking day always ends where the route ends, whatever anchor it
@@ -278,7 +329,7 @@ export function buildLegs(
       draftKm,
       deltaKm: draftKm === null ? null : distanceKm - draftKm,
       cumulativeKm: cumulative,
-      startAnchorId: legs[legs.length - 1]?.endAnchorId ?? null,
+      startAnchorId: skipped ? (plan.startAnchorId ?? null) : (legs[legs.length - 1]?.endAnchorId ?? null),
       endAnchorId: plan.endAnchorId,
       breakInside: crossesBreak(line, start, end),
       positions: sliceLine(line, start, end),

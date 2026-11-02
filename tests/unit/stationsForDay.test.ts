@@ -89,10 +89,12 @@ describe('a day shows the stations that are on it', () => {
     }
   });
 
-  it('shows all fifty-five prints somewhere across the route', () => {
+  it('shows every print somewhere, except the stations in the ridden stretch', () => {
+    // 2026-11-02 replan: Iwatsuka → Kameyama is ridden, so prints 43-46
+    // (Kuwana, Yokkaichi, Ishiyakushi, Shono) are on no walking day.
     const seen = new Set(walks.flatMap((d) => printsOf(d.id)));
     const missing = hiroshige.filter((h) => !seen.has(h.id)).map((h) => `${h.number}`);
-    expect(missing, `prints on no day: ${missing.join(', ')}`).toHaveLength(0);
+    for (const m of missing) expect(['43', '44', '45', '46'], `print ${m} is on no day`).toContain(m);
   });
 
   it('falls back to what the day names when there is no line to measure', () => {
