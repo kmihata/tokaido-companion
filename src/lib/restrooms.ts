@@ -30,6 +30,8 @@ export interface Restroom {
   /** True when a toilet itself is on the map, not only the place that usually has one. */
   mapped: boolean;
   notes: string[];
+  /** Set when Kevin added it by hand (from Google Maps), not from OpenStreetMap. */
+  addedBy?: 'kevin';
 }
 
 export interface RestroomsFile {
@@ -281,8 +283,12 @@ export function restroomWaypoints(
         `Restroom: ${KIND_LABEL[r.kind]}${r.name ? `, ${r.name}` : ''}`,
         r.offRouteKm >= 0.05 ? `${Math.round(r.offRouteKm * 1000)} m off the route` : 'on the route',
         ...r.notes,
-        r.mapped ? 'toilet mapped in OpenStreetMap' : 'inferred from the place, toilet not mapped',
-        'OpenStreetMap (ODbL), not checked on the ground',
+        ...(r.addedBy
+          ? ['added by Kevin from Google Maps, not checked on the ground']
+          : [
+              r.mapped ? 'toilet mapped in OpenStreetMap' : 'inferred from the place, toilet not mapped',
+              'OpenStreetMap (ODbL), not checked on the ground',
+            ]),
       ].join(' · '),
       position: [r.lon, r.lat] as Position,
     }));
